@@ -5,8 +5,8 @@ import { useState, FormEvent } from 'react';
 interface FormFields {
   name: string;
   company: string;
-  email: string;
   phone: string;
+  email: string;
   message: string;
 }
 
@@ -14,8 +14,8 @@ export default function ContactPageForm() {
   const [form, setForm] = useState<FormFields>({
     name: '',
     company: '',
-    email: '',
     phone: '',
+    email: '',
     message: '',
   });
   const [loading, setLoading] = useState(false);
@@ -42,13 +42,11 @@ export default function ContactPageForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => null);
-        throw new Error(
-          data?.error || 'Ошибка отправки формы'
-        );
+        throw new Error(data?.error || 'Ошибка отправки формы');
       }
 
       setSuccess(true);
-      setForm({ name: '', company: '', email: '', phone: '', message: '' });
+      setForm({ name: '', company: '', phone: '', email: '', message: '' });
     } catch (err: unknown) {
       setError(
         err instanceof Error
@@ -63,90 +61,129 @@ export default function ContactPageForm() {
   if (success) {
     return (
       <div className="text-center py-10">
-        <div className="w-16 h-16 bg-brand-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-brand-700"
+            className="w-8 h-8 text-brand"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Заявка отправлена!</h3>
-        <p className="text-gray-500">
+        <h3 className="text-xl font-bold text-text-dark mb-2">
+          Заявка отправлена!
+        </h3>
+        <p className="text-text">
           Наш менеджер свяжется с вами в ближайшее время.
         </p>
       </div>
     );
   }
 
+  const inputClass =
+    'w-full h-[44px] px-3.5 text-[14px] text-text-dark bg-white border border-surface-input rounded-lg outline-none focus:border-brand focus:ring-1 focus:ring-brand/20 transition-colors placeholder:text-text-muted';
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="name" className="label">Имя *</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            className="input"
-            placeholder="Ваше имя"
-            required
-            value={form.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="company" className="label">Компания</label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            className="input"
-            placeholder="Название компании"
-            value={form.company}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="email" className="label">Email *</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            className="input"
-            placeholder="email@company.com"
-            required
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="label">Телефон</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            className="input"
-            placeholder="+998"
-            value={form.phone}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Name */}
       <div>
-        <label htmlFor="message" className="label">Сообщение *</label>
+        <label
+          htmlFor="name"
+          className="block text-[13px] font-medium text-text-dark mb-1.5"
+        >
+          Имя *
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          className={inputClass}
+          placeholder="Ваше имя"
+          required
+          value={form.name}
+          onChange={handleChange}
+        />
+      </div>
+
+      {/* Company */}
+      <div>
+        <label
+          htmlFor="company"
+          className="block text-[13px] font-medium text-text-dark mb-1.5"
+        >
+          Компания
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          className={inputClass}
+          placeholder="Название компании"
+          value={form.company}
+          onChange={handleChange}
+        />
+      </div>
+
+      {/* Phone */}
+      <div>
+        <label
+          htmlFor="phone"
+          className="block text-[13px] font-medium text-text-dark mb-1.5"
+        >
+          Телефон *
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          className={inputClass}
+          placeholder="+998"
+          required
+          value={form.phone}
+          onChange={handleChange}
+        />
+      </div>
+
+      {/* Email */}
+      <div>
+        <label
+          htmlFor="email"
+          className="block text-[13px] font-medium text-text-dark mb-1.5"
+        >
+          Email *
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          className={inputClass}
+          placeholder="email@company.com"
+          required
+          value={form.email}
+          onChange={handleChange}
+        />
+      </div>
+
+      {/* Message */}
+      <div>
+        <label
+          htmlFor="message"
+          className="block text-[13px] font-medium text-text-dark mb-1.5"
+        >
+          Сообщение
+        </label>
         <textarea
           id="message"
           name="message"
-          className="input min-h-[140px] resize-y"
+          className="w-full h-[100px] px-3.5 py-2.5 text-[14px] text-text-dark bg-white border border-surface-input rounded-lg outline-none focus:border-brand focus:ring-1 focus:ring-brand/20 transition-colors resize-none placeholder:text-text-muted"
           placeholder="Опишите ваш запрос..."
-          required
           value={form.message}
           onChange={handleChange}
         />
@@ -161,9 +198,9 @@ export default function ContactPageForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-8 py-4 text-[15px] font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full h-[48px] text-[15px] font-semibold text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {loading ? 'Отправка...' : 'Отправить запрос'}
+        {loading ? 'Отправка...' : 'Отправить заявку'}
       </button>
     </form>
   );

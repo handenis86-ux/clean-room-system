@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowRight, ArrowLeft, Phone, List } from 'lucide-react';
-import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { articles, getArticleBySlug, getRelatedArticles } from '@/data/articles';
 
 interface PageProps {
@@ -83,55 +82,57 @@ export default async function BlogArticlePage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="bg-brand-800 pt-32 pb-16 md:pt-40 md:pb-20">
+      {/* Breadcrumbs + Header */}
+      <section className="bg-white pt-28 pb-0">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
-            <Breadcrumbs
-              items={[
-                { label: 'Главная', href: '/' },
-                { label: 'База знаний', href: '/blog' },
-                { label: article.title },
-              ]}
-            />
+          <div className="max-w-[800px]">
+            {/* Breadcrumbs */}
+            <nav className="flex items-center gap-1.5 text-[13px] text-text mb-6">
+              <Link href="/" className="hover:text-brand transition-colors">
+                Главная
+              </Link>
+              <span className="text-text-muted">/</span>
+              <Link href="/blog" className="hover:text-brand transition-colors">
+                Блог
+              </Link>
+              <span className="text-text-muted">/</span>
+              <span className="text-text-muted">{article.category}</span>
+            </nav>
 
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-xs font-medium text-brand-100 bg-brand-700 border border-brand-600 px-2.5 py-1 rounded">
-                {article.category}
-              </span>
-            </div>
+            {/* Category tag */}
+            <span className="inline-block text-[11px] font-semibold text-white bg-brand-dark px-2.5 py-1 rounded-full mb-4">
+              {article.category}
+            </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
+            {/* Title */}
+            <h1 className="text-[28px] md:text-[34px] lg:text-[36px] font-extrabold text-text-dark leading-tight mb-4">
               {article.title}
             </h1>
 
-            <div className="flex items-center gap-5 text-brand-200 text-sm">
+            {/* Meta */}
+            <div className="flex items-center gap-4 text-[13px] text-text-muted mb-8">
               <div className="flex items-center gap-1.5">
-                <Calendar size={16} />
+                <Calendar size={14} />
                 <time dateTime={article.publishedAt}>
                   {formatDate(article.publishedAt)}
                 </time>
               </div>
               <div className="flex items-center gap-1.5">
-                <Clock size={16} />
+                <Clock size={14} />
                 <span>{article.readingTime} мин чтения</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Hero image */}
-      <section className="bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl -mt-2">
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden shadow-lg">
+          {/* Hero image */}
+          <div className="max-w-[800px]">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
               <Image
                 src={article.image}
                 alt={article.title}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 896px"
+                sizes="(max-width: 768px) 100vw, 800px"
                 priority
               />
             </div>
@@ -139,86 +140,115 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="bg-white py-12 md:py-16">
+      {/* Content + Sidebar */}
+      <section className="bg-white py-10 md:py-14">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="flex flex-col lg:flex-row gap-10">
-              {/* Table of Contents - sidebar */}
-              <aside className="lg:w-64 flex-shrink-0 lg:order-2">
-                <div className="lg:sticky lg:top-28">
-                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                    <div className="flex items-center gap-2 mb-4">
-                      <List size={18} className="text-brand-700" />
-                      <h3 className="font-semibold text-gray-900 text-sm">
-                        Содержание
-                      </h3>
-                    </div>
-                    <nav className="space-y-2">
-                      {article.tableOfContents.map((item) => (
-                        <a
-                          key={item.id}
-                          href={`#${item.id}`}
-                          className="block text-sm text-gray-600 hover:text-brand-700 transition-colors py-1 border-l-2 border-gray-200 hover:border-brand-500 pl-3"
-                        >
-                          {item.title}
-                        </a>
-                      ))}
-                    </nav>
-                  </div>
-                </div>
-              </aside>
+          <div className="flex flex-col lg:flex-row gap-10 max-w-[1100px]">
+            {/* Article body */}
+            <div className="flex-1 min-w-0 max-w-[800px]">
+              <div
+                className="
+                  [&_h2]:text-[22px] [&_h2]:md:text-[24px] [&_h2]:font-bold [&_h2]:text-text-dark [&_h2]:mt-10 [&_h2]:mb-4
+                  [&_p]:text-base [&_p]:text-[#333] [&_p]:leading-[1.7] [&_p]:mb-4
+                  [&_a]:text-brand [&_a]:underline [&_a]:hover:text-brand-dark
+                  [&_strong]:text-text-dark [&_strong]:font-semibold
+                  [&_ul]:space-y-2 [&_ul]:mb-4 [&_ul]:pl-5 [&_ul]:list-disc
+                  [&_li]:text-base [&_li]:text-[#333] [&_li]:leading-[1.6]
+                  [&_table]:w-full [&_table]:border-collapse [&_table]:rounded-lg [&_table]:overflow-hidden [&_table]:mb-6 [&_table]:border [&_table]:border-surface-border
+                  [&_thead]:bg-brand-dark
+                  [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-sm [&_th]:font-semibold [&_th]:text-white
+                  [&_tbody_tr:nth-child(even)]:bg-surface
+                  [&_td]:px-4 [&_td]:py-3 [&_td]:text-sm [&_td]:text-text-dark [&_td]:border-b [&_td]:border-[#EEE]
+                "
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
 
-              {/* Article body */}
-              <div className="flex-1 lg:order-1 min-w-0">
-                <div
-                  className="prose prose-lg max-w-none
-                    prose-headings:font-heading prose-headings:text-gray-900 prose-headings:font-bold
-                    prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-                    prose-p:text-gray-700 prose-p:leading-relaxed
-                    prose-a:text-brand-700 prose-a:no-underline hover:prose-a:underline
-                    prose-strong:text-gray-900
-                    prose-ul:space-y-2
-                    prose-li:text-gray-700
-                    prose-table:border prose-table:border-gray-200 prose-table:rounded-lg prose-table:overflow-hidden
-                    prose-th:bg-gray-50 prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:text-sm prose-th:font-semibold prose-th:text-gray-900 prose-th:border-b prose-th:border-gray-200
-                    prose-td:px-4 prose-td:py-3 prose-td:text-sm prose-td:border-b prose-td:border-gray-100
-                  "
-                  dangerouslySetInnerHTML={{ __html: article.content }}
-                />
+              {/* Inline CTA */}
+              <div className="bg-brand-dark rounded-xl p-8 md:p-10 mt-12">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                  Нужна помощь в оснащении чистого помещения?
+                </h3>
+                <p className="text-white/70 text-sm mb-6 max-w-lg">
+                  Специалисты Clean Room System подберут оборудование и расходные
+                  материалы с учетом требований вашего производства.
+                </p>
+                <Link
+                  href="/contacts"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-brand-dark bg-white rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <Phone size={16} />
+                  Получить консультацию
+                </Link>
+              </div>
 
-                {/* Back link */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                  <Link
-                    href="/blog"
-                    className="inline-flex items-center gap-2 text-brand-700 font-medium hover:text-brand-600 transition-colors"
+              {/* Tags */}
+              <div className="mt-10 flex flex-wrap gap-2">
+                {article.tableOfContents.map((item) => (
+                  <span
+                    key={item.id}
+                    className="text-xs text-text bg-surface px-3 py-1.5 rounded-full border border-surface-border"
                   >
-                    <ArrowLeft size={18} />
-                    Все статьи
-                  </Link>
-                </div>
+                    {item.title}
+                  </span>
+                ))}
+              </div>
+
+              {/* Back link */}
+              <div className="mt-8 pt-8 border-t border-surface-border">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-brand font-medium text-sm hover:text-brand-dark transition-colors"
+                >
+                  <ArrowLeft size={16} />
+                  Все статьи
+                </Link>
               </div>
             </div>
+
+            {/* Table of Contents - sidebar */}
+            <aside className="lg:w-60 flex-shrink-0">
+              <div className="lg:sticky lg:top-28">
+                <div className="bg-surface rounded-xl p-5 border border-surface-border">
+                  <div className="flex items-center gap-2 mb-4">
+                    <List size={16} className="text-brand" />
+                    <h3 className="font-semibold text-text-dark text-sm">
+                      Содержание
+                    </h3>
+                  </div>
+                  <nav className="space-y-1">
+                    {article.tableOfContents.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className="block text-[13px] text-text hover:text-brand transition-colors py-1.5 border-l-2 border-surface-border hover:border-brand pl-3"
+                      >
+                        {item.title}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
       {/* Related articles */}
       {relatedArticles.length > 0 && (
-        <section className="bg-gray-50 py-16 md:py-20 border-t border-gray-100">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-10 text-center">
+        <section className="bg-surface py-14 md:py-16 border-t border-surface-border">
+          <div className="container mx-auto px-4 lg:px-8">
+            <h2 className="text-2xl font-bold text-text-dark mb-8 text-center">
               Читайте также
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {relatedArticles.map((related) => (
                 <article
                   key={related.id}
-                  className="bg-white rounded-2xl border border-gray-200 overflow-hidden group shadow-sm hover:shadow-md transition-shadow"
+                  className="rounded-xl bg-white border border-surface-stroke shadow hover:shadow-md transition-shadow overflow-hidden group"
                 >
                   <Link
                     href={`/blog/${related.slug}`}
-                    className="block relative aspect-video"
+                    className="block relative aspect-[3/2]"
                   >
                     <Image
                       src={related.image}
@@ -229,30 +259,22 @@ export default async function BlogArticlePage({ params }: PageProps) {
                     />
                   </Link>
                   <div className="p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-medium text-brand-700 bg-brand-50 border border-brand-200 px-2 py-1 rounded">
-                        {related.category}
-                      </span>
-                      <div className="flex items-center gap-1 text-xs text-gray-500">
-                        <Calendar size={12} />
-                        {formatDate(related.publishedAt)}
-                      </div>
-                    </div>
+                    <span className="inline-block text-[11px] font-semibold text-white bg-brand-dark px-2.5 py-1 rounded-full mb-3">
+                      {related.category}
+                    </span>
                     <Link href={`/blog/${related.slug}`}>
-                      <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-brand-700 transition-colors">
+                      <h3 className="text-base font-bold text-text-dark mb-2 line-clamp-2 group-hover:text-brand transition-colors leading-snug">
                         {related.title}
                       </h3>
                     </Link>
-                    <p className="text-sm text-gray-600 line-clamp-2 mb-4">
+                    <p className="text-[13px] text-text line-clamp-3 mb-4">
                       {related.excerpt}
                     </p>
-                    <Link
-                      href={`/blog/${related.slug}`}
-                      className="inline-flex items-center gap-1 text-sm text-brand-700 font-medium hover:text-brand-600"
-                    >
-                      Читать
-                      <ArrowRight size={14} />
-                    </Link>
+                    <div className="flex items-center gap-3 text-xs text-text-muted">
+                      <span>{formatDate(related.publishedAt)}</span>
+                      <span className="w-1 h-1 rounded-full bg-text-muted" />
+                      <span>{related.readingTime} мин чтения</span>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -260,36 +282,6 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
         </section>
       )}
-
-      {/* CTA */}
-      <section className="bg-brand-800 py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
-              Нужна помощь в оснащении чистого помещения?
-            </h2>
-            <p className="text-brand-100/80 mb-8 text-lg">
-              Специалисты Clean Room System подберут оборудование и расходные
-              материалы с учетом требований вашего производства и бюджета.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contacts"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold text-brand-900 bg-white rounded-lg hover:bg-brand-50 transition-colors"
-              >
-                <Phone size={18} />
-                Получить консультацию
-              </Link>
-              <Link
-                href="/catalog"
-                className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Перейти в каталог
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

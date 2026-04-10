@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, ArrowRight, Mail, BookOpen } from 'lucide-react';
-import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import { Search, Mail } from 'lucide-react';
 import { articles, blogCategories } from '@/data/articles';
 
 export const metadata: Metadata = {
@@ -23,114 +22,110 @@ function formatDate(dateString: string) {
 }
 
 export default function BlogPage() {
+  const featured = articles[0];
+  const gridArticles = articles.slice(1);
+
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-800 pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="bg-brand-dark w-full py-12">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl">
-            <Breadcrumbs
-              items={[
-                { label: 'Главная', href: '/' },
-                { label: 'База знаний' },
-              ]}
-            />
-            <div className="flex items-center gap-2 mb-4">
-              <BookOpen size={20} className="text-brand-200" />
-              <p className="text-sm font-semibold text-brand-200 uppercase tracking-wider">
-                Блог
-              </p>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
               База знаний Clean Room System
             </h1>
-            <p className="text-lg text-brand-100/80 max-w-2xl">
+            <p className="text-base text-white/80 mb-8">
               Делимся экспертными знаниями о чистых помещениях: стандарты,
               оборудование, технологии проектирования и обслуживания.
             </p>
+            <div className="relative max-w-[480px] mx-auto">
+              <Search
+                size={18}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted"
+              />
+              <input
+                type="text"
+                placeholder="Поиск по статьям..."
+                className="w-full pl-11 pr-4 py-3 bg-white rounded-full text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand/30"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Articles */}
-      <section className="bg-white py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          {/* Category filter */}
-          <div className="flex flex-wrap gap-2 mb-12">
+      {/* Category tabs */}
+      <div className="bg-white border-b border-surface-border">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center gap-6 py-3">
             {blogCategories.map((cat) => (
               <button
                 key={cat}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+                className={`text-sm py-2 border-b-2 transition-colors ${
                   cat === 'Все статьи'
-                    ? 'bg-brand-800 text-white'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-brand-500/30 hover:text-brand-700'
+                    ? 'text-brand-dark font-semibold border-brand-dark'
+                    : 'text-text font-normal border-transparent hover:text-brand-dark'
                 }`}
               >
                 {cat}
               </button>
             ))}
           </div>
+        </div>
+      </div>
 
-          {/* Featured article */}
-          <article className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12 shadow-sm">
+      {/* Featured article */}
+      <section className="bg-white pt-10 pb-4">
+        <div className="container mx-auto px-4 lg:px-8">
+          <article className="rounded-xl bg-white border border-surface-stroke shadow overflow-hidden">
             <div className="grid md:grid-cols-2">
               <Link
-                href={`/blog/${articles[0].slug}`}
-                className="relative aspect-[16/10] md:aspect-auto"
+                href={`/blog/${featured.slug}`}
+                className="relative aspect-[16/9] md:aspect-auto"
               >
                 <Image
-                  src={articles[0].image}
-                  alt={articles[0].title}
+                  src={featured.image}
+                  alt={featured.title}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </Link>
-              <div className="p-6 md:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-medium text-brand-700 bg-brand-50 border border-brand-200 px-2.5 py-1 rounded">
-                    {articles[0].category}
-                  </span>
-                  <div className="flex items-center gap-1 text-sm text-gray-500">
-                    <Calendar size={14} />
-                    {formatDate(articles[0].publishedAt)}
-                  </div>
-                </div>
-                <Link href={`/blog/${articles[0].slug}`}>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 hover:text-brand-700 transition-colors">
-                    {articles[0].title}
+              <div className="p-6 md:p-8 flex flex-col justify-center">
+                <span className="inline-block self-start text-[11px] font-semibold text-white bg-brand-dark px-2.5 py-1 rounded-full mb-3">
+                  {featured.category}
+                </span>
+                <Link href={`/blog/${featured.slug}`}>
+                  <h2 className="text-xl font-bold text-text-dark mb-3 hover:text-brand transition-colors leading-snug">
+                    {featured.title}
                   </h2>
                 </Link>
-                <p className="text-gray-600 mb-6 line-clamp-3">
-                  {articles[0].excerpt}
+                <p className="text-[13px] text-text line-clamp-3 mb-4">
+                  {featured.excerpt}
                 </p>
-                <div className="flex items-center justify-between">
-                  <Link
-                    href={`/blog/${articles[0].slug}`}
-                    className="inline-flex items-center gap-2 text-brand-700 font-medium hover:text-brand-600"
-                  >
-                    Читать полностью
-                    <ArrowRight size={18} />
-                  </Link>
-                  <span className="text-sm text-gray-400">
-                    {articles[0].readingTime} мин чтения
-                  </span>
+                <div className="flex items-center gap-3 text-xs text-text-muted">
+                  <span>{formatDate(featured.publishedAt)}</span>
+                  <span className="w-1 h-1 rounded-full bg-text-muted" />
+                  <span>{featured.readingTime} мин чтения</span>
                 </div>
               </div>
             </div>
           </article>
+        </div>
+      </section>
 
-          {/* Articles grid */}
+      {/* Articles grid */}
+      <section className="bg-white py-8 pb-12">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.slice(1).map((article) => (
+            {gridArticles.map((article) => (
               <article
                 key={article.id}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden group shadow-sm hover:shadow-md transition-shadow"
+                className="rounded-xl bg-white border border-surface-stroke shadow hover:shadow-md transition-shadow overflow-hidden group"
               >
                 <Link
                   href={`/blog/${article.slug}`}
-                  className="block relative aspect-video"
+                  className="block relative aspect-[3/2]"
                 >
                   <Image
                     src={article.image}
@@ -141,34 +136,21 @@ export default function BlogPage() {
                   />
                 </Link>
                 <div className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-medium text-brand-700 bg-brand-50 border border-brand-200 px-2 py-1 rounded">
-                      {article.category}
-                    </span>
-                    <div className="flex items-center gap-1 text-xs text-gray-500">
-                      <Calendar size={12} />
-                      {formatDate(article.publishedAt)}
-                    </div>
-                  </div>
+                  <span className="inline-block text-[11px] font-semibold text-white bg-brand-dark px-2.5 py-1 rounded-full mb-3">
+                    {article.category}
+                  </span>
                   <Link href={`/blog/${article.slug}`}>
-                    <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-brand-700 transition-colors">
+                    <h3 className="text-base font-bold text-text-dark mb-2 line-clamp-2 group-hover:text-brand transition-colors leading-snug">
                       {article.title}
                     </h3>
                   </Link>
-                  <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+                  <p className="text-[13px] text-text line-clamp-3 mb-4">
                     {article.excerpt}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href={`/blog/${article.slug}`}
-                      className="inline-flex items-center gap-1 text-sm text-brand-700 font-medium hover:text-brand-600"
-                    >
-                      Читать
-                      <ArrowRight size={14} />
-                    </Link>
-                    <span className="text-xs text-gray-400">
-                      {article.readingTime} мин
-                    </span>
+                  <div className="flex items-center gap-3 text-xs text-text-muted">
+                    <span>{formatDate(article.publishedAt)}</span>
+                    <span className="w-1 h-1 rounded-full bg-text-muted" />
+                    <span>{article.readingTime} мин чтения</span>
                   </div>
                 </div>
               </article>
@@ -176,17 +158,17 @@ export default function BlogPage() {
           </div>
 
           {/* Pagination */}
-          <nav className="flex items-center justify-center gap-2 mt-14">
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 cursor-not-allowed">
+          <nav className="flex items-center justify-center gap-2 mt-12">
+            <button className="w-10 h-10 rounded-lg border border-surface-stroke flex items-center justify-center text-text-muted cursor-not-allowed">
               &larr;
             </button>
-            <button className="w-10 h-10 rounded-lg bg-brand-800 text-white font-medium">
+            <button className="w-10 h-10 rounded-lg bg-brand text-white font-medium text-sm">
               1
             </button>
-            <button className="w-10 h-10 rounded-lg border border-gray-200 text-gray-600 hover:border-brand-500 hover:text-brand-700 transition-colors">
+            <button className="w-10 h-10 rounded-lg border border-surface-stroke text-text hover:border-brand hover:text-brand transition-colors text-sm">
               2
             </button>
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:border-brand-500 hover:text-brand-700 transition-colors">
+            <button className="w-10 h-10 rounded-lg border border-surface-stroke flex items-center justify-center text-text hover:border-brand hover:text-brand transition-colors">
               &rarr;
             </button>
           </nav>
@@ -194,37 +176,40 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="bg-brand-50 py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="bg-brand-light py-10">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center mx-auto mb-6">
-              <Mail size={24} className="text-brand-700" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-text-dark mb-3">
               Подпишитесь на рассылку
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-sm text-text mb-6">
               Получайте полезные статьи о чистых помещениях, обзоры оборудования
               и новости отрасли прямо на вашу почту. Не чаще двух раз в месяц.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Ваш email"
-                className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-500 transition-colors"
-              />
+              <div className="relative flex-1">
+                <Mail
+                  size={16}
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted"
+                />
+                <input
+                  type="email"
+                  placeholder="Ваш email"
+                  className="w-full pl-10 pr-4 py-3 bg-white border border-surface-stroke rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-colors"
+                />
+              </div>
               <button
                 type="submit"
-                className="px-6 py-3 text-sm font-semibold text-white bg-brand-800 rounded-lg hover:bg-brand-700 transition-colors whitespace-nowrap"
+                className="px-6 py-3 text-sm font-semibold text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors whitespace-nowrap"
               >
                 Подписаться
               </button>
             </form>
-            <p className="text-xs text-gray-400 mt-4">
+            <p className="text-xs text-text-muted mt-4">
               Нажимая кнопку, вы соглашаетесь с{' '}
               <Link
                 href="/privacy"
-                className="underline hover:text-gray-600"
+                className="underline hover:text-text"
               >
                 политикой конфиденциальности
               </Link>

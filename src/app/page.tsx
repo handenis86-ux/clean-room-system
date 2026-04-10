@@ -4,6 +4,8 @@ import AboutPreviewSection from '@/components/sections/AboutPreviewSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import CategoriesSection from '@/components/sections/CategoriesSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
+import PartnersSection from '@/components/sections/PartnersSection';
+import ClientsSection from '@/components/sections/ClientsSection';
 import CTASection from '@/components/sections/CTASection';
 import { siteConfig } from '@/config/site';
 
@@ -75,6 +77,8 @@ export default function HomePage() {
       <ServicesSection />
       <CategoriesSection />
       <WhyUsSection />
+      <PartnersSection />
+      <ClientsSection />
       <CTASection />
     </>
   );

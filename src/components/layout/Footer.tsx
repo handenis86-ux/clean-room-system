@@ -1,55 +1,32 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, footerNavigation } from '@/config/site';
 import Logo from '@/components/ui/Logo';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-brand-900 text-brand-200">
-      {/* Main footer */}
-      <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
+    <footer className="bg-[#0A0A0A]">
+      <div className="py-[60px] px-4 lg:px-[80px]">
+        {/* Top section — 4 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Company info */}
+          {/* Column 1: Brand */}
           <div>
-            <Logo variant="white" />
-            <p className="text-sm text-brand-200 mt-5 leading-relaxed max-w-xs">
+            <Logo variant="footer" />
+            <p className="mt-4 text-[13px] font-normal text-[#888888] leading-[1.5] max-w-xs">
               Профессиональное оборудование и расходные материалы для чистых
               помещений. Комплексные решения для фармацевтики, электроники и
               медицины.
             </p>
-            <div className="mt-6 space-y-3 text-sm">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-2.5 text-brand-100 hover:text-white transition-colors"
-              >
-                <Phone size={14} className="flex-shrink-0 text-brand-300" />
-                {siteConfig.phone}
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2.5 text-brand-100 hover:text-white transition-colors"
-              >
-                <Mail size={14} className="flex-shrink-0 text-brand-300" />
-                {siteConfig.email}
-              </a>
-              <div className="flex items-start gap-2.5 text-brand-100">
-                <MapPin size={14} className="flex-shrink-0 text-brand-300 mt-0.5" />
-                {siteConfig.address}
-              </div>
-            </div>
           </div>
 
-          {/* Каталог */}
+          {/* Column 2: Каталог */}
           <div>
-            <h3 className="font-semibold text-white text-sm mb-5">Каталог</h3>
-            <ul className="space-y-3">
+            <h3 className="text-[13px] font-bold text-white mb-4">Каталог</h3>
+            <ul className="flex flex-col gap-[12px]">
               {footerNavigation.catalog.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-brand-200 hover:text-white transition-colors"
+                    className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -58,15 +35,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Компания */}
+          {/* Column 3: Компания */}
           <div>
-            <h3 className="font-semibold text-white text-sm mb-5">Компания</h3>
-            <ul className="space-y-3">
+            <h3 className="text-[13px] font-bold text-white mb-4">Компания</h3>
+            <ul className="flex flex-col gap-[12px]">
               {footerNavigation.company.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-brand-200 hover:text-white transition-colors"
+                    className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -75,48 +52,46 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Поддержка */}
+          {/* Column 4: Контакты */}
           <div>
-            <h3 className="font-semibold text-white text-sm mb-5">Поддержка</h3>
-            <ul className="space-y-3">
-              {footerNavigation.support.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-200 hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+            <h3 className="text-[13px] font-bold text-white mb-4">Контакты</h3>
+            <ul className="flex flex-col gap-[12px]">
+              <li>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                >
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                >
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>
+                <span className="text-[13px] font-normal text-[#888888]">
+                  {siteConfig.address}
+                </span>
+              </li>
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-brand-700">
-        <div className="container mx-auto px-4 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-            <p className="text-xs text-brand-300">
-              &copy; {currentYear} {siteConfig.name}. Все права защищены.
-            </p>
-            <div className="flex items-center gap-5 text-xs text-brand-300">
-              <Link
-                href="/privacy"
-                className="hover:text-white transition-colors"
-              >
-                Конфиденциальность
-              </Link>
-              <Link
-                href="/sitemap.xml"
-                className="hover:text-white transition-colors"
-              >
-                Карта сайта
-              </Link>
-            </div>
-            <Logo variant="white" className="hidden md:block" />
-          </div>
+        {/* Bottom bar — 60px gap from top section */}
+        <div className="mt-[60px] flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-[13px] font-normal text-[#888888]">
+            &copy; 2026 {siteConfig.name}. Все права защищены.
+          </p>
+          <Link
+            href="/privacy"
+            className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+          >
+            Политика конфиденциальности
+          </Link>
         </div>
       </div>
     </footer>

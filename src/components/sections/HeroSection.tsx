@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
+    <section className="relative min-h-[500px] overflow-hidden">
       {/* Background image */}
       <Image
         src="/images/hero/hero-bg.png"
@@ -14,16 +14,16 @@ export default function HeroSection() {
         priority
       />
 
-      {/* Dark teal overlay */}
-      <div className="absolute inset-0 bg-brand-900/80" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-brand-dark/80" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 lg:px-8 flex flex-col items-start justify-center min-h-[600px] lg:min-h-[700px]">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight tracking-tight mb-6 max-w-3xl">
+      <div className="relative container mx-auto px-4 lg:px-20 flex flex-col items-start justify-center min-h-[500px]">
+        <h1 className="text-[42px] lg:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-6 max-w-3xl">
           Комплексное оснащение чистых помещений под ключ
         </h1>
 
-        <p className="text-lg md:text-xl text-brand-200 max-w-2xl mb-10 leading-relaxed">
+        <p className="text-[16px] font-normal text-brand-muted max-w-2xl mb-10 leading-relaxed">
           Профессиональные решения для фармацевтики, электроники и медицины.
           Сертифицированная продукция, поставка и сервисное сопровождение.
         </p>
@@ -31,7 +31,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-start gap-4">
           <Link
             href="/catalog"
-            className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold text-brand-900 bg-white rounded-lg hover:bg-brand-50 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold text-brand-dark bg-white rounded-lg hover:bg-gray-100 transition-colors"
           >
             Каталог продукции
           </Link>

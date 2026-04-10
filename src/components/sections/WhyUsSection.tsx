@@ -1,82 +1,62 @@
-import Image from 'next/image';
-import { CheckCircle } from 'lucide-react';
+import { ShieldCheck, Package, Headphones, Zap } from 'lucide-react';
 
 const features = [
   {
+    icon: ShieldCheck,
     title: 'Сертифицированная продукция',
     description:
       'Все товары имеют сертификаты соответствия и полностью отвечают требованиям GMP и ISO.',
   },
   {
-    title: 'Широкий ассортимент',
+    icon: Package,
+    title: 'Комплексные поставки',
     description:
-      'Более 500 наименований расходных материалов и оборудования для чистых помещений.',
+      'Полный спектр расходных материалов и оборудования от ведущих мировых производителей.',
   },
   {
+    icon: Headphones,
+    title: 'Техническая поддержка',
+    description:
+      'Экспертные консультации и сервисное сопровождение на всех этапах сотрудничества.',
+  },
+  {
+    icon: Zap,
     title: 'Быстрая доставка',
     description:
       'Оперативная доставка по Ташкенту и всему Узбекистану. Склад с постоянным наличием.',
-  },
-  {
-    title: 'Экспертные консультации',
-    description:
-      'Наши специалисты помогут подобрать оптимальное решение под ваши задачи и бюджет.',
-  },
-  {
-    title: 'Конкурентные цены',
-    description:
-      'Прямые контракты с производителями позволяют предлагать лучшие цены на рынке.',
-  },
-  {
-    title: 'Гарантия качества',
-    description:
-      'Гарантия на всю поставляемую продукцию и полное сервисное сопровождение.',
   },
 ];
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Left side — image */}
-          <div className="w-full lg:w-[45%] flex-shrink-0">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/categories/masks.png"
-                alt="Защитные очки и средства индивидуальной защиты"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
-            </div>
-          </div>
+    <section className="bg-white py-20">
+      <div className="container mx-auto px-4 lg:px-20">
+        <div className="text-center mb-14">
+          <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
+            + ПРЕИМУЩЕСТВА
+          </span>
+          <h2 className="text-[36px] font-extrabold text-text-dark mt-3">
+            Почему выбирают нас
+          </h2>
+        </div>
 
-          {/* Right side — heading + features */}
-          <div className="w-full lg:flex-1">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8">
-              Почему выбирают нас?
-            </h2>
-
-            <div className="flex flex-col gap-6">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <CheckCircle
-                    size={24}
-                    className="text-brand-600 flex-shrink-0 mt-0.5"
-                  />
-                  <div>
-                    <h3 className="font-heading font-bold text-gray-900 mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="rounded-2xl bg-surface border border-surface-border p-8 text-center flex flex-col items-center gap-4"
+            >
+              <div className="w-14 h-14 rounded-full bg-brand-light flex items-center justify-center">
+                <feature.icon size={20} className="text-brand" />
+              </div>
+              <h3 className="text-[16px] font-bold text-text-dark">
+                {feature.title}
+              </h3>
+              <p className="text-[14px] text-text leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
