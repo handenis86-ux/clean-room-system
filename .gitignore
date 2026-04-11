@@ -52,3 +52,5 @@ nul
 # Uploaded files
 public/uploads/*
 !public/uploads/.gitkeep
+
+.vercel

@@ -22,14 +22,16 @@ export const mainNavigation: NavItem[] = [
     label: 'Каталог продукции',
     href: '/catalog',
     children: [
-      { label: 'Одежда для чистых помещений', href: '/catalog/clothing' },
-      { label: 'Перчатки', href: '/catalog/gloves' },
-      { label: 'Обувь', href: '/catalog/footwear' },
-      { label: 'Очки и маски', href: '/catalog/masks' },
-      { label: 'Дезинфектанты', href: '/catalog/disinfectants' },
-      { label: 'Салфетки', href: '/catalog/wipes' },
-      { label: 'Уборочный инвентарь', href: '/catalog/cleaning' },
-      { label: 'Упаковочные материалы', href: '/catalog/packaging' },
+      { label: 'Индикаторы стерилизации', href: '/catalog/sterilization-indicators' },
+      { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants' },
+      { label: 'Одноразовая одежда', href: '/catalog/disposable-garments' },
+      { label: 'Многоразовая одежда', href: '/catalog/reusable-garments' },
+      { label: 'Перчатки защитные', href: '/catalog/gloves' },
+      { label: 'Салфетки', href: '/catalog/cleanroom-wipes' },
+      { label: 'Уборочные тележки', href: '/catalog/cleaning-trolleys' },
+      { label: 'Стулья для чистых помещений', href: '/catalog/chairs' },
+      { label: 'Очки защитные', href: '/catalog/goggles' },
+      { label: 'Обувь', href: '/catalog/shoes' },
     ],
   },
   {
@@ -44,12 +46,12 @@ export const mainNavigation: NavItem[] = [
 
 export const footerNavigation = {
   catalog: [
-    { label: 'Одежда для чистых помещений', href: '/catalog/clothing' },
+    { label: 'Индикаторы стерилизации', href: '/catalog/sterilization-indicators' },
+    { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants' },
+    { label: 'Защитная одежда', href: '/catalog/disposable-garments' },
     { label: 'Перчатки', href: '/catalog/gloves' },
-    { label: 'Обувь', href: '/catalog/footwear' },
-    { label: 'Дезинфектанты', href: '/catalog/disinfectants' },
-    { label: 'Салфетки', href: '/catalog/wipes' },
-    { label: 'Уборочный инвентарь', href: '/catalog/cleaning' },
+    { label: 'Салфетки', href: '/catalog/cleanroom-wipes' },
+    { label: 'Стулья', href: '/catalog/chairs' },
   ],
   company: [
     { label: 'О компании', href: '/company/about' },

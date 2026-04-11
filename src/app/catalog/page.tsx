@@ -2,88 +2,19 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
+import { categories } from '@/data/products';
 
 export const metadata: Metadata = {
-  title: 'Каталог продукции | Clean Room System',
+  title: 'Каталог продукции',
   description:
-    'Полный каталог расходных материалов и оборудования для чистых помещений. Индикаторы стерилизации, дезинфицирующие средства, защитная одежда, перчатки и аксессуары.',
-  alternates: {
-    canonical: 'https://clean-room-systems.uz/catalog',
-  },
+    'Полный каталог расходных материалов и оборудования для чистых помещений: индикаторы стерилизации, дезинфектанты, защитная одежда, перчатки, салфетки, стулья, очки и аксессуары.',
 };
-
-const categories = [
-  {
-    title: 'Индикаторы стерилизации',
-    description:
-      'Химические и биологические индикаторы для контроля процессов стерилизации.',
-    image: '/images/categories/sterilization-kit.png',
-    href: '/catalog/sterilization',
-    count: '24 товара',
-  },
-  {
-    title: 'Дезинфицирующие средства',
-    description:
-      'Профессиональные средства для дезинфекции поверхностей и оборудования чистых помещений.',
-    image: '/images/categories/disinfectants.png',
-    href: '/catalog/disinfectants',
-    count: '36 товаров',
-  },
-  {
-    title: 'Одноразовая защитная одежда',
-    description:
-      'Комбинезоны, халаты, шапочки и бахилы одноразового использования для помещений всех классов.',
-    image: '/images/categories/clothing.png',
-    href: '/catalog/disposable-clothing',
-    count: '42 товара',
-  },
-  {
-    title: 'Многоразовая защитная одежда',
-    description:
-      'Многоразовые комбинезоны и халаты из специальных тканей для чистых помещений.',
-    image: '/images/categories/clothing-alt.png',
-    href: '/catalog/reusable-clothing',
-    count: '18 товаров',
-  },
-  {
-    title: 'Перчатки',
-    description:
-      'Нитриловые, латексные и виниловые перчатки. Стерильные и нестерильные варианты.',
-    image: '/images/categories/gloves.png',
-    href: '/catalog/gloves',
-    count: '31 товар',
-  },
-  {
-    title: 'Уборочный инвентарь',
-    description:
-      'Мопы, швабры, вёдра и комплексные системы для уборки чистых помещений.',
-    image: '/images/categories/cleaning.png',
-    href: '/catalog/cleaning',
-    count: '27 товаров',
-  },
-  {
-    title: 'Защитные очки',
-    description:
-      'Защитные очки и лицевые щитки для работы в чистых помещениях.',
-    image: '/images/categories/masks.png',
-    href: '/catalog/goggles',
-    count: '12 товаров',
-  },
-  {
-    title: 'Аксессуары',
-    description:
-      'Дополнительные аксессуары и принадлежности для оснащения чистых помещений.',
-    image: '/images/categories/packaging.png',
-    href: '/catalog/accessories',
-    count: '19 товаров',
-  },
-];
 
 export default function CatalogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-light py-12 px-[80px]">
+      <section className="bg-brand-light py-12 px-4 lg:px-[80px]">
         <nav className="flex items-center gap-1.5 text-[13px] text-text mb-4">
           <Link href="/" className="hover:text-brand transition-colors">
             Главная
@@ -96,42 +27,40 @@ export default function CatalogPage() {
         </h1>
         <p className="text-[16px] text-brand max-w-[600px] mt-3">
           Расходные материалы и оборудование для чистых помещений от ведущих
-          мировых производителей. Всё необходимое для соответствия стандартам GMP
-          и ISO.
+          мировых производителей: Contec, Alsico, Terragene, Hydroflex, NPro,
+          Isofield, BIMOS и других.
         </p>
       </section>
 
       {/* Product Grid */}
-      <section className="py-12 px-[80px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="py-12 px-4 lg:px-[80px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => (
             <Link
-              key={category.href}
-              href={category.href}
+              key={category.slug}
+              href={`/catalog/${category.slug}`}
               className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Image */}
               <div className="relative h-[220px] w-full overflow-hidden">
                 <Image
                   src={category.image}
                   alt={category.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
               </div>
-
-              {/* Body */}
               <div className="p-5 flex flex-col gap-2.5">
-                <h3 className="text-[18px] font-bold text-brand-dark">
+                <h3 className="text-[18px] font-bold text-brand-dark line-clamp-1">
                   {category.title}
                 </h3>
-                <p className="text-[14px] text-text leading-relaxed">
+                <p className="text-[14px] text-text leading-relaxed line-clamp-2">
                   {category.description}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pt-1">
                   <span className="text-[13px] font-medium text-brand">
-                    {category.count}
+                    {category.products.length}{' '}
+                    {pluralize(category.products.length, ['товар', 'товара', 'товаров'])}
                   </span>
                   <span className="text-[13px] font-semibold text-brand group-hover:translate-x-1 transition-transform">
                     Смотреть &rarr;
@@ -173,4 +102,12 @@ export default function CatalogPage() {
       </section>
     </>
   );
+}
+
+function pluralize(n: number, forms: [string, string, string]): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return forms[0];
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return forms[1];
+  return forms[2];
 }
