@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Phone, Package } from 'lucide-react';
 import { categories, getCategoryBySlug, getAllCategorySlugs } from '@/data/products';
+import { getProductImage } from '@/data/product-images';
 
 interface Props {
   params: { category: string };
@@ -65,24 +66,37 @@ export default function CategoryPage({ params }: Props) {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {category.products.map((product) => (
+          {category.products.map((product) => {
+            const productImage = getProductImage(product.sku);
+            return (
             <article
               key={product.sku}
               className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
-              <div className="relative aspect-square w-full overflow-hidden bg-surface flex items-center justify-center">
-                <Image
-                  src={category.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-sm">
-                    <Package size={24} className="text-brand" />
-                  </div>
-                </div>
+              <div className="relative aspect-square w-full overflow-hidden bg-white flex items-center justify-center p-6">
+                {productImage ? (
+                  <Image
+                    src={productImage}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    unoptimized
+                  />
+                ) : (
+                  <>
+                    <Image
+                      src={category.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover opacity-30"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="relative z-10 w-16 h-16 rounded-full bg-brand-light flex items-center justify-center">
+                      <Package size={28} className="text-brand" />
+                    </div>
+                  </>
+                )}
               </div>
               <div className="p-5 flex flex-col gap-2 flex-1">
                 <p className="text-[11px] font-medium text-text-muted uppercase tracking-wider">
@@ -104,7 +118,8 @@ export default function CategoryPage({ params }: Props) {
                 </Link>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
