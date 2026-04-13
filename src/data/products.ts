@@ -4,6 +4,9 @@ export interface Product {
   description?: string;
   image?: string;
   url?: string;
+  specs?: { label: string; value: string }[];
+  datasheets?: { name: string; url: string; size?: string }[];
+  standards?: string[];
 }
 
 export interface ProductCategory {
@@ -24,7 +27,24 @@ export const categories: ProductCategory[] = [
     image: '/images/categories/sterilization-kit.png',
     products: [
       { name: 'BT23 Биоиндикатор', sku: 'BT23/6_BION_50', description: '2 мл / 48 часов. Автоклавирование (паровая стерилизация)', image: `${IBC}/upload/iblock/` },
-      { name: 'BT60 Биоиндикатор', sku: 'BT60_BION_100', description: '24/48 часов. Автоклавирование, воздушная или газовая стерилизация' },
+      { name: 'BT60 Биоиндикатор', sku: 'BT60_BION_100', description: '24/48 часов. Автоклавирование, воздушная или газовая стерилизация',
+        specs: [
+          { label: 'Назначение', value: 'Стерилизация' },
+          { label: 'Тип', value: 'Полоска со спорами' },
+          { label: 'Упаковка', value: '100 штук в алюминиевом zip-пакете' },
+          { label: 'Время считывания', value: '24 / 48 часов' },
+          { label: 'Температура инкубации', value: '37 / 60 °C' },
+          { label: 'Микроорганизмы', value: 'Bacillus atrophaeus 10⁶ / Geobacillus stearothermophilus 10⁵–10⁶' },
+          { label: 'Методы стерилизации', value: 'Автоклавирование (паровая), газовая (окись этилена), сухое тепло' },
+          { label: 'Условия хранения', value: '10–30 °C, влажность 30–80%' },
+          { label: 'Срок хранения', value: '2 года' },
+        ],
+        datasheets: [
+          { name: 'Инструкция (eng)', url: 'https://ibcnanotex.com/upload/iblock/4ba/0bp7ljjhevt4n4d90egmod69ec30n36n.pdf', size: '176.5 кб' },
+          { name: 'Технический паспорт TDS (eng)', url: 'https://ibcnanotex.com/upload/iblock/fb0/s0wy0tarjc1yllt0ut1hdo2mni2hou6d.pdf', size: '370.2 кб' },
+        ],
+        standards: ['ISO 11138-1:2017', 'ISO 11138-2:2017', 'ISO 11138-3:2017', 'ISO 11138-4:2017'],
+      },
       { name: 'BT96 Биоиндикатор', sku: 'BT96_BION_50_FDA', description: '30 минут. Стерилизация перекисью водорода (VH2O2)' },
       { name: 'BT222 Биоиндикатор', sku: 'BT222_BION_50_FDA', description: '1 час. Автоклавирование (паровая стерилизация)' },
       { name: 'BT98 Биоиндикатор', sku: 'BT98', description: '5 минут. Стерилизация перекисью водорода (VH2O2)' },
@@ -74,7 +94,27 @@ export const categories: ProductCategory[] = [
       { name: 'Contec ProChlor (1L)', sku: 'FBT102PC', description: 'Trigger spray' },
       { name: 'Contec ProChlor (5L)', sku: 'FBC502PC', description: '5L канистра' },
       { name: 'Contec Sterile 70% IPA (0.5L)', sku: 'SBT0570IW', description: 'Стерильный изопропиловый спирт 70%' },
-      { name: 'Contec Sterile 70% IPA (1L)', sku: 'SBT170IW', description: 'Trigger spray, стерильный IPA 70%' },
+      { name: 'Contec Sterile 70% IPA (1L)', sku: 'SBT170IW', description: 'Trigger spray, стерильный IPA 70%',
+        specs: [
+          { label: 'Назначение', value: 'Дезинфекция, чистые помещения, лаборатории' },
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс A, B' },
+          { label: 'Стерильно', value: 'Да' },
+          { label: 'Состав', value: 'Изопропиловый спирт (IPA) 70% / вода для инъекций (WFI) 30%' },
+          { label: 'Эффективность', value: 'Вирусы, бактерии, фунги' },
+          { label: 'Метод стерилизации', value: 'Гамма-облучение' },
+          { label: 'Объём', value: '1 л триггер спрей' },
+          { label: 'Фильтрация 0,22 мм', value: 'Да' },
+          { label: 'Эндотоксины', value: 'Менее 0,25 EU/мл' },
+          { label: 'Торговая марка', value: 'CONTEC' },
+        ],
+        datasheets: [
+          { name: 'Инструкция по использованию (ru)', url: 'https://ibcnanotex.com/upload/iblock/3f2/3f2078945b9efab2041b5738cd230979.pdf', size: '1.8 мб' },
+          { name: 'Декларация соответствия ЕАС', url: 'https://ibcnanotex.com/upload/iblock/a55/f8ggukkn38o8wteqtduxu0qw2n4cl3m3.pdf', size: '204.3 кб' },
+          { name: 'Технический паспорт TDS (eng)', url: 'https://ibcnanotex.com/upload/iblock/151/py6gkh51uda1lgymc0as0sscp6ggp45e.pdf', size: '417.2 кб' },
+        ],
+        standards: ['ISO 14644-1', 'ГОСТ Р 52249', 'SAL 10⁻⁶'],
+      },
       { name: 'Contec Sterile 70% IPA (5L)', sku: 'SBC570I', description: 'Стерильный IPA 70%' },
       { name: 'Contec IPA 70% (1L)', sku: 'FBT170I', description: 'Trigger spray, IPA 70%' },
       { name: 'Contec Sterile HydroPure (1L)', sku: 'SBT16HPW', description: 'Trigger spray, стерильная перекись водорода' },
@@ -169,7 +209,27 @@ export const categories: ProductCategory[] = [
     description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific, Ansell.',
     image: '/images/categories/gloves.png',
     products: [
-      { name: 'Isofield Gecko Nitrile Gloves', sku: '20830' },
+      { name: 'Isofield Gecko Nitrile Gloves', sku: '20830',
+        specs: [
+          { label: 'Назначение', value: 'Чистые помещения, лаборатории, влажная уборка' },
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4, ISO 5' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс C, D' },
+          { label: 'Использование', value: 'Одноразовое' },
+          { label: 'Материал', value: 'Нитрил (NR)' },
+          { label: 'Размер', value: 'XS, S, M, L, XL, XXL' },
+          { label: 'Длина', value: '300 мм' },
+          { label: 'AQL', value: '1.5' },
+          { label: 'Толщина манжеты', value: '0.09 мм' },
+          { label: 'Толщина ладони', value: '0.14 мм' },
+          { label: 'Толщина пальца', value: '0.16 мм' },
+          { label: 'Цвет', value: 'Зелёный' },
+        ],
+        datasheets: [
+          { name: 'Technical Data Sheet TDS (eng)', url: 'https://ibcnanotex.com/upload/iblock/e0c/k8qn36407eul7173jf7nhcucqdauf9xn.pdf', size: '356.5 кб' },
+          { name: 'Technical Data Sheet TDS (ru)', url: 'https://ibcnanotex.com/upload/iblock/230/ivn4fppyij2dak3dzvpbsxqmrdw8ckp8.pdf', size: '556.2 кб' },
+        ],
+        standards: ['ISO 9001', 'ISO 13485', 'IEST-RP-CC005.4', 'EN 455-3:2015', 'ISO 374-2:2019'],
+      },
       { name: 'NPro Ntouch TM03 трикотажные перчатки', sku: 'TM03' },
       { name: 'Shield Orange Nitrile 300 DI стерильные', sku: '69655' },
       { name: 'NPro Ntouch TE11 ESD трикотажные', sku: 'TE11' },
@@ -199,7 +259,19 @@ export const categories: ProductCategory[] = [
     description: 'Модульные уборочные тележки Hydroflex Ergo и UNO, системы насыщения мопов Prepare и PurQuip.',
     image: '/images/categories/cleaning.png',
     products: [
-      { name: 'Модульная тележка 2.0 Ergo-S 320', sku: '2123025', description: 'Hydroflex, под заказ' },
+      { name: 'Модульная тележка 2.0 Ergo-S 320', sku: '2123025', description: 'Hydroflex, под заказ',
+        specs: [
+          { label: 'Назначение', value: 'Влажная уборка' },
+          { label: 'Тип', value: 'Насыщение' },
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс A, B' },
+          { label: 'Материал', value: 'Нержавеющая сталь' },
+          { label: 'Размер', value: '782×699×1024 мм' },
+          { label: 'Автоклавирование', value: 'Да' },
+          { label: 'Вес', value: '27 кг' },
+        ],
+        standards: ['ISO 14644-1', 'ГОСТ Р 52249', 'EU GMP'],
+      },
       { name: 'Модульная тележка 2.0 Ergo-S 230', sku: '2123022', description: 'Hydroflex, под заказ' },
       { name: 'Модульная тележка 2.0 Ergo 230', sku: '2123016', description: 'Hydroflex, под заказ' },
       { name: 'Модульная тележка UNO 211', sku: '2121203', description: 'Hydroflex, под заказ' },
@@ -236,7 +308,23 @@ export const categories: ProductCategory[] = [
     description: 'Одноразовые и многоразовые мопы Hydroflex и Contec для уборки чистых помещений.',
     image: '/images/categories/cleaning.png',
     products: [
-      { name: 'Одноразовый стерильный МОП EC40-S', sku: '2111105', description: '100% полиэстер, Hydroflex' },
+      { name: 'Одноразовый стерильный МОП EC40-S', sku: '2111105', description: '100% полиэстер, Hydroflex',
+        specs: [
+          { label: 'Назначение', value: 'Уборка пола, стен, потолка' },
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс A, B' },
+          { label: 'Стерильно', value: 'Да' },
+          { label: 'Использование', value: 'Одноразовое' },
+          { label: 'Материал', value: 'Полиэстер (полиэфир) / PE' },
+          { label: 'Размер листа', value: '40×12.5 см' },
+          { label: 'Впитываемость', value: '208–260 мл' },
+          { label: 'Метод стерилизации', value: 'Гамма-облучение' },
+          { label: 'Цвет', value: 'Белый' },
+          { label: 'Площадь уборки', value: '12–14 м²' },
+          { label: 'Торговая марка', value: 'Hydroflex' },
+        ],
+        standards: ['ISO 14644-1', 'ГОСТ Р 52249', 'EU GMP'],
+      },
       { name: 'Одноразовый МОП EC40', sku: '2111104', description: '100% полиэстер, Hydroflex' },
       { name: 'Одноразовый стерильный МОП EF40-S', sku: '2111109', description: 'Полиэстер микрофибра, Hydroflex' },
       { name: 'Одноразовый МОП EX40', sku: '2111138', description: 'Полиэстер микрофибра, Hydroflex' },
@@ -257,7 +345,24 @@ export const categories: ProductCategory[] = [
     products: [
       { name: 'Hydroflex PurWipe Premio 3030', sku: '2184001' },
       { name: 'Contec Sterile Polynit Heatseal Wipes', sku: 'LWPS0006/LWPS0007' },
-      { name: 'Contec Polynit Heatseal Wipes', sku: 'PNHS-99/PNHS-1212' },
+      { name: 'Contec Polynit Heatseal Wipes', sku: 'PNHS-99/PNHS-1212',
+        specs: [
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 3, ISO 4, ISO 5, ISO 6, ISO 8' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс A, B, C, D' },
+          { label: 'Стерильно', value: 'Нет' },
+          { label: 'Использование', value: 'Одноразовое' },
+          { label: 'Материал', value: 'Полиэстер (PE) 100%' },
+          { label: 'Размер листа', value: '23×23 см, 30×30 см' },
+          { label: 'Плотность', value: '140 г/м²' },
+          { label: 'Цвет', value: 'Белый' },
+          { label: 'Обработка края', value: 'Лазерная резка' },
+          { label: 'Торговая марка', value: 'CONTEC' },
+        ],
+        datasheets: [
+          { name: 'Технический паспорт TDS (eng)', url: 'https://ibcnanotex.com/upload/iblock/072/r8jw7h8ujynm87ilrjgz86xg2qklm1se.pdf', size: '451.8 кб' },
+        ],
+        standards: ['ISO 14644-1', 'ГОСТ Р 52249', 'GMP Classes A/B/C/D'],
+      },
       { name: 'Contec SterileSorb Wipes', sku: 'C2-99IR/25' },
       { name: 'Contec Amplitude Sigma Wipes', sku: 'AMSI0001/0002/0003' },
       { name: 'NPro NGlide NC2S', sku: 'NC2S', description: 'Стерильные' },
@@ -301,7 +406,30 @@ export const categories: ProductCategory[] = [
     description: 'Одноразовые стерильные и многоразовые защитные очки NPro NView, Isofield Isoclave, Hydroflex PurGuard.',
     image: '/images/categories/goggles.png',
     products: [
-      { name: 'NPro NView VC2 многоразовые закрытые', sku: 'VC2' },
+      { name: 'NPro NView VC2 многоразовые закрытые', sku: 'VC2',
+        specs: [
+          { label: 'Назначение', value: 'Чистые помещения' },
+          { label: 'Класс чистоты ISO 14644-1', value: 'ISO 5, ISO 6, ISO 7, ISO 8' },
+          { label: 'Класс чистоты EU GMP', value: 'Класс A, B' },
+          { label: 'Стерильно', value: 'Нет' },
+          { label: 'Использование', value: 'Многоразовое' },
+          { label: 'Автоклавирование', value: 'Да' },
+          { label: 'Материал линз', value: 'Поликарбонат' },
+          { label: 'Материал оправы', value: 'Термопластичная резина' },
+          { label: 'Цвет', value: 'Голубой' },
+          { label: 'Оптический класс (EN 166)', value: 'Класс 1' },
+          { label: 'Вес', value: '75 г' },
+          { label: 'Вентиляция', value: 'Непрямая' },
+          { label: 'Циклы автоклавирования', value: '>40 при 121°C / 30 мин' },
+          { label: 'Антистатические свойства', value: 'Да' },
+          { label: 'Ремешок', value: 'Силикон (без латекса)' },
+        ],
+        datasheets: [
+          { name: 'Технический паспорт TDS', url: 'https://ibcnanotex.com/upload/iblock/642/fou6nsdtbo4q4prplysnhmhd9vufdm74.pdf', size: '585.1 кб' },
+          { name: 'Декларация соответствия ЕАС', url: 'https://ibcnanotex.com/upload/iblock/64e/qsuixzc13wamxrvjaq33rdsf8buhggra.pdf', size: '183.5 кб' },
+        ],
+        standards: ['EU 2016/425', 'TR TS 019/2011', 'ГОСТ 12.4.253-2013', 'EN 166'],
+      },
       { name: 'Isofield Isoclave CF 50210 многоразовые', sku: '50210' },
       { name: 'Isofield Isoclave IV 50110 многоразовые', sku: '50110' },
       { name: 'Hydroflex PurGuard SV-801-AF многоразовые', sku: '2962008' },
@@ -410,4 +538,16 @@ export function getCategoryBySlug(slug: string): ProductCategory | undefined {
 
 export function getAllCategorySlugs(): string[] {
   return categories.map((c) => c.slug);
+}
+
+export function productSlug(sku: string): string {
+  return sku.toLowerCase().replace(/[\/\s]+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
+export function getProductBySlug(categorySlug: string, pSlug: string): { category: ProductCategory; product: Product } | undefined {
+  const category = getCategoryBySlug(categorySlug);
+  if (!category) return undefined;
+  const product = category.products.find((p) => productSlug(p.sku) === pSlug);
+  if (!product) return undefined;
+  return { category, product };
 }

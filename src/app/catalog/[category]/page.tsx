@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Phone, Package } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { categories, getCategoryBySlug, getAllCategorySlugs } from '@/data/products';
-import { getProductImage } from '@/data/product-images';
+import ProductGrid from './ProductGrid';
 
 interface Props {
   params: { category: string };
@@ -53,74 +53,13 @@ export default function CategoryPage({ params }: Props) {
         </p>
       </section>
 
-      {/* Product Grid */}
+      {/* Product Grid with Search */}
       <section className="py-12 px-4 lg:px-[80px]">
-        <div className="mb-6 flex items-center justify-between">
-          <p className="text-[14px] text-text">
-            Найдено{' '}
-            <span className="font-semibold text-text-dark">
-              {category.products.length}
-            </span>{' '}
-            {pluralize(category.products.length, ['товар', 'товара', 'товаров'])}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {category.products.map((product) => {
-            const productImage = getProductImage(product.sku);
-            return (
-            <article
-              key={product.sku}
-              className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
-            >
-              <div className="relative aspect-square w-full overflow-hidden bg-white flex items-center justify-center p-6">
-                {productImage ? (
-                  <Image
-                    src={productImage}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    unoptimized
-                  />
-                ) : (
-                  <>
-                    <Image
-                      src={category.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover opacity-30"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-                    <div className="relative z-10 w-16 h-16 rounded-full bg-brand-light flex items-center justify-center">
-                      <Package size={28} className="text-brand" />
-                    </div>
-                  </>
-                )}
-              </div>
-              <div className="p-5 flex flex-col gap-2 flex-1">
-                <p className="text-[11px] font-medium text-text-muted uppercase tracking-wider">
-                  Арт: {product.sku}
-                </p>
-                <h3 className="text-[15px] font-bold text-brand-dark leading-snug line-clamp-2">
-                  {product.name}
-                </h3>
-                {product.description && (
-                  <p className="text-[13px] text-text leading-relaxed line-clamp-2">
-                    {product.description}
-                  </p>
-                )}
-                <Link
-                  href="/contacts"
-                  className="mt-auto pt-3 text-[13px] font-semibold text-brand hover:text-brand-dark transition-colors flex items-center gap-1"
-                >
-                  Запросить цену &rarr;
-                </Link>
-              </div>
-            </article>
-            );
-          })}
-        </div>
+        <ProductGrid
+          products={category.products}
+          categorySlug={category.slug}
+          categoryImage={category.image}
+        />
       </section>
 
       {/* Related categories */}
@@ -184,12 +123,4 @@ export default function CategoryPage({ params }: Props) {
       </section>
     </>
   );
-}
-
-function pluralize(n: number, forms: [string, string, string]): string {
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return forms[0];
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return forms[1];
-  return forms[2];
 }
