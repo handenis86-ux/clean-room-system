@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: `О компании — ${siteConfig.name}`,
   description:
-    'Clean Room System — ведущий поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Комплексные решения для фармацевтики, электроники и медицины.',
+    'Clean Room System — ведущий поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения для фармацевтики, пищевой, косметической промышленности и микроэлектроники.',
   alternates: {
     canonical: `${siteConfig.url}/company/about`,
   },
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-[18px] text-brand-muted max-w-[700px] mt-4 leading-relaxed">
             Комплексное оснащение чистых помещений для фармацевтической,
-            электронной и медицинской промышленности в Узбекистане.
+            пищевой, косметической промышленности и микроэлектроники в Узбекистане.
           </p>
         </div>
       </section>

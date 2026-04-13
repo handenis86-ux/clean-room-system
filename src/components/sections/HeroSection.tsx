@@ -24,8 +24,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-[16px] font-normal text-brand-muted max-w-2xl mb-10 leading-relaxed">
-          Профессиональные решения для фармацевтики, электроники и медицины.
-          Сертифицированная продукция, поставка и сервисное сопровождение.
+          Профессиональные решения для фармацевтики, пищевой, косметической
+          промышленности и микроэлектроники. Сертифицированная продукция и поставка.
         </p>
 
         <div className="flex flex-col sm:flex-row items-start gap-4">
