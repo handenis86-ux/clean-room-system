@@ -165,8 +165,7 @@ export default function ProductPage({ params }: Props) {
                     <a
                       key={i}
                       href={doc.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      download
                       className="flex items-center gap-3 px-4 py-3 bg-surface rounded-lg border border-surface-stroke hover:border-brand transition-colors group"
                     >
                       <FileText
