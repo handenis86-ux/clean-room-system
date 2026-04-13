@@ -521,7 +521,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-dispensers',
     title: 'Диспенсеры',
     description: 'Диспенсеры Tinman для перчаток, расходных материалов и бутылок в чистых помещениях.',
-    image: '/images/categories/packaging.png',
+    image: '/images/categories/dispenser.jpg',
     products: [
       { name: 'Tinman B1DG диспенсер для перчаток', sku: 'B1DG' },
       { name: 'Tinman FTDM диспенсер для расходников', sku: 'FTDM' },
