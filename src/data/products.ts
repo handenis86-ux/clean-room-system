@@ -257,7 +257,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleaning-trolleys-systems',
     title: 'Уборочные тележки и системы насыщения',
     description: 'Модульные уборочные тележки Hydroflex Ergo и UNO, системы насыщения мопов Prepare и PurQuip.',
-    image: '/images/categories/cleaning.png',
+    image: '/images/categories/cleaning-trolley.jpg',
     products: [
       { name: 'Модульная тележка 2.0 Ergo-S 320', sku: '2123025', description: 'Hydroflex, под заказ',
         specs: [
@@ -284,7 +284,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleaning-equipment',
     title: 'Ручки и держатели для уборки',
     description: 'Телескопические ручки и держатели мопов Hydroflex и Contec для чистых помещений.',
-    image: '/images/categories/mop-cart.png',
+    image: '/images/categories/mop-handle.jpg',
     products: [
       { name: 'Держатель из полипропилена KKV40', sku: '2151005', description: 'Hydroflex, под заказ' },
       { name: 'Держатель из нержавеющей стали KEK40', sku: '2151014', description: 'Hydroflex, под заказ' },
@@ -306,7 +306,7 @@ export const categories: ProductCategory[] = [
     slug: 'mops',
     title: 'Моп (насадки) для уборки',
     description: 'Одноразовые и многоразовые мопы Hydroflex и Contec для уборки чистых помещений.',
-    image: '/images/categories/cleaning.png',
+    image: '/images/categories/mop-pad.jpg',
     products: [
       { name: 'Одноразовый стерильный МОП EC40-S', sku: '2111105', description: '100% полиэстер, Hydroflex',
         specs: [
