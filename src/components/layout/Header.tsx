@@ -43,7 +43,7 @@ export default function Header() {
         isScrolled ? 'border-b border-[#EEF0F2]' : ''
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-[80px]">
+      <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-[80px]">
         <div className="flex items-center justify-between h-[72px]">
           {/* Left: Logo */}
           <Logo />

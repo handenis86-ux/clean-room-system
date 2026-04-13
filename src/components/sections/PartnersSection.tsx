@@ -15,16 +15,16 @@ export default function PartnersSection() {
           <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
             + НАШИ ПАРТНЁРЫ
           </span>
-          <h2 className="text-[36px] font-extrabold text-text-dark mt-3">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3">
             Официальный дистрибьютор ведущих брендов
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
           {partners.map((brand) => (
             <div
               key={brand}
-              className="w-[180px] h-[100px] rounded-xl bg-surface border border-surface-border flex items-center justify-center"
+              className="w-full max-w-[180px] h-[100px] rounded-xl bg-surface border border-surface-border flex items-center justify-center"
             >
               <span className="text-[18px] font-bold text-text-dark">
                 {brand}

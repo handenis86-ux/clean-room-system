@@ -15,7 +15,7 @@ export default function ClientsSection() {
           <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
             + КЛИЕНТЫ
           </span>
-          <h2 className="text-[36px] font-extrabold text-text-dark mt-3 mb-4">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3 mb-4">
             Нам доверяют
           </h2>
           <p className="text-[16px] text-text">

@@ -7,7 +7,7 @@ import { articles, blogCategories } from '@/data/articles';
 export const metadata: Metadata = {
   title: 'База знаний | Clean Room System',
   description:
-    'Экспертные статьи о чистых помещениях: классификация по ISO 14644, стандарты GMP, оборудование, технологии мониторинга и обслуживания.',
+    'Экспертные статьи о чистых помещениях: классификация по ISO 14644, стандарты GMP, расходные материалы, технологии мониторинга и обслуживания.',
   alternates: {
     canonical: 'https://clean-room-systems.uz/blog',
   },
@@ -36,7 +36,7 @@ export default function BlogPage() {
             </h1>
             <p className="text-base text-white/80 mb-8">
               Делимся экспертными знаниями о чистых помещениях: стандарты,
-              оборудование, технологии проектирования и обслуживания.
+              продукция, технологии проектирования и обслуживания.
             </p>
             <div className="relative max-w-[480px] mx-auto">
               <Search
@@ -183,7 +183,7 @@ export default function BlogPage() {
               Подпишитесь на рассылку
             </h2>
             <p className="text-sm text-text mb-6">
-              Получайте полезные статьи о чистых помещениях, обзоры оборудования
+              Получайте полезные статьи о чистых помещениях, обзоры продукции
               и новости отрасли прямо на вашу почту. Не чаще двух раз в месяц.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

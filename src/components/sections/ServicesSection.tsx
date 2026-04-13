@@ -26,7 +26,7 @@ export default function ServicesSection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 lg:px-20">
         <div className="text-center mb-14">
-          <h2 className="text-[36px] font-extrabold text-text-dark mb-4">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mb-4">
             Направления деятельности нашей компании
           </h2>
         </div>

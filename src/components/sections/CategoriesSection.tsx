@@ -21,16 +21,16 @@ export default function CategoriesSection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 lg:px-20">
         <div className="text-center mb-14">
-          <h2 className="text-[36px] font-extrabold text-text-dark mb-4">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mb-4">
             Каталог продукции
           </h2>
           <p className="text-[16px] text-text max-w-2xl mx-auto">
-            Полный ассортимент расходных материалов и оборудования для оснащения
+            Полный ассортимент расходных материалов и одежды для оснащения
             чистых помещений любого класса.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((cat) => (
             <Link
               key={cat.slug}

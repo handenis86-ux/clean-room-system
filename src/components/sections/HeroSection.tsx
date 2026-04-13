@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative container mx-auto px-4 lg:px-20 flex flex-col items-start justify-center min-h-[500px]">
-        <h1 className="text-[42px] lg:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-6 max-w-3xl">
+        <h1 className="text-[28px] sm:text-[36px] lg:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-6 max-w-3xl">
           Комплексное оснащение чистых помещений под ключ
         </h1>
 

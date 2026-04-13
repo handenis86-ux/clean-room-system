@@ -45,7 +45,7 @@ export default function CategoryPage({ params }: Props) {
           <span>/</span>
           <span>{category.title}</span>
         </nav>
-        <h1 className="text-[42px] font-bold text-brand-dark leading-tight">
+        <h1 className="text-[28px] md:text-[42px] font-bold text-brand-dark leading-tight">
           {category.title}
         </h1>
         <p className="text-[16px] text-brand max-w-[700px] mt-3">
@@ -97,7 +97,7 @@ export default function CategoryPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-brand-dark py-16">
         <div className="text-center max-w-2xl mx-auto px-6">
-          <h2 className="text-[32px] font-bold text-white mb-4">
+          <h2 className="text-[24px] md:text-[32px] font-bold text-white mb-4">
             Нужна консультация по товару?
           </h2>
           <p className="text-[16px] text-brand-light mb-8">

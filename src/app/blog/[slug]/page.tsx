@@ -169,8 +169,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
                   Нужна помощь в оснащении чистого помещения?
                 </h3>
                 <p className="text-white/70 text-sm mb-6 max-w-lg">
-                  Специалисты Clean Room System подберут оборудование и расходные
-                  материалы с учетом требований вашего производства.
+                  Специалисты Clean Room System подберут расходные материалы и одежду
+                  с учетом требований вашего производства.
                 </p>
                 <Link
                   href="/contacts"

@@ -7,7 +7,7 @@ import ContactPageForm from '@/components/forms/ContactPageForm';
 export const metadata: Metadata = {
   title: 'Контакты | Clean Room System',
   description:
-    'Свяжитесь с Clean Room Systems для консультации по оборудованию для чистых помещений. Телефон, email, адрес офиса в Ташкенте.',
+    'Свяжитесь с Clean Room Systems для консультации по расходным материалам для чистых помещений. Телефон, email, адрес офиса в Ташкенте.',
   alternates: {
     canonical: 'https://clean-room-systems.uz/contacts',
   },
@@ -38,7 +38,7 @@ export default function ContactsPage() {
 
       {/* Hero */}
       <section className="bg-brand-dark h-[300px] flex items-center">
-        <div className="w-full px-[80px]">
+        <div className="w-full px-4 lg:px-[80px]">
           <nav className="flex items-center gap-1.5 text-[13px] text-[#88C5D9] mb-4">
             <Link href="/" className="hover:text-white transition-colors">
               Главная
@@ -46,7 +46,7 @@ export default function ContactsPage() {
             <span>/</span>
             <span>Контакты</span>
           </nav>
-          <h1 className="text-[56px] font-extrabold text-white leading-tight">
+          <h1 className="text-[32px] md:text-[56px] font-extrabold text-white leading-tight">
             Контакты
           </h1>
           <p className="text-[18px] text-brand-muted mt-3">
@@ -57,7 +57,7 @@ export default function ContactsPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-[60px] px-[80px]">
+      <section className="py-[60px] px-4 lg:px-[80px]">
         <div className="flex flex-col lg:flex-row gap-[60px]">
           {/* LEFT column: Contact info */}
           <div className="flex-1">
@@ -148,7 +148,7 @@ export default function ContactsPage() {
           title="Clean Room Systems на карте"
         />
         {/* Overlay card */}
-        <div className="absolute bottom-6 left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
+        <div className="absolute bottom-6 left-4 lg:left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
           <p className="text-[16px] font-bold text-text-dark mb-1">
             Clean Room System
           </p>

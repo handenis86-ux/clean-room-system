@@ -18,7 +18,7 @@ export default function AboutPreviewSection() {
           <div className="flex flex-wrap justify-around gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-[48px] font-black text-brand leading-none mb-1">
+                <div className="text-[32px] sm:text-[48px] font-black text-brand leading-none mb-1">
                   {stat.value}
                 </div>
                 <div className="text-[14px] text-text">{stat.label}</div>
@@ -37,12 +37,12 @@ export default function AboutPreviewSection() {
               <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
                 + О КОМПАНИИ
               </span>
-              <h2 className="text-[36px] font-extrabold text-text-dark mt-3 mb-6 leading-tight">
+              <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3 mb-6 leading-tight">
                 Надёжный партнёр в оснащении чистых помещений
               </h2>
               <p className="text-[15px] text-text leading-relaxed mb-4">
                 Clean Room System — официальный дистрибьютор ведущих мировых производителей
-                оборудования и расходных материалов для чистых помещений. Мы обеспечиваем
+                одежды и расходных материалов для чистых помещений. Мы обеспечиваем
                 фармацевтические и биотехнологические предприятия полным спектром продукции:
                 от защитной одежды и перчаток до дезинфицирующих средств и индикаторов стерилизации.
               </p>
@@ -62,7 +62,7 @@ export default function AboutPreviewSection() {
 
             {/* Photo */}
             <div className="flex justify-center">
-              <div className="relative w-[500px] aspect-[4/3] rounded-2xl overflow-hidden">
+              <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src="/images/about/team-1.png"
                   alt="Специалисты в чистом помещении"

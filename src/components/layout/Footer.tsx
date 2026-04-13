@@ -5,14 +5,14 @@ import Logo from '@/components/ui/Logo';
 export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A]">
-      <div className="py-[60px] px-4 lg:px-[80px]">
+      <div className="w-full max-w-[1440px] mx-auto py-[60px] px-4 lg:px-[80px]">
         {/* Top section — 4 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Column 1: Brand */}
           <div>
             <Logo variant="footer" />
             <p className="mt-4 text-[13px] font-normal text-[#888888] leading-[1.5] max-w-xs">
-              Профессиональное оборудование и расходные материалы для чистых
+              Одежда и расходные материалы для чистых
               помещений. Комплексные решения для фармацевтики, электроники и
               медицины.
             </p>

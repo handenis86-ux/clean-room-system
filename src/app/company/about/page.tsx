@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: `О компании — ${siteConfig.name}`,
   description:
-    'Clean Room System — ведущий поставщик оборудования и расходных материалов для чистых помещений в Узбекистане. Комплексные решения для фармацевтики, электроники и медицины.',
+    'Clean Room System — ведущий поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Комплексные решения для фармацевтики, электроники и медицины.',
   alternates: {
     canonical: `${siteConfig.url}/company/about`,
   },
@@ -33,7 +33,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="bg-brand-dark h-[400px] flex items-center">
-        <div className="w-full px-[80px]">
+        <div className="w-full px-4 lg:px-[80px]">
           <nav className="flex items-center gap-1.5 text-[13px] text-[#88C5D9] mb-4">
             <Link href="/" className="hover:text-white transition-colors">
               Главная
@@ -46,7 +46,7 @@ export default function AboutPage() {
               О компании
             </Link>
           </nav>
-          <h1 className="text-[56px] font-extrabold text-white leading-tight">
+          <h1 className="text-[32px] md:text-[56px] font-extrabold text-white leading-tight">
             О компании
           </h1>
           <p className="text-[18px] text-brand-muted max-w-[700px] mt-4 leading-relaxed">
@@ -57,14 +57,14 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="py-20 px-[80px]">
+      <section className="py-20 px-4 lg:px-[80px]">
         <div className="flex flex-col lg:flex-row gap-[60px] items-start">
           {/* Left */}
           <div className="flex-1">
             <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-3">
               + КТО МЫ
             </p>
-            <h2 className="text-[36px] font-extrabold text-text-dark leading-tight mb-6">
+            <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark leading-tight mb-6">
               Профессионалы в области чистых помещений
             </h2>
             <p className="text-[15px] text-text leading-relaxed mb-4">
@@ -89,24 +89,24 @@ export default function AboutPage() {
           </div>
 
           {/* Right */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
               src="/images/about/team-2.png"
               alt="Команда Clean Room System"
               width={500}
               height={450}
-              className="w-[500px] h-[450px] object-cover rounded-2xl"
+              className="w-full lg:w-[500px] h-auto lg:h-[450px] object-cover rounded-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-brand-light py-[60px] px-[80px]">
+      <section className="bg-brand-light py-[60px] px-4 lg:px-[80px]">
         <div className="flex items-center justify-around flex-wrap gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="text-[48px] font-black text-brand leading-none mb-2">
+              <p className="text-[32px] sm:text-[48px] font-black text-brand leading-none mb-2">
                 {s.value}
               </p>
               <p className="text-[14px] text-text">{s.label}</p>
@@ -116,16 +116,16 @@ export default function AboutPage() {
       </section>
 
       {/* Partners */}
-      <section className="py-20 px-[80px]">
+      <section className="py-20 px-4 lg:px-[80px]">
         <div className="text-center mb-12">
           <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-3">
             + ПАРТНЁРЫ
           </p>
-          <h2 className="text-[36px] font-extrabold text-text-dark">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark">
             Наши партнёры
           </h2>
           <p className="text-[15px] text-text mt-3 max-w-[600px] mx-auto">
-            Мы сотрудничаем с ведущими мировыми производителями оборудования и
+            Мы сотрудничаем с ведущими мировыми производителями одежды и
             расходных материалов для чистых помещений.
           </p>
         </div>
@@ -144,16 +144,16 @@ export default function AboutPage() {
       </section>
 
       {/* Certification */}
-      <section className="bg-surface py-20 px-[80px]">
+      <section className="bg-surface py-20 px-4 lg:px-[80px]">
         <div className="flex flex-col lg:flex-row gap-[60px] items-start">
           {/* Left: Certificate image */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
               src="/images/about/certificate.png"
               alt="Сертификаты Clean Room System"
               width={400}
               height={350}
-              className="w-[400px] h-[350px] object-cover rounded-2xl"
+              className="w-full lg:w-[400px] h-auto lg:h-[350px] object-cover rounded-2xl"
             />
           </div>
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-3">
               + СЕРТИФИКАЦИЯ
             </p>
-            <h2 className="text-[36px] font-extrabold text-text-dark leading-tight mb-4">
+            <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark leading-tight mb-4">
               Сертифицированное качество
             </h2>
             <p className="text-[15px] text-text leading-relaxed mb-6">
@@ -183,12 +183,12 @@ export default function AboutPage() {
       </section>
 
       {/* Clients */}
-      <section className="py-20 px-[80px]">
+      <section className="py-20 px-4 lg:px-[80px]">
         <div className="text-center mb-12">
           <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-3">
             + КЛИЕНТЫ
           </p>
-          <h2 className="text-[36px] font-extrabold text-text-dark">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark">
             Нам доверяют
           </h2>
           <p className="text-[15px] text-text mt-3 max-w-[600px] mx-auto">
@@ -213,7 +213,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="bg-brand-dark py-20">
         <div className="text-center max-w-3xl mx-auto px-6">
-          <h2 className="text-[36px] font-bold text-white mb-4">
+          <h2 className="text-[28px] md:text-[36px] font-bold text-white mb-4">
             Готовы обсудить ваш проект?
           </h2>
           <p className="text-brand-light text-[16px] max-w-xl mx-auto mb-8 leading-relaxed">

@@ -2,7 +2,7 @@ import { NavItem, SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
   name: 'Clean Room System',
-  description: 'Комплексное оснащение чистых помещений под ключ. Одежда, перчатки, дезинфектанты, салфетки и уборочное оборудование для фармацевтики, электроники и медицины.',
+  description: 'Одежда и расходные материалы для чистых помещений. Официальный поставщик ведущих мировых производителей для фармацевтики и биотехнологий в Узбекистане.',
   url: 'https://clean-room-systems.uz',
   phone: '+998 99 821-12-22',
   email: 'info@clean-room-systems.uz',

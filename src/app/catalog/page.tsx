@@ -7,7 +7,7 @@ import { categories } from '@/data/products';
 export const metadata: Metadata = {
   title: 'Каталог продукции',
   description:
-    'Полный каталог расходных материалов и оборудования для чистых помещений: индикаторы стерилизации, дезинфектанты, защитная одежда, перчатки, салфетки, стулья, очки и аксессуары.',
+    'Полный каталог одежды и расходных материалов для чистых помещений: индикаторы стерилизации, дезинфектанты, защитная одежда, перчатки, салфетки, стулья, очки и аксессуары.',
 };
 
 export default function CatalogPage() {
@@ -22,11 +22,11 @@ export default function CatalogPage() {
           <span>/</span>
           <span>Каталог</span>
         </nav>
-        <h1 className="text-[42px] font-bold text-brand-dark leading-tight">
+        <h1 className="text-[28px] md:text-[42px] font-bold text-brand-dark leading-tight">
           Каталог продукции
         </h1>
         <p className="text-[16px] text-brand max-w-[600px] mt-3">
-          Расходные материалы и оборудование для чистых помещений от ведущих
+          Одежда и расходные материалы для чистых помещений от ведущих
           мировых производителей: Contec, Alsico, Terragene, Hydroflex, NPro,
           Isofield, BIMOS и других.
         </p>
@@ -75,7 +75,7 @@ export default function CatalogPage() {
       {/* CTA */}
       <section className="bg-brand-dark py-16">
         <div className="text-center max-w-2xl mx-auto px-6">
-          <h2 className="text-[32px] font-bold text-white mb-4">
+          <h2 className="text-[24px] md:text-[32px] font-bold text-white mb-4">
             Не нашли нужный товар?
           </h2>
           <p className="text-[16px] text-brand-light mb-8">

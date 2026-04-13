@@ -11,7 +11,7 @@ const features = [
     icon: Package,
     title: 'Комплексные поставки',
     description:
-      'Полный спектр расходных материалов и оборудования от ведущих мировых производителей.',
+      'Полный спектр расходных материалов и одежды от ведущих мировых производителей.',
   },
   {
     icon: Headphones,
@@ -35,7 +35,7 @@ export default function WhyUsSection() {
           <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
             + ПРЕИМУЩЕСТВА
           </span>
-          <h2 className="text-[36px] font-extrabold text-text-dark mt-3">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3">
             Почему выбирают нас
           </h2>
         </div>
