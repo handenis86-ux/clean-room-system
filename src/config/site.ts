@@ -15,24 +15,24 @@ export const siteConfig: SiteConfig = {
 
 export const mainNavigation: NavItem[] = [
   {
-    label: 'О компании',
-    href: '/company/about',
-  },
-  {
     label: 'Каталог продукции',
     href: '/catalog',
     children: [
-      { label: 'Индикаторы стерилизации', href: '/catalog/sterilization-indicators' },
-      { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants' },
-      { label: 'Одноразовая одежда', href: '/catalog/disposable-garments' },
-      { label: 'Многоразовая одежда', href: '/catalog/reusable-garments' },
-      { label: 'Перчатки защитные', href: '/catalog/gloves' },
+      { label: 'Индикаторы стерилизации', href: '/catalog/indicators' },
+      { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants-and-detergents' },
+      { label: 'Одежда одноразовая', href: '/catalog/garments' },
+      { label: 'Одежда многоразовая', href: '/catalog/reusable-garm' },
+      { label: 'Перчатки защитные', href: '/catalog/perchatki-zashchitnye' },
       { label: 'Салфетки', href: '/catalog/cleanroom-wipes' },
-      { label: 'Уборочные тележки', href: '/catalog/cleaning-trolleys' },
-      { label: 'Стулья для чистых помещений', href: '/catalog/chairs' },
+      { label: 'Уборочные тележки', href: '/catalog/cleaning-trolleys-systems' },
       { label: 'Очки защитные', href: '/catalog/goggles' },
-      { label: 'Обувь', href: '/catalog/shoes' },
+      { label: 'Стулья', href: '/catalog/cleanroom-chairs' },
+      { label: 'Обувь', href: '/catalog/cleanroom-shoes' },
     ],
+  },
+  {
+    label: 'О компании',
+    href: '/company/about',
   },
   {
     label: 'База знаний',
@@ -46,12 +46,12 @@ export const mainNavigation: NavItem[] = [
 
 export const footerNavigation = {
   catalog: [
-    { label: 'Индикаторы стерилизации', href: '/catalog/sterilization-indicators' },
-    { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants' },
-    { label: 'Защитная одежда', href: '/catalog/disposable-garments' },
-    { label: 'Перчатки', href: '/catalog/gloves' },
+    { label: 'Индикаторы стерилизации', href: '/catalog/indicators' },
+    { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants-and-detergents' },
+    { label: 'Защитная одежда', href: '/catalog/garments' },
+    { label: 'Перчатки', href: '/catalog/perchatki-zashchitnye' },
     { label: 'Салфетки', href: '/catalog/cleanroom-wipes' },
-    { label: 'Стулья', href: '/catalog/chairs' },
+    { label: 'Стулья', href: '/catalog/cleanroom-chairs' },
   ],
   company: [
     { label: 'О компании', href: '/company/about' },

@@ -18,8 +18,8 @@ const IBC = 'https://ibcnanotex.com';
 
 export const categories: ProductCategory[] = [
   {
-    slug: 'sterilization-indicators',
-    title: 'Индикаторы для стерилизации',
+    slug: 'indicators',
+    title: 'Индикаторы для стерилизации, дезинфекции и мойки',
     description: 'Биологические и химические индикаторы контроля процессов стерилизации, инкубаторы и аксессуары Terragene.',
     image: '/images/categories/sterilization-kit.png',
     products: [
@@ -64,7 +64,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'disinfectants',
+    slug: 'disinfectants-and-detergents',
     title: 'Дезинфицирующие и моющие средства',
     description: 'Профессиональные средства Contec, Diversey, Neokhim для дезинфекции и CIP-мойки чистых помещений.',
     image: '/images/categories/disinfectants.png',
@@ -105,7 +105,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'disposable-garments',
+    slug: 'garments',
     title: 'Одежда одноразовая защитная',
     description: 'Одноразовые комбинезоны, халаты, шапочки, бахилы и маски для чистых помещений Isofield, NPro, Lakeland.',
     image: '/images/categories/clothing.png',
@@ -140,7 +140,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'reusable-garments',
+    slug: 'reusable-garm',
     title: 'Одежда многоразовая защитная',
     description: 'Многоразовые комбинезоны, халаты, бахилы и бельё Alsico High Tech и High Clean Stat II, включая ESD.',
     image: '/images/categories/clothing-alt.png',
@@ -164,7 +164,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'gloves',
+    slug: 'perchatki-zashchitnye',
     title: 'Перчатки защитные',
     description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific, Ansell.',
     image: '/images/categories/gloves.png',
@@ -194,7 +194,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'cleaning-trolleys',
+    slug: 'cleaning-trolleys-systems',
     title: 'Уборочные тележки и системы насыщения',
     description: 'Модульные уборочные тележки Hydroflex Ergo и UNO, системы насыщения мопов Prepare и PurQuip.',
     image: '/images/categories/cleaning.png',
@@ -232,7 +232,7 @@ export const categories: ProductCategory[] = [
   },
   {
     slug: 'mops',
-    title: 'Моп-насадки для уборки',
+    title: 'Моп (насадки) для уборки',
     description: 'Одноразовые и многоразовые мопы Hydroflex и Contec для уборки чистых помещений.',
     image: '/images/categories/cleaning.png',
     products: [
@@ -311,7 +311,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'accessories',
+    slug: 'cleanroom-accessories',
     title: 'Аксессуары для чистых помещений',
     description: 'Стерильные маркеры, ручки и бумага для документооборота в чистых помещениях NPro NSupport.',
     image: '/images/categories/packaging.png',
@@ -322,7 +322,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'shoes',
+    slug: 'cleanroom-shoes',
     title: 'Обувь для чистых помещений',
     description: 'Автоклавируемые сабо Rosato и WearerTech/Toffeln Protect для чистых помещений.',
     image: '/images/categories/footwear.png',
@@ -334,7 +334,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'chairs',
+    slug: 'cleanroom-chairs',
     title: 'Стулья для чистых помещений',
     description: 'Лабораторные и ESD-стулья BIMOS: Labsit, Nexxit, Neon, Flex, Fin, Allround, Basic.',
     image: '/images/categories/work-table.png',
@@ -370,7 +370,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'sticky-mats',
+    slug: 'cleanroom-sticky-mats',
     title: 'Липкие коврики',
     description: 'Липкие маты CELOS pure11 для удаления загрязнений на входах в чистые помещения.',
     image: '/images/categories/packaging.png',
@@ -379,7 +379,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'packaging',
+    slug: 'cleanroom-packaging',
     title: 'Упаковка для чистых помещений',
     description: 'Полиэтиленовая, антистатическая и стерильная упаковка ZEAL Clean Supplies для чистых помещений и лабораторий.',
     image: '/images/categories/packaging.png',
@@ -390,7 +390,7 @@ export const categories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'dispensers',
+    slug: 'cleanroom-dispensers',
     title: 'Диспенсеры',
     description: 'Диспенсеры Tinman для перчаток, расходных материалов и бутылок в чистых помещениях.',
     image: '/images/categories/packaging.png',
