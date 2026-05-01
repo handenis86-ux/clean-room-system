@@ -41,12 +41,12 @@ export default function CatalogPage() {
               href={`/catalog/${category.slug}`}
               className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="relative h-[220px] w-full overflow-hidden">
+              <div className="relative h-[220px] w-full overflow-hidden bg-gray-50">
                 <Image
                   src={category.image}
                   alt={category.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
               </div>

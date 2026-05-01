@@ -37,12 +37,12 @@ export default function CategoriesSection() {
               href={`/catalog/${cat.slug}`}
               className="group bg-white rounded-xl overflow-hidden border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-md transition-shadow"
             >
-              <div className="relative h-[220px] overflow-hidden">
+              <div className="relative h-[220px] overflow-hidden bg-gray-50">
                 <Image
                   src={cat.image}
                   alt={cat.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
