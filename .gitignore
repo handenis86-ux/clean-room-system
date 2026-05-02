@@ -49,6 +49,12 @@ prisma/dev.db-journal
 .claude/
 nul
 
+# Marketing internal docs (sensitive — budgets, keys, strategy)
+marketing/
+
+# Research / source materials (PDFs, scratch)
+annex1-2022-*
+
 # Uploaded files
 public/uploads/*
 !public/uploads/.gitkeep
