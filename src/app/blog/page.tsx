@@ -5,7 +5,7 @@ import { Search, Mail } from 'lucide-react';
 import { articles, blogCategories } from '@/data/articles';
 
 export const metadata: Metadata = {
-  title: 'База знаний: чистые помещения, GMP, ISO 14644 | Clean Room System',
+  title: 'База знаний: чистые помещения, GMP, ISO 14644 | Clean Room Systems',
   description:
     'Экспертные статьи о чистых помещениях для предприятий Узбекистана: классы ISO 14644, требования GMP, выбор расходных материалов, мониторинг, валидация и обслуживание.',
   alternates: {
@@ -32,7 +32,7 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              База знаний Clean Room System
+              База знаний Clean Room Systems
             </h1>
             <p className="text-base text-white/80 mb-8">
               Делимся экспертными знаниями о чистых помещениях: стандарты,

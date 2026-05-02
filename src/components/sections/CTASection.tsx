@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Phone, Mail } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 
 export default function CTASection() {
   return (
@@ -16,7 +16,7 @@ export default function CTASection() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
           <a
-            href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+            href={`tel:${phoneTel}`}
             className="inline-flex items-center gap-2 text-[14px] font-semibold text-white hover:text-brand-muted transition-colors whitespace-nowrap"
           >
             <Phone size={16} />

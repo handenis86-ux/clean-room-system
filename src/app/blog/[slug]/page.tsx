@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowRight, ArrowLeft, Phone, List } from 'lucide-react';
 import { articles, getArticleBySlug, getRelatedArticles } from '@/data/articles';
+import { siteConfig } from '@/config/site';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -23,18 +24,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Статья не найдена' };
   }
 
+  const absoluteImage = article.image.startsWith('http')
+    ? article.image
+    : `${siteConfig.url}${article.image}`;
+
   return {
-    title: `${article.title} | Clean Room System`,
+    title: `${article.title} | ${siteConfig.name}`,
     description: article.excerpt,
     alternates: {
-      canonical: `https://cleanroom.uz/blog/${article.slug}`,
+      canonical: `${siteConfig.url}/blog/${article.slug}`,
     },
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: 'article',
       publishedTime: article.publishedAt,
-      images: [{ url: article.image }],
+      images: [{ url: absoluteImage }],
     },
   };
 }
@@ -57,21 +62,34 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const relatedArticles = getRelatedArticles(slug, 3);
 
+  const articleImage = article.image.startsWith('http')
+    ? article.image
+    : `${siteConfig.url}${article.image}`;
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: article.title,
     description: article.excerpt,
-    image: article.image,
+    image: [articleImage],
     datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/blog/${article.slug}`,
+    },
     author: {
       '@type': 'Organization',
-      name: 'Clean Room System',
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Clean Room System',
-      url: 'https://cleanroom.uz',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/images/logo.png`,
+      },
     },
   };
 
@@ -169,7 +187,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
                   Нужна помощь в оснащении чистого помещения?
                 </h3>
                 <p className="text-white/70 text-sm mb-6 max-w-lg">
-                  Специалисты Clean Room System подберут расходные материалы и одежду
+                  Специалисты Clean Room Systems подберут расходные материалы и одежду
                   с учетом требований вашего производства.
                 </p>
                 <Link

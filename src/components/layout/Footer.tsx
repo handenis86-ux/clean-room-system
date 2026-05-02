@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { siteConfig, footerNavigation } from '@/config/site';
+import { siteConfig, footerNavigation, phoneTel } from '@/config/site';
 import Logo from '@/components/ui/Logo';
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-[12px]">
               <li>
                 <a
-                  href={`tel:${siteConfig.phone}`}
+                  href={`tel:${phoneTel}`}
                   className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
                 >
                   {siteConfig.phone}

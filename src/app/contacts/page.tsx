@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 import ContactPageForm from '@/components/forms/ContactPageForm';
 
 export const metadata: Metadata = {
   title: 'Контакты | Поставщик расходников для чистых помещений в Ташкенте',
   description:
-    'Свяжитесь с Clean Room System для консультации по расходным материалам для чистых помещений GMP / ISO 14644. Телефон, email, адрес офиса в Ташкенте, Узбекистан.',
+    'Свяжитесь с Clean Room Systems для консультации по расходным материалам для чистых помещений GMP / ISO 14644. Телефон, email, адрес офиса в Ташкенте, Узбекистан.',
   alternates: {
     canonical: `${siteConfig.url}/contacts`,
   },
@@ -105,10 +105,10 @@ export default function ContactsPage() {
               <div>
                 <p className="text-[13px] text-text-muted mb-0.5">Телефон</p>
                 <a
-                  href="tel:+998998211222"
+                  href={`tel:${phoneTel}`}
                   className="text-[16px] font-semibold text-text-dark hover:text-brand transition-colors"
                 >
-                  +998 99 821-12-22
+                  {siteConfig.phone}
                 </a>
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function ContactsPage() {
         {/* Overlay card */}
         <div className="absolute bottom-6 left-4 lg:left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
           <p className="text-[16px] font-bold text-text-dark mb-1">
-            Clean Room System
+            Clean Room Systems
           </p>
           <p className="text-[13px] text-text">
             г. Ташкент, ул. Нукус, 85/1

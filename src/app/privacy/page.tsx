@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Политика конфиденциальности',
   description:
-    'Политика конфиденциальности и обработки персональных данных Clean Room System (TOPAZ COMPANY), Ташкент, Узбекистан.',
+    'Политика конфиденциальности и обработки персональных данных Clean Room Systems (TOPAZ COMPANY), Ташкент, Узбекистан.',
   alternates: {
     canonical: `${siteConfig.url}/privacy`,
   },
@@ -173,7 +173,7 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <strong>Телефон:</strong>{' '}
-                  <a href={`tel:${siteConfig.phone}`} className="text-brand-700 hover:text-brand-600 hover:underline">
+                  <a href={`tel:${phoneTel}`} className="text-brand-700 hover:text-brand-600 hover:underline">
                     {siteConfig.phone}
                   </a>
                 </li>

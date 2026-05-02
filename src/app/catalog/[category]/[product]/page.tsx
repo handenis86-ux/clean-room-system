@@ -9,7 +9,7 @@ import {
   productSlug,
 } from '@/data/products';
 import { getProductImage } from '@/data/product-images';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 
 interface Props {
   params: { category: string; product: string };
@@ -44,7 +44,7 @@ function inferBrand(name: string, sku: string): string {
   // Fallback: first capitalized word in product name (e.g. "BIMOS Texon" -> "BIMOS")
   const match = name.match(/^([A-ZА-Я][A-Za-zА-Яа-я0-9]+)/);
   if (match && match[1].length >= 3) return match[1];
-  return 'Clean Room System';
+  return 'Clean Room Systems';
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -102,7 +102,7 @@ export default function ProductPage({ params }: Props) {
       },
       seller: {
         '@type': 'Organization',
-        name: 'Clean Room System',
+        name: 'Clean Room Systems',
       },
     },
   };
@@ -284,11 +284,11 @@ export default function ProductPage({ params }: Props) {
               </Link>
               <div className="flex items-center justify-center gap-6 text-[14px]">
                 <a
-                  href="tel:+998998211222"
+                  href={`tel:${phoneTel}`}
                   className="flex items-center gap-1.5 text-brand hover:text-brand-dark transition-colors"
                 >
                   <Phone size={14} />
-                  +998 99 821-12-22
+                  {siteConfig.phone}
                 </a>
                 <a
                   href={`mailto:${siteConfig.email}`}

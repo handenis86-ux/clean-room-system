@@ -1,8 +1,8 @@
 import { NavItem, SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'Clean Room System',
-  description: 'Одежда и расходные материалы для чистых помещений. Официальный поставщик ведущих мировых производителей для фармацевтики и биотехнологий в Узбекистане.',
+  name: 'Clean Room Systems',
+  description: 'Одежда и расходные материалы для чистых помещений. Поставщик ведущих мировых производителей для фармацевтики и биотехнологий в Узбекистане.',
   url: 'https://cleanroom.uz',
   phone: '+998 99 821-12-22',
   email: 'info@cleanroom.uz',
@@ -12,6 +12,8 @@ export const siteConfig: SiteConfig = {
     youtube: 'https://youtube.com/@clean_room_systems',
   },
 };
+
+export const phoneTel = siteConfig.phone.replace(/[^\d+]/g, '');
 
 export const mainNavigation: NavItem[] = [
   {

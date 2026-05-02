@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 import Logo from '@/components/ui/Logo';
 
 const navLinks = [
@@ -68,7 +68,7 @@ export default function Header() {
           {/* Right: Phone + CTA + Mobile toggle */}
           <div className="flex items-center gap-4">
             <a
-              href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+              href={`tel:${phoneTel}`}
               className="hidden lg:flex items-center gap-2 text-sm font-medium text-[#333333] hover:text-[#00608A] transition-colors"
             >
               <Phone size={16} />
@@ -132,7 +132,7 @@ export default function Header() {
             {/* Mobile contact info */}
             <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
               <a
-                href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                href={`tel:${phoneTel}`}
                 className="flex items-center gap-2 text-sm font-medium text-[#00608A]"
               >
                 <Phone size={16} />

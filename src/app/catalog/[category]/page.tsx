@@ -9,7 +9,7 @@ import {
   getAllCategorySlugs,
   productSlug,
 } from '@/data/products';
-import { siteConfig } from '@/config/site';
+import { siteConfig, phoneTel } from '@/config/site';
 import ProductGrid from './ProductGrid';
 
 interface Props {
@@ -140,11 +140,11 @@ export default function CategoryPage({ params }: Props) {
               Оставить заявку
             </Link>
             <a
-              href="tel:+998998211222"
+              href={`tel:${phoneTel}`}
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-[15px] font-semibold text-white border border-white rounded-lg hover:bg-white/10 transition-colors"
             >
               <Phone size={16} />
-              +998 99 821-12-22
+              {siteConfig.phone}
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: `О компании — ${siteConfig.name}`,
   description:
-    'Clean Room System — поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения GMP / ISO 14644 для фармы, пищёвки, косметики и микроэлектроники.',
+    'Clean Room Systems — поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения GMP / ISO 14644 для фармы, пищёвки, косметики и микроэлектроники.',
   alternates: {
     canonical: `${siteConfig.url}/company/about`,
   },
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
               src="/images/about/team-2.webp"
-              alt="Команда Clean Room System"
+              alt="Команда Clean Room Systems"
               width={500}
               height={450}
               className="w-full lg:w-[500px] h-auto lg:h-[450px] object-cover rounded-2xl"
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
               src="/images/about/certificate.webp"
-              alt="Сертификаты Clean Room System"
+              alt="Сертификаты Clean Room Systems"
               width={400}
               height={350}
               className="w-full lg:w-[400px] h-auto lg:h-[350px] object-cover rounded-2xl"
@@ -204,7 +204,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-[15px] text-text mt-3 max-w-[600px] mx-auto">
             Фармацевтические компании, лаборатории и производственные предприятия
-            Узбекистана выбирают Clean Room System.
+            Узбекистана выбирают Clean Room Systems.
           </p>
         </div>
         <p className="text-[16px] text-text leading-relaxed text-center max-w-[700px] mx-auto">
