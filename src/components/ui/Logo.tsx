@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface LogoProps {
   variant?: 'default' | 'white' | 'footer';
@@ -6,18 +7,20 @@ interface LogoProps {
 }
 
 export default function Logo({ variant = 'default', className = '' }: LogoProps) {
-  const variantStyles = {
-    default: 'text-xl font-bold text-[#00608A]',
-    white: 'text-xl font-bold text-white',
-    footer: 'text-lg font-extrabold text-white',
-  };
+  const isDark = variant === 'white' || variant === 'footer';
+  const height = variant === 'footer' ? 36 : 44;
 
   return (
-    <Link
-      href="/"
-      className={`font-heading tracking-tight ${variantStyles[variant]} ${className}`}
-    >
-      Clean Room System
+    <Link href="/" className={`inline-flex items-center ${className}`} aria-label="Clean Room Systems">
+      <Image
+        src="/images/logo.png"
+        alt="Clean Room Systems"
+        width={height * 4}
+        height={height}
+        priority
+        className={isDark ? 'brightness-0 invert' : ''}
+        style={{ height, width: 'auto' }}
+      />
     </Link>
   );
 }
