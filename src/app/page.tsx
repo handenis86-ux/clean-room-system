@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import AboutPreviewSection from '@/components/sections/AboutPreviewSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import CategoriesSection from '@/components/sections/CategoriesSection';
+import SeoContentSection from '@/components/sections/SeoContentSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
 import PartnersSection from '@/components/sections/PartnersSection';
 import ClientsSection from '@/components/sections/ClientsSection';
@@ -78,6 +79,7 @@ export default function HomePage() {
       <AboutPreviewSection />
       <ServicesSection />
       <CategoriesSection />
+      <SeoContentSection />
       <WhyUsSection />
       <PartnersSection />
       <ClientsSection />

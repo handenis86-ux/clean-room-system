@@ -25,6 +25,13 @@ export const metadata: Metadata = {
     'Узбекистан', 'Ташкент', 'Pharma Park', 'поставщик',
     'расходные материалы', 'фармацевтика',
   ],
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      'ru-RU': siteConfig.url,
+      'x-default': siteConfig.url,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
