@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Политика конфиденциальности',
   description: 'Политика конфиденциальности и обработки персональных данных Clean Room Systems.',
   alternates: {
-    canonical: 'https://clean-room-systems.uz/privacy',
+    canonical: 'https://cleanroom.uz/privacy',
   },
 };
 

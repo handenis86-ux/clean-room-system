@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Свяжитесь с Clean Room Systems для консультации по расходным материалам для чистых помещений. Телефон, email, адрес офиса в Ташкенте.',
   alternates: {
-    canonical: 'https://clean-room-systems.uz/contacts',
+    canonical: 'https://cleanroom.uz/contacts',
   },
 };
 
@@ -89,10 +89,10 @@ export default function ContactsPage() {
               <div>
                 <p className="text-[13px] text-text-muted mb-0.5">Email</p>
                 <a
-                  href="mailto:info@clean-room-systems.uz"
+                  href="mailto:info@cleanroom.uz"
                   className="text-[16px] font-semibold text-text-dark hover:text-brand transition-colors"
                 >
-                  info@clean-room-systems.uz
+                  info@cleanroom.uz
                 </a>
               </div>
             </div>

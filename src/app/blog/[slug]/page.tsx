@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${article.title} | Clean Room System`,
     description: article.excerpt,
     alternates: {
-      canonical: `https://clean-room-systems.uz/blog/${article.slug}`,
+      canonical: `https://cleanroom.uz/blog/${article.slug}`,
     },
     openGraph: {
       title: article.title,
@@ -71,7 +71,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
     publisher: {
       '@type': 'Organization',
       name: 'Clean Room System',
-      url: 'https://clean-room-systems.uz',
+      url: 'https://cleanroom.uz',
     },
   };
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://clean-room-systems.uz',
+    canonical: 'https://cleanroom.uz',
   },
 };
 

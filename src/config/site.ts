@@ -3,9 +3,9 @@ import { NavItem, SiteConfig } from '@/types';
 export const siteConfig: SiteConfig = {
   name: 'Clean Room System',
   description: 'Одежда и расходные материалы для чистых помещений. Официальный поставщик ведущих мировых производителей для фармацевтики и биотехнологий в Узбекистане.',
-  url: 'https://clean-room-systems.uz',
+  url: 'https://cleanroom.uz',
   phone: '+998 99 821-12-22',
-  email: 'info@clean-room-systems.uz',
+  email: 'info@cleanroom.uz',
   address: 'г. Ташкент, ул. Нукус, 85/1',
   social: {
     telegram: 'https://t.me/clean_room_systems',

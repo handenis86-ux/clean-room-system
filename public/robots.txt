@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://clean-room-systems.uz/sitemap.xml
+Sitemap: https://cleanroom.uz/sitemap.xml

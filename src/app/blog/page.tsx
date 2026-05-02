@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Экспертные статьи о чистых помещениях: классификация по ISO 14644, стандарты GMP, расходные материалы, технологии мониторинга и обслуживания.',
   alternates: {
-    canonical: 'https://clean-room-systems.uz/blog',
+    canonical: 'https://cleanroom.uz/blog',
   },
 };
 

@@ -250,7 +250,7 @@ async function main() {
     { key: 'site_name', value: 'Clean Room Systems', type: 'text', group: 'general' },
     { key: 'site_description', value: 'Профессиональное оборудование для чистых помещений', type: 'text', group: 'general' },
     { key: 'contact_phone', value: '+998 99 821-12-22', type: 'text', group: 'contacts' },
-    { key: 'contact_email', value: 'info@clean-room-systems.uz', type: 'text', group: 'contacts' },
+    { key: 'contact_email', value: 'info@cleanroom.uz', type: 'text', group: 'contacts' },
     { key: 'contact_address', value: 'г. Ташкент, ул. Нукус, 85/1', type: 'text', group: 'contacts' },
   ];
 
