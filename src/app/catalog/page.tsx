@@ -3,11 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
 import { categories } from '@/data/products';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Каталог продукции',
+  title: 'Каталог расходных материалов для чистых помещений | Узбекистан',
   description:
-    'Полный каталог одежды и расходных материалов для чистых помещений: индикаторы стерилизации, дезинфектанты, защитная одежда, перчатки, салфетки, стулья, очки и аксессуары.',
+    'Каталог расходников для чистых помещений GMP / ISO 14644 в Узбекистане: индикаторы стерилизации, дезинфектанты, одежда, перчатки, салфетки, тележки. Купить в Ташкенте.',
+  alternates: {
+    canonical: `${siteConfig.url}/catalog`,
+  },
 };
 
 export default function CatalogPage() {

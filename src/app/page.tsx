@@ -10,12 +10,14 @@ import CTASection from '@/components/sections/CTASection';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — Одежда и расходные материалы для чистых помещений`,
-  description: 'Одежда, перчатки, дезинфектанты, индикаторы стерилизации, салфетки и уборочный инвентарь для чистых помещений. Официальный поставщик в Узбекистане.',
+  title: `Поставщик расходников для чистых помещений в Узбекистане | ${siteConfig.name}`,
+  description:
+    'B2B поставщик расходных материалов для чистых помещений в Ташкенте: GMP, ISO 14644. Одежда, перчатки, дезинфектанты, индикаторы, салфетки для фармы, пищёвки и электроники.',
   openGraph: {
-    title: `${siteConfig.name} — Одежда и расходные материалы для чистых помещений`,
-    description: 'Профессиональное оснащение чистых помещений для фармацевтики, пищевой, косметической промышленности и микроэлектроники.',
-    images: ['/og-image.jpg'],
+    title: `Поставщик расходников для чистых помещений в Узбекистане | ${siteConfig.name}`,
+    description:
+      'Профессиональное оснащение чистых помещений по GMP и ISO 14644 для фармацевтики, пищевой, косметической промышленности и микроэлектроники в Узбекистане.',
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://cleanroom.uz',
@@ -29,7 +31,7 @@ const jsonLd = {
   description: siteConfig.description,
   url: siteConfig.url,
   logo: `${siteConfig.url}/logo.png`,
-  image: `${siteConfig.url}/og-image.jpg`,
+  image: `${siteConfig.url}/og-image.png`,
   telephone: siteConfig.phone,
   email: siteConfig.email,
   priceRange: '$$',

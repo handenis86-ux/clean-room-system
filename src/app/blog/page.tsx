@@ -5,9 +5,9 @@ import { Search, Mail } from 'lucide-react';
 import { articles, blogCategories } from '@/data/articles';
 
 export const metadata: Metadata = {
-  title: 'База знаний | Clean Room System',
+  title: 'База знаний: чистые помещения, GMP, ISO 14644 | Clean Room System',
   description:
-    'Экспертные статьи о чистых помещениях: классификация по ISO 14644, стандарты GMP, расходные материалы, технологии мониторинга и обслуживания.',
+    'Экспертные статьи о чистых помещениях для предприятий Узбекистана: классы ISO 14644, требования GMP, выбор расходных материалов, мониторинг, валидация и обслуживание.',
   alternates: {
     canonical: 'https://cleanroom.uz/blog',
   },

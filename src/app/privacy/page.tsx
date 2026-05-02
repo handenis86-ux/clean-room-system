@@ -4,9 +4,14 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Политика конфиденциальности',
-  description: 'Политика конфиденциальности и обработки персональных данных Clean Room Systems.',
+  description:
+    'Политика конфиденциальности и обработки персональных данных Clean Room System (TOPAZ COMPANY), Ташкент, Узбекистан.',
   alternates: {
-    canonical: 'https://cleanroom.uz/privacy',
+    canonical: `${siteConfig.url}/privacy`,
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

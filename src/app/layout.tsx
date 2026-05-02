@@ -14,13 +14,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Одежда и расходные материалы для чистых помещений`,
+    default: `${siteConfig.name} — поставщик расходников для чистых помещений в Узбекистане`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description:
+    'B2B поставщик расходных материалов и одежды для чистых помещений в Узбекистане: GMP, ISO 14644. Решения для фармацевтики, пищёвки, косметики и микроэлектроники в Ташкенте.',
   keywords: [
     'чистые помещения', 'cleanroom', 'GMP', 'ISO 14644',
     'одежда для чистых помещений', 'перчатки', 'дезинфектанты',
+    'Узбекистан', 'Ташкент', 'Pharma Park', 'поставщик',
+    'расходные материалы', 'фармацевтика',
   ],
   icons: {
     icon: [
@@ -38,14 +41,16 @@ export const metadata: Metadata = {
     locale: 'ru_RU',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Одежда и расходные материалы для чистых помещений`,
-    description: siteConfig.description,
+    title: `${siteConfig.name} — поставщик расходников для чистых помещений в Узбекистане`,
+    description:
+      'B2B поставщик расходных материалов и одежды для чистых помещений в Узбекистане: GMP, ISO 14644. Решения для фармацевтики, пищёвки, косметики и микроэлектроники в Ташкенте.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
-    description: siteConfig.description,
+    description:
+      'B2B поставщик расходных материалов и одежды для чистых помещений в Узбекистане: GMP, ISO 14644. Решения для фармы, пищёвки, косметики и электроники в Ташкенте.',
     images: ['/og-image.png'],
   },
 };

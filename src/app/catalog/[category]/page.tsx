@@ -3,7 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Phone } from 'lucide-react';
-import { categories, getCategoryBySlug, getAllCategorySlugs } from '@/data/products';
+import {
+  categories,
+  getCategoryBySlug,
+  getAllCategorySlugs,
+  productSlug,
+} from '@/data/products';
+import { siteConfig } from '@/config/site';
 import ProductGrid from './ProductGrid';
 
 interface Props {
@@ -18,8 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(params.category);
   if (!category) return { title: 'Категория не найдена' };
   return {
-    title: category.title,
-    description: category.description,
+    title: `${category.title} для чистых помещений | ${siteConfig.name}`,
+    description: `${category.description} Поставка в Ташкенте и по Узбекистану — для GMP-производств, лабораторий и чистых помещений ISO 14644.`,
+    alternates: {
+      canonical: `${siteConfig.url}/catalog/${category.slug}`,
+    },
   };
 }
 
@@ -30,8 +39,27 @@ export default function CategoryPage({ params }: Props) {
     notFound();
   }
 
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: category.title,
+    description: category.description,
+    numberOfItems: category.products.length,
+    itemListElement: category.products.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.name,
+      url: `${siteConfig.url}/catalog/${category.slug}/${productSlug(p.sku)}`,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-brand-light py-12 px-4 lg:px-[80px]">
         <nav className="flex items-center gap-1.5 text-[13px] text-text mb-4">

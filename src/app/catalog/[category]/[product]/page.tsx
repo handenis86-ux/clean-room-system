@@ -9,6 +9,7 @@ import {
   productSlug,
 } from '@/data/products';
 import { getProductImage } from '@/data/product-images';
+import { siteConfig } from '@/config/site';
 
 interface Props {
   params: { category: string; product: string };
@@ -24,12 +25,40 @@ export function generateStaticParams() {
   return params;
 }
 
+// Map common SKU prefixes to brand names.
+const SKU_BRAND_MAP: { prefix: string; brand: string }[] = [
+  { prefix: 'BT', brand: 'Terragene' },
+  { prefix: 'BD', brand: 'Hydroflex' },
+  { prefix: 'NC', brand: 'NPro' },
+  { prefix: 'CT', brand: 'Contec' },
+  { prefix: 'IS', brand: 'Isofield' },
+  { prefix: 'AL', brand: 'Alsico' },
+  { prefix: 'BM', brand: 'BIMOS' },
+];
+
+function inferBrand(name: string, sku: string): string {
+  const upperSku = sku.toUpperCase();
+  for (const { prefix, brand } of SKU_BRAND_MAP) {
+    if (upperSku.startsWith(prefix)) return brand;
+  }
+  // Fallback: first capitalized word in product name (e.g. "BIMOS Texon" -> "BIMOS")
+  const match = name.match(/^([A-ZА-Я][A-Za-zА-Яа-я0-9]+)/);
+  if (match && match[1].length >= 3) return match[1];
+  return 'Clean Room System';
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = getProductBySlug(params.category, params.product);
   if (!result) return { title: 'Товар не найден' };
+  const { product, category } = result;
+  const baseDesc = product.description || category.description;
+  const description = `${baseDesc} Купить в Ташкенте — поставка по Узбекистану для GMP-производств и чистых помещений ISO 14644.`;
   return {
-    title: `${result.product.name} — ${result.category.title}`,
-    description: result.product.description || result.category.description,
+    title: `${product.name} | ${category.title} | купить в Ташкенте`,
+    description: description.slice(0, 200),
+    alternates: {
+      canonical: `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`,
+    },
   };
 }
 
@@ -48,8 +77,43 @@ export default function ProductPage({ params }: Props) {
     .filter((p) => p.sku !== product.sku)
     .slice(0, 5);
 
+  const productUrl = `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`;
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    sku: product.sku,
+    description: product.description || category.description,
+    image: productImage
+      ? `${siteConfig.url}${productImage}`
+      : `${siteConfig.url}/og-image.png`,
+    brand: {
+      '@type': 'Brand',
+      name: inferBrand(product.name, product.sku),
+    },
+    category: category.title,
+    offers: {
+      '@type': 'Offer',
+      url: productUrl,
+      availability: 'https://schema.org/InStock',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'UZS',
+      },
+      seller: {
+        '@type': 'Organization',
+        name: 'Clean Room System',
+      },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+
       {/* Breadcrumbs */}
       <section className="bg-brand-light py-4 px-4 lg:px-[80px]">
         <nav className="flex items-center gap-1.5 text-[13px] text-text flex-wrap">
@@ -227,11 +291,11 @@ export default function ProductPage({ params }: Props) {
                   +998 99 821-12-22
                 </a>
                 <a
-                  href="mailto:info@crs.uz"
+                  href={`mailto:${siteConfig.email}`}
                   className="flex items-center gap-1.5 text-brand hover:text-brand-dark transition-colors"
                 >
                   <Mail size={14} />
-                  info@crs.uz
+                  {siteConfig.email}
                 </a>
               </div>
             </div>

@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: `О компании — ${siteConfig.name}`,
   description:
-    'Clean Room System — ведущий поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения для фармацевтики, пищевой, косметической промышленности и микроэлектроники.',
+    'Clean Room System — поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения GMP / ISO 14644 для фармы, пищёвки, косметики и микроэлектроники.',
   alternates: {
     canonical: `${siteConfig.url}/company/about`,
   },
@@ -26,6 +26,17 @@ const certifications = [
   'GMP — надлежащая производственная практика',
   'CE — подтверждение соответствия стандартам ЕС',
   'ГОСТ Р — соответствие национальным стандартам',
+];
+
+const partners = [
+  'IBC Nanotex',
+  'Contec',
+  'BIMOS',
+  'Terragene',
+  'Hydroflex',
+  'NPro',
+  'Isofield',
+  'Alsico',
 ];
 
 export default function AboutPage() {
@@ -129,14 +140,14 @@ export default function AboutPage() {
             расходных материалов для чистых помещений.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          {partners.map((partnerName) => (
             <div
-              key={i}
+              key={partnerName}
               className="h-[80px] bg-surface rounded-xl border border-surface-border flex items-center justify-center"
             >
-              <span className="text-[13px] text-text-muted">
-                Partner {i + 1}
+              <span className="text-[15px] font-semibold text-brand-dark">
+                {partnerName}
               </span>
             </div>
           ))}
@@ -196,18 +207,12 @@ export default function AboutPage() {
             Узбекистана выбирают Clean Room System.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-[80px] bg-surface rounded-xl border border-surface-border flex items-center justify-center"
-            >
-              <span className="text-[13px] text-text-muted">
-                Client {i + 1}
-              </span>
-            </div>
-          ))}
-        </div>
+        <p className="text-[16px] text-text leading-relaxed text-center max-w-[700px] mx-auto">
+          Среди наших клиентов — фармацевтические производства, резиденты Pharma
+          Park, лаборатории, пищевые и косметические производства Узбекистана.
+          Мы соблюдаем конфиденциальность партнёрских отношений и предоставляем
+          рекомендации по запросу.
+        </p>
       </section>
 
       {/* CTA */}
