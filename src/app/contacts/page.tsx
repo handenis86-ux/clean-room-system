@@ -24,7 +24,7 @@ export default function ContactsPage() {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: `${siteConfig.url}/og-image.png`,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/logo.png`,
     priceRange: '$$',
     address: {
       '@type': 'PostalAddress',

@@ -24,7 +24,7 @@ export const categories: ProductCategory[] = [
     slug: 'indicators',
     title: 'Индикаторы для стерилизации, дезинфекции и мойки',
     description: 'Биологические и химические индикаторы контроля процессов стерилизации, инкубаторы и аксессуары Terragene.',
-    image: '/images/categories/sterilization-kit.png',
+    image: '/images/categories/sterilization-kit.webp',
     products: [
       { name: 'BT23 Биоиндикатор', sku: 'BT23/6_BION_50', description: '2 мл / 48 часов. Автоклавирование (паровая стерилизация)',
         specs: [
@@ -652,7 +652,7 @@ export const categories: ProductCategory[] = [
     slug: 'disinfectants-and-detergents',
     title: 'Дезинфицирующие и моющие средства',
     description: 'Профессиональные средства Contec, Diversey, Neokhim для дезинфекции и CIP-мойки чистых помещений.',
-    image: '/images/categories/disinfectants.png',
+    image: '/images/categories/disinfectants.webp',
     products: [
       { name: 'Contec Sterile ProChlor (1L)', sku: 'SBT102PC', description: 'Стерильное спорицидное средство, уничтожает споры за 60 сек',
         specs: [
@@ -1084,7 +1084,7 @@ export const categories: ProductCategory[] = [
     slug: 'garments',
     title: 'Одежда одноразовая защитная',
     description: 'Одноразовые комбинезоны, халаты, шапочки, бахилы и маски для чистых помещений Isofield, NPro, Lakeland.',
-    image: '/images/categories/clothing.jpg',
+    image: '/images/categories/clothing.webp',
     products: [
       { name: 'Маска стерильная на завязках Isofield Tera 230', sku: '60131',
         description: 'Стерильная маска 230 мм на завязках, нетканый полиэстер, ISO 5 / GMP A-B, 500 шт/уп',
@@ -1467,7 +1467,7 @@ export const categories: ProductCategory[] = [
     slug: 'reusable-garm',
     title: 'Одежда многоразовая защитная',
     description: 'Многоразовые комбинезоны, халаты, бахилы и бельё Alsico High Tech и High Clean Stat II, включая ESD.',
-    image: '/images/categories/clothing.png',
+    image: '/images/categories/clothing.webp',
     products: [
       { name: 'Комбинезон ESD Alsico High Tech', sku: '1029552',
         description: 'Многоразовый ESD-комбинезон без капюшона, 98% полиэстер + 2% углеродное волокно, ISO 4-6 / GMP A-B, стирка и автоклавирование',
@@ -1650,7 +1650,7 @@ export const categories: ProductCategory[] = [
     slug: 'perchatki-zashchitnye',
     title: 'Перчатки защитные',
     description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific, Ansell.',
-    image: '/images/categories/gloves.png',
+    image: '/images/categories/gloves.webp',
     products: [
       { name: 'Isofield Gecko Nitrile Gloves', sku: '20830',
         specs: [
@@ -2070,7 +2070,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleaning-trolleys-systems',
     title: 'Уборочные тележки и системы насыщения',
     description: 'Модульные уборочные тележки Hydroflex Ergo и UNO, системы насыщения мопов Prepare и PurQuip.',
-    image: '/images/categories/cleaning-trolley.jpg',
+    image: '/images/categories/cleaning-trolley.webp',
     products: [
       { name: 'Модульная тележка 2.0 Ergo-S 320', sku: '2123025', description: 'Hydroflex, под заказ',
         specs: [
@@ -2446,7 +2446,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-wipes',
     title: 'Салфетки для чистых помещений',
     description: 'Сухие, стерильные и пропитанные салфетки Hydroflex PurWipe, Contec, NPro NGlide.',
-    image: '/images/categories/wipes.png',
+    image: '/images/categories/wipes.webp',
     products: [
       { name: 'Hydroflex PurWipe Premio 3030', sku: '2184001',
         description: 'Многоразовые тканые микрофибровые салфетки для чистых помещений ISO 5-8 / GMP A-D. Автоклавируемые, безворсовые, антистатические.',
@@ -2683,7 +2683,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleaning-cloth',
     title: 'Протирочный материал',
     description: 'Салфетки NPro NGlide в рулонах для протирки и сильных загрязнений в чистых помещениях.',
-    image: '/images/categories/wiping-cloth.png',
+    image: '/images/categories/wiping-cloth.webp',
     products: [
       { name: 'NGlide N5 универсальные в рулоне', sku: 'N5',
         description: 'Универсальный протирочный нетканый материал в рулоне из целлюлозы/полиэстера. Высокая прочность, низкое ворсоотделение, устойчивость к растворителям.',
@@ -2806,7 +2806,7 @@ export const categories: ProductCategory[] = [
     slug: 'goggles',
     title: 'Очки защитные',
     description: 'Одноразовые стерильные и многоразовые защитные очки NPro NView, Isofield Isoclave, Hydroflex PurGuard.',
-    image: '/images/categories/goggles.png',
+    image: '/images/categories/goggles.webp',
     products: [
       { name: 'NPro NView VC2 многоразовые закрытые', sku: 'VC2',
         specs: [
@@ -2982,7 +2982,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-shoes',
     title: 'Обувь для чистых помещений',
     description: 'Автоклавируемые сабо Rosato и WearerTech/Toffeln Protect для чистых помещений.',
-    image: '/images/categories/footwear.png',
+    image: '/images/categories/footwear.webp',
     products: [
       { name: 'Автоклавируемые сабо Rosato Secure Strap', sku: '40',
         description: 'Автоклавируемые антистатические сабо из полимерной резины без латекса, ISO 4-8 / GMP A-D, размеры EU 34-47',
@@ -3057,7 +3057,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-chairs',
     title: 'Стулья для чистых помещений',
     description: 'Лабораторные и ESD-стулья BIMOS: Labsit, Nexxit, Neon, Flex, Fin, Allround, Basic.',
-    image: '/images/categories/cleanroom-chair.png',
+    image: '/images/categories/cleanroom-chair.webp',
     products: [
       { name: 'BIMOS Labsit 2', sku: '9123',
         description: 'Лабораторный стул с технологией 3D-Flex, антимикробная искусственная кожа, ISO 4 / GMP A-B, высота 450–650 мм',
@@ -3479,7 +3479,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-sticky-mats',
     title: 'Липкие коврики',
     description: 'Липкие маты CELOS pure11 для удаления загрязнений на входах в чистые помещения.',
-    image: '/images/categories/sticky-mat.jpg',
+    image: '/images/categories/sticky-mat.webp',
     products: [
       { name: 'CELOS pure11 L30-8 (66×114 см, 30 листов)', sku: '08041',
         description: 'Многослойный антибактериальный липкий коврик для чистых помещений, 66×114 см, 30 листов, встроенный индикатор листов',
@@ -3556,7 +3556,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-dispensers',
     title: 'Диспенсеры',
     description: 'Диспенсеры Tinman для перчаток, расходных материалов и бутылок в чистых помещениях.',
-    image: '/images/categories/dispenser.jpg',
+    image: '/images/categories/dispenser.webp',
     products: [
       { name: 'Tinman B1DG диспенсер для перчаток', sku: 'B1DG',
         description: 'Диспенсер из полированной нержавеющей стали для одной коробки перчаток, ISO 4 / GMP A-B',

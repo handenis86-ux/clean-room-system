@@ -13,7 +13,7 @@ export default function Logo({ variant = 'default', className = '' }: LogoProps)
   return (
     <Link href="/" className={`inline-flex items-center ${className}`} aria-label="Clean Room Systems">
       <Image
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt="Clean Room Systems"
         width={height * 4}
         height={height}

@@ -102,7 +102,7 @@ export default function AboutPage() {
           {/* Right */}
           <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
-              src="/images/about/team-2.png"
+              src="/images/about/team-2.webp"
               alt="Команда Clean Room System"
               width={500}
               height={450}
@@ -160,7 +160,7 @@ export default function AboutPage() {
           {/* Left: Certificate image */}
           <div className="flex-shrink-0 w-full lg:w-auto">
             <Image
-              src="/images/about/certificate.png"
+              src="/images/about/certificate.webp"
               alt="Сертификаты Clean Room System"
               width={400}
               height={350}

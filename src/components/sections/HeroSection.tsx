@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section className="relative min-h-[500px] overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/hero/hero-bg.png"
+        src="/images/hero/hero-bg.webp"
         alt="Чистое помещение — профессиональное оснащение"
         fill
         className="object-cover"

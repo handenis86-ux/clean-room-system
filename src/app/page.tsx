@@ -30,7 +30,7 @@ const jsonLd = {
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.png`,
+  logo: `${siteConfig.url}/images/logo.png`,
   image: `${siteConfig.url}/og-image.png`,
   telephone: siteConfig.phone,
   email: siteConfig.email,

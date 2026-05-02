@@ -64,7 +64,7 @@ export default function AboutPreviewSection() {
             <div className="flex justify-center">
               <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/about/team-1.png"
+                  src="/images/about/team-1.webp"
                   alt="Специалисты в чистом помещении"
                   fill
                   className="object-cover"

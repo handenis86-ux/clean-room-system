@@ -28,7 +28,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Подробный разбор международного стандарта ISO 14644: классы чистоты от ISO 1 до ISO 9, методы измерения концентрации частиц и практические рекомендации по определению класса вашего помещения.',
     category: 'Стандарты и регламенты',
-    image: '/images/blog/cleanroom-iso.png',
+    image: '/images/blog/cleanroom-iso.webp',
     publishedAt: '2026-03-20',
     readingTime: 12,
     tableOfContents: [
@@ -91,7 +91,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Какие требования предъявляются к одежде для чистых помещений различных классов? Разбираем типы тканей, правила одевания и снятия, а также частоту замены и стирки спецодежды.',
     category: 'Оборудование',
-    image: '/images/blog/clothing-requirements.png',
+    image: '/images/blog/clothing-requirements.webp',
     publishedAt: '2026-03-10',
     readingTime: 9,
     tableOfContents: [
@@ -130,7 +130,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Обзор современных дезинфицирующих средств для фармацевтических чистых помещений: спороцидные, бактерицидные и фунгицидные препараты, ротация и валидация эффективности.',
     category: 'Технологии',
-    image: '/images/blog/disinfectants-pharma.png',
+    image: '/images/blog/disinfectants-pharma.webp',
     publishedAt: '2026-02-25',
     readingTime: 11,
     tableOfContents: [
@@ -170,7 +170,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Всё о требованиях GMP к чистым помещениям фармацевтических производств: классы A, B, C, D, нормы по микробиологической чистоте, требования к персоналу и документации.',
     category: 'Стандарты и регламенты',
-    image: '/images/blog/gmp-standards.png',
+    image: '/images/blog/gmp-standards.webp',
     publishedAt: '2026-02-10',
     readingTime: 14,
     tableOfContents: [
@@ -220,7 +220,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Какие параметры необходимо контролировать в чистом помещении: счетная концентрация частиц, перепад давления, температура, влажность. Оборудование и методы непрерывного мониторинга.',
     category: 'Технологии',
-    image: '/images/blog/monitoring.png',
+    image: '/images/blog/monitoring.webp',
     publishedAt: '2026-01-28',
     readingTime: 10,
     tableOfContents: [
@@ -254,7 +254,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Практическое руководство по уборке чистых помещений: протоколы ежедневной и генеральной уборки, выбор моющих средств, инвентарь, обучение клинингового персонала.',
     category: 'Технологии',
-    image: '/images/blog/cleaning-maintenance.png',
+    image: '/images/blog/cleaning-maintenance.webp',
     publishedAt: '2026-01-15',
     readingTime: 8,
     tableOfContents: [
@@ -288,7 +288,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Как работают высокоэффективные фильтры HEPA и ULPA, в чем их различие, как правильно выбрать фильтр для вашего чистого помещения и когда необходима замена.',
     category: 'Оборудование',
-    image: '/images/blog/hepa-filters.png',
+    image: '/images/blog/hepa-filters.webp',
     publishedAt: '2026-01-05',
     readingTime: 10,
     tableOfContents: [
@@ -318,7 +318,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Обзор типов передаточных окон (pass-through) и воздушных шлюзов для чистых помещений: статические, динамические, с HEPA-фильтрацией, с УФ-обеззараживанием.',
     category: 'Оборудование',
-    image: '/images/blog/pass-through.png',
+    image: '/images/blog/pass-through.webp',
     publishedAt: '2025-12-20',
     readingTime: 7,
     tableOfContents: [
@@ -348,7 +348,7 @@ export const articles: BlogArticle[] = [
     excerpt:
       'Этапы квалификации чистых помещений: DQ, IQ, OQ, PQ. Что включают протоколы валидации и как подготовиться к инспекции надзорных органов.',
     category: 'Стандарты и регламенты',
-    image: '/images/blog/validation.png',
+    image: '/images/blog/validation.webp',
     publishedAt: '2025-12-05',
     readingTime: 13,
     tableOfContents: [
