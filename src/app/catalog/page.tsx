@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 import { categories } from '@/data/products';
 import { siteConfig, phoneTel } from '@/config/site';
-import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Каталог расходных материалов для чистых помещений | Узбекистан',
