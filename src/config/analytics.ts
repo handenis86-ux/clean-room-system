@@ -9,6 +9,6 @@
 
 export const analytics = {
   gtmId: 'GTM-KZFL6BZQ',
-  ga4Id: '',          // 'G-XXXXXXXXXX' — можно не заполнять если используешь GTM (GTM сам подключит GA4)
+  ga4Id: 'G-VPC23RG1LT',
   yandexMetrikaId: '', // '12345678'
 };
