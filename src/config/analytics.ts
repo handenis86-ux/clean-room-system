@@ -10,5 +10,5 @@
 export const analytics = {
   gtmId: 'GTM-KZFL6BZQ',
   ga4Id: 'G-VPC23RG1LT',
-  yandexMetrikaId: '', // '12345678'
+  yandexMetrikaId: '109020233',
 };
