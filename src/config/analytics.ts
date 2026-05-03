@@ -8,7 +8,7 @@
  */
 
 export const analytics = {
-  gtmId: '',          // 'GTM-XXXXXXX'
+  gtmId: 'GTM-KZFL6BZQ',
   ga4Id: '',          // 'G-XXXXXXXXXX' — можно не заполнять если используешь GTM (GTM сам подключит GA4)
   yandexMetrikaId: '', // '12345678'
 };
