@@ -3,6 +3,12 @@ import { Inter } from 'next/font/google';
 import { siteConfig } from '@/config/site';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import {
+  GoogleTagManagerHead,
+  GoogleTagManagerNoScript,
+} from '@/components/analytics/GoogleTagManager';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { YandexMetrika } from '@/components/analytics/YandexMetrika';
 import './globals.css';
 
 const inter = Inter({
@@ -65,7 +71,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={inter.variable}>
+      <head>
+        <GoogleTagManagerHead />
+        <GoogleAnalytics />
+        <YandexMetrika />
+      </head>
       <body className="min-h-screen flex flex-col">
+        <GoogleTagManagerNoScript />
         <Header />
         <main className="flex-grow pt-[73px]">{children}</main>
         <Footer />
