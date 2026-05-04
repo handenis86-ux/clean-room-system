@@ -1,8 +1,12 @@
 const partners = [
+  'IBC Nanotex',
   'Contec',
-  'Alsico',
+  'BIMOS',
   'Terragene',
-  'NPRO',
+  'Hydroflex',
+  'NPro',
+  'Isofield',
+  'Alsico',
 ];
 
 export default function PartnersSection() {
@@ -14,15 +18,15 @@ export default function PartnersSection() {
             + НАШИ ПАРТНЁРЫ
           </span>
           <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3">
-            Официальный дистрибьютор ведущих брендов
+            Работаем с ведущими брендами для чистых помещений
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
           {partners.map((brand) => (
             <div
               key={brand}
-              className="w-full max-w-[180px] h-[100px] rounded-xl bg-surface border border-surface-border flex items-center justify-center"
+              className="w-full max-w-[200px] h-[100px] rounded-xl bg-surface border border-surface-border flex items-center justify-center"
             >
               <span className="text-[18px] font-bold text-text-dark">
                 {brand}
