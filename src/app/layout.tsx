@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { siteConfig } from '@/config/site';
 import Header from '@/components/layout/Header';
@@ -17,8 +17,15 @@ const inter = Inter({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#00608A',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  manifest: '/site.webmanifest',
   title: {
     default: `${siteConfig.name} — поставщик расходников для чистых помещений в Узбекистане`,
     template: `%s | ${siteConfig.name}`,

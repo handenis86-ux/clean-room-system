@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
+  '@id': `${siteConfig.url}/#localbusiness`,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,

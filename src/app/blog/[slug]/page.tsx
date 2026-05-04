@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : `${siteConfig.url}${article.image}`;
 
   return {
-    title: `${article.title} | ${siteConfig.name}`,
+    title: article.title,
     description: article.excerpt,
     alternates: {
       canonical: `${siteConfig.url}/blog/${article.slug}`,

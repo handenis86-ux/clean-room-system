@@ -47,17 +47,42 @@ function inferBrand(name: string, sku: string): string {
   return 'Clean Room Systems';
 }
 
+function truncate(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const slice = text.slice(0, max);
+  const lastSpace = slice.lastIndexOf(' ');
+  return (lastSpace > max * 0.6 ? slice.slice(0, lastSpace) : slice) + '…';
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = getProductBySlug(params.category, params.product);
   if (!result) return { title: 'Товар не найден' };
   const { product, category } = result;
   const baseDesc = product.description || category.description;
   const description = `${baseDesc} Купить в Ташкенте — поставка по Узбекистану для GMP-производств и чистых помещений ISO 14644.`;
+  const title = `${product.name} | ${category.title} | купить в Ташкенте`;
+  const truncatedDescription = truncate(description, 200);
+  const productImage = getProductImage(product.sku);
+  const ogImageUrl = productImage
+    ? `${siteConfig.url}${productImage}`
+    : `${siteConfig.url}/og-image.png`;
   return {
-    title: `${product.name} | ${category.title} | купить в Ташкенте`,
-    description: description.slice(0, 200),
+    title,
+    description: truncatedDescription,
     alternates: {
       canonical: `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`,
+    },
+    openGraph: {
+      title,
+      description: truncatedDescription,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 800,
+          height: 800,
+          alt: product.name,
+        },
+      ],
     },
   };
 }
@@ -78,6 +103,38 @@ export default function ProductPage({ params }: Props) {
     .slice(0, 5);
 
   const productUrl = `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`;
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Главная',
+        item: `${siteConfig.url}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Каталог',
+        item: `${siteConfig.url}/catalog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: category.title,
+        item: `${siteConfig.url}/catalog/${category.slug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: product.name,
+        item: productUrl,
+      },
+    ],
+  };
+
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -112,6 +169,10 @@ export default function ProductPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Breadcrumbs */}

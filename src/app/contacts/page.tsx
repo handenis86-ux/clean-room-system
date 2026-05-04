@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, phoneTel } from '@/config/site';
 import ContactPageForm from '@/components/forms/ContactPageForm';
+import MapEmbed from '@/components/ui/MapEmbed';
 
 export const metadata: Metadata = {
   title: 'Контакты | Поставщик расходников для чистых помещений в Ташкенте',
@@ -169,18 +170,12 @@ export default function ContactsPage() {
 
       {/* Map */}
       <section className="relative h-[350px] w-full bg-gray-200">
-        <iframe
+        <MapEmbed
           src="https://yandex.ru/map-widget/v1/?ll=69.251543%2C41.310247&z=16&pt=69.251543%2C41.310247%2Cpm2rdm"
-          width="100%"
-          height="100%"
-          className="w-full h-full"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
           title="Clean Room Systems на карте"
         />
         {/* Overlay card */}
-        <div className="absolute bottom-6 left-4 lg:left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
+        <div className="pointer-events-none absolute bottom-6 left-4 lg:left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
           <p className="text-[16px] font-bold text-text-dark mb-1">
             Clean Room Systems
           </p>

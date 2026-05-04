@@ -85,7 +85,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-[#00608A] hover:text-[#005070] rounded-md transition-colors"
+              className="lg:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] p-3 text-[#00608A] hover:text-[#005070] rounded-md transition-colors"
               aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

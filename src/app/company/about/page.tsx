@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: `О компании — ${siteConfig.name}`,
+  title: 'О компании',
   description:
     'Clean Room Systems — поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения GMP / ISO 14644 для фармы, пищёвки, косметики и микроэлектроники.',
   alternates: {

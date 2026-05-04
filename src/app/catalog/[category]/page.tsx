@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(params.category);
   if (!category) return { title: 'Категория не найдена' };
   return {
-    title: `${category.title} для чистых помещений | ${siteConfig.name}`,
+    title: `${category.title} для чистых помещений`,
     description: `${category.description} Поставка в Ташкенте и по Узбекистану — для GMP-производств, лабораторий и чистых помещений ISO 14644.`,
     alternates: {
       canonical: `${siteConfig.url}/catalog/${category.slug}`,
@@ -53,11 +53,40 @@ export default function CategoryPage({ params }: Props) {
     })),
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Главная',
+        item: `${siteConfig.url}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Каталог',
+        item: `${siteConfig.url}/catalog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: category.title,
+        item: `${siteConfig.url}/catalog/${category.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Hero */}

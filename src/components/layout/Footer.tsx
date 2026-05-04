@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div>
             <Logo variant="footer" />
-            <p className="mt-4 text-[13px] font-normal text-[#888888] leading-[1.5] max-w-xs">
+            <p className="mt-4 text-[14px] font-normal text-[#888888] leading-[1.5] max-w-xs">
               Одежда и расходные материалы для чистых
               помещений. Решения для фармацевтики, пищевой,
               косметической промышленности и микроэлектроники.
@@ -20,13 +20,13 @@ export default function Footer() {
 
           {/* Column 2: Каталог */}
           <div>
-            <h3 className="text-[13px] font-bold text-white mb-4">Каталог</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">Каталог</h3>
             <ul className="flex flex-col gap-[12px]">
               {footerNavigation.catalog.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                    className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -37,13 +37,13 @@ export default function Footer() {
 
           {/* Column 3: Компания */}
           <div>
-            <h3 className="text-[13px] font-bold text-white mb-4">Компания</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">Компания</h3>
             <ul className="flex flex-col gap-[12px]">
               {footerNavigation.company.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                    className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -54,12 +54,12 @@ export default function Footer() {
 
           {/* Column 4: Контакты */}
           <div>
-            <h3 className="text-[13px] font-bold text-white mb-4">Контакты</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">Контакты</h3>
             <ul className="flex flex-col gap-[12px]">
               <li>
                 <a
                   href={`tel:${phoneTel}`}
-                  className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                  className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
@@ -67,13 +67,13 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+                  className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                 >
                   {siteConfig.email}
                 </a>
               </li>
               <li>
-                <span className="text-[13px] font-normal text-[#888888]">
+                <span className="text-sm font-normal text-[#888888]">
                   {siteConfig.address}
                 </span>
               </li>
@@ -83,12 +83,12 @@ export default function Footer() {
 
         {/* Bottom bar — 60px gap from top section */}
         <div className="mt-[60px] flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-[13px] font-normal text-[#888888]">
+          <p className="text-sm font-normal text-[#888888]">
             &copy; 2026 {siteConfig.name}. Все права защищены.
           </p>
           <Link
             href="/privacy"
-            className="text-[13px] font-normal text-[#888888] hover:text-white transition-colors"
+            className="text-sm font-normal text-[#888888] hover:text-white transition-colors"
           >
             Политика конфиденциальности
           </Link>
