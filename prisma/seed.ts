@@ -139,32 +139,6 @@ async function main() {
     console.log('Created clothing products:', products.length);
   }
 
-  if (glovesCategory) {
-    const products = [
-      {
-        name: 'Перчатки нитриловые стерильные Ansell',
-        slug: 'perchatki-nitrilovye-ansell',
-        description: 'Стерильные нитриловые перчатки Ansell для работы в чистых помещениях класса ISO 5 и выше.',
-        price: 1800,
-        sku: 'GLV-002',
-        categoryId: glovesCategory.id,
-        inStock: true,
-        isFeatured: true,
-        metaTitle: 'Перчатки нитриловые Ansell | Clean Room Systems',
-        metaDescription: 'Стерильные нитриловые перчатки Ansell. Для чистых помещений ISO 5+.',
-      },
-    ];
-
-    for (const product of products) {
-      await prisma.product.upsert({
-        where: { slug: product.slug },
-        update: product,
-        create: product,
-      });
-    }
-    console.log('Created gloves products:', products.length);
-  }
-
   // Create articles
   const articles = [
     {
@@ -231,11 +205,9 @@ async function main() {
 
   // Create partners
   const partners = [
-    { name: 'Ansell', logo: '/images/partners/ansell.png', type: 'supplier', order: 1 },
-    { name: 'Kimberly-Clark', logo: '/images/partners/kimberly.png', type: 'supplier', order: 2 },
-    { name: 'DuPont', logo: '/images/partners/dupont.png', type: 'supplier', order: 3 },
-    { name: '3M', logo: '/images/partners/3m.png', type: 'supplier', order: 4 },
-    { name: 'Texwipe', logo: '/images/partners/texwipe.png', type: 'supplier', order: 5 },
+    { name: 'DuPont', logo: '/images/partners/dupont.png', type: 'supplier', order: 1 },
+    { name: '3M', logo: '/images/partners/3m.png', type: 'supplier', order: 2 },
+    { name: 'Texwipe', logo: '/images/partners/texwipe.png', type: 'supplier', order: 3 },
   ];
 
   for (const partner of partners) {

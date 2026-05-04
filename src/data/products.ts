@@ -1649,7 +1649,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'perchatki-zashchitnye',
     title: 'Перчатки защитные',
-    description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific, Ansell.',
+    description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific.',
     image: '/images/categories/gloves.webp',
     products: [
       { name: 'Isofield Gecko Nitrile Gloves', sku: '20830',

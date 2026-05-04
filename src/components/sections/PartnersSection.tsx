@@ -2,8 +2,6 @@ const partners = [
   'Contec',
   'Alsico',
   'Terragene',
-  'Kimberly-Clark',
-  'Ansell',
   'NPRO',
 ];
 

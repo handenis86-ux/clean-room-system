@@ -28,7 +28,7 @@ const mockProducts = [
   },
   {
     id: '2',
-    name: 'Перчатки нитриловые стерильные Ansell',
+    name: 'Перчатки нитриловые стерильные',
     sku: 'GLV-002',
     price: 1800,
     category: 'Перчатки',
