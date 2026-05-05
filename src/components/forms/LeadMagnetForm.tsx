@@ -107,9 +107,9 @@ export default function LeadMagnetForm({
         page_url:
           typeof window !== 'undefined' ? window.location.href : '',
       };
-      if (formsConfig.turnstileSiteKey && turnstileToken) {
-        payload['cf-turnstile-response'] = turnstileToken;
-      }
+      // Turnstile is a client-side UX gate only — Web3Forms requires Pro
+      // to validate it server-side. Honeypot + JS-required widget still
+      // filter basic bots.
 
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
