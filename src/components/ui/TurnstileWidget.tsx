@@ -26,20 +26,31 @@ export default function TurnstileWidget({
 }: TurnstileWidgetProps) {
   const ref = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const onVerifyRef = useRef(onVerify);
+
+  // Keep callback ref fresh without triggering effect re-run.
+  useEffect(() => {
+    onVerifyRef.current = onVerify;
+  }, [onVerify]);
 
   useEffect(() => {
     if (!siteKey) return;
 
+    let cancelled = false;
+
     const renderWidget = () => {
+      if (cancelled) return;
       if (!ref.current || !window.turnstile) return;
+      if (widgetIdRef.current) return;
       widgetIdRef.current = window.turnstile.render(ref.current, {
         sitekey: siteKey,
-        callback: onVerify,
+        callback: (token: string) => onVerifyRef.current(token),
+        'expired-callback': () => onVerifyRef.current(''),
+        'error-callback': () => onVerifyRef.current(''),
         theme,
       });
     };
 
-    // Подгрузка скрипта Turnstile если ещё нет
     if (!window.turnstile) {
       const existing = document.querySelector(
         'script[src*="challenges.cloudflare.com/turnstile"]'
@@ -53,7 +64,6 @@ export default function TurnstileWidget({
         window.onTurnstileLoad = renderWidget;
         document.head.appendChild(script);
       } else {
-        // Скрипт грузится в этот момент — подождём через onload
         window.onTurnstileLoad = renderWidget;
       }
     } else {
@@ -61,15 +71,17 @@ export default function TurnstileWidget({
     }
 
     return () => {
+      cancelled = true;
       if (widgetIdRef.current && window.turnstile) {
         try {
           window.turnstile.remove(widgetIdRef.current);
         } catch {
           /* noop */
         }
+        widgetIdRef.current = null;
       }
     };
-  }, [siteKey, theme, onVerify]);
+  }, [siteKey, theme]);
 
   if (!siteKey) return null;
 
