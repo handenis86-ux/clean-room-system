@@ -2,13 +2,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Phone } from 'lucide-react';
+import { Phone, ShieldCheck } from 'lucide-react';
 import {
   categories,
   getCategoryBySlug,
   getAllCategorySlugs,
   productSlug,
 } from '@/data/products';
+import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
 import ProductGrid from './ProductGrid';
 
@@ -38,6 +39,8 @@ export default function CategoryPage({ params }: Props) {
   if (!category) {
     notFound();
   }
+
+  const annex1Refs = gmpAnnex1Mapping[category.slug] || [];
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -108,6 +111,17 @@ export default function CategoryPage({ params }: Props) {
         <p className="text-[16px] text-brand max-w-[700px] mt-3">
           {category.description}
         </p>
+        {annex1Refs.length > 0 && (
+          <div className="mt-6 inline-flex items-start gap-2 px-4 py-2.5 bg-brand-light/40 rounded-lg text-[13px] text-brand-dark">
+            <ShieldCheck size={16} className="shrink-0 mt-0.5" />
+            <span>
+              Категория покрывает разделы EU GMP Annex 1 (2022):{' '}
+              <strong>
+                {annex1Refs.map((r) => r.section).join(', ')}
+              </strong>
+            </span>
+          </div>
+        )}
       </section>
 
       {/* Product Grid with Search */}

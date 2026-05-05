@@ -2,13 +2,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Phone, Mail, Package, FileText, ChevronRight } from 'lucide-react';
+import { Phone, Mail, Package, FileText, ChevronRight, ShieldCheck } from 'lucide-react';
 import {
   categories,
   getProductBySlug,
   productSlug,
 } from '@/data/products';
 import { getProductImage } from '@/data/product-images';
+import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
 
 interface Props {
@@ -96,6 +97,7 @@ export default function ProductPage({ params }: Props) {
 
   const { category, product } = result;
   const productImage = getProductImage(product.sku);
+  const annex1Refs = gmpAnnex1Mapping[category.slug] || [];
 
   // Other products in the same category (exclude current)
   const otherProducts = category.products
@@ -332,6 +334,40 @@ export default function ProductPage({ params }: Props) {
                     </span>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {/* GMP Annex 1 (2022) compliance */}
+            {annex1Refs.length > 0 && (
+              <div className="mt-6 p-5 bg-brand-light/30 border border-brand-light rounded-xl">
+                <h3 className="text-[16px] font-bold text-brand-dark mb-4 flex items-center gap-2">
+                  <ShieldCheck size={18} className="text-brand" />
+                  Соответствие EU GMP Annex 1 (2022)
+                </h3>
+                <ul className="space-y-3">
+                  {annex1Refs.map((ref) => (
+                    <li key={ref.section} className="text-[14px]">
+                      <div className="flex items-start gap-2.5">
+                        <span className="font-bold text-brand-dark whitespace-nowrap">
+                          {ref.section}
+                        </span>
+                        <div>
+                          <p className="font-semibold text-text-dark">
+                            {ref.title}
+                          </p>
+                          <p className="text-text-muted text-[13px] mt-0.5 leading-relaxed">
+                            {ref.relevance}
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 pt-3 border-t border-brand-light/50 text-[12px] text-text-muted leading-relaxed">
+                  Маппинг приведён для общего понимания применимости продукции.
+                  Финальное подтверждение соответствия — на стороне QA вашего
+                  предприятия в составе валидационного пакета.
+                </p>
               </div>
             )}
 
