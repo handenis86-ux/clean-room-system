@@ -63,6 +63,7 @@ export const footerNavigation = {
   ],
   support: [
     { label: 'Доставка и оплата', href: '/delivery' },
+    { label: 'GMP чек-лист 2027', href: '/resources/gmp-audit-checklist' },
     { label: 'Политика конфиденциальности', href: '/privacy' },
   ],
 };

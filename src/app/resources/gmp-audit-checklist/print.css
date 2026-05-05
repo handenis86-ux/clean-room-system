@@ -1,0 +1,162 @@
+/* Long-form content styling — applies always */
+.prose-content {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #2b2f33;
+}
+
+.prose-content p {
+  margin-bottom: 1em;
+}
+
+.prose-content h2 {
+  scroll-margin-top: 100px;
+}
+
+.prose-content h3 {
+  scroll-margin-top: 100px;
+}
+
+.prose-content strong {
+  color: #0d1418;
+  font-weight: 600;
+}
+
+.prose-content ol > li,
+.prose-content ul > li {
+  line-height: 1.7;
+}
+
+/* Print styles — Ctrl+P → save as PDF */
+@media print {
+  /* Hide chrome */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print,
+  /* Floating contact buttons (rendered as direct children of <body>) */
+  body > div.fixed,
+  body > a.fixed,
+  body > [class*="fixed"],
+  [class*="FloatingContactButtons"],
+  [class*="floating-contact"] {
+    display: none !important;
+  }
+
+  /* Reset body / layout */
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Remove main padding inserted by RootLayout */
+  main {
+    padding: 0 !important;
+  }
+
+  /* Remove sticky behavior in print */
+  aside,
+  .sticky,
+  .lg\:sticky {
+    position: static !important;
+    top: auto !important;
+  }
+
+  /* Single column for print */
+  .grid {
+    display: block !important;
+  }
+
+  /* Remove backgrounds that waste ink */
+  .bg-surface,
+  .bg-surface\/50,
+  .no-print-bg {
+    background: transparent !important;
+  }
+
+  /* Container */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 22pt !important;
+    page-break-after: avoid;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    page-break-after: avoid;
+    page-break-before: auto;
+    margin-top: 1.4em !important;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    page-break-after: avoid;
+    margin-top: 1em !important;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  table {
+    page-break-inside: avoid;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #888 !important;
+    padding: 6pt !important;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  ul,
+  ol {
+    page-break-inside: avoid;
+  }
+
+  section {
+    page-break-inside: auto;
+    page-break-before: auto;
+  }
+
+  /* Show URLs after links inside body content */
+  article a[href]:not([href^="#"]):after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* Don't append URL to internal anchors / very short links */
+  article a[href^="/"]:after {
+    content: " (https://cleanroom.uz" attr(href) ")";
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* Pitfall + CTA blocks — keep readable but lighter */
+  .bg-amber-50 {
+    background: transparent !important;
+    border: 1px solid #888 !important;
+  }
+}
