@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Phone } from 'lucide-react';
 import { categories } from '@/data/products';
 import { siteConfig, phoneTel } from '@/config/site';
+import CatalogFilteredGrid from './CatalogFilteredGrid';
 
 export const metadata: Metadata = {
   title: 'Каталог расходных материалов для чистых помещений | Узбекистан',
@@ -36,44 +37,11 @@ export default function CatalogPage() {
         </p>
       </section>
 
-      {/* Product Grid */}
+      {/* Product Grid with filter */}
       <section className="py-12 px-4 lg:px-[80px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/catalog/${category.slug}`}
-              className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="relative h-[220px] w-full overflow-hidden bg-gray-50">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  fill
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-5 flex flex-col gap-2.5">
-                <h3 className="text-[18px] font-bold text-brand-dark line-clamp-1">
-                  {category.title}
-                </h3>
-                <p className="text-[14px] text-text leading-relaxed line-clamp-2">
-                  {category.description}
-                </p>
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-[13px] font-medium text-brand">
-                    {category.products.length}{' '}
-                    {pluralize(category.products.length, ['товар', 'товара', 'товаров'])}
-                  </span>
-                  <span className="text-[13px] font-semibold text-brand group-hover:translate-x-1 transition-transform">
-                    Смотреть &rarr;
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <Suspense fallback={null}>
+          <CatalogFilteredGrid categories={categories} />
+        </Suspense>
       </section>
 
       {/* CTA */}
@@ -108,10 +76,3 @@ export default function CatalogPage() {
   );
 }
 
-function pluralize(n: number, forms: [string, string, string]): string {
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return forms[0];
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return forms[1];
-  return forms[2];
-}

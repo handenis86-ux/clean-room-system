@@ -1,0 +1,115 @@
+/* Product card — print-to-PDF stylesheet */
+
+/* Hidden on screen */
+.product-print-header,
+.product-print-footer {
+  display: none;
+}
+
+@media print {
+  /* Hide site chrome */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print,
+  body > div.fixed,
+  body > [class*='fixed'] {
+    display: none !important;
+  }
+
+  /* Hide breadcrumbs section */
+  section.bg-brand-light.py-4 {
+    display: none !important;
+  }
+
+  /* Hide "other products in category" — last section */
+  section.bg-surface.py-12 {
+    display: none !important;
+  }
+
+  /* Reset page chrome */
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Show print-only header / footer */
+  .product-print-header,
+  .product-print-footer {
+    display: block !important;
+  }
+
+  .product-print-header {
+    border-bottom: 1pt solid #00608a;
+    padding: 8pt 0 10pt;
+    margin-bottom: 14pt;
+  }
+
+  .product-print-footer {
+    margin-top: 24pt;
+    padding-top: 8pt;
+    border-top: 1pt solid #ccc;
+    font-size: 9pt;
+    color: #555;
+    text-align: center;
+  }
+
+  /* Single-column layout for product details */
+  .product-page-grid {
+    display: block !important;
+  }
+
+  .product-page-grid > div:first-child {
+    width: 100% !important;
+    max-width: 220pt !important;
+    margin: 0 auto 14pt !important;
+  }
+
+  .product-page-grid > div:last-child {
+    width: 100% !important;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 18pt !important;
+    page-break-after: avoid;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Tables / blocks not to break across pages */
+  .specs-table,
+  .standards-block > div > div {
+    page-break-inside: avoid;
+  }
+
+  /* Append URLs after links */
+  a[href]:after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* Don't print URL after fragment / button-like links */
+  a[href^='#']:after,
+  a.no-print-url:after {
+    content: '' !important;
+  }
+
+  @page {
+    margin: 12mm 14mm;
+  }
+}

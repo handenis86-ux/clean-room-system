@@ -9,7 +9,10 @@ import {
   getAllCategorySlugs,
   productSlug,
 } from '@/data/products';
-import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
+import {
+  STANDARDS,
+  getStandardsForCategory,
+} from '@/data/standards-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
 import ProductGrid from './ProductGrid';
 
@@ -40,7 +43,10 @@ export default function CategoryPage({ params }: Props) {
     notFound();
   }
 
-  const annex1Refs = gmpAnnex1Mapping[category.slug] || [];
+  const stdsForCategory = getStandardsForCategory(category.slug);
+  const stdLabels = stdsForCategory
+    .map((id) => STANDARDS[id].shortName)
+    .join(' · ');
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -111,14 +117,12 @@ export default function CategoryPage({ params }: Props) {
         <p className="text-[16px] text-brand max-w-[700px] mt-3">
           {category.description}
         </p>
-        {annex1Refs.length > 0 && (
+        {stdsForCategory.length > 0 && (
           <div className="mt-6 inline-flex items-start gap-2 px-4 py-2.5 bg-brand-light/40 rounded-lg text-[13px] text-brand-dark">
             <ShieldCheck size={16} className="shrink-0 mt-0.5" />
             <span>
-              Категория покрывает разделы EU GMP Annex 1 (2022):{' '}
-              <strong>
-                {annex1Refs.map((r) => r.section).join(', ')}
-              </strong>
+              Категория покрывает стандарты:{' '}
+              <strong>{stdLabels}</strong>
             </span>
           </div>
         )}

@@ -9,8 +9,14 @@ import {
   productSlug,
 } from '@/data/products';
 import { getProductImage } from '@/data/product-images';
-import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
+import {
+  STANDARDS,
+  getStandardsForCategory,
+  getRefsByStandard,
+} from '@/data/standards-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
+import PrintProductButton from './PrintProductButton';
+import './print.css';
 
 interface Props {
   params: { category: string; product: string };
@@ -97,7 +103,7 @@ export default function ProductPage({ params }: Props) {
 
   const { category, product } = result;
   const productImage = getProductImage(product.sku);
-  const annex1Refs = gmpAnnex1Mapping[category.slug] || [];
+  const stdsForCategory = getStandardsForCategory(category.slug);
 
   // Other products in the same category (exclude current)
   const otherProducts = category.products
@@ -199,9 +205,44 @@ export default function ProductPage({ params }: Props) {
         </nav>
       </section>
 
+      {/* Print-only header — visible only when printing */}
+      <div className="product-print-header">
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            padding: '0 14mm',
+          }}
+        >
+          <div>
+            <strong style={{ fontSize: '14pt', color: '#00608A' }}>
+              Clean Room Systems
+            </strong>
+            <div style={{ fontSize: '9pt', color: '#666', marginTop: '2pt' }}>
+              Поставщик расходных материалов для чистых помещений
+              <br />
+              cleanroom.uz · {siteConfig.phone} · {siteConfig.email}
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: '9pt',
+              color: '#666',
+              textAlign: 'right',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Карточка товара
+            <br />
+            Арт. {product.sku}
+          </div>
+        </div>
+      </div>
+
       {/* Main content */}
       <section className="py-10 px-4 lg:px-[80px]">
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-10 product-page-grid">
           {/* LEFT — Image */}
           <div className="lg:w-[45%] shrink-0">
             <div className="relative aspect-square w-full bg-white rounded-xl border border-surface-stroke overflow-hidden flex items-center justify-center">
@@ -337,34 +378,53 @@ export default function ProductPage({ params }: Props) {
               </div>
             )}
 
-            {/* GMP Annex 1 (2022) compliance */}
-            {annex1Refs.length > 0 && (
-              <div className="mt-6 p-5 bg-brand-light/30 border border-brand-light rounded-xl">
+            {/* Standards compliance */}
+            {stdsForCategory.length > 0 && (
+              <div className="mt-6 standards-block">
                 <h3 className="text-[16px] font-bold text-brand-dark mb-4 flex items-center gap-2">
                   <ShieldCheck size={18} className="text-brand" />
-                  Соответствие EU GMP Annex 1 (2022)
+                  Соответствие стандартам
                 </h3>
-                <ul className="space-y-3">
-                  {annex1Refs.map((ref) => (
-                    <li key={ref.section} className="text-[14px]">
-                      <div className="flex items-start gap-2.5">
-                        <span className="font-bold text-brand-dark whitespace-nowrap">
-                          {ref.section}
-                        </span>
-                        <div>
-                          <p className="font-semibold text-text-dark">
-                            {ref.title}
-                          </p>
-                          <p className="text-text-muted text-[13px] mt-0.5 leading-relaxed">
-                            {ref.relevance}
-                          </p>
-                        </div>
+                <div className="space-y-4">
+                  {stdsForCategory.map((stdId) => {
+                    const meta = STANDARDS[stdId];
+                    const refs = getRefsByStandard(category.slug, stdId);
+                    return (
+                      <div
+                        key={stdId}
+                        className="p-5 bg-brand-light/30 border border-brand-light rounded-xl"
+                      >
+                        <p className="text-[14px] font-bold text-brand-dark mb-1">
+                          {meta.shortName}
+                        </p>
+                        <p className="text-[12px] text-text-muted mb-3 leading-snug">
+                          {meta.fullName}
+                        </p>
+                        <ul className="space-y-2.5">
+                          {refs.map((ref) => (
+                            <li key={ref.section} className="text-[14px]">
+                              <div className="flex items-start gap-2.5">
+                                <span className="font-bold text-brand-dark whitespace-nowrap">
+                                  {ref.section}
+                                </span>
+                                <div>
+                                  <p className="font-semibold text-text-dark">
+                                    {ref.title}
+                                  </p>
+                                  <p className="text-text-muted text-[13px] mt-0.5 leading-relaxed">
+                                    {ref.relevance}
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-4 pt-3 border-t border-brand-light/50 text-[12px] text-text-muted leading-relaxed">
-                  Маппинг приведён для общего понимания применимости продукции.
+                    );
+                  })}
+                </div>
+                <p className="mt-4 text-[12px] text-text-muted leading-relaxed">
+                  Маппинг приведён для общего понимания применимости.
                   Финальное подтверждение соответствия — на стороне QA вашего
                   предприятия в составе валидационного пакета.
                 </p>
@@ -372,13 +432,14 @@ export default function ProductPage({ params }: Props) {
             )}
 
             {/* CTA */}
-            <div className="mt-4 flex flex-col gap-3">
+            <div className="mt-4 flex flex-col gap-3 no-print">
               <Link
                 href="/contacts"
                 className="w-full inline-flex items-center justify-center px-6 py-3.5 text-[15px] font-semibold text-white bg-brand rounded-lg hover:bg-brand-dark transition-colors"
               >
                 Запросить цену
               </Link>
+              <PrintProductButton />
               <div className="flex items-center justify-center gap-6 text-[14px]">
                 <a
                   href={`tel:${phoneTel}`}
@@ -445,6 +506,13 @@ export default function ProductPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Print-only footer */}
+      <div className="product-print-footer">
+        © 2026 Clean Room Systems · TOPAZ COMPANY · cleanroom.uz
+        <br />
+        Подбор продукции и КП — {siteConfig.email} · {siteConfig.phone}
+      </div>
     </>
   );
 }
