@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { formsConfig } from '@/config/forms';
+import TurnstileWidget from '@/components/ui/TurnstileWidget';
 
 interface FormFields {
   name: string;
@@ -64,6 +65,7 @@ export default function ContactPageForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -100,6 +102,10 @@ export default function ContactPageForm() {
       setError('Подтвердите согласие на обработку персональных данных.');
       return;
     }
+    if (formsConfig.turnstileSiteKey && !turnstileToken) {
+      setError('Подтвердите, что вы не робот.');
+      return;
+    }
 
     if (!formsConfig.web3formsAccessKey) {
       // eslint-disable-next-line no-console
@@ -117,7 +123,7 @@ export default function ContactPageForm() {
 
     setLoading(true);
     try {
-      const payload = {
+      const payload: Record<string, string> = {
         access_key: formsConfig.web3formsAccessKey,
         subject: 'Новая заявка с сайта cleanroom.uz',
         from_name: form.name,
@@ -131,6 +137,9 @@ export default function ContactPageForm() {
         page_url:
           typeof window !== 'undefined' ? window.location.href : '',
       };
+      if (formsConfig.turnstileSiteKey && turnstileToken) {
+        payload['cf-turnstile-response'] = turnstileToken;
+      }
 
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -165,6 +174,14 @@ export default function ContactPageForm() {
         botcheck: '',
       });
       setAgree(false);
+      setTurnstileToken('');
+      if (typeof window !== 'undefined' && window.turnstile) {
+        try {
+          window.turnstile.reset();
+        } catch {
+          /* noop */
+        }
+      }
     } catch (err: unknown) {
       setError(
         err instanceof Error
@@ -346,6 +363,13 @@ export default function ContactPageForm() {
           </Link>
         </span>
       </label>
+
+      {formsConfig.turnstileSiteKey && (
+        <TurnstileWidget
+          siteKey={formsConfig.turnstileSiteKey}
+          onVerify={(token) => setTurnstileToken(token)}
+        />
+      )}
 
       {error && (
         <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">

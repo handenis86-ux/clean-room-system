@@ -148,5 +148,6 @@ export interface SiteConfig {
     vk?: string;
     telegram?: string;
     youtube?: string;
+    whatsapp?: string;
   };
 }

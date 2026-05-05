@@ -10,6 +10,7 @@ export const siteConfig: SiteConfig = {
   social: {
     telegram: 'https://t.me/clean_room_systems',
     youtube: 'https://youtube.com/@clean_room_systems',
+    whatsapp: 'https://wa.me/998998211222',
   },
 };
 

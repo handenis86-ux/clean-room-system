@@ -1,15 +1,14 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Picture from '@/components/ui/Picture';
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[500px] overflow-hidden">
       {/* Background image */}
-      <Image
+      <Picture
         src="/images/hero/hero-bg.webp"
         alt="Чистое помещение — профессиональное оснащение"
         fill
-        className="object-cover"
         sizes="100vw"
         priority
       />
