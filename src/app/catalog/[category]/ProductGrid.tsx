@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Package, Search } from 'lucide-react';
 import { Product, productSlug } from '@/data/products';
 import { getProductImage } from '@/data/product-images';
+import CompareCheckbox from '@/components/compare/CompareCheckbox';
 
 interface ProductGridProps {
   products: Product[];
@@ -66,6 +67,13 @@ export default function ProductGrid({
               className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
               <div className="relative aspect-square w-full overflow-hidden bg-white flex items-center justify-center p-6">
+                <div className="absolute top-2 right-2 z-20">
+                  <CompareCheckbox
+                    sku={product.sku}
+                    name={product.name}
+                    categorySlug={categorySlug}
+                  />
+                </div>
                 {pImage ? (
                   <Image
                     src={pImage}

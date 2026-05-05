@@ -4,6 +4,8 @@ import { siteConfig } from '@/config/site';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FloatingContactButtons from '@/components/ui/FloatingContactButtons';
+import { CompareProvider } from '@/components/compare/CompareContext';
+import CompareBar from '@/components/compare/CompareBar';
 import {
   GoogleTagManagerHead,
   GoogleTagManagerNoScript,
@@ -86,10 +88,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen flex flex-col">
         <GoogleTagManagerNoScript />
-        <Header />
-        <main className="flex-grow pt-[73px] pb-[64px] lg:pb-0">{children}</main>
-        <Footer />
-        <FloatingContactButtons />
+        <CompareProvider>
+          <Header />
+          <main className="flex-grow pt-[73px] pb-[64px] lg:pb-0">{children}</main>
+          <Footer />
+          <FloatingContactButtons />
+          <CompareBar />
+        </CompareProvider>
       </body>
     </html>
   );

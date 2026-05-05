@@ -5,6 +5,7 @@ import { Phone } from 'lucide-react';
 import { categories } from '@/data/products';
 import { siteConfig, phoneTel } from '@/config/site';
 import CatalogFilteredGrid from './CatalogFilteredGrid';
+import CatalogSearch from './CatalogSearch';
 
 export const metadata: Metadata = {
   title: 'Каталог расходных материалов для чистых помещений | Узбекистан',
@@ -35,6 +36,13 @@ export default function CatalogPage() {
           мировых производителей: Contec, Alsico, Terragene, Hydroflex, NPro,
           Isofield, BIMOS и других.
         </p>
+
+        {/* Catalog search */}
+        <div className="mt-6">
+          <Suspense fallback={<div className="h-[44px] w-full max-w-[600px] bg-white rounded-lg" />}>
+            <CatalogSearch />
+          </Suspense>
+        </div>
       </section>
 
       {/* Product Grid with filter */}
