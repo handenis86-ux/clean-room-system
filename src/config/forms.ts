@@ -11,5 +11,5 @@ export const formsConfig = {
    * Затем: в Web3Forms dashboard включить Turnstile для access key и вставить Secret Key туда.
    * Пока ключ пустой — Turnstile не показывается, форма работает на одном honeypot.
    */
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAADJTO-znIjOvoy0P',
 };
