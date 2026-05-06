@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     'Узбекистан', 'Ташкент', 'Pharma Park', 'поставщик',
     'расходные материалы', 'фармацевтика',
   ],
+  verification: {
+    yandex: '492a0b96746d2356',
+  },
   alternates: {
     canonical: siteConfig.url,
     languages: {
