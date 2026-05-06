@@ -10,6 +10,7 @@ import PartnersSection from '@/components/sections/PartnersSection';
 import ClientsSection from '@/components/sections/ClientsSection';
 import CTASection from '@/components/sections/CTASection';
 import { siteConfig } from '@/config/site';
+import { localBusinessJsonLd } from '@/data/local-business-schema';
 
 export const metadata: Metadata = {
   title: `Поставщик расходников для чистых помещений в Узбекистане | ${siteConfig.name}`,
@@ -26,48 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': ['Organization', 'LocalBusiness'],
-  '@id': `${siteConfig.url}/#localbusiness`,
-  name: siteConfig.name,
-  description: siteConfig.description,
-  url: siteConfig.url,
-  logo: `${siteConfig.url}/images/logo.png`,
-  image: `${siteConfig.url}/og-image.png`,
-  telephone: siteConfig.phone,
-  email: siteConfig.email,
-  priceRange: '$$',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    contactType: 'sales',
-    areaServed: 'UZ',
-    availableLanguage: ['Russian', 'Uzbek'],
-  },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ул. Нукус, 85/1',
-    addressLocality: 'Ташкент',
-    addressCountry: 'UZ',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 41.2995,
-    longitude: 69.2401,
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '09:00',
-    closes: '18:00',
-  },
-  sameAs: [
-    siteConfig.social.telegram,
-    siteConfig.social.youtube,
-  ].filter(Boolean),
-};
+const jsonLd = localBusinessJsonLd;
 
 export default function HomePage() {
   return (

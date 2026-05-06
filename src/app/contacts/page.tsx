@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, phoneTel } from '@/config/site';
 import ContactPageForm from '@/components/forms/ContactPageForm';
 import MapEmbed from '@/components/ui/MapEmbed';
+import { localBusinessJsonLd } from '@/data/local-business-schema';
 
 export const metadata: Metadata = {
   title: 'Контакты | Поставщик расходников для чистых помещений в Ташкенте',
@@ -15,58 +16,11 @@ export const metadata: Metadata = {
 };
 
 export default function ContactsPage() {
-  const contactJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${siteConfig.url}/#localbusiness`,
-    name: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    image: `${siteConfig.url}/og-image.png`,
-    logo: `${siteConfig.url}/images/logo.png`,
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'ул. Нукус, 85/1',
-      addressLocality: 'Ташкент',
-      addressCountry: 'UZ',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 41.2995,
-      longitude: 69.2401,
-    },
-    areaServed: {
-      '@type': 'Country',
-      name: 'UZ',
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-        ],
-        opens: '09:00',
-        closes: '18:00',
-      },
-    ],
-    sameAs: [
-      siteConfig.social.telegram,
-      siteConfig.social.youtube,
-    ].filter(Boolean),
-  };
-
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
 
       {/* Hero */}
