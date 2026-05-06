@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { Search, X } from 'lucide-react';
 import { categories, productSlug } from '@/data/products';
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
 interface SearchResult {
   name: string;
   sku: string;
@@ -65,6 +71,24 @@ export default function CatalogSearch() {
       document.removeEventListener('keydown', handleKey);
     };
   }, []);
+
+  // Push internal site_search events to dataLayer (debounced 600ms after typing
+  // stops). GA4 + Yandex.Metrika pick this up via GTM. Tracks what users
+  // actually look for in the catalog — direct demand signal.
+  useEffect(() => {
+    const q = query.trim();
+    if (q.length < 3) return;
+    const timer = setTimeout(() => {
+      if (typeof window === 'undefined') return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'site_search',
+        search_term: q.toLowerCase(),
+        results_count: results.length,
+      });
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [query, results.length]);
 
   return (
     <div ref={ref} className="relative w-full max-w-[600px]">
