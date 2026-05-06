@@ -18,17 +18,17 @@ import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title:
-    'Соответствие стандартам — каталог Clean Room Systems (Annex 1, ICH, USP)',
+    'Соответствие стандартам — каталог Clean Room Systems (Annex 1, ICH, USP, ASTM, ISO 13485)',
   description:
-    'Compliance matrix всех 17 категорий каталога Clean Room Systems против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10 и USP <1116>. Для QA-специалистов фарм-индустрии.',
+    'Compliance matrix всех 17 категорий каталога Clean Room Systems против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10/Q11, USP <1116>, ASTM cleanroom standards и ISO 13485. Для QA-специалистов фарм- и медтех-индустрии.',
   alternates: {
     canonical: `${siteConfig.url}/compliance/standards`,
   },
   openGraph: {
     title:
-      'Compliance Matrix — 5 стандартов × 17 категорий | Clean Room Systems',
+      'Compliance Matrix — 8 стандартов × 17 категорий | Clean Room Systems',
     description:
-      'Подбор расходников против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10 и USP <1116>. Готовая база для CCS и валидационного пакета.',
+      'Подбор расходников против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10/Q11, USP <1116>, ASTM и ISO 13485. Готовая база для CCS и валидационного пакета.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 };
@@ -38,7 +38,10 @@ const STANDARD_ORDER: StandardId[] = [
   'ich_q7',
   'ich_q9',
   'ich_q10',
+  'ich_q11',
   'usp_1116',
+  'astm_cleanroom',
+  'iso_13485',
 ];
 
 const STANDARD_INTRO: Record<StandardId, string> = {
@@ -50,8 +53,14 @@ const STANDARD_INTRO: Record<StandardId, string> = {
     'ICH Q9 (R1) — пересмотренное в 2023 году руководство по Quality Risk Management. Это методологический документ: он не описывает конкретные требования, а формулирует принципы риск-подхода, которые пронизывают и Annex 1, и ICH Q7, и ICH Q10. R1-версия подчеркнула формализацию субъективности риск-оценки, требование адекватного hazard identification и связь с CCS. Annex II документа содержит примеры применения риск-подхода к qualification, validation, supplier management, change control и cleaning programs. Для каталога CRS ICH Q9 — это основа обоснования выбора каждой категории расходников: класс одежды, тип перчаток, уровень стерильности салфеток, ротация дезинфектантов — всё определяется риск-классификацией зоны и операции. Без явной привязки к ICH Q9 любой выбор поставщика расходников будет атакован аудитором как «не обоснованный».',
   ich_q10:
     'ICH Q10 — Pharmaceutical Quality System (PQS), концептуальная рамка управления качеством на всём жизненном цикле препарата. Документ описывает четыре элемента PQS: Process Performance & Product Quality Monitoring (§3.2), Corrective Action / Preventive Action (CAPA, §3.2.2), Change Management (§3.2.3) и Management Review (§3.2.4). Отдельный §2.7 посвящён управлению аутсорс-активностями и квалификации поставщиков — это ключевой раздел для дистрибьютора расходников. В контексте каталога CRS ICH Q10 определяет, как покупатель должен формализовать отношения с поставщиком: оценка качества партий, change control при смене артикула, аудит производителя, корректирующие действия по жалобам. Для каждой категории каталога мы готовы предоставить TDS, протоколы партий, сертификаты ISO 9001/13485 и CE — это основной пакет для квалификации поставщика по Q10.',
+  ich_q11:
+    'ICH Q11 — руководство «Development and Manufacture of Drug Substances», принятое ICH в 2012 г. и закрытое аддендумом по выбору starting materials в 2017 г. Документ описывает scientific и risk-based подход к разработке и производству активных фармацевтических субстанций (как chemical entities, так и biotechnological/biological). Ключевые секции: §5 (Process Development) — выбор материалов, оборудования и расходников по риск-подходу; §6 (Description of Manufacturing Process and Process Controls) — обоснование критических параметров; §7.3 (Manufacturing Process Development) — link с Quality Target Product Profile и CQAs. Q11 расширяет ICH Q7 в части development-фазы и тесно связан с Q8 (Pharmaceutical Development) и Q9. Для каталога CRS Q11 актуален прежде всего для производителей API в Узбекистане — выбор упаковки субстанции, дезинфектантов в зонах синтеза и биоиндикаторов для верификации стерилизации оборудования обосновывается через development-пакет по Q11.',
   usp_1116:
     'USP <1116> — глава Фармакопеи США «Microbiological Control and Monitoring of Aseptic Processing Environments». В отличие от Annex 1 (нормативный документ ЕС), USP <1116> носит характер информационной главы, но фактически признаётся регуляторами США (FDA), Канады и многих других стран как best-practice reference. Документ детально описывает: классификацию cleanroom (раздел 4), мониторинг персонала и gowning (раздел 5), очистку и дезинфекцию (раздел 6), микробиологический мониторинг и flora identification (раздел 7), интерпретацию результатов EM (раздел 8). USP <1116> требует валидации программы дезинфекции (включая ротацию спорицида), отпечатков перчаток после критических операций, применения стерильной одежды и мопов в зонах A/B. Для производителей, экспортирующих в США или работающих с американскими contract manufacturing partners, USP <1116> часто является обязательным reference вместе с Annex 1.',
+  astm_cleanroom:
+    'ASTM Cleanroom Standards — серия специализированных тест-методов и руководств от American Society for Testing and Materials, дополняющих Annex 1 / ISO 14644 практическим инструментарием. Ключевые номера: ASTM E2500-25 (Standard Guide for Specification, Design, and Verification of Pharmaceutical and Biopharmaceutical Manufacturing Systems and Equipment — risk-based рамка для commissioning и qualification, обновлена в 2025 г.); ASTM E2042/E2042M-09(2021) (Standard Practice for Cleaning and Maintaining Controlled Areas and Clean Rooms — методология протирки и mopping); ASTM F51/F51M-20 (Sizing and Counting Particulate Contaminant In and On Clean Room Garments — обязательный тест для квалификации поставщика комбинезонов); ASTM E2090 (Particle and Fiber Release from Cleanroom Wipers); ASTM F1671/F1671M-22 (Resistance of Materials to Penetration by Blood-Borne Pathogens, Phi-X174 bacteriophage — barrier-тест для перчаток и одежды биотех/медтех применения). ASTM-стандарты используются как основа технических спецификаций при квалификации поставщика расходников и в составе IQ/OQ протоколов.',
+  iso_13485:
+    'ISO 13485 — международный стандарт «Medical Devices — Quality Management Systems — Requirements for Regulatory Purposes», действующая редакция 2016 г. с изменением A11:2021. Применяется производителями медицинских изделий (включая стерильные одноразовые изделия, имплантаты, диагностические наборы, расходники для медтех-индустрии). Структурно близок к ISO 9001, но содержит специфические требования по контролю контаминации и стерильности. Ключевые секции для cleanroom: §6.4 (Work Environment) — особенно §6.4.2 «Contamination control», требующий документированных процедур контроля контаминации продукта и среды; §7.5.2 (Cleanliness of product) — спецификации чистоты продукта и зон производства; §7.5.6 (Validation of processes for production and service provision) — валидация стерилизации, lyophilization, sealing и других «special processes»; §8.2.4 (Monitoring and measurement of product) — input для EM-программы. Для каталога CRS ISO 13485 актуален при работе с производителями медизделий: одежда, перчатки, дезинфектанты, салфетки и индикаторы стерилизации применяются в рамках §6.4 и §7.5.2.',
 };
 
 const STANDARD_SLUG_LABEL: Record<StandardId, string> = {
@@ -59,7 +68,10 @@ const STANDARD_SLUG_LABEL: Record<StandardId, string> = {
   ich_q7: 'ICH Q7',
   ich_q9: 'ICH Q9 (R1)',
   ich_q10: 'ICH Q10',
+  ich_q11: 'ICH Q11',
   usp_1116: 'USP <1116>',
+  astm_cleanroom: 'ASTM Cleanroom',
+  iso_13485: 'ISO 13485',
 };
 
 interface StandardSummary {
@@ -114,7 +126,7 @@ export default function ComplianceStandardsPage() {
     headline:
       'Соответствие международным стандартам — каталог Clean Room Systems',
     description:
-      'Compliance matrix 17 категорий каталога против EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1), ICH Q10 и USP <1116>.',
+      'Compliance matrix 17 категорий каталога против EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1), ICH Q10, ICH Q11, USP <1116>, ASTM cleanroom standards и ISO 13485.',
     author: { '@type': 'Organization', name: siteConfig.name },
     publisher: {
       '@type': 'Organization',
@@ -186,7 +198,23 @@ export default function ComplianceStandardsPage() {
         name: 'Можно ли получить compliance-документацию в виде Excel-таблицы?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Да. По запросу отдел продаж Clean Room Systems отправляет полную compliance matrix в формате Excel — с разбивкой по категориям, SKU, §-разделам Annex 1, ссылками на ICH/USP и колонками под TDS / протоколы партий / сертификаты. Это удобный формат для подключения к QMS-системе предприятия. Запросить можно через форму на странице контактов или по телефону отдела продаж.',
+          text: 'Да. По запросу отдел продаж Clean Room Systems отправляет полную compliance matrix в формате Excel — с разбивкой по категориям, SKU, §-разделам Annex 1, ссылками на ICH/USP/ASTM/ISO 13485 и колонками под TDS / протоколы партий / сертификаты. Это удобный формат для подключения к QMS-системе предприятия. Запросить можно через форму на странице контактов или по телефону отдела продаж.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Зачем нужны ASTM-стандарты, если есть Annex 1 и ISO 14644?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Annex 1 и ISO 14644 описывают требования к чистоте среды, но не дают конкретных методов измерения для оценки расходников. ASTM закрывает именно этот пробел: F51/F51M-20 — тест на выделение частиц комбинезонами, E2090 — тест на выделение частиц и волокон cleanroom-салфетками, F1671/F1671M-22 — barrier-тест перчаток на проникновение патогенов, E2042/E2042M — практика протирки в controlled areas, E2500-25 — risk-based рамка для commissioning и qualification оборудования. На квалификации поставщика QA-аудитор ожидает увидеть протокол испытаний именно по этим ASTM-методам — голословной ссылки на «ISO 5» недостаточно.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Кому в Узбекистане нужен ISO 13485 и ICH Q11?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ISO 13485 — обязательный стандарт для производителей медицинских изделий: одноразовых стерильных изделий, имплантатов, диагностических наборов, расходников. В Узбекистане локальное медтех-производство пока ограничено, но резиденты Pharma Park и СЭЗ всё чаще запускают линии медизделий — для них ISO 13485 необходим параллельно с GMP. Каталог CRS для медтех-сектора покрывает одежду, перчатки, дезинфектанты, салфетки и индикаторы стерилизации в рамках §6.4 (contamination control) и §7.5.2 (cleanliness of product). ICH Q11 — для производителей API/субстанций: в Узбекистане это заводы полного цикла, выпускающие активные ингредиенты для собственных формуляций. Q11 описывает development-фазу процесса и применяется вместе с ICH Q7 (GMP for API). Для CRS-каталога Q11 актуален в категориях упаковки субстанций, дезинфектантов в зонах синтеза и биоиндикаторов.',
         },
       },
     ],
@@ -235,14 +263,15 @@ export default function ComplianceStandardsPage() {
             Соответствие международным стандартам — каталог Clean Room Systems
           </h1>
           <p className="text-[16px] md:text-[18px] text-brand-muted mt-4 leading-relaxed">
-            17 категорий расходников разнесены по 5 ключевым стандартам
-            фарм-индустрии: EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1), ICH Q10
-            и USP &lt;1116&gt;. Эта страница — рабочий инструмент QA-департамента
-            для составления CCS, валидационного пакета и подготовки производства
+            17 категорий расходников разнесены по 8 ключевым стандартам фарм-
+            и медтех-индустрии: EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1),
+            ICH Q10, ICH Q11, USP &lt;1116&gt;, ASTM cleanroom standards и
+            ISO 13485. Эта страница — рабочий инструмент QA-департамента для
+            составления CCS, валидационного пакета и подготовки производства
             к GMP-инспекции.
           </p>
           {/* Quick stats */}
-          <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
             {summary.map((s) => (
               <div
                 key={s.id}
@@ -270,16 +299,19 @@ export default function ComplianceStandardsPage() {
       <section className="bg-white py-12 px-4 lg:px-[80px]">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-6">
-            5 стандартов: что и зачем
+            8 стандартов: что и зачем
           </h2>
           <p className="text-[15px] text-text leading-relaxed mb-8">
-            Современный QA-пакет фарм-производства не ограничивается одним
-            нормативным документом. Annex 1 устанавливает требования к
-            стерильному производству, ICH Q7-Q10 описывают методологию (риск,
-            PQS, GMP для API), USP &lt;1116&gt; добавляет детализацию микробиологической
-            программы. Все пять документов взаимно ссылаются друг на друга, и
-            аудит регулятора Узбекистана к 2027 г. будет ожидать формального
-            покрытия каждого из них в QA-документации.
+            Современный QA-пакет фарм- и медтех-производства не ограничивается
+            одним нормативным документом. Annex 1 устанавливает требования к
+            стерильному производству, ICH Q7-Q11 описывают методологию (риск,
+            PQS, GMP для API, development drug substance), USP &lt;1116&gt;
+            добавляет детализацию микробиологической программы, ASTM-стандарты
+            дают конкретные test methods для квалификации расходников, а
+            ISO 13485 покрывает производителей медицинских изделий. Документы
+            взаимно ссылаются друг на друга, и аудит регулятора Узбекистана к
+            2027 г. будет ожидать формального покрытия каждого применимого
+            стандарта в QA-документации.
           </p>
           <div className="space-y-8">
             {STANDARD_ORDER.map((stdId) => {
@@ -312,7 +344,7 @@ export default function ComplianceStandardsPage() {
       <section className="bg-surface py-12 px-4 lg:px-[80px]">
         <div className="max-w-[1240px] mx-auto">
           <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-2">
-            Compliance Matrix: 17 категорий × 5 стандартов
+            Compliance Matrix: 17 категорий × 8 стандартов
           </h2>
           <p className="text-[15px] text-text mb-6">
             Цифра в ячейке — количество ref-связей категории с разделами

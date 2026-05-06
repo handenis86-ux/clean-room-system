@@ -6,10 +6,13 @@
  *  - ICH Q7 — GMP Guide for APIs
  *  - ICH Q9 (R1) — Quality Risk Management
  *  - ICH Q10 — Pharmaceutical Quality System (PQS)
+ *  - ICH Q11 — Development and Manufacture of Drug Substances (API)
  *  - USP <1116> — Microbiological Control and Monitoring of Aseptic Processing Environments
+ *  - ASTM Cleanroom Standards (E2500-25, E2042/E2042M, F51/F51M-20, E2090, F1671/F1671M-22)
+ *  - ISO 13485 — Medical Devices: Quality Management Systems
  *
  * Annex 1 импортируется как есть из `gmp-annex1-mapping.ts` (legacy-совместимость).
- * ICH/USP добавлены в этом файле — для категорий, где они объективно применимы.
+ * ICH/USP/ASTM/ISO добавлены в этом файле — для категорий, где они объективно применимы.
  *
  * Финальное подтверждение применимости — на стороне QA предприятия в составе
  * валидационного пакета.
@@ -21,7 +24,10 @@ export type StandardId =
   | 'ich_q7'
   | 'ich_q9'
   | 'ich_q10'
-  | 'usp_1116';
+  | 'ich_q11'
+  | 'usp_1116'
+  | 'astm_cleanroom'
+  | 'iso_13485';
 
 export interface StandardMeta {
   id: StandardId;
@@ -61,6 +67,13 @@ export const STANDARDS: Record<StandardId, StandardMeta> = {
     scope:
       'Фармацевтическая система качества — рамки управления изменениями, отклонениями, поставщиками.',
   },
+  ich_q11: {
+    id: 'ich_q11',
+    shortName: 'ICH Q11',
+    fullName: 'ICH Q11: Development and Manufacture of Drug Substances',
+    scope:
+      'Разработка и производство активных фармацевтических субстанций (API) — риск-подход к выбору материалов и процессу.',
+  },
   usp_1116: {
     id: 'usp_1116',
     shortName: 'USP <1116>',
@@ -68,6 +81,21 @@ export const STANDARDS: Record<StandardId, StandardMeta> = {
       'USP <1116>: Microbiological Control and Monitoring of Aseptic Processing Environments',
     scope:
       'Микробиологический контроль и мониторинг асептических производственных сред (US Pharmacopeia).',
+  },
+  astm_cleanroom: {
+    id: 'astm_cleanroom',
+    shortName: 'ASTM',
+    fullName:
+      'ASTM Cleanroom Standards (E2500-25, E2042/E2042M, F51/F51M-20, E2090, F1671/F1671M-22)',
+    scope:
+      'Серия ASTM-стандартов для cleanroom: материалы, тестовые методы, валидация систем, контроль выделения частиц и проникновения патогенов.',
+  },
+  iso_13485: {
+    id: 'iso_13485',
+    shortName: 'ISO 13485',
+    fullName: 'ISO 13485: Medical Devices — Quality Management Systems',
+    scope:
+      'Менеджмент качества для производителей медицинских изделий, в том числе работающих в чистых помещениях.',
   },
 };
 
@@ -100,11 +128,25 @@ const additionalMapping: Record<string, StandardReference[]> = {
         'Выбор типа индикатора и точек загрузки автоклава должен опираться на риск-анализ цикла стерилизации.',
     },
     {
+      standard: 'ich_q11',
+      section: 'Section 7.3',
+      title: 'Manufacturing Process Development (API)',
+      relevance:
+        'Для производителей API стерилизация оборудования и упаковки субстанции верифицируется биоиндикаторами как часть development-пакета процесса.',
+    },
+    {
       standard: 'usp_1116',
       section: 'Section 7',
       title: 'Microorganisms in Cleanrooms',
       relevance:
         'Биоиндикаторы используются как часть программы микробиологического контроля асептических зон.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 7.5.6',
+      title: 'Validation of processes for production',
+      relevance:
+        'Для производителей медицинских изделий ISO 13485 требует валидации процессов стерилизации с применением биологических индикаторов и пара­метрического контроля.',
     },
   ],
   'disinfectants-and-detergents': [
@@ -129,6 +171,20 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Эффективность дезинфекции отслеживается через EM-программу как часть непрерывного контроля процесса.',
     },
+    {
+      standard: 'ich_q11',
+      section: 'Section 5',
+      title: 'Process Development (API cleaning)',
+      relevance:
+        'Производители API применяют дезинфектанты и моющие средства в рамках программы cleaning verification зон синтеза и кросс-контаминации между batch.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'ISO 13485 §6.4.2 прямо требует процедур контроля контаминации при производстве стерильных медицинских изделий — дезинфектанты и моющие средства входят в этот контур.',
+    },
   ],
   garments: [
     {
@@ -145,6 +201,20 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Класс одежды (стерильная/нестерильная, низковыделяющая) выбирается по риск-категории зоны.',
     },
+    {
+      standard: 'astm_cleanroom',
+      section: 'F51/F51M-20',
+      title: 'Sizing & Counting Particulate on Garments',
+      relevance:
+        'ASTM F51/F51M-20 — стандартный метод подсчёта частиц ≥5 мкм в/на ткани cleanroom-комбинезонов; применим для входного контроля и квалификации поставщика.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 7.5.2',
+      title: 'Cleanliness of product',
+      relevance:
+        'Для производителей медизделий ISO 13485 §7.5.2 требует контроля чистоты персонала в зоне производства; стерильная или низковыделяющая одежда — обязательный элемент.',
+    },
   ],
   'reusable-garm': [
     {
@@ -160,6 +230,13 @@ const additionalMapping: Record<string, StandardReference[]> = {
       title: 'Change Control',
       relevance:
         'Любые изменения поставщика или цикла обслуживания одежды должны проходить через формальную процедуру change control.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'F51/F51M-20',
+      title: 'Particulate Monitoring of Reusable Garments',
+      relevance:
+        'F51/F51M-20 — основной метод для re-qualification многоразовых комбинезонов: подсчёт частиц после каждых N циклов стирки/стерилизации.',
     },
   ],
   'perchatki-zashchitnye': [
@@ -184,6 +261,20 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Контроль поставщика перчаток: TDS, протоколы партий, аудит производителя — часть PQS.',
     },
+    {
+      standard: 'astm_cleanroom',
+      section: 'F1671/F1671M-22',
+      title: 'Resistance to Blood-Borne Pathogen Penetration',
+      relevance:
+        'F1671/F1671M-22 (Phi-X174 bacteriophage challenge) — стандартный метод оценки барьерных свойств перчаток для биотех/медизделий и работы с биологическими агентами.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 7.5.2',
+      title: 'Cleanliness of product',
+      relevance:
+        'Производители медицинских изделий применяют стерильные перчатки в рамках §7.5.2 (cleanliness of product) и §6.4.2 (contamination control).',
+    },
   ],
   'cleanroom-wipes': [
     {
@@ -199,6 +290,27 @@ const additionalMapping: Record<string, StandardReference[]> = {
       title: 'Risk-based wipe selection',
       relevance:
         'Стерильные vs нестерильные, материал, плотность, размер — определяются риск-категорией зоны и операции.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2090',
+      title: 'Particle & Fiber Release from Cleanroom Wipers',
+      relevance:
+        'ASTM E2090 — стандартный метод подсчёта частиц и волокон, выделяемых cleanroom-салфетками; ключевой тест для входного контроля и квалификации поставщика.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas and Clean Rooms',
+      relevance:
+        'ASTM E2042/E2042M описывает процедуры влажной/сухой протирки поверхностей в контролируемых зонах — методическая база для SOP по применению wipes.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Производители медизделий используют cleanroom-салфетки для рутинной очистки рабочих поверхностей в рамках §6.4.2 (contamination control).',
     },
   ],
   'cleaning-cloth': [
@@ -225,6 +337,13 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Отдельные комплекты инвентаря по зонам, цветовое кодирование — стандартный риск-контроль.',
     },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2500-25',
+      title: 'Specification, Design, Verification of Cleaning Systems',
+      relevance:
+        'ASTM E2500-25 — risk-based рамка для спецификации и верификации поддерживающих систем чистого помещения, включая уборочные тележки и дозирующие узлы.',
+    },
   ],
   'cleaning-equipment': [
     {
@@ -249,6 +368,13 @@ const additionalMapping: Record<string, StandardReference[]> = {
       title: 'Mop rotation & qualification',
       relevance:
         'Частота смены мопов, цветовое кодирование, валидация качества — риск-подход.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042/E2042M — methodology для влажной протирки и mopping в controlled environments: техника движения, перекрытие зон, частота смены раствора.',
     },
   ],
   goggles: [
@@ -325,6 +451,20 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Поставщик упаковки проходит отдельную квалификацию (TDS, протоколы партий, биосовместимость).',
     },
+    {
+      standard: 'ich_q11',
+      section: 'Section 5',
+      title: 'Process Development (Container Closure for API)',
+      relevance:
+        'ICH Q11 §5 включает выбор первичной упаковки субстанции в development-пакете; материал и метод укупорки обосновываются риск-подходом.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 7.5.2',
+      title: 'Cleanliness of product',
+      relevance:
+        'Для медицинских изделий §7.5.2 требует контролируемой чистой упаковки, поддерживающей стерильность до момента использования.',
+    },
   ],
   'cleanroom-dispensers': [
     {
@@ -383,7 +523,10 @@ export function getStandardsForCategory(categorySlug: string): StandardId[] {
     'ich_q7',
     'ich_q9',
     'ich_q10',
+    'ich_q11',
     'usp_1116',
+    'astm_cleanroom',
+    'iso_13485',
   ];
   const present = new Set(refs.map((r) => r.standard));
   return order.filter((s) => present.has(s));
