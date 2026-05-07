@@ -13,6 +13,7 @@ interface CategoryShape {
   description: string;
   image: string;
   products: { sku: string }[];
+  group?: 'consumables' | 'furniture';
 }
 
 interface CatalogFilteredGridProps {
@@ -137,7 +138,7 @@ export default function CatalogFilteredGrid({
         )}
       </div>
 
-      {/* Grid */}
+      {/* Grid — grouped by category.group */}
       {filteredCategories.length === 0 ? (
         <div className="text-center py-16 bg-surface rounded-xl">
           <p className="text-[16px] text-text-muted">
@@ -152,45 +153,73 @@ export default function CatalogFilteredGrid({
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCategories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/catalog/${category.slug}`}
-              className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="relative h-[220px] w-full overflow-hidden bg-gray-50">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  fill
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-5 flex flex-col gap-2.5">
-                <h3 className="text-[18px] font-bold text-brand-dark line-clamp-1">
-                  {category.title}
-                </h3>
-                <p className="text-[14px] text-text leading-relaxed line-clamp-2">
-                  {category.description}
-                </p>
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-[13px] font-medium text-brand">
-                    {category.products.length}{' '}
-                    {pluralize(category.products.length, [
-                      'товар',
-                      'товара',
-                      'товаров',
-                    ])}
-                  </span>
-                  <span className="text-[13px] font-semibold text-brand group-hover:translate-x-1 transition-transform">
-                    Смотреть &rarr;
-                  </span>
+        <div className="space-y-12">
+          {(['consumables', 'furniture'] as const).map((groupId) => {
+            const groupCats = filteredCategories.filter(
+              (c) => (c.group ?? 'consumables') === groupId
+            );
+            if (groupCats.length === 0) return null;
+            const heading =
+              groupId === 'consumables'
+                ? 'Расходные материалы'
+                : 'Мебель и оборудование cleanroom';
+            const subheading =
+              groupId === 'consumables'
+                ? 'Перчатки, одежда, дезинфектанты, салфетки, индикаторы и расходники.'
+                : 'Нержавеющая мебель TINMAN: скамейки, шкафы, столы, тележки, диспенсеры, шлюзы, раковины.';
+            return (
+              <div key={groupId}>
+                <div className="mb-5">
+                  <h2 className="text-[22px] md:text-[26px] font-extrabold text-text-dark">
+                    {heading}
+                  </h2>
+                  <p className="text-[14px] text-text-muted mt-1">
+                    {subheading}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {groupCats.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={`/catalog/${category.slug}`}
+                      className="group rounded-xl bg-white border border-surface-stroke shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-lg transition-shadow"
+                    >
+                      <div className="relative h-[220px] w-full overflow-hidden bg-gray-50">
+                        <Image
+                          src={category.image}
+                          alt={category.title}
+                          fill
+                          className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="p-5 flex flex-col gap-2.5">
+                        <h3 className="text-[18px] font-bold text-brand-dark line-clamp-1">
+                          {category.title}
+                        </h3>
+                        <p className="text-[14px] text-text leading-relaxed line-clamp-2">
+                          {category.description}
+                        </p>
+                        <div className="flex items-center justify-between pt-1">
+                          <span className="text-[13px] font-medium text-brand">
+                            {category.products.length}{' '}
+                            {pluralize(category.products.length, [
+                              'товар',
+                              'товара',
+                              'товаров',
+                            ])}
+                          </span>
+                          <span className="text-[13px] font-semibold text-brand group-hover:translate-x-1 transition-transform">
+                            Смотреть &rarr;
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       )}
     </>

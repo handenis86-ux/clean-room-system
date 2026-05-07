@@ -48,6 +48,12 @@ export const mainNavigation: NavItem[] = [
 ];
 
 export const footerNavigation = {
+  // Каталог в футере — короткий список из 6 ключевых расходников.
+  // Новые TINMAN-категории мебели (tinman-benches, tinman-cabinets,
+  // tinman-carts, tinman-drawers, tinman-garment-racks, tinman-mirrors,
+  // tinman-pass-through, tinman-platforms, tinman-shelves, tinman-sinks,
+  // tinman-step-stools, tinman-tables, tinman-waste-bins) доступны
+  // через основной каталог /catalog и в группе 'furniture' категорий.
   catalog: [
     { label: 'Индикаторы стерилизации', href: '/catalog/indicators' },
     { label: 'Дезинфицирующие средства', href: '/catalog/disinfectants-and-detergents' },

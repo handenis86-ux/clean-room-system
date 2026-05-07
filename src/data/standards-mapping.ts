@@ -474,6 +474,400 @@ const additionalMapping: Record<string, StandardReference[]> = {
       relevance:
         'Дозаторы для дезинфектантов / стерильного ИПА — часть валидированной программы очистки.',
     },
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based dispenser selection',
+      relevance:
+        'Тип диспенсера (для масок, перчаток, бумаги, очков), материал и схема выдачи (FIFO/FILO) — выбираются по риск-категории зоны и операции.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design',
+      relevance:
+        'USP <1116> §4 описывает требования к дизайну cleanroom: настенные диспенсеры экономят площадь зоны и упрощают cleanability.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методическая база для очистки и обслуживания cleanroom-оснастки, включая настенные диспенсеры.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Для производителей медизделий §6.4.2 требует контроля контаминации; нержавеющие диспенсеры — стандартное решение для зон чистого производства.',
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────────────
+  // TINMAN — МЕБЕЛЬ И ОБОРУДОВАНИЕ
+  // ICH Q9 (risk-based selection), USP <1116> §4 (Cleanroom Design),
+  // ASTM E2042 (Cleanroom Cleaning Practice), ISO 13485 §6.4 (Work environment).
+  // ─────────────────────────────────────────────────────────────────────
+  'tinman-benches': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based bench selection',
+      relevance:
+        'Тип скамейки (с обувницей / без, перфорированная / сплошная), материал (AISI 304 / 316) — выбираются по риск-категории gowning room.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — gowning area',
+      relevance:
+        'USP <1116> §4 предписывает чёткое разделение gowning room на зоны переодевания со скамейкой как ключевым элементом разграничения «грязной» и «чистой» сторон.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методическая база для очистки cleanroom-мебели, включая скамейки в gowning room.',
+    },
+    {
+      standard: 'ich_q10',
+      section: 'Section 2.7',
+      title: 'Supplier qualification',
+      relevance:
+        'Сертификат AISI 304 / 316, протоколы сварки, cleanability tests от поставщика мебели — часть PQS.',
+    },
+  ],
+
+  'tinman-cabinets': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based cabinet selection',
+      relevance:
+        'Тип шкафа (с фильтром / без, акрил / металл, UV-лампа), материал и опции — выбираются по риск-категории зоны хранения cleanroom-расходников.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — storage',
+      relevance:
+        'USP <1116> §4 описывает требования к хранению cleanroom-материалов: закрытые шкафы из cleanable материалов снижают риск контаминации запасов.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки шкафов в cleanroom: внутренние и внешние поверхности, регулярность.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Шкафы для хранения расходников медизделий — часть инфраструктуры §6.4.2 (контроль контаминации).',
+    },
+  ],
+
+  'tinman-carts': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based cart selection',
+      relevance:
+        'Перфорированные тележки или ламинарные кейсы (HEPA/ULPA) — выбираются по риск-анализу транспорта материалов между зонами.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — material flow',
+      relevance:
+        'USP <1116> §4 регламентирует материальный поток: ламинарные кейсы EVOK позволяют перевозить чувствительные материалы через зоны меньшего класса без потери защиты.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2500-25',
+      title: 'Specification & Verification of Cleaning Systems',
+      relevance:
+        'ASTM E2500 — risk-based рамка для спецификации поддерживающих cleanroom-систем, включая транспортные тележки.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки тележек: колёса, ручки, полки.',
+    },
+  ],
+
+  'tinman-drawers': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based storage selection',
+      relevance:
+        'Тумбы-ящики с колёсами для хранения мелких материалов выбираются по риск-категории зоны и характеру операций.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — point-of-use storage',
+      relevance:
+        'USP <1116> §4 описывает point-of-use хранение: мобильные ящики на колёсах рядом с рабочим столом сокращают трафик в зоне.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки систем хранения cleanroom.',
+    },
+  ],
+
+  'tinman-garment-racks': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based gowning storage',
+      relevance:
+        'Тип стойки для одежды (одинарная / двойная / настенная), кол-во крючков, наличие зеркала — выбираются по риск-анализу gowning room и кол-ва персонала.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 5',
+      title: 'Personnel & Gowning',
+      relevance:
+        'USP <1116> §5 описывает gowning workflow: фиксированные крючки, перфорированная рама и циркуляция воздуха — стандарт хранения cleanroom-одежды между сменами.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки оборудования gowning room, включая стойки для одежды.',
+    },
+  ],
+
+  'tinman-mirrors': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based mirror placement',
+      relevance:
+        'Зеркала в gowning room обязательны для self-check оператора; материал (нерж. сталь vs стекло), размещение — по риск-анализу gowning workflow.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 5',
+      title: 'Personnel & Gowning self-verification',
+      relevance:
+        'USP <1116> §5 регламентирует самопроверку правильности надевания комплекта оператором перед входом в чистую зону — ключевая роль зеркала в полный рост.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки cleanroom-зеркал и других поверхностей gowning room.',
+    },
+  ],
+
+  'tinman-pass-through': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based airlock design',
+      relevance:
+        'Pass-through — критический элемент материального шлюза; выбор размера, наличия UV-лампы, типа дверей — на основе риск-анализа материального потока.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — airlocks',
+      relevance:
+        'USP <1116> §4 описывает требования к дизайну airlocks: pass-through с электромагнитной блокировкой обеих дверей предотвращает прямое сообщение между зонами разной чистоты.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2500-25',
+      title: 'Specification & Verification',
+      relevance:
+        'ASTM E2500 — risk-based рамка для спецификации pass-through и других систем материального потока в cleanroom.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Pass-through — стандартный элемент инфраструктуры для производителей медизделий по §6.4.2 (контроль контаминации).',
+    },
+  ],
+
+  'tinman-platforms': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based access equipment',
+      relevance:
+        'Платформы для доступа к высокому оборудованию (HVAC, изоляторы) — выбираются по риск-анализу операций и высоте оборудования.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — equipment access',
+      relevance:
+        'USP <1116> §4 учитывает доступность оборудования для рутинного обслуживания; перфорированные платформы из нерж. стали — стандарт.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки cleanroom-оснастки, включая платформы и стремянки.',
+    },
+  ],
+
+  'tinman-shelves': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based storage selection',
+      relevance:
+        'Тип стеллажа (перфорированный / сплошной, размер ячеек), кол-во полок, держатели — выбираются по риск-анализу хранения и характеру материалов.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — storage organization',
+      relevance:
+        'USP <1116> §4 регламентирует point-of-use хранение и организацию материалов в чистой зоне; регулируемые полки на Z-профиле — гибкое решение.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки cleanroom-стеллажей: полки, опоры, перфорация.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Стеллажи для хранения расходников медизделий — часть инфраструктуры §6.4.2 (контроль контаминации).',
+    },
+  ],
+
+  'tinman-sinks': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based sink placement',
+      relevance:
+        'Размещение раковин в gowning rooms (но не в зонах A/B/C) — критический элемент дизайна; материал, тип крана, защита от брызг — по риск-анализу.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — hand wash stations',
+      relevance:
+        'USP <1116> §4 регламентирует размещение раковин в первичной зоне переодевания и не допускает их в более чистых зонах из-за риска биопленки.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки cleanroom-раковин: чаша, сток, экран от брызг.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Раковины для мытья рук — стандартный элемент gowning room для производителей медизделий по §6.4.2.',
+    },
+  ],
+
+  'tinman-step-stools': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based stool selection',
+      relevance:
+        'Стремянки для редкого доступа к оборудованию выбираются по риск-анализу операций и высоте.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design',
+      relevance:
+        'USP <1116> §4 учитывает доступность оборудования; компактные стремянки из перфорированной нерж. стали — стандарт.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки cleanroom-стремянок: ступени, поручни, ножки.',
+    },
+  ],
+
+  'tinman-tables': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based table selection',
+      relevance:
+        'Тип столешницы (перфорированная / сплошная / HPL Compact), нагрузка (250 / 400 кг), подстолье — выбираются по риск-анализу операций.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — work surfaces',
+      relevance:
+        'USP <1116> §4 описывает требования к рабочим поверхностям: cleanability, нагрузка, дизайн без зазоров — обязательны для cleanroom-столов.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки рабочих поверхностей в cleanroom: столешницы, ящики, тумбы.',
+    },
+    {
+      standard: 'iso_13485',
+      section: 'Section 6.4',
+      title: 'Work environment & contamination control',
+      relevance:
+        'Рабочие столы — основное оборудование зоны для производителей медизделий по §6.4.2 (контроль контаминации).',
+    },
+  ],
+
+  'tinman-waste-bins': [
+    {
+      standard: 'ich_q9',
+      section: 'Annex II.7',
+      title: 'Risk-based waste handling',
+      relevance:
+        'Тип урны (одинарный / двойной мешок), материал, ножки/колёса — выбираются по риск-анализу обращения с отходами в зоне.',
+    },
+    {
+      standard: 'usp_1116',
+      section: 'Section 4',
+      title: 'Cleanroom Design — waste collection',
+      relevance:
+        'USP <1116> §4 регламентирует сбор отходов в чистой зоне: cleanable материалы, верхний фиксатор мешка для замены без касания, регулярная замена.',
+    },
+    {
+      standard: 'astm_cleanroom',
+      section: 'E2042/E2042M-09(2021)',
+      title: 'Cleaning & Maintaining Controlled Areas',
+      relevance:
+        'ASTM E2042 — методика очистки контейнеров для отходов в cleanroom.',
+    },
   ],
 };
 

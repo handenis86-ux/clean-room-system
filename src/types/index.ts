@@ -12,6 +12,8 @@ export interface Category {
   isActive: boolean;
   metaTitle?: string | null;
   metaDescription?: string | null;
+  /** Visual grouping — e.g. 'consumables' (default), 'furniture', 'equipment'. */
+  group?: 'consumables' | 'furniture';
   createdAt: Date;
   updatedAt: Date;
 }
