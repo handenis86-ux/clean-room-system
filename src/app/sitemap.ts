@@ -57,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/resources/gowning-room-design-guide`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${base}/compliance/annex1`,
       lastModified: now,
       changeFrequency: 'weekly',

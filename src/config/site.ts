@@ -73,6 +73,7 @@ export const footerNavigation = {
     { label: 'GMP чек-лист 2027', href: '/resources/gmp-audit-checklist' },
     { label: 'ISO 14644 справочник', href: '/resources/iso-14644-classes-spec' },
     { label: 'Валидация дезинфекции', href: '/resources/disinfection-validation-protocol' },
+    { label: 'Гид по gowning room', href: '/resources/gowning-room-design-guide' },
     { label: 'Соответствие Annex 1', href: '/compliance/annex1' },
     { label: 'Все стандарты — matrix', href: '/compliance/standards' },
     { label: 'Политика конфиденциальности', href: '/privacy' },

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title:
     'Соответствие стандартам — каталог Clean Room Systems (Annex 1, ICH, USP, ASTM, ISO 13485)',
   description:
-    'Compliance matrix всех 17 категорий каталога Clean Room Systems против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10/Q11, USP <1116>, ASTM cleanroom standards и ISO 13485. Для QA-специалистов фарм- и медтех-индустрии.',
+    'Compliance matrix всех 17 категорий каталога Clean Room Systems против EU GMP Annex 1 (2022), ICH Q7/Q9/Q10/Q11, USP <1116>, ASTM cleanroom standards и ISO 13485. Vendor compliance: TINMAN. Для QA-специалистов фарм- и медтех-индустрии.',
   alternates: {
     canonical: `${siteConfig.url}/compliance/standards`,
   },
@@ -126,7 +126,7 @@ export default function ComplianceStandardsPage() {
     headline:
       'Соответствие международным стандартам — каталог Clean Room Systems',
     description:
-      'Compliance matrix 17 категорий каталога против EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1), ICH Q10, ICH Q11, USP <1116>, ASTM cleanroom standards и ISO 13485.',
+      'Compliance matrix 17 категорий каталога против EU GMP Annex 1 (2022), ICH Q7, ICH Q9 (R1), ICH Q10, ICH Q11, USP <1116>, ASTM cleanroom standards и ISO 13485. Включает разрез vendor compliance на примере TINMAN — производителя нержавеющей мебели для cleanroom (Сербия), эксклюзивно поставляемого через Clean Room Systems в Узбекистане.',
     author: { '@type': 'Organization', name: siteConfig.name },
     publisher: {
       '@type': 'Organization',
@@ -139,6 +139,15 @@ export default function ComplianceStandardsPage() {
       '@type': 'Thing',
       name: STANDARDS[stdId].fullName,
     })),
+    mentions: [
+      {
+        '@type': 'Brand',
+        name: 'TINMAN',
+        description:
+          'Производитель нержавеющей мебели и оборудования для cleanroom (Сербия). Эксклюзивно поставляется в Узбекистан через Clean Room Systems. Покрывает 7 из 8 стандартов compliance matrix (EU GMP Annex 1, ICH Q9/Q10/Q11, USP <1116>, ASTM, ISO 13485).',
+        url: `${siteConfig.url}/brands/tinman`,
+      },
+    ],
   };
 
   const faqJsonLd = {
@@ -591,6 +600,186 @@ export default function ComplianceStandardsPage() {
               Compliance Matrix только Annex 1
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Vendor compliance: TINMAN */}
+      <section className="bg-surface py-12 px-4 lg:px-[80px]">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="mb-8">
+            <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-3">
+              + ПОСТАВЩИК-ПРИМЕР
+            </p>
+            <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-3">
+              Vendor compliance: TINMAN
+            </h2>
+            <p className="text-[15px] text-text leading-relaxed max-w-[800px]">
+              TINMAN — производитель нержавеющей мебели и оборудования для
+              cleanroom (Сербия), эксклюзивно поставляется в Узбекистан через
+              Clean Room Systems. Покрывает 7 из 8 стандартов нашей Compliance
+              Matrix.
+            </p>
+            <Link
+              href="/brands/tinman"
+              className="inline-flex items-center gap-1.5 mt-3 text-brand font-semibold hover:text-brand-dark transition-colors"
+            >
+              Подробнее о TINMAN
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* Таблица: TINMAN × Standards */}
+          <div className="bg-white rounded-xl border border-surface-input overflow-x-auto">
+            <table className="w-full border-collapse text-[13px] min-w-[700px]">
+              <thead className="bg-brand-light">
+                <tr>
+                  <th className="text-left p-3 border-b border-surface-input">
+                    Стандарт
+                  </th>
+                  <th className="p-3 border-b border-l border-surface-input text-center">
+                    TINMAN
+                  </th>
+                  <th className="text-left p-3 border-b border-l border-surface-input">
+                    Как покрывается
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    EU GMP Annex 1 (2022)
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    §5 Premises (поверхности, дизайн), §6 Equipment (cleaning),
+                    §11 Disinfection (совместимость с агентами)
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ICH Q7 (API GMP)
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="text-text-muted text-[16px]">—</span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    Не применимо: ICH Q7 описывает производство субстанций,
+                    мебель не входит в скоп
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ICH Q9 (Risk Management)
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    Risk-based выбор материала AISI 304 vs 316 по риск-категории
+                    зоны
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ICH Q10 (PQS)
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    Поставщик-квалификация: TDS, протоколы партий, ISO 9001 —
+                    часть PQS
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ICH Q11
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    Применимо для API-производителей: упаковочные шкафы, столы
+                    для линии синтеза
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    USP &lt;1116&gt;
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    Section 4 (Cleanroom Design): мебель — часть design
+                    qualification
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-b border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ASTM (E2042 + др.)
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-b border-l border-surface-input text-text">
+                    E2042 Cleaning Practice, F51 для интегрированных решений
+                    (где есть текстиль)
+                  </td>
+                </tr>
+                <tr className="hover:bg-brand-light/20 transition-colors">
+                  <td className="p-3 border-surface-input font-semibold text-brand-dark whitespace-nowrap">
+                    ISO 13485
+                  </td>
+                  <td className="p-3 border-l border-surface-input text-center">
+                    <span className="inline-block min-w-[28px] h-7 leading-7 px-2 rounded-full bg-brand text-white text-[13px] font-bold">
+                      ✓
+                    </span>
+                  </td>
+                  <td className="p-3 border-l border-surface-input text-text">
+                    §6.4 Work Environment для производителей медустройство
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Доп. описание */}
+          <div className="mt-6 p-5 bg-white border border-surface-input rounded-xl">
+            <h3 className="text-[16px] font-bold text-text-dark mb-3">
+              Документация TINMAN для аудита
+            </h3>
+            <ul className="space-y-2 text-[14px] text-text">
+              <li>✓ Сертификат материала AISI 304/316 (3.1 EN 10204)</li>
+              <li>✓ Декларация соответствия CE</li>
+              <li>✓ Паспорт качества (cert. of conformity)</li>
+              <li>
+                ✓ Инструкция по очистке и санитарии (cleaning / disinfection
+                compatibility)
+              </li>
+              <li>✓ Технический паспорт (TDS)</li>
+              <li>✓ ISO 9001:2015 — система менеджмента качества TINMAN</li>
+            </ul>
+          </div>
+
+          <p className="mt-4 text-[12px] text-text-muted leading-relaxed">
+            ICH Q7 (API GMP) формально не применим к мебели — TINMAN указан как
+            «не применимо» в этой строке.
+          </p>
         </div>
       </section>
 
