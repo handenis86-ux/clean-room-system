@@ -3561,7 +3561,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-dispensers',
     title: 'Диспенсеры',
     description: 'Диспенсеры TINMAN из нержавеющей стали AISI 304 для перчаток, масок, бахил, очков, бумаги и салфеток в зонах чистых помещений ISO 4 / GMP A.',
-    image: '/images/categories/dispenser.webp',
+    image: '/images/categories/tinman-dispensers.webp',
     group: 'furniture',
     products: [
       { name: 'TINMAN B1DFM — настенный диспенсер для одной коробки масок', sku: 'TINMAN-B1DFM',
@@ -3739,7 +3739,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-benches',
     title: 'Скамейки для гоунинга TINMAN',
     description: 'Нержавеющие скамейки AISI 304 для зон переодевания. Перфорированные сиденья, подножки для бахил, ISO 4 / GMP A. Производство TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-benches.webp',
     group: 'furniture',
     products: [
       { name: 'Micro CRB B — скамейка с обувницей', sku: 'TINMAN-MICRO-CRB-B',
@@ -3823,7 +3823,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-cabinets',
     title: 'Шкафы TINMAN',
     description: 'Шкафы для чистых помещений из нержавеющей стали AISI 304 со скошенным верхом, опциональным фильтром очистки воздуха и регулируемыми полками. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-cabinets.webp',
     group: 'furniture',
     products: [
       { name: 'CRGC — шкаф для чистых помещений со скошенным верхом', sku: 'TINMAN-CRGC',
@@ -3848,7 +3848,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-carts',
     title: 'Тележки и кейсы TINMAN',
     description: 'Транспортные тележки и ламинарные кейсы для перемещения материалов между зонами разной чистоты. Нержавеющая сталь AISI 304, ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-carts.webp',
     group: 'furniture',
     products: [
       { name: 'EVOK LAM Cart — тележка с ламинарным потоком и HEPA/ULPA-фильтром', sku: 'TINMAN-EVOK-LAM-CART',
@@ -3906,7 +3906,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-drawers',
     title: 'Ящики и системы хранения TINMAN',
     description: 'Тележки-ящики из нержавеющей стали AISI 304 для хранения и перемещения мелких материалов в чистых зонах. Скруглённые внутренние углы, ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-drawers.webp',
     group: 'furniture',
     products: [
       { name: 'CRT D — мобильная тумба с ящиками', sku: 'TINMAN-CRT-D',
@@ -3930,7 +3930,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-garment-racks',
     title: 'Стойки для одежды TINMAN',
     description: 'Перфорированные стойки и вешалки для cleanroom-одежды из нержавеющей стали AISI 304. Воздушная проницаемость 40%, фиксированные крючки, ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-garment-racks.webp',
     group: 'furniture',
     products: [
       { name: 'CRG D — двойная напольная стойка для одежды', sku: 'TINMAN-CRG-D',
@@ -3986,7 +3986,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-mirrors',
     title: 'Зеркала TINMAN',
     description: 'Настенные зеркала из нержавеющей стали 2R high gloss с фасочной обработкой кромок для зон гоунинга чистых помещений. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-mirrors.webp',
     group: 'furniture',
     products: [
       { name: 'CRM — настенное зеркало для зоны гоунинга', sku: 'TINMAN-CRM',
@@ -4010,7 +4010,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-pass-through',
     title: 'Передаточные шлюзы TINMAN',
     description: 'Передаточные шкафы (pass-through) с двумя дверьми и системой блокировки для безопасной передачи материалов между зонами разной чистоты. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-pass-through.webp',
     group: 'furniture',
     products: [
       { name: 'CRGC Pass-Through — передаточный шкаф со скошенным верхом', sku: 'TINMAN-PASS-THROUGH-CRGC',
@@ -4035,7 +4035,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-platforms',
     title: 'Платформы TINMAN',
     description: 'Перфорированные подъёмные платформы из нержавеющей стали AISI 304 на 3, 4 или 5 ступеней для зон чистых помещений. Ручка-поручень, регулируемые ножки. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-platforms.webp',
     group: 'furniture',
     products: [
       { name: 'CRST t — платформа подъёмная (3/4/5 ступеней)', sku: 'TINMAN-CRST-T-PLATFORM',
@@ -4060,7 +4060,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-shelves',
     title: 'Стеллажи TINMAN',
     description: 'Стеллажи и полки из нержавеющей стали AISI 304 для хранения cleanroom-материалов, инструментов, контейнеров. Регулируемые полки на Z-профиле, ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-shelves.webp',
     group: 'furniture',
     products: [
       { name: 'CRG h8 s50 — стеллаж с крючками и полками', sku: 'TINMAN-CRG-H8-S50',
@@ -4161,7 +4161,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-sinks',
     title: 'Раковины TINMAN',
     description: 'Раковины из нержавеющей стали AISI 304 для зон гоунинга и зон обработки рук. Откидная крышка для доступа к коммуникациям, защитный задний экран. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-sinks.webp',
     group: 'furniture',
     products: [
       { name: 'CRSU — раковина из нержавеющей стали', sku: 'TINMAN-CRSU',
@@ -4185,7 +4185,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-step-stools',
     title: 'Стремянки TINMAN',
     description: 'Перфорированные стремянки на 1 или 2 ступени из нержавеющей стали AISI 304 для удобного перемещения по чистым помещениям. Регулируемые ножки, ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-step-stools.webp',
     group: 'furniture',
     products: [
       { name: 'CRST t — стремянка (1 или 2 ступени)', sku: 'TINMAN-CRST-T-STOOL',
@@ -4210,7 +4210,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-tables',
     title: 'Столы рабочие TINMAN',
     description: 'Рабочие столы из нержавеющей стали AISI 304 для основных операций в чистых помещениях. Перфорированные / сплошные / HPL-Compact, опциональные ящики и тумбы. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-tables.webp',
     group: 'furniture',
     products: [
       { name: 'Micro CRT — перфорированный рабочий стол', sku: 'TINMAN-MICRO-CRT',
@@ -4266,7 +4266,7 @@ export const categories: ProductCategory[] = [
     slug: 'tinman-waste-bins',
     title: 'Урны TINMAN',
     description: 'Урны для сбора отходов и расходных материалов из нержавеющей стали AISI 304 с верхним фиксатором мешка и сглаженными кромками. ISO 4 / GMP A. TINMAN (Сербия).',
-    image: '/images/categories/tinman-placeholder.webp',
+    image: '/images/categories/tinman-waste-bins.webp',
     group: 'furniture',
     products: [
       { name: 'CRW BH — урна с верхним фиксатором мешка', sku: 'TINMAN-CRW-BH',
