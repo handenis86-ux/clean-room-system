@@ -64,6 +64,7 @@ export const footerNavigation = {
   ],
   company: [
     { label: 'О компании', href: '/company/about' },
+    { label: 'TINMAN — мебель cleanroom', href: '/brands/tinman' },
     { label: 'База знаний', href: '/blog' },
     { label: 'Контакты', href: '/contacts' },
   ],
