@@ -286,6 +286,47 @@ export const productImages: Record<string, string> = {
   'STDM': `${IBC}/upload/iblock/b9c/9za5960qdjzdzvi0un20pxun7avr2gsw.jpg`,
   'B3DD': `${IBC}/upload/iblock/032/v32mihe09cbw4zza2fbloxzuqd7y2jxs.jpg`,
   'B3DG': `${IBC}/upload/iblock/8a8/bv9o9iqu6gcasj8a8h2idr53qqrgxb2r.jpg`,
+
+  // ─── TINMAN — нержавеющая мебель cleanroom (фото с tinmanclean.com) ───
+  // Диспенсеры
+  'TINMAN-B1DFM': '/images/products/tinman-b1dfm.webp',
+  'TINMAN-B1DG': '/images/products/tinman-b1dg.webp',
+  'TINMAN-B3DFM': '/images/products/tinman-b3dfm.webp',
+  'TINMAN-B3DG': '/images/products/tinman-b3dg.webp',
+  'TINMAN-DFMB': '/images/products/tinman-dfmb.webp',
+  'TINMAN-FTDM': '/images/products/tinman-ftdm.webp',
+  'TINMAN-GDM': '/images/products/tinman-gdm.webp',
+  'TINMAN-LBS': '/images/products/tinman-lbs.webp',
+  'TINMAN-STDM': '/images/products/tinman-stdm.webp',
+  'TINMAN-WDM': '/images/products/tinman-wdm.webp',
+  // Шкафы / зеркала / раковины / pass-through
+  'TINMAN-CRGC': '/images/products/tinman-crgc.webp',
+  'TINMAN-CRM': '/images/products/tinman-crm.webp',
+  'TINMAN-CRSU': '/images/products/tinman-crsu.webp',
+  'TINMAN-PASS-THROUGH-CRGC': '/images/products/tinman-pass-through-crgc.webp',
+  // Стойки для одежды
+  'TINMAN-CRG': '/images/products/tinman-crg.webp',
+  'TINMAN-CRG-IW': '/images/products/tinman-crg-iw.webp',
+  // Стеллажи
+  'TINMAN-CRG-H8-S50': '/images/products/tinman-crg-h8-s50.webp',
+  'TINMAN-MICRO-CRS': '/images/products/tinman-micro-crs.webp',
+  'TINMAN-PHARMA-CRS': '/images/products/tinman-pharma-crs.webp',
+  'TINMAN-MICRO-CRS-R': '/images/products/tinman-micro-crs-r.webp',
+  'TINMAN-PHARMA-CRS-R': '/images/products/tinman-pharma-crs-r.webp',
+  // Скамейки
+  'TINMAN-MICRO-CRB': '/images/products/tinman-micro-crb.webp',
+  'TINMAN-MICRO-CRB-B': '/images/products/tinman-micro-crb-b.webp',
+  'TINMAN-PHARMA-CRB': '/images/products/tinman-pharma-crb.webp',
+  'TINMAN-PHARMA-CRB-B': '/images/products/tinman-pharma-crb-b.webp',
+  'TINMAN-PHARMA-CRB-S': '/images/products/tinman-pharma-crb-s.webp',
+  // Столы / ящики
+  'TINMAN-MICRO-CRT': '/images/products/tinman-micro-crt.webp',
+  'TINMAN-PHARMA-CRT': '/images/products/tinman-pharma-crt.webp',
+  'TINMAN-CRT-T': '/images/products/tinman-crt-t.webp',
+  'TINMAN-CRT-D': '/images/products/tinman-crt-d.webp',
+  // (8 SKU без фото на сайте TINMAN — TINMAN-CRG-D, TINMAN-CRSHM,
+  //  MICRO-CRC, PHARMA-CRC, EVOK-LAM-CART, CRST-T-STOOL, CRST-T-PLATFORM,
+  //  CRW-BH — fallback на category image)
 };
 
 export function getProductImage(sku: string): string | undefined {
