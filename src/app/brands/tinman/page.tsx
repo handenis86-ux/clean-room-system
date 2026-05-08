@@ -145,9 +145,9 @@ export default function TinmanBrandPage() {
     name: 'TINMAN',
     description:
       'TINMAN — производитель нержавеющей мебели и оборудования для чистых помещений (Сербия). Полный ассортимент cleanroom-мебели для фарм-, биотех- и медицинских производств.',
-    url: 'https://www.tinmanclean.com',
+    url: 'https://tinmanclean.com',
     logo: `${siteConfig.url}/og-image.png`,
-    sameAs: ['https://www.tinmanclean.com'],
+    sameAs: ['https://tinmanclean.com'],
   };
 
   const breadcrumbJsonLd = {
