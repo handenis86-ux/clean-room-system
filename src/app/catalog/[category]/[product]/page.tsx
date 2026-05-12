@@ -143,6 +143,10 @@ export default function ProductPage({ params }: Props) {
     ],
   };
 
+  // Product schema без Offer-блока: цены под запрос (B2B-модель),
+  // поэтому Merchant Listings нерелевантны. Декларировать Offer без
+  // numeric price + hasMerchantReturnPolicy + shippingDetails — это
+  // ошибка по Google Search Central. Оставляем чистый Product.
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -152,23 +156,15 @@ export default function ProductPage({ params }: Props) {
     image: productImage
       ? `${siteConfig.url}${productImage}`
       : `${siteConfig.url}/og-image.png`,
+    url: productUrl,
     brand: {
       '@type': 'Brand',
       name: inferBrand(product.name, product.sku),
     },
     category: category.title,
-    offers: {
-      '@type': 'Offer',
-      url: productUrl,
-      availability: 'https://schema.org/InStock',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'UZS',
-      },
-      seller: {
-        '@type': 'Organization',
-        name: 'Clean Room Systems',
-      },
+    manufacturer: {
+      '@type': 'Organization',
+      name: inferBrand(product.name, product.sku),
     },
   };
 
