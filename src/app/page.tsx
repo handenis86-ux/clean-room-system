@@ -13,13 +13,13 @@ import { siteConfig } from '@/config/site';
 import { localBusinessJsonLd } from '@/data/local-business-schema';
 
 export const metadata: Metadata = {
-  title: `Поставщик расходников для чистых помещений в Узбекистане | ${siteConfig.name}`,
+  title: `Расходники и мебель для чистых помещений Узбекистан — TINMAN, Contec, Terragene`,
   description:
-    'B2B поставщик расходных материалов для чистых помещений в Ташкенте: GMP, ISO 14644. Одежда, перчатки, дезинфектанты, индикаторы, салфетки для фармы, пищёвки и электроники.',
+    'Поставщик расходников cleanroom в Узбекистане: перчатки, дезинфектанты, биоиндикаторы, мебель TINMAN. Для GMP, ISO 14644, Pharma Park. Доставка из Ташкента, КП за 24 ч.',
   openGraph: {
-    title: `Поставщик расходников для чистых помещений в Узбекистане | ${siteConfig.name}`,
+    title: `Расходники cleanroom в Узбекистане — TINMAN, Contec, Terragene, BIMOS | ${siteConfig.name}`,
     description:
-      'Профессиональное оснащение чистых помещений по GMP и ISO 14644 для фармацевтики, пищевой, косметической промышленности и микроэлектроники в Узбекистане.',
+      'B2B-поставщик расходных материалов и мебели для чистых помещений для фарм-, биотех- и медицинских производств Узбекистана. GMP / ISO 14644 / EU GMP Annex 1 (2022).',
     images: ['/og-image.png'],
   },
   alternates: {

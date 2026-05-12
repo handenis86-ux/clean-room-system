@@ -27,9 +27,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(params.category);
   if (!category) return { title: 'Категория не найдена' };
+  const productCount = category.products.length;
   return {
-    title: `${category.title} для чистых помещений`,
-    description: `${category.description} Поставка в Ташкенте и по Узбекистану — для GMP-производств, лабораторий и чистых помещений ISO 14644.`,
+    title: `${category.title} в Узбекистане — купить для GMP / ISO 14644 в Ташкенте`,
+    description: `${category.description} ${productCount} ${productCount === 1 ? 'SKU' : 'SKU'} в наличии. Поставка из Ташкента, КП за 24 часа. Для фарм-, биотех- и медицинских производств Узбекистана.`.slice(
+      0,
+      200
+    ),
     alternates: {
       canonical: `${siteConfig.url}/catalog/${category.slug}`,
     },
