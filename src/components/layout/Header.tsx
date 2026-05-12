@@ -9,6 +9,7 @@ import Logo from '@/components/ui/Logo';
 
 const navLinks = [
   { label: 'Каталог', href: '/catalog' },
+  { label: 'TINMAN', href: '/brands/tinman' },
   { label: 'О компании', href: '/company/about' },
   { label: 'База знаний', href: '/blog' },
   { label: 'Контакты', href: '/contacts' },
