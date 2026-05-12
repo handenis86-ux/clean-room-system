@@ -21,8 +21,8 @@ function trackClick(method: 'whatsapp' | 'telegram' | 'phone') {
 export default function FloatingContactButtons() {
   return (
     <>
-      {/* Desktop: vertical floating stack (lg+) */}
-      <div className="hidden lg:flex fixed bottom-6 right-6 z-40 flex-col gap-3">
+      {/* Desktop: vertical floating stack (lg+) — left side, Tawk chat lives on the right */}
+      <div className="hidden lg:flex fixed bottom-6 left-6 z-40 flex-col gap-3">
         <a
           href={whatsappUrl}
           target="_blank"
@@ -32,7 +32,7 @@ export default function FloatingContactButtons() {
           className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
         >
           <MessageCircle className="h-7 w-7" strokeWidth={2} />
-          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-md bg-gray-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="pointer-events-none absolute left-full ml-3 whitespace-nowrap rounded-md bg-gray-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
             Написать в WhatsApp
           </span>
         </a>
@@ -46,7 +46,7 @@ export default function FloatingContactButtons() {
           className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
         >
           <Send className="h-6 w-6" strokeWidth={2} />
-          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-md bg-gray-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="pointer-events-none absolute left-full ml-3 whitespace-nowrap rounded-md bg-gray-900 px-3 py-1.5 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
             Написать в Telegram
           </span>
         </a>
