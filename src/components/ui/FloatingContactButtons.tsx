@@ -10,7 +10,7 @@ declare global {
 }
 
 const whatsappUrl = siteConfig.social.whatsapp ?? 'https://wa.me/998998211222';
-const telegramUrl = siteConfig.social.telegram ?? 'https://t.me/clean_room_systems';
+const telegramUrl = siteConfig.social.telegram ?? 'https://t.me/khan_denis';
 
 function trackClick(method: 'whatsapp' | 'telegram' | 'phone') {
   if (typeof window === 'undefined') return;

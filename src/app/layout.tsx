@@ -12,6 +12,7 @@ import {
 } from '@/components/analytics/GoogleTagManager';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { YandexMetrika } from '@/components/analytics/YandexMetrika';
+import { TawkChat } from '@/components/analytics/TawkChat';
 import './globals.css';
 
 const inter = Inter({
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FloatingContactButtons />
           <CompareBar />
         </CompareProvider>
+        <TawkChat />
       </body>
     </html>
   );

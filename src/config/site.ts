@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
   email: 'info@cleanroom.uz',
   address: 'г. Ташкент, ул. Нукус, 85/1',
   social: {
-    telegram: 'https://t.me/clean_room_systems',
+    telegram: 'https://t.me/khan_denis',
     youtube: 'https://youtube.com/@clean_room_systems',
     whatsapp: 'https://wa.me/998998211222',
   },
