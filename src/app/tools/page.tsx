@@ -150,7 +150,7 @@ export default function ToolsIndexPage() {
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-semibold uppercase tracking-wider mb-3">
             B2B-калькуляторы
           </div>
-          <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight max-w-4xl">
+          <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight max-w-4xl text-white">
             Калькуляторы для cleanroom — расчёт за минуту
           </h1>
           <p className="mt-4 text-base lg:text-lg text-white/85 max-w-3xl">

@@ -76,7 +76,7 @@ export default function CalculatorShell({
               Live-расчёт
             </span>
           </div>
-          <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight max-w-4xl">
+          <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight max-w-4xl text-white">
             {title}
           </h1>
           <p className="mt-4 text-base lg:text-lg text-white/85 max-w-3xl">
