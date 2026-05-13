@@ -27,6 +27,14 @@ const PRICES = {
   stepStool: 400,
 };
 
+// Уровень накладных расходов на импорт мебели в Узбекистан.
+// Таможенная пошлина — типично 40% на мебель для предприятий (HS 9403),
+// НДС — 12% на (стоимость + пошлина).
+// Логистика (морем + автом до Ташкента) + монтаж — ~15%.
+const DUTY_PCT = 0.4;
+const VAT_PCT = 0.12;
+const LOGISTICS_PCT = 0.15;
+
 const formatUsd = (n: number) =>
   '$' +
   n.toLocaleString('en-US', { maximumFractionDigits: 0 }).replace(/,/g, ' ');
@@ -169,8 +177,14 @@ export default function GowningBudgetCalculator() {
       (acc, r) => acc + (r.unitPrice ?? 0) * r.qty,
       0
     );
-    // 12% надбавка на крепёж/доставку/монтаж, округление до $500
-    const total = formatRound(subtotal * 1.12);
+    // Реалистичная стоимость с импортом в Узбекистан:
+    // EXW + таможенная пошлина 40% + НДС 12% (на EXW+пошлину) + ~15% логистика и монтаж.
+    const duty = subtotal * DUTY_PCT;
+    const vatBase = subtotal + duty;
+    const vat = vatBase * VAT_PCT;
+    const logistics = subtotal * LOGISTICS_PCT;
+    const totalRaw = subtotal + duty + vat + logistics;
+    const total = formatRound(totalRaw);
 
     const itemsCount = rows.reduce((acc, r) => acc + r.qty, 0);
 
@@ -183,7 +197,16 @@ export default function GowningBudgetCalculator() {
           ? 'площадь близка к минимуму (2–3 м²/оператора) — спроектируйте кабины переодевания внимательно'
           : null;
 
-    return { rows, total, subtotal, itemsCount, densityWarning };
+    return {
+      rows,
+      total,
+      subtotal,
+      duty,
+      vat,
+      logistics,
+      itemsCount,
+      densityWarning,
+    };
   }, [area, operators, zone, options]);
 
   return (
@@ -271,11 +294,11 @@ export default function GowningBudgetCalculator() {
           />
         </InputGroup>
 
-        {/* Equipment table */}
+        {/* Equipment spec (без цен — только состав комплекта) */}
         <div className="rounded-xl bg-white border border-surface-border overflow-hidden">
           <div className="px-4 py-3 border-b border-surface-border bg-surface flex items-center justify-between">
             <h3 className="text-[14px] font-bold text-text-dark">
-              Спецификация оборудования
+              Состав комплекта
             </h3>
             <span className="text-[11px] text-text-muted font-semibold uppercase tracking-wider">
               {calc.itemsCount} ед.
@@ -287,10 +310,6 @@ export default function GowningBudgetCalculator() {
                 <tr>
                   <th className="text-left px-3 py-2 font-semibold">SKU</th>
                   <th className="text-right px-3 py-2 font-semibold">Кол-во</th>
-                  <th className="text-right px-3 py-2 font-semibold">
-                    Цена/шт
-                  </th>
-                  <th className="text-right px-3 py-2 font-semibold">Сумма</th>
                 </tr>
               </thead>
               <tbody>
@@ -310,35 +329,12 @@ export default function GowningBudgetCalculator() {
                         {r.sku} · {r.note}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 text-right tabular-nums font-semibold text-text-dark">
-                      {r.qty}
-                    </td>
-                    <td className="px-3 py-2.5 text-right tabular-nums text-text">
-                      {r.unitPrice !== null
-                        ? formatUsd(r.unitPrice)
-                        : 'по запросу'}
-                    </td>
                     <td className="px-3 py-2.5 text-right tabular-nums font-bold text-text-dark">
-                      {r.unitPrice !== null
-                        ? formatUsd(r.unitPrice * r.qty)
-                        : '—'}
+                      {r.qty}
                     </td>
                   </tr>
                 ))}
               </tbody>
-              <tfoot>
-                <tr className="border-t-2 border-surface-border bg-surface">
-                  <td
-                    colSpan={3}
-                    className="px-3 py-3 text-right text-[12px] text-text-muted font-semibold uppercase tracking-wider"
-                  >
-                    Подытог
-                  </td>
-                  <td className="px-3 py-3 text-right tabular-nums font-bold text-text-dark">
-                    {formatUsd(calc.subtotal)}
-                  </td>
-                </tr>
-              </tfoot>
             </table>
           </div>
         </div>
@@ -346,20 +342,47 @@ export default function GowningBudgetCalculator() {
 
       {/* Result */}
       <div className="space-y-4 lg:sticky lg:top-[88px]">
+        {/* Заметный disclaimer перед ценой */}
+        <div className="rounded-xl bg-amber-50 border-2 border-amber-300 p-4">
+          <p className="text-[13px] text-amber-900 leading-relaxed">
+            <strong className="block text-amber-950 mb-1 text-[14px]">
+              Цены ориентировочные
+            </strong>
+            Это рамочный бюджет для планирования — реальные цены TINMAN
+            зависят от спецификации, валютного курса и сроков. Точная стоимость
+            рассчитывается персональным КП после уточнения проекта.
+          </p>
+        </div>
+
         <ResultCard
-          eyebrow="Примерная стоимость комплекта"
-          bigNumber={`от ${formatUsd(calc.total)}`}
+          eyebrow="Ориентировочный бюджет проекта"
+          bigNumber={`~ ${formatUsd(calc.total)}`}
           caption={
             <>
-              Цена ориентировочная — включает 12% на крепёж, доставку и
-              монтаж. Точная стоимость зависит от материалов (AISI 304 vs 316),
-              габаритов и сроков.
+              Включает таможенную пошлину 40%, НДС 12%, логистику до Ташкента
+              и монтаж ~15%. Без учёта проектных работ, валидации и
+              сертификации. Точное КП — за 24 часа.
             </>
           }
           breakdown={[
+            {
+              label: 'EXW (без таможни)',
+              value: formatUsd(calc.subtotal),
+            },
+            {
+              label: '+ Пошлина 40%',
+              value: formatUsd(calc.duty),
+            },
+            {
+              label: '+ НДС 12%',
+              value: formatUsd(calc.vat),
+            },
+            {
+              label: '+ Логистика и монтаж',
+              value: formatUsd(calc.logistics),
+            },
             { label: 'Площадь', value: `${area} м²` },
             { label: 'Операторов', value: operators },
-            { label: 'Позиций', value: calc.rows.length },
           ]}
         >
           {calc.densityWarning && (
@@ -387,7 +410,10 @@ export default function GowningBudgetCalculator() {
             opt_mirrors: !!options.mirrors,
             opt_sticky_mats: !!options.sticky_mats,
             items_count: calc.itemsCount,
-            subtotal_usd: calc.subtotal,
+            exw_usd: Math.round(calc.subtotal),
+            duty_usd: Math.round(calc.duty),
+            vat_usd: Math.round(calc.vat),
+            logistics_usd: Math.round(calc.logistics),
             total_usd: calc.total,
             spec: calc.rows
               .map((r) => `${r.sku} ×${r.qty}`)
