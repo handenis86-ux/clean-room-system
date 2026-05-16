@@ -7,16 +7,29 @@ import { siteConfig, phoneTel } from '@/config/site';
 
 export const metadata: Metadata = {
   title:
-    'EU GMP Annex 1 (2022) — соответствие каталога Clean Room Systems',
+    'EU GMP Annex 1 для фарм-заводов Узбекистана 2027: чек-лист соответствия',
   description:
-    'Compliance matrix всех 17 категорий каталога Clean Room Systems против разделов EU GMP Annex 1 (2022). Гид для QA-специалистов фарм-производств Узбекистана.',
+    'Соответствие Annex 1 к дедлайну GMP 2027 в Узбекистане: 9 §-разделов (§4 гоунинг, §7 перчатки, §8 дезинфекция) × 17 категорий расходников. Скачать чек-лист, запросить КП.',
   alternates: {
     canonical: `${siteConfig.url}/compliance/annex1`,
   },
+  keywords: [
+    'EU GMP Annex 1',
+    'соответствие Annex 1',
+    'GMP Узбекистан 2027',
+    'фарм-завод Узбекистан',
+    'чек-лист GMP',
+    'CCS контроль контаминации',
+    'gowning §4',
+    'дезинфекция §8',
+    'перчатки §7',
+    'Ташкент Pharma Park',
+  ],
   openGraph: {
-    title: 'EU GMP Annex 1 (2022) — Compliance Matrix Clean Room Systems',
+    title:
+      'EU GMP Annex 1 — соответствие фарм-завода Узбекистана к дедлайну 2027',
     description:
-      'Подбор расходников для чистых помещений по разделам EU GMP Annex 1 (2022). 17 категорий × 11 разделов в одной таблице.',
+      'Чек-лист и compliance matrix Annex 1 для QA-специалистов Узбекистана: §4 гоунинг, §7 перчатки, §8 дезинфекция. 17 категорий расходников × 9 разделов. Скачать чек-лист или запросить КП.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 };
@@ -157,11 +170,65 @@ export default function ComplianceAnnex1Page() {
     ],
   };
 
+  const techArticleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline:
+      'EU GMP Annex 1 для фарм-заводов Узбекистана: чек-лист соответствия к дедлайну 2027',
+    description:
+      'Compliance matrix EU GMP Annex 1 (2022) для производителей лекарственных средств Узбекистана. 17 категорий расходников распределены по 9 §-разделам Annex 1 — рабочий инструмент для CCS, валидационного пакета и подготовки к GMP-аудиту перед 1 января 2027 г.',
+    mainEntityOfPage: `${siteConfig.url}/compliance/annex1`,
+    url: `${siteConfig.url}/compliance/annex1`,
+    inLanguage: 'ru',
+    isAccessibleForFree: true,
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType:
+        'QA-специалисты, начальники производства, аудиторы фарм-заводов Узбекистана',
+    },
+    about: [
+      { '@type': 'Thing', name: 'EU GMP Annex 1 (2022)' },
+      { '@type': 'Thing', name: 'Contamination Control Strategy (CCS)' },
+      { '@type': 'Thing', name: 'Aseptic processing' },
+      { '@type': 'Thing', name: 'Cleanroom gowning (§4)' },
+      { '@type': 'Thing', name: 'Cleanroom disinfection (§8)' },
+      { '@type': 'Thing', name: 'Sterile gloves (§7)' },
+      { '@type': 'Thing', name: 'Environmental monitoring (§9)' },
+      {
+        '@type': 'Thing',
+        name: 'Обязательная GMP-сертификация в Узбекистане с 1 января 2027 г.',
+      },
+      { '@type': 'Thing', name: 'PIC/S гармонизация' },
+    ],
+    keywords: [
+      'EU GMP Annex 1',
+      'соответствие Annex 1',
+      'GMP Узбекистан 2027',
+      'фарм-завод Узбекистан',
+      'чек-лист GMP',
+      'CCS',
+      'gowning',
+      'дезинфекция',
+      'стерильные перчатки',
+      'aseptic',
+      'Pharma Park Ташкент',
+    ].join(', '),
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -183,7 +250,8 @@ export default function ComplianceAnnex1Page() {
             B2B compliance reference
           </div>
           <h1 className="text-[28px] md:text-[42px] font-extrabold text-white leading-tight">
-            EU GMP Annex 1 (2022) — соответствие каталога
+            EU GMP Annex 1 для фарм-заводов Узбекистана: чек-лист
+            соответствия к дедлайну 2027
           </h1>
           <p className="text-[16px] md:text-[18px] text-brand-muted mt-4 leading-relaxed">
             17 категорий расходников Clean Room Systems разнесены по 9

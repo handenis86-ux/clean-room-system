@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Phone, ShieldCheck } from 'lucide-react';
+import { Phone, ShieldCheck, Calculator, ArrowRight } from 'lucide-react';
 import {
   categories,
   getCategoryBySlug,
@@ -18,6 +18,58 @@ import ProductGrid from './ProductGrid';
 
 interface Props {
   params: { category: string };
+}
+
+interface CalculatorCTA {
+  href: string;
+  title: string;
+  description: string;
+  cta: string;
+}
+
+const CATEGORY_TO_CALCULATOR: Record<string, CalculatorCTA> = {
+  'perchatki-zashchitnye': {
+    href: '/tools/gloves-calculator',
+    title: 'Сколько нужно перчаток на год?',
+    description:
+      'Рассчитайте годовой расход стерильных и нестерильных нитриловых перчаток по операторам, сменам и классу GMP. Менеджер пришлёт КП на расчётный объём за 24 часа.',
+    cta: 'Открыть калькулятор перчаток',
+  },
+  'disinfectants-and-detergents': {
+    href: '/tools/disinfectant-calculator',
+    title: 'Сколько дезинфектанта закупить на квартал?',
+    description:
+      'Рассчитайте расход спиртовых и спороцидных средств по площади чистых зон, частоте обработки и ротации действующих веществ согласно требованиям GMP Annex 1.',
+    cta: 'Открыть калькулятор дезинфектантов',
+  },
+  garments: {
+    href: '/tools/gloves-calculator',
+    title: 'Считаете годовую потребность по СИЗ?',
+    description:
+      'Калькулятор перчаток поможет точно оценить расход СИЗ-расходников на оператора в год. Для одноразовых костюмов норма обычно равна расходу перчаток на смену.',
+    cta: 'Открыть калькулятор перчаток',
+  },
+  'cleanroom-wipes': {
+    href: '/tools/disinfectant-calculator',
+    title: 'Расход салфеток связан с расходом дезинфектанта',
+    description:
+      'Чтобы посчитать норму салфеток на квартал, начните с расчёта дезинфектанта по площади и частоте обработки — обычно на 1 л раствора уходит 8–12 салфеток 23×23 см.',
+    cta: 'Рассчитать расход дезинфектанта',
+  },
+};
+
+const TINMAN_CALCULATOR: CalculatorCTA = {
+  href: '/tools/gowning-room-budget',
+  title: 'Сколько стоит оборудовать гаунинг-комнату?',
+  description:
+    'Рассчитайте бюджет на скамьи, шкафы, зеркала, степ-овер и аксессуары TINMAN под площадь и пропускную способность вашей зоны переодевания. Растаможка и логистика по UZ — уже в цене.',
+  cta: 'Открыть калькулятор бюджета',
+};
+
+function getCalculatorForCategory(slug: string): CalculatorCTA | null {
+  if (CATEGORY_TO_CALCULATOR[slug]) return CATEGORY_TO_CALCULATOR[slug];
+  if (slug.startsWith('tinman-')) return TINMAN_CALCULATOR;
+  return null;
 }
 
 export function generateStaticParams() {
@@ -51,6 +103,8 @@ export default function CategoryPage({ params }: Props) {
   const stdLabels = stdsForCategory
     .map((id) => STANDARDS[id].shortName)
     .join(' · ');
+
+  const calculatorCTA = getCalculatorForCategory(category.slug);
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -131,6 +185,35 @@ export default function CategoryPage({ params }: Props) {
           </div>
         )}
       </section>
+
+      {/* Calculator CTA (contextual) */}
+      {calculatorCTA && (
+        <section className="px-4 lg:px-[80px] pt-10">
+          <Link
+            href={calculatorCTA.href}
+            className="group flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-6 rounded-xl border border-brand/20 bg-gradient-to-br from-brand-dark to-brand p-6 md:p-7 hover:shadow-lg hover:border-brand transition-all"
+          >
+            <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm">
+              <Calculator size={28} className="text-white" strokeWidth={1.75} />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-[18px] md:text-[20px] font-bold text-white leading-snug mb-1.5">
+                {calculatorCTA.title}
+              </h2>
+              <p className="text-[14px] md:text-[15px] text-brand-light leading-relaxed max-w-[680px]">
+                {calculatorCTA.description}
+              </p>
+            </div>
+            <span className="inline-flex items-center justify-center gap-2 px-5 py-3 text-[14px] font-semibold text-brand-dark bg-white rounded-lg group-hover:bg-brand-light transition-colors shrink-0 tabular-nums">
+              {calculatorCTA.cta}
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
+            </span>
+          </Link>
+        </section>
+      )}
 
       {/* Product Grid with Search */}
       <section className="py-12 px-4 lg:px-[80px]">
