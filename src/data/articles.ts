@@ -11,14 +11,9 @@ export interface BlogArticle {
   tableOfContents: { id: string; title: string }[];
 }
 
-export const blogCategories = [
-  'Все статьи',
-  'Оборудование',
-  'Стандарты и регламенты',
-  'Технологии',
-] as const;
+export type BlogCategory = string;
 
-export type BlogCategory = (typeof blogCategories)[number];
+export const ALL_CATEGORIES_LABEL = 'Все статьи';
 
 export const articles: BlogArticle[] = [
   {

@@ -5,6 +5,7 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import CategoriesSection from '@/components/sections/CategoriesSection';
 import SeoContentSection from '@/components/sections/SeoContentSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
+import ComplianceResourcesSection from '@/components/sections/ComplianceResourcesSection';
 import LeadMagnetCTA from '@/components/sections/LeadMagnetCTA';
 import PartnersSection from '@/components/sections/PartnersSection';
 import ClientsSection from '@/components/sections/ClientsSection';
@@ -43,6 +44,7 @@ export default function HomePage() {
       <CategoriesSection />
       <SeoContentSection />
       <WhyUsSection />
+      <ComplianceResourcesSection />
       <LeadMagnetCTA />
       <PartnersSection />
       <ClientsSection />
