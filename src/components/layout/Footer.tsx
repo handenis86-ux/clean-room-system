@@ -1,6 +1,28 @@
 import Link from 'next/link';
+import { Send, Youtube, MessageCircle } from 'lucide-react';
 import { siteConfig, footerNavigation, phoneTel } from '@/config/site';
 import Logo from '@/components/ui/Logo';
+
+const socialLinks = [
+  {
+    href: siteConfig.social.telegramChannel,
+    label: 'Telegram канал Clean Room Systems',
+    Icon: Send,
+    color: '#229ED9',
+  },
+  {
+    href: siteConfig.social.whatsapp,
+    label: 'WhatsApp',
+    Icon: MessageCircle,
+    color: '#25D366',
+  },
+  {
+    href: siteConfig.social.youtube,
+    label: 'YouTube канал',
+    Icon: Youtube,
+    color: '#FF0000',
+  },
+].filter((s): s is { href: string; label: string; Icon: typeof Send; color: string } => !!s.href);
 
 export default function Footer() {
   return (
@@ -16,6 +38,27 @@ export default function Footer() {
               помещений. Решения для фармацевтики, пищевой,
               косметической промышленности и микроэлектроники.
             </p>
+
+            {/* Social icons row */}
+            <div className="mt-6 flex items-center gap-3">
+              {socialLinks.map(({ href, label, Icon, color }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="group flex h-10 w-10 items-center justify-center rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] hover:bg-[#222] transition-colors"
+                  style={{ '--brand-color': color } as React.CSSProperties}
+                >
+                  <Icon
+                    size={18}
+                    className="text-[#888888] group-hover:text-[var(--brand-color)] transition-colors"
+                    strokeWidth={2}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Column 2: Каталог */}

@@ -149,6 +149,7 @@ export interface SiteConfig {
   social: {
     vk?: string;
     telegram?: string;
+    telegramChannel?: string;
     youtube?: string;
     whatsapp?: string;
   };
