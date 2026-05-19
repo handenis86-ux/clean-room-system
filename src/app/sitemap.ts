@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { categories, productSlug } from '@/data/products';
 import { articles } from '@/data/articles';
+import { allFacets } from '@/data/category-facets';
 import { siteConfig } from '@/config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -128,6 +129,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  const facetUrls: MetadataRoute.Sitemap = allFacets.map((f) => ({
+    url: `${base}/catalog/${f.parentCategory}/filter/${f.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
   const articleUrls: MetadataRoute.Sitemap = articles.map((article) => {
     const parsed = article.publishedAt ? new Date(article.publishedAt) : null;
     const lastModified =
@@ -140,5 +148,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticUrls, ...categoryUrls, ...productUrls, ...articleUrls];
+  return [...staticUrls, ...categoryUrls, ...productUrls, ...facetUrls, ...articleUrls];
 }
