@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -240,11 +241,13 @@ export default function CategoryPage({ params }: Props) {
 
       {/* Product Grid with Search */}
       <section className="py-12 px-4 lg:px-[80px]">
-        <ProductGrid
-          products={category.products}
-          categorySlug={category.slug}
-          categoryImage={category.image}
-        />
+        <Suspense fallback={null}>
+          <ProductGrid
+            products={category.products}
+            categorySlug={category.slug}
+            categoryImage={category.image}
+          />
+        </Suspense>
       </section>
 
       {/* SEO content: intro + sections + FAQ + internal links */}
