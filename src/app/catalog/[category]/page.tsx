@@ -13,6 +13,7 @@ import {
   STANDARDS,
   getStandardsForCategory,
 } from '@/data/standards-mapping';
+import { getCategorySeoContent } from '@/data/category-seo';
 import { siteConfig, phoneTel } from '@/config/site';
 import ProductGrid from './ProductGrid';
 
@@ -105,6 +106,22 @@ export default function CategoryPage({ params }: Props) {
     .join(' · ');
 
   const calculatorCTA = getCalculatorForCategory(category.slug);
+  const seoContent = getCategorySeoContent(category.slug);
+
+  const faqJsonLd = seoContent && seoContent.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: seoContent.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.a,
+          },
+        })),
+      }
+    : null;
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -155,6 +172,12 @@ export default function CategoryPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* Hero */}
       <section className="bg-brand-light py-12 px-4 lg:px-[80px]">
@@ -223,6 +246,85 @@ export default function CategoryPage({ params }: Props) {
           categoryImage={category.image}
         />
       </section>
+
+      {/* SEO content: intro + sections + FAQ + internal links */}
+      {seoContent && (
+        <section className="bg-white py-12 px-4 lg:px-[80px] border-t border-surface-border">
+          <div className="max-w-[860px] mx-auto">
+            <div className="prose prose-slate max-w-none">
+              <p className="text-[15px] leading-relaxed text-text mb-6">
+                {seoContent.intro}
+              </p>
+
+              {seoContent.sections.map((s, i) => (
+                <div key={i} className="mb-8">
+                  <h2 className="text-[22px] md:text-[26px] font-bold text-text-dark mb-3 mt-8">
+                    {s.heading}
+                  </h2>
+                  <div
+                    className="
+                      text-[15px] leading-relaxed text-text
+                      [&_p]:mb-3
+                      [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-3 [&_ul]:space-y-1
+                      [&_li]:leading-snug
+                      [&_a]:text-brand [&_a]:underline hover:[&_a]:text-brand-dark
+                      [&_strong]:font-semibold [&_strong]:text-text-dark
+                    "
+                    dangerouslySetInnerHTML={{ __html: s.body }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {seoContent.faq.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-surface-border">
+                <h2 className="text-[22px] md:text-[26px] font-bold text-text-dark mb-6">
+                  Часто задаваемые вопросы
+                </h2>
+                <div className="space-y-4">
+                  {seoContent.faq.map((f, i) => (
+                    <details
+                      key={i}
+                      className="group rounded-lg border border-surface-border bg-surface px-5 py-4 open:bg-white open:border-brand/30"
+                    >
+                      <summary className="text-[15px] font-semibold text-text-dark cursor-pointer list-none flex items-start justify-between gap-3">
+                        <span>{f.q}</span>
+                        <span className="text-brand text-xl shrink-0 transition-transform group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="text-[14px] leading-relaxed text-text mt-3">
+                        {f.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {seoContent.internalLinks.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-surface-border">
+                <h3 className="text-[16px] font-semibold text-text-dark mb-4 uppercase tracking-wider">
+                  По теме
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {seoContent.internalLinks.map((l, i) => (
+                    <li key={i}>
+                      <Link
+                        href={l.href}
+                        className="group flex items-center gap-2 text-[14px] text-brand hover:text-brand-dark transition-colors"
+                      >
+                        <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                        <span className="underline">{l.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Related categories */}
       <section className="bg-surface py-12 px-4 lg:px-[80px]">
