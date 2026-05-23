@@ -71,6 +71,7 @@ export const footerNavigation = {
   ],
   support: [
     { label: 'Доставка и оплата', href: '/delivery' },
+    { label: 'Поставщик в Ташкенте', href: '/locations/tashkent-cleanroom-supplier' },
     { label: 'B2B-калькуляторы', href: '/tools' },
     { label: 'GMP в Узбекистане 2027', href: '/compliance/gmp-2027-uzbekistan' },
     { label: 'GMP чек-лист 2027', href: '/resources/gmp-audit-checklist' },
