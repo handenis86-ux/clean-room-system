@@ -76,6 +76,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${base}/compliance/gmp-2027-uzbekistan`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${base}/brands/tinman`,
       lastModified: now,
       changeFrequency: 'monthly',

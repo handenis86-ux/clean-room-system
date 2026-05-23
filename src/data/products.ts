@@ -33,6 +33,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'indicators',
     title: 'Индикаторы для стерилизации, дезинфекции и мойки',
+    seoH1: 'Биологические и химические индикаторы стерилизации',
     description: 'Биологические и химические индикаторы контроля процессов стерилизации, инкубаторы и аксессуары Terragene.',
     image: '/images/categories/sterilization-kit.webp',
     products: [
@@ -1094,6 +1095,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'garments',
     title: 'Одежда одноразовая защитная',
+    seoH1: 'Одежда одноразовая для чистых помещений и GMP',
     description: 'Одноразовые комбинезоны, халаты, шапочки, бахилы и маски для чистых помещений Isofield, NPro, Lakeland.',
     image: '/images/categories/clothing.webp',
     products: [
@@ -1477,6 +1479,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'reusable-garm',
     title: 'Одежда многоразовая защитная',
+    seoH1: 'Многоразовая одежда для чистых помещений',
     description: 'Многоразовые комбинезоны, халаты, бахилы и бельё Alsico High Tech и High Clean Stat II, включая ESD.',
     image: '/images/categories/clothing.webp',
     products: [
@@ -1660,6 +1663,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'perchatki-zashchitnye',
     title: 'Перчатки защитные',
+    seoH1: 'Защитные перчатки для чистых помещений и фарм-производств',
     description: 'Стерильные и нестерильные перчатки для чистых помещений от Isofield, NPro, Shield Scientific.',
     image: '/images/categories/gloves.webp',
     products: [

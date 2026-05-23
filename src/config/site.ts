@@ -72,6 +72,7 @@ export const footerNavigation = {
   support: [
     { label: 'Доставка и оплата', href: '/delivery' },
     { label: 'B2B-калькуляторы', href: '/tools' },
+    { label: 'GMP в Узбекистане 2027', href: '/compliance/gmp-2027-uzbekistan' },
     { label: 'GMP чек-лист 2027', href: '/resources/gmp-audit-checklist' },
     { label: 'ISO 14644 справочник', href: '/resources/iso-14644-classes-spec' },
     { label: 'Валидация дезинфекции', href: '/resources/disinfection-validation-protocol' },
