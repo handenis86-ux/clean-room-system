@@ -82,8 +82,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(params.category);
   if (!category) return { title: 'Категория не найдена' };
   const productCount = category.products.length;
+  const seoTitle = category.seoH1 || category.title;
   return {
-    title: `${category.title} в Узбекистане — купить для GMP / ISO 14644 в Ташкенте`,
+    title: `${seoTitle} в Узбекистане — купить для GMP / ISO 14644 в Ташкенте`,
     description: `${category.description} ${productCount} ${productCount === 1 ? 'SKU' : 'SKU'} в наличии. Поставка из Ташкента, КП за 24 часа. Для фарм-, биотех- и медицинских производств Узбекистана.`.slice(
       0,
       200
@@ -194,7 +195,7 @@ export default function CategoryPage({ params }: Props) {
           <span>{category.title}</span>
         </nav>
         <h1 className="text-[28px] md:text-[42px] font-bold text-brand-dark leading-tight">
-          {category.title}
+          {category.seoH1 || category.title}
         </h1>
         <p className="text-[16px] text-brand max-w-[700px] mt-3">
           {category.description}

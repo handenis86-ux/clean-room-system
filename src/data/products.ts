@@ -11,7 +11,15 @@ export interface Product {
 
 export interface ProductCategory {
   slug: string;
+  /** Короткий title для nav, breadcrumbs, карточек на /catalog. */
   title: string;
+  /**
+   * Опциональный длинный H1 / meta-title для SEO. Если задан — используется
+   * на странице категории как H1 и в начале meta-title, иначе fallback на `title`.
+   * Применяется, когда основной title слишком короткий для SEO, но менять его
+   * во всём UI нежелательно (раздуло бы breadcrumbs и nav).
+   */
+  seoH1?: string;
   description: string;
   image: string;
   /** Visual grouping — e.g. 'consumables' (default), 'furniture'. */
@@ -653,6 +661,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'disinfectants-and-detergents',
     title: 'Дезинфицирующие и моющие средства',
+    seoH1: 'Дезинфицирующие средства для чистых помещений',
     description: 'Профессиональные средства Contec, Diversey, Neokhim для дезинфекции и CIP-мойки чистых помещений.',
     image: '/images/categories/disinfectants.webp',
     products: [
