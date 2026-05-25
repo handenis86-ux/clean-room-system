@@ -2169,7 +2169,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleaning-equipment',
     title: 'Ручки и держатели для уборки',
     description: 'Телескопические ручки и держатели мопов Hydroflex и Contec для чистых помещений.',
-    image: '/images/categories/mop-handle.jpg',
+    image: '/images/categories/mop-handle.webp',
     products: [
       { name: 'Держатель из полипропилена KKV40', sku: '2151005', description: 'Hydroflex, держатель мопа из полипропилена, ISO 6 / GMP C, D',
         specs: [
@@ -2352,7 +2352,7 @@ export const categories: ProductCategory[] = [
     slug: 'mops',
     title: 'Моп (насадки) для уборки',
     description: 'Одноразовые и многоразовые мопы Hydroflex и Contec для уборки чистых помещений.',
-    image: '/images/categories/mop-pad.jpg',
+    image: '/images/categories/mop-pad.webp',
     products: [
       { name: 'Одноразовый стерильный МОП EC40-S', sku: '2111105', description: '100% полиэстер, Hydroflex',
         specs: [
@@ -2941,7 +2941,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-accessories',
     title: 'Аксессуары для чистых помещений',
     description: 'Стерильные маркеры, ручки и бумага для документооборота в чистых помещениях NPro NSupport.',
-    image: '/images/categories/ta_markers.jpg',
+    image: '/images/categories/ta_markers.webp',
     products: [
       { name: 'Маркеры стерильные NPro NSupport', sku: 'SM1S/SM2S',
         description: 'Стерильные маркеры с двумя наконечниками (1 мм / 0.5 мм), гамма-стерилизация ≥25 кГр, ISO 4 / GMP A-B. SM1S — синий, SM2S — чёрный',
@@ -3523,7 +3523,7 @@ export const categories: ProductCategory[] = [
     slug: 'cleanroom-packaging',
     title: 'Упаковка для чистых помещений',
     description: 'Полиэтиленовая, антистатическая и стерильная упаковка ZEAL Clean Supplies для чистых помещений и лабораторий.',
-    image: '/images/categories/packaging-cr.jpg',
+    image: '/images/categories/packaging-cr.webp',
     products: [
       { name: 'ZEAL Clean Supplies полиэтиленовая упаковка', sku: 'Z800-1000',
         description: 'Полиэтиленовые пакеты ZEAL для чистых помещений ISO 6 / GMP C-D. Возможно изготовление в рулонах, складном и индивидуальном форматах любых размеров.',

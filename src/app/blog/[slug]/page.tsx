@@ -88,7 +88,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       url: siteConfig.url,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/images/logo.png`,
+        url: `${siteConfig.url}/images/logo.webp`,
       },
     },
   };

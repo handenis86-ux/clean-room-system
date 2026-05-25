@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "optimize-images": "node scripts/optimize-all-images.mjs",
+    "prebuild": "node scripts/optimize-all-images.mjs",
     "build": "node --max-old-space-size=4096 node_modules/next/dist/bin/next build",
     "start": "next start",
     "lint": "next lint",

@@ -27,8 +27,8 @@ export const localBusinessJsonLd = {
     'Расходные материалы и одежда для чистых помещений в Узбекистане — GMP, ISO 14644',
 
   url: siteConfig.url,
-  logo: `${siteConfig.url}/images/logo.png`,
-  image: [`${siteConfig.url}/og-image.png`, `${siteConfig.url}/images/logo.png`],
+  logo: `${siteConfig.url}/images/logo.webp`,
+  image: [`${siteConfig.url}/og-image.png`, `${siteConfig.url}/images/logo.webp`],
 
   telephone: siteConfig.phone,
   email: siteConfig.email,

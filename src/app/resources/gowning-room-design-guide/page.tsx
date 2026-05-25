@@ -63,7 +63,7 @@ const jsonLd = {
     url: siteConfig.url,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteConfig.url}/images/logo.png`,
+      url: `${siteConfig.url}/images/logo.webp`,
     },
   },
   image: `${siteConfig.url}/og-image.png`,
