@@ -42,7 +42,7 @@ const helpOptions = [
   'Подготовка SOP и документации',
   'Pre-audit (внутренний аудит готовности)',
   'Mock inspection',
-  'Сопровождение на инспекции АРФО',
+  'Сопровождение на GMP-инспекции',
   'CCS (Contamination Control Strategy)',
   'Supplier qualification расходников',
   'Бесплатная 30-минутная консультация',
@@ -267,7 +267,7 @@ export default function GmpConsultingForm() {
           <Send size={12} /> Заявка на GMP-консалтинг
         </div>
         <h3 className="text-[22px] lg:text-[26px] font-extrabold text-text-dark leading-tight">
-          Получите план подготовки к GMP-инспекции АРФО
+          Получите план подготовки к GMP-инспекции
         </h3>
         <p className="text-[14px] text-text-muted mt-1.5 leading-relaxed">
           Заполните форму — свяжемся в течение 24 часов и согласуем 30-минутный

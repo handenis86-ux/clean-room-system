@@ -22,7 +22,7 @@ export default function GmpConsultingCTA() {
               <span className="text-brand">Получите план за 30 минут</span>
             </h2>
             <p className="text-[15px] md:text-[16px] text-text mt-4 leading-relaxed max-w-[640px]">
-              Поможем пройти инспекцию АРФО с первого раза. Обучение QA,
+              Поможем пройти GMP-инспекцию в Узбекистане с первого раза. Обучение QA,
               подготовка SOP, mock inspection, supplier qualification — в одном
               окне с практикующими GMP-консультантами. Бесплатная диагностика
               готовности предприятия.
@@ -39,7 +39,7 @@ export default function GmpConsultingCTA() {
                 href="/compliance/gmp-2027-uzbekistan"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-brand-dark border border-brand-dark/30 rounded-lg hover:bg-white transition-colors"
               >
-                Что требует АРФО
+                Что проверяет инспектор
               </Link>
             </div>
           </div>
@@ -62,11 +62,11 @@ export default function GmpConsultingCTA() {
               </li>
               <li className="flex gap-2.5">
                 <span className="text-brand font-bold shrink-0">›</span>
-                <span>Mock inspection за 2-3 мес. до АРФО</span>
+                <span>Mock inspection за 2-3 мес. до GMP-инспекции</span>
               </li>
               <li className="flex gap-2.5">
                 <span className="text-brand font-bold shrink-0">›</span>
-                <span>Сопровождение на инспекции АРФО</span>
+                <span>Сопровождение на GMP-инспекции</span>
               </li>
               <li className="flex gap-2.5">
                 <span className="text-brand font-bold shrink-0">›</span>
