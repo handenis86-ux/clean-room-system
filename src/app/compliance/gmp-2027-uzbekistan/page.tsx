@@ -848,6 +848,37 @@ export default function ComplianceGmpUzbekistan2027Page() {
         </div>
       </section>
 
+      {/* Inline consulting CTA */}
+      <section className="bg-brand-light/40 border-y border-brand-light py-10 lg:py-14 px-4 lg:px-[80px]">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="bg-white rounded-2xl border-2 border-brand/30 p-6 lg:p-8 shadow-sm">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand text-white text-[11px] font-bold uppercase tracking-wider mb-3">
+                  <ShieldCheck size={12} />
+                  GMP-консалтинг
+                </div>
+                <h2 className="text-[22px] lg:text-[26px] font-extrabold text-text-dark leading-tight mb-2">
+                  Нужна помощь с подготовкой к GMP?
+                </h2>
+                <p className="text-[14px] lg:text-[15px] text-text leading-relaxed">
+                  Получите бесплатную диагностику готовности предприятия за
+                  30 минут. Партнёрство с практикующими GMP-консультантами,
+                  которые уже сертифицировали заводы в Узбекистане.
+                </p>
+              </div>
+              <Link
+                href="/gmp-podgotovka"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors whitespace-nowrap"
+              >
+                Получить план
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 5 — Help resources */}
       <section
         id="resources"

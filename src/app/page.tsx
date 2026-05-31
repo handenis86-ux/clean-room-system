@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
+import GmpConsultingCTA from '@/components/sections/GmpConsultingCTA';
 import AboutPreviewSection from '@/components/sections/AboutPreviewSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import CategoriesSection from '@/components/sections/CategoriesSection';
@@ -39,6 +40,7 @@ export default function HomePage() {
       />
 
       <HeroSection />
+      <GmpConsultingCTA />
       <AboutPreviewSection />
       <ServicesSection />
       <CategoriesSection />
