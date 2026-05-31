@@ -78,11 +78,18 @@ export function generateStaticParams() {
   return getAllCategorySlugs().map((category) => ({ category }));
 }
 
+const UZ_TRANSLATED_CATEGORIES = new Set([
+  'perchatki-zashchitnye',
+  'garments',
+  'disinfectants-and-detergents',
+]);
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(params.category);
   if (!category) return { title: 'Категория не найдена' };
   const productCount = category.products.length;
   const seoTitle = category.seoH1 || category.title;
+  const hasUz = UZ_TRANSLATED_CATEGORIES.has(category.slug);
   return {
     title: `${seoTitle} в Узбекистане — купить для GMP / ISO 14644 в Ташкенте`,
     description: `${category.description} ${productCount} ${productCount === 1 ? 'SKU' : 'SKU'} в наличии. Поставка из Ташкента, КП за 24 часа. Для фарм-, биотех- и медицинских производств Узбекистана.`.slice(
@@ -91,6 +98,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ),
     alternates: {
       canonical: `${siteConfig.url}/catalog/${category.slug}`,
+      languages: {
+        ru: `${siteConfig.url}/catalog/${category.slug}`,
+        uz: hasUz
+          ? `${siteConfig.url}/uz/catalog/${category.slug}`
+          : `${siteConfig.url}/uz`,
+        'x-default': `${siteConfig.url}/catalog/${category.slug}`,
+      },
     },
   };
 }

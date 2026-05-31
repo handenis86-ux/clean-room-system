@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     'Как получить сертификат GMP в Узбекистане до 1 января 2027 г.: кто выдаёт, какие документы нужны, сроки и стоимость GMP-инспекции, чек-лист подготовки для фарм-завода и резидентов Pharma Park.',
   alternates: {
     canonical: `${siteConfig.url}/compliance/gmp-2027-uzbekistan`,
+    languages: {
+      ru: `${siteConfig.url}/compliance/gmp-2027-uzbekistan`,
+      uz: `${siteConfig.url}/uz/compliance/gmp-2027-uzbekistan`,
+      'x-default': `${siteConfig.url}/compliance/gmp-2027-uzbekistan`,
+    },
   },
   robots: {
     index: true,

@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     'Поможем пройти GMP-инспекцию в Узбекистане с первого раза. Обучение QA, подготовка SOP, mock inspection, supplier qualification. Партнёрство с практикующими GMP-консультантами. Бесплатная диагностика готовности.',
   alternates: {
     canonical: `${siteConfig.url}/gmp-podgotovka`,
+    languages: {
+      ru: `${siteConfig.url}/gmp-podgotovka`,
+      uz: `${siteConfig.url}/uz/gmp-podgotovka`,
+      'x-default': `${siteConfig.url}/gmp-podgotovka`,
+    },
   },
   keywords: [
     'обучение GMP Узбекистан',

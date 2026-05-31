@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Send, Youtube, MessageCircle } from 'lucide-react';
 import { siteConfig, footerNavigation, phoneTel } from '@/config/site';
 import Logo from '@/components/ui/Logo';
+import { t } from '@/data/i18n/dictionary';
+import { getLocaleFromPath, localizePath, type Locale } from '@/lib/i18n';
 
 const socialLinks = [
   {
@@ -24,7 +29,48 @@ const socialLinks = [
   },
 ].filter((s): s is { href: string; label: string; Icon: typeof Send; color: string } => !!s.href);
 
-export default function Footer() {
+interface FooterProps {
+  locale?: Locale;
+}
+
+export default function Footer({ locale: localeProp }: FooterProps = {}) {
+  const pathname = usePathname();
+  const locale: Locale = localeProp ?? getLocaleFromPath(pathname || '/');
+  const dict = t[locale];
+  const ruCatalog = footerNavigation.catalog;
+  const ruCompany = footerNavigation.company;
+
+  // Локализованные подписи (для uz берём из словаря, для ru — оригинальные).
+  // Сохраняем порядок и href, перевод только labels.
+  const catalogLabels: Record<string, string> =
+    locale === 'uz'
+      ? {
+          '/catalog/indicators': dict.footer.catalogItems.indicators,
+          '/catalog/disinfectants-and-detergents':
+            dict.footer.catalogItems.disinfectants,
+          '/catalog/garments': dict.footer.catalogItems.garments,
+          '/catalog/perchatki-zashchitnye': dict.footer.catalogItems.gloves,
+          '/catalog/cleanroom-wipes': dict.footer.catalogItems.wipes,
+          '/catalog/cleanroom-chairs': dict.footer.catalogItems.chairs,
+        }
+      : {};
+
+  const companyLabels: Record<string, string> =
+    locale === 'uz'
+      ? {
+          '/company/about': dict.footer.companyItems.about,
+          '/brands/tinman': dict.footer.companyItems.tinman,
+          '/blog': dict.footer.companyItems.blog,
+          '/contacts': dict.footer.companyItems.contacts,
+        }
+      : {};
+
+  const renderLabel = (
+    map: Record<string, string>,
+    href: string,
+    fallback: string,
+  ) => (locale === 'uz' && map[href]) || fallback;
+
   return (
     <footer className="bg-[#0A0A0A]">
       <div className="w-full max-w-[1440px] mx-auto py-[60px] px-4 lg:px-[80px]">
@@ -32,11 +78,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Column 1: Brand */}
           <div>
-            <Logo variant="footer" />
+            <Logo variant="footer" locale={locale} />
             <p className="mt-4 text-[14px] font-normal text-[#888888] leading-[1.5] max-w-xs">
-              Одежда и расходные материалы для чистых
-              помещений. Решения для фармацевтики, пищевой,
-              косметической промышленности и микроэлектроники.
+              {dict.footer.brandDescription}
             </p>
 
             {/* Social icons row */}
@@ -63,15 +107,17 @@ export default function Footer() {
 
           {/* Column 2: Каталог */}
           <div>
-            <h3 className="text-[14px] font-bold text-white mb-4">Каталог</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">
+              {dict.footer.catalogHeading}
+            </h3>
             <ul className="flex flex-col gap-[12px]">
-              {footerNavigation.catalog.map((item) => (
+              {ruCatalog.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={localizePath(item.href, locale)}
                     className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                   >
-                    {item.label}
+                    {renderLabel(catalogLabels, item.href, item.label)}
                   </Link>
                 </li>
               ))}
@@ -80,15 +126,17 @@ export default function Footer() {
 
           {/* Column 3: Компания */}
           <div>
-            <h3 className="text-[14px] font-bold text-white mb-4">Компания</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">
+              {dict.footer.companyHeading}
+            </h3>
             <ul className="flex flex-col gap-[12px]">
-              {footerNavigation.company.map((item) => (
+              {ruCompany.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={localizePath(item.href, locale)}
                     className="inline-block py-1.5 text-sm font-normal text-[#888888] hover:text-white transition-colors"
                   >
-                    {item.label}
+                    {renderLabel(companyLabels, item.href, item.label)}
                   </Link>
                 </li>
               ))}
@@ -97,7 +145,9 @@ export default function Footer() {
 
           {/* Column 4: Контакты */}
           <div>
-            <h3 className="text-[14px] font-bold text-white mb-4">Контакты</h3>
+            <h3 className="text-[14px] font-bold text-white mb-4">
+              {dict.footer.contactsHeading}
+            </h3>
             <ul className="flex flex-col gap-[12px]">
               <li>
                 <a
@@ -127,13 +177,13 @@ export default function Footer() {
         {/* Bottom bar — 60px gap from top section */}
         <div className="mt-[60px] flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-sm font-normal text-[#888888]">
-            &copy; 2026 {siteConfig.name}. Все права защищены.
+            &copy; {dict.common.year} {siteConfig.name}. {dict.common.allRightsReserved}
           </p>
           <Link
-            href="/privacy"
+            href={localizePath('/privacy', locale)}
             className="text-sm font-normal text-[#888888] hover:text-white transition-colors"
           >
-            Политика конфиденциальности
+            {dict.common.privacyPolicy}
           </Link>
         </div>
       </div>

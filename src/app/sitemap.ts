@@ -166,5 +166,138 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticUrls, ...categoryUrls, ...productUrls, ...facetUrls, ...articleUrls];
+  // Узбекские URL — только 10 переведённых страниц (см. /uz/*).
+  // Альтернаты ru/uz используются только для основных русских записей, а
+  // дублирующие узбекские записи помечены как `monthly` с priority 0.7.
+  const uzUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${base}/uz`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/`,
+          uz: `${base}/uz`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/catalog`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/catalog`,
+          uz: `${base}/uz/catalog`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/catalog/perchatki-zashchitnye`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/catalog/perchatki-zashchitnye`,
+          uz: `${base}/uz/catalog/perchatki-zashchitnye`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/catalog/garments`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/catalog/garments`,
+          uz: `${base}/uz/catalog/garments`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/catalog/disinfectants-and-detergents`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/catalog/disinfectants-and-detergents`,
+          uz: `${base}/uz/catalog/disinfectants-and-detergents`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/compliance/gmp-2027-uzbekistan`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/compliance/gmp-2027-uzbekistan`,
+          uz: `${base}/uz/compliance/gmp-2027-uzbekistan`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/gmp-podgotovka`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/gmp-podgotovka`,
+          uz: `${base}/uz/gmp-podgotovka`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/blog/gmp-uzbekistan-2027-podgotovka`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/blog/gmp-uzbekistan-2027-podgotovka`,
+          uz: `${base}/uz/blog/gmp-uzbekistan-2027-podgotovka`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/contacts`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/contacts`,
+          uz: `${base}/uz/contacts`,
+        },
+      },
+    },
+    {
+      url: `${base}/uz/company/about`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ru: `${base}/company/about`,
+          uz: `${base}/uz/company/about`,
+        },
+      },
+    },
+  ];
+
+  return [
+    ...staticUrls,
+    ...categoryUrls,
+    ...productUrls,
+    ...facetUrls,
+    ...articleUrls,
+    ...uzUrls,
+  ];
 }

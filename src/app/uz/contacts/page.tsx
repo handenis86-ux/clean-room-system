@@ -1,26 +1,28 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, phoneTel } from '@/config/site';
 import ContactPageForm from '@/components/forms/ContactPageForm';
 import MapEmbed from '@/components/ui/MapEmbed';
 import { localBusinessJsonLd } from '@/data/local-business-schema';
+import { buildAlternates } from '@/lib/i18n';
+import { t } from '@/data/i18n/dictionary';
+
+const dict = t.uz;
 
 export const metadata: Metadata = {
-  title: 'Контакты | Поставщик расходников для чистых помещений в Ташкенте',
-  description:
-    'Свяжитесь с Clean Room Systems для консультации по расходным материалам для чистых помещений GMP / ISO 14644. Телефон, email, адрес офиса в Ташкенте, Узбекистан.',
-  alternates: {
-    canonical: `${siteConfig.url}/contacts`,
-    languages: {
-      ru: `${siteConfig.url}/contacts`,
-      uz: `${siteConfig.url}/uz/contacts`,
-      'x-default': `${siteConfig.url}/contacts`,
-    },
+  title: dict.contacts.metaTitle,
+  description: dict.contacts.metaDescription,
+  openGraph: {
+    title: dict.contacts.metaTitle,
+    description: dict.contacts.metaDescription,
+    locale: 'uz_UZ',
+    images: ['/og-image.png'],
   },
+  alternates: buildAlternates('uz', '/contacts'),
 };
 
-export default function ContactsPage() {
+export default function UzContactsPage() {
   return (
     <>
       <script
@@ -32,18 +34,17 @@ export default function ContactsPage() {
       <section className="bg-brand-dark h-[300px] flex items-center">
         <div className="w-full px-4 lg:px-[80px]">
           <nav className="flex items-center gap-1.5 text-[13px] text-[#88C5D9] mb-4">
-            <Link href="/" className="hover:text-white transition-colors">
-              Главная
+            <Link href="/uz" className="hover:text-white transition-colors">
+              {dict.common.breadcrumbsHome}
             </Link>
             <span>/</span>
-            <span>Контакты</span>
+            <span>{dict.contacts.pageTitle}</span>
           </nav>
           <h1 className="text-[32px] md:text-[56px] font-extrabold text-white leading-tight">
-            Контакты
+            {dict.contacts.pageTitle}
           </h1>
           <p className="text-[18px] text-brand-muted mt-3">
-            Свяжитесь с нами любым удобным способом — мы готовы ответить на ваши
-            вопросы.
+            {dict.contacts.pageSubtitle}
           </p>
         </div>
       </section>
@@ -54,7 +55,7 @@ export default function ContactsPage() {
           {/* LEFT column: Contact info */}
           <div className="flex-1">
             <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-6">
-              + КОНТАКТНАЯ ИНФОРМАЦИЯ
+              + {dict.common.contactInfo}
             </p>
 
             {/* Phone */}
@@ -63,7 +64,7 @@ export default function ContactsPage() {
                 <Phone size={20} className="text-brand" />
               </div>
               <div>
-                <p className="text-[13px] text-text-muted mb-0.5">Телефон</p>
+                <p className="text-[13px] text-text-muted mb-0.5">{dict.common.phone}</p>
                 <a
                   href={`tel:${phoneTel}`}
                   className="text-[16px] font-semibold text-text-dark hover:text-brand transition-colors"
@@ -95,31 +96,31 @@ export default function ContactsPage() {
                 <MapPin size={20} className="text-brand" />
               </div>
               <div>
-                <p className="text-[13px] text-text-muted mb-0.5">Адрес</p>
+                <p className="text-[13px] text-text-muted mb-0.5">{dict.common.address}</p>
                 <p className="text-[16px] font-semibold text-text-dark">
-                  г. Ташкент, ул. Нукус, 85/1
+                  Toshkent sh., Nukus koʻchasi, 85/1
                 </p>
               </div>
             </div>
 
             {/* Schedule */}
             <p className="text-xs font-bold text-brand uppercase tracking-[2px] mb-4">
-              + ГРАФИК РАБОТЫ
+              + {dict.common.scheduleTitle}
             </p>
             <p className="text-[15px] text-text-dark mb-1">
-              Пн — Пт: 09:00 — 18:00
+              {dict.common.scheduleWeekdays}
             </p>
-            <p className="text-[15px] text-text-muted">Сб — Вс: Выходной</p>
+            <p className="text-[15px] text-text-muted">{dict.common.scheduleWeekend}</p>
           </div>
 
           {/* RIGHT column: Contact form */}
           <div className="flex-1">
             <div className="rounded-2xl bg-surface p-8">
               <h2 className="text-[24px] font-extrabold text-text-dark mb-2">
-                Оставить заявку
+                {dict.contacts.formTitle}
               </h2>
               <p className="text-[14px] text-text mb-6">
-                Заполните форму, и мы свяжемся с вами в ближайшее время.
+                {dict.contacts.formSubtitle}
               </p>
               <ContactPageForm />
             </div>
@@ -131,16 +132,11 @@ export default function ContactsPage() {
       <section className="relative h-[350px] w-full bg-gray-200">
         <MapEmbed
           src="https://yandex.ru/map-widget/v1/?ll=69.251543%2C41.310247&z=16&pt=69.251543%2C41.310247%2Cpm2rdm"
-          title="Clean Room Systems на карте"
+          title="Clean Room Systems xaritada"
         />
-        {/* Overlay card */}
         <div className="pointer-events-none absolute bottom-6 left-4 lg:left-[80px] bg-white rounded-xl shadow-lg p-5 max-w-[320px]">
-          <p className="text-[16px] font-bold text-text-dark mb-1">
-            Clean Room Systems
-          </p>
-          <p className="text-[13px] text-text">
-            г. Ташкент, ул. Нукус, 85/1
-          </p>
+          <p className="text-[16px] font-bold text-text-dark mb-1">Clean Room Systems</p>
+          <p className="text-[13px] text-text">Toshkent sh., Nukus koʻchasi, 85/1</p>
         </div>
       </section>
     </>

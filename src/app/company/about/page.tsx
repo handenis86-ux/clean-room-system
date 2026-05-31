@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     'Clean Room Systems — поставщик одежды и расходных материалов для чистых помещений в Узбекистане. Решения GMP / ISO 14644 для фармы, пищёвки, косметики и микроэлектроники.',
   alternates: {
     canonical: `${siteConfig.url}/company/about`,
+    languages: {
+      ru: `${siteConfig.url}/company/about`,
+      uz: `${siteConfig.url}/uz/company/about`,
+      'x-default': `${siteConfig.url}/company/about`,
+    },
   },
 };
 

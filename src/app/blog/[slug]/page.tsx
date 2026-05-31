@@ -28,11 +28,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? article.image
     : `${siteConfig.url}${article.image}`;
 
+  const hasUz = article.slug === 'gmp-uzbekistan-2027-podgotovka';
+
   return {
     title: article.title,
     description: article.excerpt,
     alternates: {
       canonical: `${siteConfig.url}/blog/${article.slug}`,
+      languages: {
+        ru: `${siteConfig.url}/blog/${article.slug}`,
+        uz: hasUz
+          ? `${siteConfig.url}/uz/blog/${article.slug}`
+          : `${siteConfig.url}/uz`,
+        'x-default': `${siteConfig.url}/blog/${article.slug}`,
+      },
     },
     openGraph: {
       title: article.title,

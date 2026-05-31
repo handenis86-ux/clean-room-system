@@ -13,6 +13,7 @@ import {
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { YandexMetrika } from '@/components/analytics/YandexMetrika';
 import { TawkChat } from '@/components/analytics/TawkChat';
+import LangAttributeSetter from '@/components/layout/LangAttributeSetter';
 import './globals.css';
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
     languages: {
       'ru-RU': siteConfig.url,
+      'uz': `${siteConfig.url}/uz`,
       'x-default': siteConfig.url,
     },
   },
@@ -92,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen flex flex-col">
         <GoogleTagManagerNoScript />
+        <LangAttributeSetter />
         <CompareProvider>
           <Header />
           <main className="flex-grow pt-[73px] pb-[64px] lg:pb-0">{children}</main>

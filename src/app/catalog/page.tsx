@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     'Каталог расходников для чистых помещений GMP / ISO 14644 в Узбекистане: индикаторы стерилизации, дезинфектанты, одежда, перчатки, салфетки, тележки. Купить в Ташкенте.',
   alternates: {
     canonical: `${siteConfig.url}/catalog`,
+    languages: {
+      'ru': `${siteConfig.url}/catalog`,
+      'uz': `${siteConfig.url}/uz/catalog`,
+      'x-default': `${siteConfig.url}/catalog`,
+    },
   },
 };
 

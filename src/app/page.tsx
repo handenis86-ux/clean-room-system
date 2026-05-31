@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://cleanroom.uz',
+    languages: {
+      'ru': 'https://cleanroom.uz',
+      'uz': 'https://cleanroom.uz/uz',
+      'x-default': 'https://cleanroom.uz',
+    },
   },
 };
 
