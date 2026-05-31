@@ -307,7 +307,7 @@ export const t = {
       heroEyebrow: 'GMP-2027 Oʻzbekiston',
       heroTitle: 'Oʻzbekistonda GMP sertifikatsiyasi 2027 yil 1 yanvariga',
       heroSubtitle:
-        'Farm-korxonalar QA-boʻlimlari uchun reference-hub: meʼyoriy baza, kimga taalluqli, «Toʻgʻri amaliyot markazi» tekshiruv roʻyxati, bosqichli tayyorgarlik.',
+        'Farm-korxonalar QA-boʻlimlari uchun reference-hub: meʼyoriy baza, kimga taalluqli, «Zarur amaliyotlar markazi» tekshiruv roʻyxati, bosqichli tayyorgarlik.',
     },
     contacts: {
       metaTitle:

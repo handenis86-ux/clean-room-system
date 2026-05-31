@@ -70,7 +70,7 @@ const audience = [
   {
     title: 'Xorijiy importyorlar',
     description:
-      'EI / PIC/S mamlakatlaridan ishlab chiqaruvchilar Oʻzbekistonda roʻyxatdan oʻtkazish uchun oʻz milliy GMP-sertifikatlarini ishlatadilar. PIC/S tashqarisidagi mamlakatlardan — ishlab chiqaruvchi oʻz maydonchasida «Toʻgʻri amaliyot markazi» GMP-tekshiruvidan oʻtishi yoki mutual recognition uchun paket berishi kerak.',
+      'EI / PIC/S mamlakatlaridan ishlab chiqaruvchilar Oʻzbekistonda roʻyxatdan oʻtkazish uchun oʻz milliy GMP-sertifikatlarini ishlatadilar. PIC/S tashqarisidagi mamlakatlardan — ishlab chiqaruvchi oʻz maydonchasida «Zarur amaliyotlar markazi» GMP-tekshiruvidan oʻtishi yoki mutual recognition uchun paket berishi kerak.',
   },
 ];
 
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     q: 'Tekshiruvni kim oʻtkazadi?',
-    a: '«Toʻgʻri amaliyot markazi» davlat unitar korxonasi (ГУП Центр надлежащих практик) inspektorlari — uzpharm-gxp.uz. Baʼzi hollarda xorijiy konsultantlar jalb qilinadi. PIC/Sga aʼzo boʻlgach, sxema mamlakatlari vakillari ham tekshiruvga jalb qilinishi mumkin.',
+    a: '«Zarur amaliyotlar markazi» davlat unitar korxonasi (ГУП Центр надлежащих практик) inspektorlari — uzpharm-gxp.uz. Baʼzi hollarda xorijiy konsultantlar jalb qilinadi. PIC/Sga aʼzo boʻlgach, sxema mamlakatlari vakillari ham tekshiruvga jalb qilinishi mumkin.',
   },
   {
     q: 'Boshqa mamlakatda berilgan GMP-sertifikati amal qiladimi?',
@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: '2026 yilda boshlash va 2027 yil 1 yanvarigacha ulgurish mumkinmi?',
-    a: 'Infratuzilma Annex 1ga yaqin va belgilangan QA-rahbar mavjud boʻlsa — ha. Noldan boshlanganda — realistik maqsad 2027 yil Q2-Q3, Sogʻliqni saqlash vazirligi qoshidagi Farmatsevtika sanoatini rivojlantirish agentligi bilan bosqichli sertifikatsiyani oldindan kelishish bilan.',
+    a: 'Infratuzilma Annex 1ga yaqin va belgilangan QA-rahbar mavjud boʻlsa — ha. Noldan boshlanganda — realistik maqsad 2027 yil Q2-Q3, Sogʻliqni saqlash vazirligi qoshidagi Farmatsevtika tarmogʻini rivojlantirish agentligi bilan bosqichli sertifikatsiyani oldindan kelishish bilan.',
   },
 ];
 
@@ -215,7 +215,7 @@ export default function UzGmpHubPage() {
             </li>
             <li className="bg-surface p-5 rounded-xl border border-surface-border">
               <p className="font-bold text-text-dark mb-1.5">
-                «Toʻgʻri amaliyot markazi» davlat unitar korxonasi (ГУП Центр
+                «Zarur amaliyotlar markazi» davlat unitar korxonasi (ГУП Центр
                 надлежащих практик)
               </p>
               <p className="text-[14px] text-text leading-relaxed">
@@ -274,7 +274,7 @@ export default function UzGmpHubPage() {
       <section id="inspector-checks" className="bg-white py-12 lg:py-16 px-4 lg:px-[80px]">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[24px] md:text-[32px] font-extrabold text-text-dark mb-5">
-            «Toʻgʻri amaliyot markazi» inspektori nimani tekshiradi
+            «Zarur amaliyotlar markazi» inspektori nimani tekshiradi
           </h2>
           <p className="text-[15px] text-text leading-relaxed mb-6">
             GMP-tekshiruv odatda maydonchada 3-5 kun davom etadi. Inspektor

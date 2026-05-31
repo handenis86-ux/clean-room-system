@@ -173,7 +173,7 @@ const faqs = [
   {
     question: 'GMP-tekshiruvsiz GMP sertifikatini olish mumkinmi?',
     answer:
-      'Yoʻq. Oʻzbekistondagi mahalliy ishlab chiqaruvchi uchun «Toʻgʻri amaliyot markazi» maydonchada GMP-tekshiruvi majburiy — bu Oʻzbekiston GMP sertifikatini olishning yagona yoʻli. Xorijiy GMP-sertifikatlar (EU, FDA, MHRA) preparatni roʻyxatga olishda importyorlar uchun eʼtirof etiladi, lekin mahalliy zavodni tekshiruvdan ozod qilmaydi. Oʻzbekiston PIC/S ga toʻliq aʼzo boʻlishga harakat qilmoqda (2027-2029 ufqi), bu kelajakda mutual recognition ni kengaytiradi, lekin u paytgacha — faqat Markaz tekshiruvi.',
+      'Yoʻq. Oʻzbekistondagi mahalliy ishlab chiqaruvchi uchun «Zarur amaliyotlar markazi» maydonchada GMP-tekshiruvi majburiy — bu Oʻzbekiston GMP sertifikatini olishning yagona yoʻli. Xorijiy GMP-sertifikatlar (EU, FDA, MHRA) preparatni roʻyxatga olishda importyorlar uchun eʼtirof etiladi, lekin mahalliy zavodni tekshiruvdan ozod qilmaydi. Oʻzbekiston PIC/S ga toʻliq aʼzo boʻlishga harakat qilmoqda (2027-2029 ufqi), bu kelajakda mutual recognition ni kengaytiradi, lekin u paytgacha — faqat Markaz tekshiruvi.',
   },
 ];
 
