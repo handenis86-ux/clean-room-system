@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import CalculatorShell from '@/components/calculators/CalculatorShell';
@@ -76,7 +77,9 @@ export default function DisinfectantCalculatorPage() {
           </>
         }
       >
-        <DisinfectantCalculator />
+        <Suspense fallback={null}>
+          <DisinfectantCalculator />
+        </Suspense>
       </CalculatorShell>
     </>
   );

@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import InputGroup, {
@@ -14,6 +15,21 @@ import QuoteRequestForm from '@/components/calculators/QuoteRequestForm';
 import { useCalcGtm } from '@/components/calculators/useCalcGtm';
 
 type ZoneClass = 'AB' | 'C' | 'D';
+
+/**
+ * SKU → calc-preset mapping. Some TINMAN SKUs imply zone/option choices
+ * (e.g. pass-through hatch is only relevant to A/B). Used when product
+ * pages deep-link with ?sku=TINMAN-PASS-THROUGH-CRGC.
+ */
+const SKU_PRESET: Record<
+  string,
+  { zone?: ZoneClass; enableOptions?: string[] }
+> = {
+  'TINMAN-PASS-THROUGH-CRGC': { zone: 'AB', enableOptions: ['pass_through'] },
+  'TINMAN-CRSU': { enableOptions: ['sinks'] },
+  'TINMAN-CRM': { enableOptions: ['mirrors'] },
+  'STICKY-MAT': { enableOptions: ['sticky_mats'] },
+};
 
 const PRICES = {
   bench: 1500,
@@ -54,6 +70,7 @@ interface Row {
 }
 
 export default function GowningBudgetCalculator() {
+  const searchParams = useSearchParams();
   const [area, setArea] = useState(30);
   const [operators, setOperators] = useState(8);
   const [zone, setZone] = useState<ZoneClass>('C');
@@ -63,6 +80,22 @@ export default function GowningBudgetCalculator() {
     mirrors: true,
     sticky_mats: true,
   });
+
+  // Prefill from ?sku=… — product/catalog pages can deep-link with a TINMAN SKU.
+  useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (!sku) return;
+    const preset = SKU_PRESET[sku.trim().toUpperCase()];
+    if (!preset) return;
+    if (preset.zone) setZone(preset.zone);
+    if (preset.enableOptions?.length) {
+      setOptions((prev) => {
+        const next = { ...prev };
+        for (const k of preset.enableOptions!) next[k] = true;
+        return next;
+      });
+    }
+  }, [searchParams]);
 
   useCalcGtm('gowning', [area, operators, zone, options]);
 

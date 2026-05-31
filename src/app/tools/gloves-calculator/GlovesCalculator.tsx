@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Package } from 'lucide-react';
 import InputGroup, {
@@ -14,6 +15,19 @@ import { useCalcGtm } from '@/components/calculators/useCalcGtm';
 
 type ZoneClass = 'AB' | 'C' | 'D';
 type GloveType = 'sterile' | 'non_sterile';
+
+/**
+ * SKU → glove type prefill map. Used when product page links here with
+ * ?sku=20830 — we preselect the right glove type so the calc lands on the
+ * SKU the user came from.
+ */
+const SKU_GLOVE_TYPE: Record<string, GloveType> = {
+  // Sterile nitriles (Isofield Gecko)
+  '20830': 'sterile',
+  '20831': 'sterile',
+  // Non-sterile nitriles (Shield White, ClearKlens, etc.)
+  '69845': 'non_sterile',
+};
 
 const ZONE_LABELS: Record<ZoneClass, string> = {
   AB: 'GMP A/B (стерильный розлив, изолятор)',
@@ -31,12 +45,25 @@ const formatNumber = (n: number) =>
   n.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
 
 export default function GlovesCalculator() {
+  const searchParams = useSearchParams();
   const [operators, setOperators] = useState(10);
   const [shifts, setShifts] = useState<1 | 2 | 3>(2);
   const [zone, setZone] = useState<ZoneClass>('C');
   const [gloveType, setGloveType] = useState<GloveType>('non_sterile');
   const [workDays, setWorkDays] = useState(250);
   const [waste, setWaste] = useState(10);
+
+  // Prefill from ?sku=… — product pages link in with the SKU they want quoted.
+  useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (!sku) return;
+    const mapped = SKU_GLOVE_TYPE[sku.trim()];
+    if (mapped) {
+      setGloveType(mapped);
+      // Sterile gloves imply A/B class as the most common use-case.
+      if (mapped === 'sterile') setZone('AB');
+    }
+  }, [searchParams]);
 
   useCalcGtm('gloves', [
     operators,

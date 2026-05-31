@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import CalculatorShell from '@/components/calculators/CalculatorShell';
@@ -78,7 +79,9 @@ export default function GowningBudgetPage() {
           </>
         }
       >
-        <GowningBudgetCalculator />
+        <Suspense fallback={null}>
+          <GowningBudgetCalculator />
+        </Suspense>
       </CalculatorShell>
     </>
   );

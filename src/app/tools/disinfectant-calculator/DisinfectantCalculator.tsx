@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Droplet } from 'lucide-react';
 import InputGroup, {
@@ -14,6 +15,21 @@ import { useCalcGtm } from '@/components/calculators/useCalcGtm';
 
 type ZoneClass = 'AB' | 'C' | 'D';
 type ProductLine = 'sterile' | 'non_sterile';
+
+/**
+ * SKU → product line prefill. Sterile Contec SKUs start with `SBC*`; the
+ * non-sterile «F» family (FBC*, FBT*) maps to non_sterile.
+ */
+const SKU_PRODUCT_LINE: Record<string, ProductLine> = {
+  // Sterile Contec
+  SBC56HP: 'sterile',
+  SBC570I: 'sterile',
+  SBC502PC: 'sterile',
+  // Non-sterile Contec / ClearKlens
+  FBC570I: 'non_sterile',
+  FBT170I: 'non_sterile',
+  FBC502PC: 'non_sterile',
+};
 
 // Расход рабочего раствора на 1 м² (мл) — типовая практика
 // для протирочной дезинфекции в cleanroom.
@@ -52,11 +68,23 @@ interface SkuLine {
 }
 
 export default function DisinfectantCalculator() {
+  const searchParams = useSearchParams();
   const [area, setArea] = useState(200);
   const [zone, setZone] = useState<ZoneClass>('C');
   const [productLine, setProductLine] = useState<ProductLine>('non_sterile');
   const [weeks, setWeeks] = useState(WEEKS_PER_YEAR);
   const [reserve, setReserve] = useState(15);
+
+  // Prefill from ?sku=… — product pages can deep-link with a known Contec SKU.
+  useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (!sku) return;
+    const mapped = SKU_PRODUCT_LINE[sku.trim().toUpperCase()];
+    if (mapped) {
+      setProductLine(mapped);
+      if (mapped === 'sterile') setZone('AB');
+    }
+  }, [searchParams]);
 
   useCalcGtm('disinfectant', [area, zone, productLine, weeks, reserve]);
 

@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useRef, useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { CheckCircle2, Send } from 'lucide-react';
 import { formsConfig } from '@/config/forms';
+import { CALCULATOR_TYPE, CalcKind } from './useCalcGtm';
 
 interface QuoteRequestFormProps {
   /** Slug-id калькулятора (для GTM-события и темы письма). */
-  calculatorId: 'gloves' | 'gowning' | 'disinfectant';
+  calculatorId: CalcKind;
   /** Заголовок калькулятора — отображается в теме email и в success-сообщении. */
   calculatorName: string;
   /** Числовое значение результата для GTM-события (например, пар/год). */
@@ -42,10 +43,36 @@ export default function QuoteRequestForm({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const intentFired = useRef(false);
+
+  /**
+   * Push `calculator_quote_requested` on quote-button click — fires once per
+   * page-visit even if the user clicks the button multiple times. Captures
+   * the computed result summary so we can see what volume the lead asked for.
+   */
+  const pushQuoteIntent = () => {
+    if (intentFired.current) return;
+    if (typeof window === 'undefined') return;
+    intentFired.current = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'calculator_quote_requested',
+      calculator_type: CALCULATOR_TYPE[calculatorId],
+      calculator: calculatorId,
+      result_amount: resultAmount ?? null,
+      result_label: resultLabel,
+      ...payload,
+    });
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    // Fire the intent event as soon as the user attempts to submit, even if
+    // validation fails. We want to see «КП requested» demand independently of
+    // whether the email field was valid on first try.
+    pushQuoteIntent();
 
     if (!email.trim() || !name.trim()) {
       setError('Заполните имя и email.');
@@ -109,10 +136,14 @@ export default function QuoteRequestForm({
         throw new Error(data?.message || 'Ошибка отправки формы');
       }
 
+      // Successful Web3Forms submission — fire a separate `generate_lead`
+      // event so we can split «showed intent» (button click above) vs
+      // «actually delivered email». Both are useful for the funnel.
       if (typeof window !== 'undefined') {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: 'calculator_quote_requested',
+          event: 'generate_lead',
+          calculator_type: CALCULATOR_TYPE[calculatorId],
           calculator: calculatorId,
           result_amount: resultAmount ?? null,
         });

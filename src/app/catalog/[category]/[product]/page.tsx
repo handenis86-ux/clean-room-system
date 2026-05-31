@@ -16,6 +16,8 @@ import {
 } from '@/data/standards-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
 import PrintProductButton from './PrintProductButton';
+import CalculatorCTA from './CalculatorCTA';
+import StickyKpCTA from './StickyKpCTA';
 import './print.css';
 
 interface Props {
@@ -435,6 +437,7 @@ export default function ProductPage({ params }: Props) {
               >
                 Запросить цену
               </Link>
+              <CalculatorCTA category={category.slug} sku={product.sku} />
               <PrintProductButton />
               <div className="flex items-center justify-center gap-6 text-[14px]">
                 <a
@@ -509,6 +512,21 @@ export default function ProductPage({ params }: Props) {
         <br />
         Подбор продукции и КП — {siteConfig.email} · {siteConfig.phone}
       </div>
+
+      {/*
+        Mobile spacer: root <main> already has pb-[64px] for the
+        FloatingContactButtons bar. The StickyKpCTA stacks above that
+        (~56px), so on mobile product pages we need ~56px extra clearance
+        so the last visible content isn't obscured. Hidden on lg+.
+      */}
+      <div aria-hidden className="lg:hidden h-14 no-print" />
+
+      {/* Mobile sticky "Получить КП" — product pages only, above FloatingContactButtons */}
+      <StickyKpCTA
+        productName={product.name}
+        sku={product.sku}
+        category={category.slug}
+      />
     </>
   );
 }
