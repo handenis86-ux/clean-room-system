@@ -1,5 +1,17 @@
 {
   "regions": ["fra1"],
+  "redirects": [
+    {
+      "source": "/blog/vybor-dezinfektantov-dlya-farmacevticheskogo-proizvodstva",
+      "destination": "/blog/dezinfektanty-cleanroom-vybor-2026-gajd",
+      "permanent": true
+    },
+    {
+      "source": "/blog/klassifikaciya-chistyh-pomeschenij-iso-14644",
+      "destination": "/blog/iso-14644-klassy-chistoty-poyasneniye",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
