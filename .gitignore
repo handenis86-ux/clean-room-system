@@ -60,3 +60,7 @@ public/uploads/*
 !public/uploads/.gitkeep
 
 .vercel
+
+# Analytics — local credentials & weekly reports
+.secrets/
+reports/weekly/*.md

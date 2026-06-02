@@ -1,0 +1,16 @@
+{
+  "name": "crs-ga-cli",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "bun run cli.ts test",
+    "summary": "bun run cli.ts summary 7"
+  },
+  "dependencies": {
+    "@google-analytics/data": "latest",
+    "@google-cloud/local-auth": "^3.0.1",
+    "google-auth-library": "^10.6.2",
+    "googleapis": "^171.4.0"
+  }
+}
