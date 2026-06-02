@@ -25,6 +25,8 @@ const SKU_GLOVE_TYPE: Record<string, GloveType> = {
   // Sterile nitriles (Isofield Gecko)
   '20830': 'sterile',
   '20831': 'sterile',
+  // Sterile latex (Isofield CR+ Latex)
+  '10040': 'sterile',
   // Non-sterile nitriles (Shield White, ClearKlens, etc.)
   '69845': 'non_sterile',
 };
