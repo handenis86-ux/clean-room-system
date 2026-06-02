@@ -1,6 +1,7 @@
 'use client';
 
 import { Download } from 'lucide-react';
+import { trackEvent } from '@/lib/track';
 
 export default function PrintProductButton() {
   return (
@@ -9,9 +10,7 @@ export default function PrintProductButton() {
       onClick={() => {
         if (typeof window !== 'undefined') {
           window.print();
-          if (window.dataLayer) {
-            window.dataLayer.push({ event: 'product_pdf_download' });
-          }
+          trackEvent('product_pdf_download');
         }
       }}
       className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-medium text-brand-dark bg-white border border-brand rounded-lg hover:bg-brand-light transition-colors no-print"

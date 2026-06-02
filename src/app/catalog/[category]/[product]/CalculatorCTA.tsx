@@ -2,12 +2,7 @@
 
 import Link from 'next/link';
 import { Calculator } from 'lucide-react';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackEvent } from '@/lib/track';
 
 interface CalculatorConfig {
   href: (sku: string) => string;
@@ -47,13 +42,7 @@ export default function CalculatorCTA({ category, sku }: Props) {
   if (!config) return null;
 
   const handleClick = () => {
-    if (typeof window === 'undefined') return;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'product_calculator_click',
-      sku,
-      category,
-    });
+    trackEvent('product_calculator_click', { sku, category });
   };
 
   return (

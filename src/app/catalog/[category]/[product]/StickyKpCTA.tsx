@@ -2,12 +2,7 @@
 
 import Link from 'next/link';
 import { FileText } from 'lucide-react';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackEvent } from '@/lib/track';
 
 interface Props {
   productName: string;
@@ -35,10 +30,7 @@ export default function StickyKpCTA({ productName, sku, category }: Props) {
   const label = longLabel.length <= 32 ? longLabel : 'Запросить КП';
 
   const handleClick = () => {
-    if (typeof window === 'undefined') return;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'generate_lead',
+    trackEvent('generate_lead', {
       method: 'product_kp_cta',
       sku,
       category,

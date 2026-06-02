@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { CheckCircle2, Send, AlertCircle, Phone } from 'lucide-react';
 import { formsConfig } from '@/config/forms';
 import { siteConfig, phoneTel } from '@/config/site';
+import { trackEvent } from '@/lib/track';
 
 /**
  * GMP-consulting lead form. Uses the same Web3Forms access key as
@@ -12,12 +13,6 @@ import { siteConfig, phoneTel } from '@/config/site';
  * GTM event with `method: 'gmp_consulting_form'` BEFORE the network call
  * so we capture intent even if Web3Forms times out.
  */
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
 
 const productionTypes = [
   'Твёрдые лекарственные формы',
@@ -135,16 +130,12 @@ export default function GmpConsultingForm() {
       return;
     }
 
-    // Push GTM event BEFORE network call (SSR-safe).
-    if (typeof window !== 'undefined') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'generate_lead',
-        method: 'gmp_consulting_form',
-        production_type: form.productionType,
-        target_date: form.targetDate,
-      });
-    }
+    // Fire BEFORE network call so we capture intent even on timeout.
+    trackEvent('generate_lead', {
+      method: 'gmp_consulting_form',
+      production_type: form.productionType,
+      target_date: form.targetDate,
+    });
 
     if (!formsConfig.web3formsAccessKey) {
       // eslint-disable-next-line no-console

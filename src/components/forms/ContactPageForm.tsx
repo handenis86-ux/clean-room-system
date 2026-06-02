@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { formsConfig } from '@/config/forms';
+import { trackEvent } from '@/lib/track';
 import TurnstileWidget from '@/components/ui/TurnstileWidget';
 
 interface FormFields {
@@ -12,12 +13,6 @@ interface FormFields {
   email: string;
   message: string;
   botcheck: string;
-}
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
 }
 
 /**
@@ -158,11 +153,8 @@ export default function ContactPageForm() {
         throw new Error(data?.message || 'Ошибка отправки формы');
       }
 
-      // GTM trigger — fires only on successful submission.
-      if (typeof window !== 'undefined') {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'form_submit' });
-      }
+      // Fires only on successful submission.
+      trackEvent('form_submit');
 
       setSuccess(true);
       setForm({

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { CheckCircle2, Send, AlertCircle, Phone } from 'lucide-react';
 import { formsConfig } from '@/config/forms';
 import { siteConfig, phoneTel } from '@/config/site';
+import { trackEvent } from '@/lib/track';
 import { t } from '@/data/i18n/dictionary';
 
 /**
@@ -15,12 +16,6 @@ import { t } from '@/data/i18n/dictionary';
  * `language: 'uz'`, чтобы в GTM/GA4 можно было отличать узбекские лиды
  * для атрибуции и приоритизации в CRM.
  */
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
 
 const dict = t.uz.gmpConsulting;
 
@@ -140,17 +135,13 @@ export default function GmpConsultingFormUz() {
       return;
     }
 
-    // GTM event с language: 'uz' — для атрибуции узбекских лидов.
-    if (typeof window !== 'undefined') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'generate_lead',
-        method: 'gmp_consulting_form',
-        language: 'uz',
-        production_type: form.productionType,
-        target_date: form.targetDate,
-      });
-    }
+    // language: 'uz' — для атрибуции узбекских лидов.
+    trackEvent('generate_lead', {
+      method: 'gmp_consulting_form',
+      language: 'uz',
+      production_type: form.productionType,
+      target_date: form.targetDate,
+    });
 
     if (!formsConfig.web3formsAccessKey) {
       // eslint-disable-next-line no-console

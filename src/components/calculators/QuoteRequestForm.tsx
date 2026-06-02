@@ -4,6 +4,7 @@ import { useRef, useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { CheckCircle2, Send } from 'lucide-react';
 import { formsConfig } from '@/config/forms';
+import { trackEvent } from '@/lib/track';
 import { CALCULATOR_TYPE, CalcKind } from './useCalcGtm';
 
 interface QuoteRequestFormProps {
@@ -19,12 +20,6 @@ interface QuoteRequestFormProps {
   payload: Record<string, string | number | boolean>;
   /** CTA-кнопка label (по умолчанию: «Запросить КП на этот объём»). */
   submitLabel?: string;
-}
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
 }
 
 export default function QuoteRequestForm({
@@ -54,9 +49,7 @@ export default function QuoteRequestForm({
     if (intentFired.current) return;
     if (typeof window === 'undefined') return;
     intentFired.current = true;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'calculator_quote_requested',
+    trackEvent('calculator_quote_requested', {
       calculator_type: CALCULATOR_TYPE[calculatorId],
       calculator: calculatorId,
       result_amount: resultAmount ?? null,
@@ -139,15 +132,11 @@ export default function QuoteRequestForm({
       // Successful Web3Forms submission — fire a separate `generate_lead`
       // event so we can split «showed intent» (button click above) vs
       // «actually delivered email». Both are useful for the funnel.
-      if (typeof window !== 'undefined') {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'generate_lead',
-          calculator_type: CALCULATOR_TYPE[calculatorId],
-          calculator: calculatorId,
-          result_amount: resultAmount ?? null,
-        });
-      }
+      trackEvent('generate_lead', {
+        calculator_type: CALCULATOR_TYPE[calculatorId],
+        calculator: calculatorId,
+        result_amount: resultAmount ?? null,
+      });
 
       setSuccess(true);
     } catch (err: unknown) {

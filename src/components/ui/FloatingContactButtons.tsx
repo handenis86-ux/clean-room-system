@@ -2,20 +2,13 @@
 
 import { MessageCircle, Send, Phone } from 'lucide-react';
 import { siteConfig, phoneTel } from '@/config/site';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackEvent } from '@/lib/track';
 
 const whatsappUrl = siteConfig.social.whatsapp ?? 'https://wa.me/998998211222';
 const telegramUrl = siteConfig.social.telegram ?? 'https://t.me/khan_denis';
 
 function trackClick(method: 'whatsapp' | 'telegram' | 'phone') {
-  if (typeof window === 'undefined') return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'messenger_click', method });
+  trackEvent('messenger_click', { method });
 }
 
 export default function FloatingContactButtons() {

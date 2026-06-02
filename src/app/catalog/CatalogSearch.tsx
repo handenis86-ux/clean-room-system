@@ -4,12 +4,7 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, X } from 'lucide-react';
 import { categories, productSlug } from '@/data/products';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackEvent } from '@/lib/track';
 
 interface SearchResult {
   name: string;
@@ -79,10 +74,7 @@ export default function CatalogSearch() {
     const q = query.trim();
     if (q.length < 3) return;
     const timer = setTimeout(() => {
-      if (typeof window === 'undefined') return;
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'site_search',
+      trackEvent('site_search', {
         search_term: q.toLowerCase(),
         results_count: results.length,
       });

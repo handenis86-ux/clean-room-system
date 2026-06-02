@@ -1,12 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackEvent } from '@/lib/track';
 
 export type CalcKind = 'gloves' | 'gowning' | 'disinfectant';
 
@@ -46,9 +41,7 @@ export function useCalcGtm(calculator: CalcKind, deps: unknown[]) {
     const id = window.setTimeout(() => {
       if (fired.current) return;
       fired.current = true;
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'calculator_used',
+      trackEvent('calculator_used', {
         calculator_type: CALCULATOR_TYPE[calculator],
         // Keep legacy field for backwards-compat with existing GA4 reports.
         calculator,

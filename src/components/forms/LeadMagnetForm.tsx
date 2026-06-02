@@ -4,6 +4,7 @@ import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { formsConfig } from '@/config/forms';
+import { trackEvent } from '@/lib/track';
 import TurnstileWidget from '@/components/ui/TurnstileWidget';
 
 interface LeadFormFields {
@@ -31,12 +32,6 @@ interface LeadMagnetFormProps {
    * Текст кнопки сабмита.
    */
   submitLabel?: string;
-}
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
 }
 
 export default function LeadMagnetForm({
@@ -128,14 +123,7 @@ export default function LeadMagnetForm({
         throw new Error(data?.message || 'Ошибка отправки формы');
       }
 
-      // GTM event
-      if (typeof window !== 'undefined') {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'lead_magnet_download',
-          resource: resourceId,
-        });
-      }
+      trackEvent('lead_magnet_download', { resource: resourceId });
 
       router.push(redirectTo);
     } catch (err: unknown) {
