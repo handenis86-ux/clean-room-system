@@ -32,6 +32,7 @@ export default function QuoteRequestForm({
 }: QuoteRequestFormProps) {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [company, setCompany] = useState('');
   const [agree, setAgree] = useState(false);
   const [botcheck, setBotcheck] = useState('');
@@ -67,12 +68,17 @@ export default function QuoteRequestForm({
     // whether the email field was valid on first try.
     pushQuoteIntent();
 
-    if (!email.trim() || !name.trim()) {
-      setError('Заполните имя и email.');
+    if (!name.trim() || !phone.trim() || !email.trim()) {
+      setError('Заполните имя, телефон и email.');
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError('Укажите корректный email.');
+      return;
+    }
+    // Телефон обязателен для B2B-обзвона: минимум 9 цифр (узб. номер без кода — 9).
+    if (phone.replace(/\D/g, '').length < 9) {
+      setError('Укажите корректный номер телефона, например +998 90 123 45 67.');
       return;
     }
     if (!agree) {
@@ -102,6 +108,7 @@ export default function QuoteRequestForm({
         replyto: email,
         name,
         email,
+        phone,
         company: company || '—',
         calculator: calculatorId,
         result_label: resultLabel,
@@ -160,8 +167,9 @@ export default function QuoteRequestForm({
           Заявка отправлена
         </h3>
         <p className="text-[14px] text-emerald-800 leading-relaxed max-w-md mx-auto">
-          Менеджер CRS свяжется с вами по email <strong>{email}</strong> в
-          течение 1 рабочего дня и пришлёт КП на расчётный объём.
+          Менеджер CRS свяжется с вами по телефону <strong>{phone}</strong> или
+          email <strong>{email}</strong> в течение 1 рабочего дня и пришлёт КП
+          на расчётный объём.
         </p>
         <p className="text-[12px] text-emerald-700/80 mt-3">
           Тем временем —{' '}
@@ -256,7 +264,26 @@ export default function QuoteRequestForm({
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="sm:col-span-2">
+        <div>
+          <label
+            htmlFor={`qr-phone-${calculatorId}`}
+            className="block text-[12px] font-medium text-text-dark mb-1"
+          >
+            Телефон *
+          </label>
+          <input
+            id={`qr-phone-${calculatorId}`}
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            className={inputClass}
+            placeholder="+998 90 123 45 67"
+            required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+        <div>
           <label
             htmlFor={`qr-company-${calculatorId}`}
             className="block text-[12px] font-medium text-text-dark mb-1"
