@@ -1491,6 +1491,18 @@ export default function DisinfectionValidationProtocolPage() {
                   </li>
                   <li>
                     <Link
+                      href="/tools/disinfectant-calculator"
+                      className="text-brand hover:underline"
+                    >
+                      Калькулятор расхода дезинфектанта
+                    </Link>{' '}
+                    — оцените годовую потребность в средствах и
+                    расходниках по площади зон, частоте обработки и
+                    графику ротации, затем запросите КП на расчётный
+                    объём;
+                  </li>
+                  <li>
+                    <Link
                       href="/catalog/cleanroom-wipes"
                       className="text-brand hover:underline"
                     >

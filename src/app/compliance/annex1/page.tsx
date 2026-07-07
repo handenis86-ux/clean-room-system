@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ShieldCheck, ArrowRight, Phone, Download } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Phone, Download, Calculator } from 'lucide-react';
 import { categories } from '@/data/products';
 import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
@@ -512,6 +512,13 @@ export default function ComplianceAnnex1Page() {
             >
               <Download size={16} />
               Чек-лист GMP-аудита
+            </Link>
+            <Link
+              href="/tools"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-[15px] font-semibold text-white border border-white rounded-lg hover:bg-white/10 transition-colors"
+            >
+              <Calculator size={16} />
+              Калькуляторы расхода (§4 / §7 / §8)
             </Link>
           </div>
         </div>
