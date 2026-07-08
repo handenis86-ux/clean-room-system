@@ -20,6 +20,7 @@ import {
   isAnyFilterActive,
   productMatchesFilters,
 } from '@/data/product-filters';
+import { trackEvent } from '@/lib/track';
 
 interface ProductGridProps {
   products: Product[];
@@ -180,6 +181,17 @@ export default function ProductGrid({
       const current = searchParams.get('q') ?? '';
       if (current !== search) {
         updateUrl(active, search);
+        // Explicitly capture the settled search term. SPA `?q=` updates don't
+        // reliably reach GA4 enhanced-measurement site-search (most terms were
+        // logged blank), so we fire view_search_results with the term once per
+        // settled query — this is our cleanest signal of what visitors want.
+        const term = search.trim().toLowerCase();
+        if (term.length >= 2) {
+          trackEvent('view_search_results', {
+            search_term: term,
+            category: categorySlug,
+          });
+        }
       }
     }, 250);
     return () => clearTimeout(t);
