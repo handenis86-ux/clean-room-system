@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const seoTitle = category.seoH1 || category.title;
   const hasUz = UZ_TRANSLATED_CATEGORIES.has(category.slug);
   return {
-    title: `${seoTitle} в Узбекистане — купить для GMP / ISO 14644 в Ташкенте`,
+    title: category.metaTitle || `${seoTitle} — купить в Узбекистане`,
     description: `${category.description} ${productCount} ${productCount === 1 ? 'SKU' : 'SKU'} в наличии. Поставка из Ташкента, КП за 24 часа. Для фарм-, биотех- и медицинских производств Узбекистана.`.slice(
       0,
       200

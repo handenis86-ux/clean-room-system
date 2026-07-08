@@ -20,6 +20,13 @@ export interface ProductCategory {
    * во всём UI нежелательно (раздуло бы breadcrumbs и nav).
    */
   seoH1?: string;
+  /**
+   * Опциональный meta-title (тег <title>) для SEO. Если задан — используется
+   * как есть, иначе fallback-шаблон в generateMetadata. Позволяет задать
+   * точный, не пере-оптимизированный заголовок ≤ 60 символов под целевой
+   * запрос конкретной категории.
+   */
+  metaTitle?: string;
   description: string;
   image: string;
   /** Visual grouping — e.g. 'consumables' (default), 'furniture'. */
@@ -1096,6 +1103,7 @@ export const categories: ProductCategory[] = [
     slug: 'garments',
     title: 'Одежда одноразовая защитная',
     seoH1: 'Одежда одноразовая для чистых помещений и GMP',
+    metaTitle: 'Одноразовая одежда для чистых помещений — купить в Узбекистане',
     description: 'Одноразовые комбинезоны, халаты, шапочки, бахилы и маски для чистых помещений Isofield, NPro, Lakeland.',
     image: '/images/categories/clothing.webp',
     products: [
