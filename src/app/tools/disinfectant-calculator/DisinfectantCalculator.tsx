@@ -70,8 +70,11 @@ interface SkuLine {
 export default function DisinfectantCalculator() {
   const searchParams = useSearchParams();
   const [area, setArea] = useState(200);
-  const [zone, setZone] = useState<ZoneClass>('C');
-  const [productLine, setProductLine] = useState<ProductLine>('non_sterile');
+  // Дефолт — A/B и стерильная линейка. В зонах C/D заводы применяют дешёвый
+  // дезинфектант и премиальную линейку туда не покупают; деньги и намерение
+  // читателя (Annex 1, ротация, валидация) лежат в критических зонах.
+  const [zone, setZone] = useState<ZoneClass>('AB');
+  const [productLine, setProductLine] = useState<ProductLine>('sterile');
   const [weeks, setWeeks] = useState(WEEKS_PER_YEAR);
   const [reserve, setReserve] = useState(15);
 
@@ -394,6 +397,29 @@ export default function DisinfectantCalculator() {
               .map((l) => `${l.sku} ×${l.units}×${l.unitL}л`)
               .join('; '),
           }}
+          submitLabel={
+            productLine === 'sterile'
+              ? 'Запросить образцы на испытание'
+              : 'Запросить КП на этот объём'
+          }
+          offerBadge={
+            productLine === 'sterile' ? 'Образцы на валидацию' : 'Получить точное КП'
+          }
+          offerTitle={
+            productLine === 'sterile'
+              ? 'Образцы для испытания эффективности'
+              : 'КП на расчётный объём — за 24 часа'
+          }
+          offerSubtitle={
+            productLine === 'sterile'
+              ? 'Смена дезинфектанта в зонах A/B проходит через испытание эффективности и change control. Пришлём образцы, паспорта качества и протокол испытания под ваш SOP — вместе с ценами на расчётный объём.'
+              : 'Менеджер CRS пришлёт цены, спецификацию SKU и предложит график поставки.'
+          }
+          successPromise={
+            productLine === 'sterile'
+              ? 'и согласует объём образцов и протокол испытания'
+              : 'и пришлёт КП на расчётный объём'
+          }
         />
       </div>
     </div>

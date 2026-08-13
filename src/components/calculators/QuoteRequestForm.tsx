@@ -20,6 +20,17 @@ interface QuoteRequestFormProps {
   payload: Record<string, string | number | boolean>;
   /** CTA-кнопка label (по умолчанию: «Запросить КП на этот объём»). */
   submitLabel?: string;
+  /**
+   * Оффер формы. По умолчанию — запрос КП на объём: это работает там, где
+   * решение принимает снабжение (перчатки, бюджет гардеробной). Для стерильных
+   * дезинфектантов A/B решение принимает QA и первый шаг — испытание
+   * эффективности, а не цена; такие калькуляторы передают свой текст.
+   */
+  offerBadge?: string;
+  offerTitle?: string;
+  offerSubtitle?: string;
+  /** Хвост success-сообщения: «…в течение 1 рабочего дня <successPromise>». */
+  successPromise?: string;
 }
 
 export default function QuoteRequestForm({
@@ -29,6 +40,10 @@ export default function QuoteRequestForm({
   resultLabel,
   payload,
   submitLabel = 'Запросить КП на этот объём',
+  offerBadge = 'Получить точное КП',
+  offerTitle = 'КП на расчётный объём — за 24 часа',
+  offerSubtitle = 'Менеджер CRS пришлёт цены, спецификацию SKU и предложит график поставки.',
+  successPromise = 'и пришлёт КП на расчётный объём',
 }: QuoteRequestFormProps) {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -40,11 +55,29 @@ export default function QuoteRequestForm({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const intentFired = useRef(false);
+  const formStarted = useRef(false);
 
   /**
-   * Push `calculator_quote_requested` on quote-button click — fires once per
-   * page-visit even if the user clicks the button multiple times. Captures
-   * the computed result summary so we can see what volume the lead asked for.
+   * Push `calculator_form_started` on first focus of any field — раньше воронка
+   * прыгала от «подвигал ползунок» сразу к «отправил форму», и мы не отличали
+   * «форму не увидел» от «увидел и отказался». Это событие делит шаг надвое.
+   */
+  const handleFieldFocus = () => {
+    if (formStarted.current) return;
+    if (typeof window === 'undefined') return;
+    formStarted.current = true;
+    trackEvent('calculator_form_started', {
+      calculator_type: CALCULATOR_TYPE[calculatorId],
+      calculator: calculatorId,
+      result_amount: resultAmount ?? null,
+    });
+  };
+
+  /**
+   * Push `calculator_quote_requested` on submit attempt — срабатывает один раз
+   * за визит, даже если пользователь жмёт кнопку несколько раз. ВАЖНО: это не
+   * клик по кнопке, а именно попытка отправки, включая неудачную валидацию.
+   * Захватывает сводку расчёта, чтобы видеть, на какой объём пришёл лид.
    */
   const pushQuoteIntent = () => {
     if (intentFired.current) return;
@@ -68,16 +101,23 @@ export default function QuoteRequestForm({
     // whether the email field was valid on first try.
     pushQuoteIntent();
 
-    if (!name.trim() || !phone.trim() || !email.trim()) {
-      setError('Заполните имя, телефон и email.');
+    if (!name.trim()) {
+      setError('Укажите имя.');
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Достаточно одного канала связи. Три обязательных поля для анонимного
+    // первого касания — слишком тяжёлый вход: за 30 дней 7 человек посчитали
+    // расход и ни один не отправил форму.
+    if (!phone.trim() && !email.trim()) {
+      setError('Оставьте телефон или email — достаточно одного.');
+      return;
+    }
+    if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError('Укажите корректный email.');
       return;
     }
-    // Телефон обязателен для B2B-обзвона: минимум 9 цифр (узб. номер без кода — 9).
-    if (phone.replace(/\D/g, '').length < 9) {
+    // Узбекский номер без кода страны — 9 цифр.
+    if (phone.trim() && phone.replace(/\D/g, '').length < 9) {
       setError('Укажите корректный номер телефона, например +998 90 123 45 67.');
       return;
     }
@@ -105,10 +145,11 @@ export default function QuoteRequestForm({
         access_key: formsConfig.web3formsAccessKey,
         subject: `Заявка с калькулятора: ${calculatorName}`,
         from_name: name,
-        replyto: email,
+        // replyto только при валидном email — иначе Web3Forms отклонит отправку.
+        ...(email.trim() ? { replyto: email } : {}),
         name,
-        email,
-        phone,
+        email: email.trim() || '—',
+        phone: phone.trim() || '—',
         company: company || '—',
         calculator: calculatorId,
         result_label: resultLabel,
@@ -167,9 +208,19 @@ export default function QuoteRequestForm({
           Заявка отправлена
         </h3>
         <p className="text-[14px] text-emerald-800 leading-relaxed max-w-md mx-auto">
-          Менеджер CRS свяжется с вами по телефону <strong>{phone}</strong> или
-          email <strong>{email}</strong> в течение 1 рабочего дня и пришлёт КП
-          на расчётный объём.
+          Менеджер CRS свяжется с вами{' '}
+          {phone.trim() && (
+            <>
+              по телефону <strong>{phone}</strong>
+            </>
+          )}
+          {phone.trim() && email.trim() ? ' или ' : ''}
+          {email.trim() && (
+            <>
+              по email <strong>{email}</strong>
+            </>
+          )}{' '}
+          в течение 1 рабочего дня {successPromise}.
         </p>
         <p className="text-[12px] text-emerald-700/80 mt-3">
           Тем временем —{' '}
@@ -203,15 +254,12 @@ export default function QuoteRequestForm({
     >
       <div className="mb-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand text-[11px] font-bold uppercase tracking-wider mb-2">
-          <Send size={12} /> Получить точное КП
+          <Send size={12} /> {offerBadge}
         </div>
         <h3 className="text-xl font-bold text-text-dark leading-tight">
-          КП на расчётный объём — за 24 часа
+          {offerTitle}
         </h3>
-        <p className="text-[13px] text-text-muted mt-1">
-          Менеджер CRS пришлёт цены, спецификацию SKU и предложит график
-          поставки.
-        </p>
+        <p className="text-[13px] text-text-muted mt-1">{offerSubtitle}</p>
       </div>
 
       {/* Honeypot */}
@@ -243,6 +291,7 @@ export default function QuoteRequestForm({
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onFocus={handleFieldFocus}
           />
         </div>
         <div>
@@ -250,7 +299,7 @@ export default function QuoteRequestForm({
             htmlFor={`qr-email-${calculatorId}`}
             className="block text-[12px] font-medium text-text-dark mb-1"
           >
-            Email *
+            Email
           </label>
           <input
             id={`qr-email-${calculatorId}`}
@@ -259,9 +308,9 @@ export default function QuoteRequestForm({
             autoComplete="email"
             className={inputClass}
             placeholder="email@company.com"
-            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onFocus={handleFieldFocus}
           />
         </div>
         <div>
@@ -269,7 +318,7 @@ export default function QuoteRequestForm({
             htmlFor={`qr-phone-${calculatorId}`}
             className="block text-[12px] font-medium text-text-dark mb-1"
           >
-            Телефон *
+            Телефон
           </label>
           <input
             id={`qr-phone-${calculatorId}`}
@@ -278,9 +327,9 @@ export default function QuoteRequestForm({
             autoComplete="tel"
             className={inputClass}
             placeholder="+998 90 123 45 67"
-            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            onFocus={handleFieldFocus}
           />
         </div>
         <div>
@@ -298,9 +347,14 @@ export default function QuoteRequestForm({
             placeholder="Название предприятия (опционально)"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
+            onFocus={handleFieldFocus}
           />
         </div>
       </div>
+
+      <p className="text-[12px] text-text-muted mt-2">
+        Обязательно только имя и один способ связи — телефон или email.
+      </p>
 
       <label className="flex items-start gap-2.5 text-[12px] text-text leading-snug cursor-pointer select-none mt-4">
         <input
