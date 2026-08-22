@@ -16,6 +16,7 @@ import {
   ActiveFilters,
   emptyActiveFilters,
   extractProductFilters,
+  extractSterilizationMethods,
   getCategoryAvailableFilters,
   isAnyFilterActive,
   productMatchesFilters,
@@ -345,6 +346,47 @@ export default function ProductGrid({
           {filteredProducts.map((product) => {
             const pImage = getProductImage(product.sku);
             const slug = productSlug(product.sku);
+            /**
+             * Признаки выбора прямо в списке. В этой нише отбирают по классу
+             * зоны, стерильности и бренду — без них листинг не даёт отсеять, и
+             * приходится открывать карточки подряд (GA4: листинги держат
+             * 3–18 секунд, карточки — 6–12 минут).
+             */
+            const attrs = extractProductFilters(product);
+            const badges: { key: string; text: string; cls: string }[] = [];
+            if (attrs.gmpClasses.length) {
+              badges.push({
+                key: 'gmp',
+                text: `GMP ${attrs.gmpClasses.join('/')}`,
+                cls: 'bg-brand-light text-brand-dark',
+              });
+            }
+            if (attrs.isSterile !== null) {
+              badges.push({
+                key: 'sterile',
+                text: attrs.isSterile ? 'Стерильно' : 'Нестерильно',
+                cls: attrs.isSterile
+                  ? 'bg-emerald-50 text-emerald-700'
+                  : 'bg-surface text-text-muted',
+              });
+            }
+            if (attrs.brand) {
+              badges.push({
+                key: 'brand',
+                text: attrs.brand,
+                cls: 'bg-surface text-text-muted',
+              });
+            }
+            // Индикаторы выбирают по методу стерилизации, а не по классу зоны.
+            if (categorySlug === 'indicators') {
+              for (const m of extractSterilizationMethods(product)) {
+                badges.unshift({
+                  key: `method-${m}`,
+                  text: m,
+                  cls: 'bg-brand-light text-brand-dark',
+                });
+              }
+            }
             return (
               <Link
                 key={product.sku}
@@ -394,6 +436,18 @@ export default function ProductGrid({
                     <p className="text-[13px] text-text leading-relaxed line-clamp-2">
                       {product.description}
                     </p>
+                  )}
+                  {badges.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {badges.map((b) => (
+                        <span
+                          key={b.key}
+                          className={`text-[11px] font-semibold px-2 py-0.5 rounded ${b.cls}`}
+                        >
+                          {b.text}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   <span className="mt-auto pt-3 text-[13px] font-semibold text-brand group-hover:text-brand-dark transition-colors flex items-center gap-1">
                     Подробнее &rarr;

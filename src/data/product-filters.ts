@@ -157,6 +157,37 @@ export function extractProductFilters(product: Product): ProductFilters {
   return { gmpClasses, isoClasses, brand, isSterile };
 }
 
+/**
+ * Короткие метки методов стерилизации для индикаторов.
+ *
+ * Индикаторы — самая большая категория каталога (38 SKU), и ни один из четырёх
+ * общих признаков (GMP-класс, ISO, стерильность, бренд) к ним не применим: их
+ * выбирают по методу стерилизации, под который индикатор рассчитан. Значение в
+ * спецификации развёрнутое («Автоклавирование (пар) 121–135 °C»), для списка
+ * нужна короткая метка. Одно значение может дать несколько меток
+ * («Газовая (EtO) или сухой жар» → EtO + Сухой жар).
+ */
+const STERILIZATION_METHOD_PATTERNS: { pattern: RegExp; label: string }[] = [
+  { pattern: /автоклав|паров|\bпар\b|steam/i, label: 'Пар' },
+  { pattern: /окис[ьи]\s*этилена|\bEtO\b|\bЭО\b|этиленоксид/i, label: 'EtO' },
+  { pattern: /перекис|VH2O2|H2O2/i, label: 'VH2O2' },
+  { pattern: /LTSF|формальдегид/i, label: 'LTSF' },
+  { pattern: /сух(ой|им)\s*жар/i, label: 'Сухой жар' },
+];
+
+export function extractSterilizationMethods(product: Product): string[] {
+  const raw = (product.specs ?? [])
+    .filter((s) => /метод[ыа]?\s+стерилизаци/i.test(s.label))
+    .map((s) => s.value)
+    .join(' | ');
+  if (!raw) return [];
+  const out: string[] = [];
+  for (const { pattern, label } of STERILIZATION_METHOD_PATTERNS) {
+    if (pattern.test(raw) && !out.includes(label)) out.push(label);
+  }
+  return out;
+}
+
 /** Какие из 4 размерностей реально применимы к этой категории. */
 export interface CategoryAvailableFilters {
   gmpClasses: GmpClass[];
