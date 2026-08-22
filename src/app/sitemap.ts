@@ -82,6 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${base}/compliance/iso-13485-uzbekistan`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${base}/gmp-podgotovka`,
       lastModified: now,
       changeFrequency: 'weekly',
