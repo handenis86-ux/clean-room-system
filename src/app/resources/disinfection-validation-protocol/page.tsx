@@ -518,6 +518,18 @@ export default function DisinfectionValidationProtocolPage() {
                   приводит к выходу EM-показателей за alert/action
                   limits.
                 </p>
+                <p className="mb-4">
+                  Годовой объём по каждому средству ротации считается от площади
+                  зоны и частоты обработок —{' '}
+                  <Link
+                    href="/tools/disinfectant-calculator"
+                    className="text-brand font-semibold hover:underline"
+                  >
+                    калькулятор расхода дезсредств
+                  </Link>{' '}
+                  раскладывает потребность на базовое средство, IPA и спорицид с
+                  недельным циклом по Annex 1 §8.66.
+                </p>
 
                 <h3 className="text-[20px] font-bold text-text-dark mb-3 mt-6">
                   2.5 Применение в реальных условиях (qualification of

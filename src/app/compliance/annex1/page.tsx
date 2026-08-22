@@ -5,6 +5,33 @@ import { categories } from '@/data/products';
 import { gmpAnnex1Mapping } from '@/data/gmp-annex1-mapping';
 import { siteConfig, phoneTel } from '@/config/site';
 
+/**
+ * Категория каталога → профильный калькулятор.
+ *
+ * Ссылка ставится прямо в блоке категории, а не в подвале: читатель Annex 1
+ * думает о конкретной категории именно здесь. До этого единственный переход на
+ * /tools стоял в самом низу 552-строчной страницы и вёл на общий хаб — за неделю
+ * в калькуляторы заходил один человек при том, что эту страницу читают по 5–7 минут.
+ */
+const CATEGORY_CALCULATOR: Record<string, { href: string; label: string }> = {
+  'disinfectants-and-detergents': {
+    href: '/tools/disinfectant-calculator',
+    label: 'Рассчитать годовой расход дезсредств',
+  },
+  'perchatki-zashchitnye': {
+    href: '/tools/gloves-calculator',
+    label: 'Рассчитать расход перчаток',
+  },
+  garments: {
+    href: '/tools/gowning-room-budget',
+    label: 'Рассчитать бюджет гардеробной',
+  },
+  'reusable-garm': {
+    href: '/tools/gowning-room-budget',
+    label: 'Сравнить бюджет одноразовой и многоразовой одежды',
+  },
+};
+
 export const metadata: Metadata = {
   title:
     'EU GMP Annex 1 для фарм-заводов Узбекистана 2027: чек-лист соответствия',
@@ -443,6 +470,15 @@ export default function ComplianceAnnex1Page() {
                       </li>
                     ))}
                   </ul>
+                  {CATEGORY_CALCULATOR[cat.slug] && (
+                    <Link
+                      href={CATEGORY_CALCULATOR[cat.slug].href}
+                      className="inline-flex items-center gap-1.5 mt-3.5 text-[13px] font-semibold text-brand hover:underline"
+                    >
+                      <Calculator size={14} />
+                      {CATEGORY_CALCULATOR[cat.slug].label}
+                    </Link>
+                  )}
                 </div>
               );
             })}
