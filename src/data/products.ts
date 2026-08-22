@@ -1102,7 +1102,7 @@ export const categories: ProductCategory[] = [
   {
     slug: 'garments',
     title: 'Одежда одноразовая защитная',
-    seoH1: 'Одежда одноразовая для чистых помещений и GMP',
+    seoH1: 'Одноразовая одежда для чистых помещений и GMP',
     metaTitle: 'Одноразовая одежда для чистых помещений — купить в Узбекистане',
     description: 'Одноразовые комбинезоны, халаты, шапочки, бахилы и маски для чистых помещений Isofield, NPro, Lakeland.',
     image: '/images/categories/clothing.webp',

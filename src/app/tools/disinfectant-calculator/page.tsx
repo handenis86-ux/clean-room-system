@@ -7,7 +7,7 @@ import DisinfectantCalculator from './DisinfectantCalculator';
 const URL = `${siteConfig.url}/tools/disinfectant-calculator`;
 
 export const metadata: Metadata = {
-  title: 'Калькулятор расхода дезинфектантов для cleanroom — л/год по GMP',
+  title: 'Калькулятор расчёта дезсредств для cleanroom — л/год по GMP',
   description:
     'Расчёт годового расхода Contec ProChlor, Sterile IPA, HydroPure для GMP A/B/C/D: площадь × частота × 60 мл/м² × ротация спорицида по Annex 1 §8.66. КП за 24 ч.',
   alternates: { canonical: URL },

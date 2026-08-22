@@ -887,7 +887,7 @@ export default function ComplianceGmpUzbekistan2027Page() {
                 href="/gmp-podgotovka"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors whitespace-nowrap"
               >
-                Получить план
+                Подготовка к GMP-инспекции
                 <ArrowRight size={16} />
               </Link>
             </div>
