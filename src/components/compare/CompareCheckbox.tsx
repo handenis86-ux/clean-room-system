@@ -51,7 +51,10 @@ export default function CompareCheckbox({ sku, name, categorySlug }: Props) {
           ? 'bg-brand text-white border-brand hover:bg-brand-dark'
           : limitReached
           ? 'bg-surface text-text-muted border-surface-stroke cursor-not-allowed'
-          : 'bg-white text-brand border-brand/40 hover:border-brand hover:bg-brand-light/30',
+          : // Кнопка лежит поверх белого контейнера изображения. Белая заливка с
+            // бордюром в 40% прозрачности на белом фоне практически не читается —
+            // отсюда и обход функции вручную. Даём тон и тень для контраста.
+            'bg-brand-light text-brand-dark border-brand/60 shadow-sm hover:border-brand hover:bg-brand-light/70',
       ].join(' ')}
     >
       <span

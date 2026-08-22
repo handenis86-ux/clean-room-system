@@ -203,37 +203,61 @@ export default function CompareTable({ category }: Props) {
                 </tr>
               )}
 
-              {labelOrder.map((label, idx) => (
-                <tr
-                  key={label}
-                  className={idx % 2 === 0 ? 'bg-white' : 'bg-surface/50'}
-                >
-                  <th
-                    scope="row"
-                    className={[
-                      'sticky left-0 z-10 text-left text-[13px] font-semibold text-text-dark px-4 py-3 border-b border-surface-stroke align-top',
-                      idx % 2 === 0 ? 'bg-surface' : 'bg-surface',
-                    ].join(' ')}
+              {labelOrder.map((label, idx) => {
+                /**
+                 * Решение принимается по строкам, где значения расходятся.
+                 * При четырёх товарах и пятнадцати характеристиках совпадающих
+                 * ячеек большинство, и без выделения глаз ищет отличия вручную —
+                 * ради этого таблицу и открывают. Совпадающие строки приглушаем,
+                 * различающиеся оставляем контрастными.
+                 */
+                const values = selectedProducts.map((p) => getValue(p, label));
+                const differs = new Set(values).size > 1;
+                return (
+                  <tr
+                    key={label}
+                    className={idx % 2 === 0 ? 'bg-white' : 'bg-surface/50'}
                   >
-                    {label}
-                  </th>
-                  {selectedProducts.map((p) => {
-                    const value = getValue(p, label);
-                    const empty = value === '—';
-                    return (
-                      <td
-                        key={p.sku}
-                        className={[
-                          'px-4 py-3 border-b border-l border-surface-stroke text-[13px] leading-relaxed align-top',
-                          empty ? 'text-text-muted' : 'text-text',
-                        ].join(' ')}
-                      >
-                        {value}
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
+                    <th
+                      scope="row"
+                      className={[
+                        'sticky left-0 z-10 bg-surface text-left text-[13px] px-4 py-3 border-b border-surface-stroke align-top',
+                        differs
+                          ? 'font-semibold text-text-dark'
+                          : 'font-medium text-text-muted',
+                      ].join(' ')}
+                    >
+                      {label}
+                      {differs && (
+                        <span
+                          aria-label="значения различаются"
+                          title="Значения различаются"
+                          className="ml-1.5 inline-block align-middle h-1.5 w-1.5 rounded-full bg-brand"
+                        />
+                      )}
+                    </th>
+                    {selectedProducts.map((p, i) => {
+                      const value = values[i];
+                      const empty = value === '—';
+                      return (
+                        <td
+                          key={p.sku}
+                          className={[
+                            'px-4 py-3 border-b border-l border-surface-stroke text-[13px] leading-relaxed align-top',
+                            empty
+                              ? 'text-text-muted'
+                              : differs
+                              ? 'text-text-dark font-medium'
+                              : 'text-text-muted',
+                          ].join(' ')}
+                        >
+                          {value}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
 
               {/* Standards row if any product has standards */}
               {selectedProducts.some((p) => p.standards && p.standards.length > 0) && (
