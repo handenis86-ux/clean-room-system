@@ -423,8 +423,162 @@ export default function ComplianceAnnex1Page() {
         </div>
       </section>
 
-      {/* Per-category deep dive */}
+      {/* Класс зоны под операцию — таблицы 3 и 4 Annex 1 */}
       <section className="bg-white py-12 px-4 lg:px-[80px]">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-3">
+            Какой класс зоны нужен под конкретную операцию
+          </h2>
+          <p className="text-[15px] text-text leading-relaxed mb-6 max-w-[880px]">
+            Annex 1 приводит примеры операций и минимальных классов отдельно для
+            двух маршрутов производства. Это первое, что определяет спецификацию
+            расходников: одежда, перчатки и дезинфектанты выбираются под класс
+            зоны, а не под тип препарата.
+          </p>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-surface-input overflow-hidden">
+              <div className="bg-brand-light px-4 py-3">
+                <h3 className="text-[16px] font-bold text-text-dark">
+                  Финально стерилизуемые продукты
+                </h3>
+                <p className="text-[13px] text-text-muted mt-0.5">
+                  Таблица 3 Annex 1
+                </p>
+              </div>
+              <table className="w-full border-collapse text-[14px]">
+                <tbody>
+                  {[
+                    ['A', 'Розлив продуктов при необычном риске'],
+                    [
+                      'C',
+                      'Подготовка растворов при необычном риске. Розлив продуктов',
+                    ],
+                    [
+                      'D',
+                      'Подготовка растворов и компонентов для последующего розлива',
+                    ],
+                  ].map(([cls, ops]) => (
+                    <tr key={cls} className="align-top">
+                      <th
+                        scope="row"
+                        className="w-[64px] p-3 border-t border-surface-input text-left font-bold text-brand-dark"
+                      >
+                        {cls}
+                      </th>
+                      <td className="p-3 border-t border-l border-surface-input text-text leading-relaxed">
+                        {ops}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="rounded-xl border border-surface-input overflow-hidden">
+              <div className="bg-brand-light px-4 py-3">
+                <h3 className="text-[16px] font-bold text-text-dark">
+                  Асептическая подготовка и обработка
+                </h3>
+                <p className="text-[13px] text-text-muted mt-0.5">
+                  Таблица 4 Annex 1
+                </p>
+              </div>
+              <table className="w-full border-collapse text-[14px]">
+                <tbody>
+                  {[
+                    [
+                      'A',
+                      'Асептическая сборка оборудования розлива. Соединения в асептических условиях после финального стерилизующего фильтра. Асептическое смешивание. Пополнение стерильного балк-продукта, контейнеров и укупорок. Асептический розлив и запечатывание. Загрузка лиофилизатора.',
+                    ],
+                    [
+                      'B',
+                      'Фоновая поддержка для класса A, если не используется изолятор. Транспортировка и хранение защищённых от среды компонентов для введения в класс A.',
+                    ],
+                    [
+                      'C',
+                      'Подготовка растворов для фильтрации, включая отбор и дозирование.',
+                    ],
+                    [
+                      'D',
+                      'Очистка оборудования. Обращение с компонентами после очистки. Сборка под HEPA-потоком до стерилизации. Сборка закрытых и стерилизованных одноразовых систем.',
+                    ],
+                  ].map(([cls, ops]) => (
+                    <tr key={cls} className="align-top">
+                      <th
+                        scope="row"
+                        className="w-[64px] p-3 border-t border-surface-input text-left font-bold text-brand-dark"
+                      >
+                        {cls}
+                      </th>
+                      <td className="p-3 border-t border-l border-surface-input text-text leading-relaxed">
+                        {ops}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* SUS */}
+          <div className="mt-10">
+            <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-3">
+              Одноразовые системы (SUS): §8.131–8.139
+            </h2>
+            <p className="text-[15px] text-text leading-relaxed mb-5 max-w-[880px]">
+              Отдельный подраздел редакции 2022 года. SUS — мешки, фильтры,
+              трубки, коннекторы, клапаны, ёмкости и датчики, применяемые вместо
+              многоразового оборудования, чтобы сократить число ручных
+              вмешательств. Для дистрибьютора расходников это ближайший
+              смежный контур: требования к квалификации поставщика здесь
+              жёстче, чем к обычным расходникам.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  c: '§8.132',
+                  t: 'Риски, оцениваемые в CCS',
+                  d: 'Взаимодействие продукта с контактной поверхностью, хрупкость по сравнению с фиксированными системами, рост числа и сложности ручных соединений, сложность сборки.',
+                },
+                {
+                  c: '§8.134',
+                  t: 'Квалификация поставщика',
+                  d: 'Оценка поставщика, включая процесс стерилизации, критична. Для стерильных SUS — верификация гарантии стерильности при квалификации и проверка свидетельств стерилизации каждой единицы при поступлении.',
+                },
+                {
+                  c: '§8.136',
+                  t: 'Extractables и leachables',
+                  d: 'Профили оцениваются, особенно для полимерных систем. Для компонентов высокого риска — оценка профиля leachables, включая безопасность.',
+                },
+                {
+                  c: '§8.138',
+                  t: 'Приёмка каждой единицы',
+                  d: 'Визуальный осмотр внешней упаковки, проверка этикеток и сопроводительных документов — сертификата соответствия и свидетельства о стерилизации.',
+                },
+              ].map((x) => (
+                <div
+                  key={x.c}
+                  className="rounded-xl border border-surface-input bg-surface p-5"
+                >
+                  <div className="flex items-baseline gap-3 mb-1.5">
+                    <span className="text-[13px] font-bold text-brand-dark whitespace-nowrap">
+                      {x.c}
+                    </span>
+                    <h3 className="text-[16px] font-bold text-text-dark">
+                      {x.t}
+                    </h3>
+                  </div>
+                  <p className="text-[14px] text-text leading-relaxed">{x.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Per-category deep dive */}
+      <section className="bg-surface py-12 px-4 lg:px-[80px]">
         <div className="max-w-[1100px] mx-auto">
           <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-2">
             Детально по категориям
