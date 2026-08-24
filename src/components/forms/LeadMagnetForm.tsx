@@ -10,6 +10,7 @@ import TurnstileWidget from '@/components/ui/TurnstileWidget';
 interface LeadFormFields {
   email: string;
   name: string;
+  phone: string;
   company: string;
   position: string;
   botcheck: string;
@@ -32,6 +33,20 @@ interface LeadMagnetFormProps {
    * Текст кнопки сабмита.
    */
   submitLabel?: string;
+  /**
+   * Показывать и требовать телефон. Для тяжёлых материалов (нормативные
+   * документы) это оправданно: ценность материала окупает лишнее поле.
+   */
+  requirePhone?: boolean;
+  /**
+   * Тема письма — чтобы заявки на разные материалы различались в почте.
+   */
+  subject?: string;
+  /**
+   * Если задан — вызывается вместо редиректа. Используется там, где ссылки
+   * на скачивание раскрываются на той же странице.
+   */
+  onSuccess?: () => void;
 }
 
 export default function LeadMagnetForm({
@@ -39,11 +54,15 @@ export default function LeadMagnetForm({
   resourceId = 'gmp_audit_checklist_2027',
   compact = false,
   submitLabel = 'Получить чек-лист бесплатно',
+  requirePhone = false,
+  subject = 'Скачивание lead-магнита: GMP-аудит чеклист',
+  onSuccess,
 }: LeadMagnetFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<LeadFormFields>({
     email: '',
     name: '',
+    phone: '',
     company: '',
     position: '',
     botcheck: '',
@@ -70,6 +89,10 @@ export default function LeadMagnetForm({
       setError('Укажите корректный email.');
       return;
     }
+    if (requirePhone && form.phone.replace(/\D/g, '').length < 9) {
+      setError('Укажите корректный номер телефона, например +998 90 123 45 67.');
+      return;
+    }
     if (!agree) {
       setError('Подтвердите согласие на обработку персональных данных.');
       return;
@@ -82,7 +105,8 @@ export default function LeadMagnetForm({
     if (!formsConfig.web3formsAccessKey) {
       // eslint-disable-next-line no-console
       console.warn('[LeadMagnetForm] web3formsAccessKey is empty.');
-      router.push(redirectTo);
+      if (onSuccess) onSuccess();
+      else router.push(redirectTo);
       return;
     }
 
@@ -90,11 +114,12 @@ export default function LeadMagnetForm({
     try {
       const payload: Record<string, string> = {
         access_key: formsConfig.web3formsAccessKey,
-        subject: 'Скачивание lead-магнита: GMP-аудит чеклист',
+        subject,
         from_name: form.name,
         replyto: form.email,
         name: form.name,
         email: form.email,
+        phone: form.phone || '—',
         company: form.company,
         position: form.position || '—',
         resource: resourceId,
@@ -125,7 +150,12 @@ export default function LeadMagnetForm({
 
       trackEvent('lead_magnet_download', { resource: resourceId });
 
-      router.push(redirectTo);
+      if (onSuccess) {
+        setLoading(false);
+        onSuccess();
+      } else {
+        router.push(redirectTo);
+      }
     } catch (err: unknown) {
       setError(
         err instanceof Error
@@ -198,6 +228,29 @@ export default function LeadMagnetForm({
             onChange={handleChange}
           />
         </div>
+
+        {requirePhone && (
+          <div>
+            <label
+              htmlFor="lm-phone"
+              className="block text-[12px] font-medium text-text-dark mb-1"
+            >
+              Телефон *
+            </label>
+            <input
+              id="lm-phone"
+              name="phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              className={inputClass}
+              placeholder="+998 90 123 45 67"
+              required
+              value={form.phone}
+              onChange={handleChange}
+            />
+          </div>
+        )}
 
         <div>
           <label

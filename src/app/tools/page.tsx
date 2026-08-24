@@ -113,7 +113,7 @@ const tools: ToolCard[] = [
     desc: 'Сколько литров ProChlor, Sterile IPA и HydroPure нужно на год.',
     bullets: [
       '60 мл/м² × частота × 52 нед.',
-      'Ротация спорицида (Annex 1 §8.66)',
+      'Ротация спорицида (Annex 1 §4.33)',
       'Контейнеры 1 / 5 л',
     ],
     Icon: Droplet,

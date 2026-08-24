@@ -44,7 +44,7 @@ const TREATMENTS_PER_WEEK: Record<ZoneClass, number> = {
 };
 
 // Цикл ротации: ProChlor (спорицид) вместо обычного дезинфектанта
-// еженедельно по Annex 1 §8.66 — 1 раз из всех обработок.
+// еженедельно по Annex 1 §4.33 — 1 раз из всех обработок.
 // Остальные обработки делятся: 60% базовая дезинфекция (HydroPure / QUAT),
 // 20% IPA для критических точек.
 const SHARE_REGULAR = 0.6;
@@ -137,7 +137,7 @@ export default function DisinfectantCalculator() {
         name: 'Contec Sterile ProChlor (5L)',
         sku: 'SBC502PC',
         href: '/catalog/disinfectants-and-detergents/SBC502PC',
-        note: 'HClO 2000 ppm, стерильный спорицид — ротация раз в неделю (Annex 1 §8.66)',
+        note: 'HClO 2000 ppm, стерильный спорицид — ротация раз в неделю (Annex 1 §4.33)',
         litres: litresSporicide,
         unitL,
         units: ceilUnits(litresSporicide),
@@ -352,7 +352,7 @@ export default function DisinfectantCalculator() {
               При обработке <strong>{area} м²</strong> с частотой{' '}
               <strong>{calc.treatmentsPerWeek}× / нед.</strong> для зоны{' '}
               <strong>GMP {zone === 'AB' ? 'A/B' : zone}</strong>. Включает{' '}
-              {reserve}% резерва и ротацию спорицида по Annex 1 §8.66.
+              {reserve}% резерва и ротацию спорицида по Annex 1 §4.33.
             </>
           }
           breakdown={[

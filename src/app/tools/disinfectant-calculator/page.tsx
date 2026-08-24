@@ -9,7 +9,7 @@ const URL = `${siteConfig.url}/tools/disinfectant-calculator`;
 export const metadata: Metadata = {
   title: 'Калькулятор расчёта дезсредств для cleanroom — л/год по GMP',
   description:
-    'Расчёт годового расхода Contec ProChlor, Sterile IPA, HydroPure для GMP A/B/C/D: площадь × частота × 60 мл/м² × ротация спорицида по Annex 1 §8.66. КП за 24 ч.',
+    'Расчёт годового расхода Contec ProChlor, Sterile IPA, HydroPure для GMP A/B/C/D: площадь × частота × 60 мл/м² × ротация спорицида по Annex 1 §4.33. КП за 24 ч.',
   alternates: { canonical: URL },
   openGraph: {
     type: 'website',
@@ -58,7 +58,7 @@ export default function DisinfectantCalculatorPage() {
       <CalculatorShell
         eyebrow="Инструмент"
         title="Калькулятор расхода дезинфектантов для cleanroom"
-        subtitle="Рассчитайте годовую потребность в Contec ProChlor (спорицид), Sterile IPA и HydroPure по площади и классу GMP. Учтена еженедельная ротация спорицида по Annex 1 §8.66."
+        subtitle="Рассчитайте годовую потребность в Contec ProChlor (спорицид), Sterile IPA и HydroPure по площади и классу GMP. Учтена еженедельная ротация спорицида по Annex 1 §4.33."
         breadcrumbs={[
           { label: 'Главная', href: '/' },
           { label: 'Инструменты', href: '/tools' },
@@ -66,7 +66,7 @@ export default function DisinfectantCalculatorPage() {
         ]}
         footnote={
           <>
-            Нормативная база: EU GMP Annex 1 §8.66 — для бактерицидных
+            Нормативная база: EU GMP Annex 1 §4.33 — для бактерицидных
             дезинфектантов обязательна ротация со спорицидом на регулярной
             основе. Расход 60 мл/м² рабочего раствора — типовая оценка для
             протирочной дезинфекции в cleanroom. Реальное потребление зависит

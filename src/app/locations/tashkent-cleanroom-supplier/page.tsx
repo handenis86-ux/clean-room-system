@@ -95,7 +95,7 @@ const categoryList: CategoryItem[] = [
   {
     title: 'Дезинфектанты cleanroom',
     href: '/catalog/disinfectants-and-detergents',
-    text: 'Contec Sporicidin, Diversey Oxivir, Neokhim Bacillol — бактерицидные и спорицидные растворы для ротации по §8.66 Annex 1. Готовые к применению формы (RTU) и концентраты, sterile / non-sterile варианты. Полный TDS-пакет с данными EN 13697 / EN 13727 / ASTM E2197 — для disinfection validation.',
+    text: 'Contec Sporicidin, Diversey Oxivir, Neokhim Bacillol — бактерицидные и спорицидные растворы для ротации по §4.33 Annex 1. Готовые к применению формы (RTU) и концентраты, sterile / non-sterile варианты. Полный TDS-пакет с данными EN 13697 / EN 13727 / ASTM E2197 — для disinfection validation.',
   },
   {
     title: 'Защитные перчатки',

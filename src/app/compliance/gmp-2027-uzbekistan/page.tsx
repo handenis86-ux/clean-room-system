@@ -169,7 +169,7 @@ const inspectorCategories: InspectorCategory[] = [
     id: 'disinfection',
     title: 'Дезинфекция и валидация',
     items: [
-      'Программа дезинфекции по §8.66 Annex 1: 2 ротационных агента (бактерицид + спорицид).',
+      'Программа дезинфекции по §4.33 Annex 1: 2 ротационных агента (бактерицид + спорицид).',
       'Validated disinfection efficacy: tests on real surfaces по EN 13697 / ASTM E2197 с реальными изолятами.',
       'IQ/OQ/PQ протоколы для критического оборудования (boilers, autoclaves, lyo, fillers).',
       'Cleaning validation для всех оборудования с ровненькой схемой и MACO/PDE-расчётами.',

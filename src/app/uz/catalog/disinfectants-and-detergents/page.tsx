@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: 'EU GMP Annex 1 boʻyicha dezinfektantlar rotatsiyasi nima uchun majburiy?',
-    a: 'Annex 1 §8.66-8.69 dezinfeksiya dasturida turli taʼsir mexanizmlariga ega vositalarning rotatsiyasini talab qiladi (masalan, IPA + chlorli sporitsid + perekiy peroksid). Bu mikroorganizmlarning rezistentligi shakllanishini oldini oladi va EM-baseline ustida nazoratni mustahkamlaydi. CCSda har bir zona uchun rotatsiya jadvali va asoslash boʻlishi kerak.',
+    a: 'Annex 1 §4.33–4.36 dezinfeksiya dasturida turli taʼsir mexanizmlariga ega vositalarning rotatsiyasini talab qiladi (masalan, IPA + chlorli sporitsid + perekiy peroksid). Bu mikroorganizmlarning rezistentligi shakllanishini oldini oladi va EM-baseline ustida nazoratni mustahkamlaydi. CCSda har bir zona uchun rotatsiya jadvali va asoslash boʻlishi kerak.',
   },
   {
     q: 'Stеril va nosteril dezinfektant oʻrtasidagi farq nima?',
-    a: 'Stеril dezinfektant — 0.22 mkm filtr orqali oʻtgan, partiyaga sterillik testi sertifikati bilan, individual qadoqda. A/B zonalari uchun majburiy. Nosteril dezinfektant — partiyaga maksimal bioburden taʼminlash bilan, C/D zonalari uchun yetarli. EU GMP Annex 1 §8.67 toʻgʻridan-toʻgʻri stеril zonalar uchun stеril dezinfektantlar talab qiladi.',
+    a: 'Stеril dezinfektant — 0.22 mkm filtr orqali oʻtgan, partiyaga sterillik testi sertifikati bilan, individual qadoqda. A/B zonalari uchun majburiy. Nosteril dezinfektant — partiyaga maksimal bioburden taʼminlash bilan, C/D zonalari uchun yetarli. EU GMP Annex 1 §4.35 toʻgʻridan-toʻgʻri stеril zonalar uchun stеril dezinfektantlar talab qiladi.',
   },
   {
     q: 'Bir chorakda dezinfektant sarfini qanday hisoblash mumkin?',
