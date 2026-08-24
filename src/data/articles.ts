@@ -1515,14 +1515,15 @@ export const articles: BlogArticle[] = [
     <tr><th>Метод</th><th>Зона A</th><th>B</th><th>C</th><th>D</th></tr>
   </thead>
   <tbody>
-    <tr><td>Active air (КОЕ/м³)</td><td>&lt;1</td><td>10</td><td>100</td><td>200</td></tr>
-    <tr><td>Settle plate Ø90 / 4 ч (КОЕ)</td><td>&lt;1</td><td>5</td><td>50</td><td>100</td></tr>
-    <tr><td>Contact plate Ø55 (КОЕ)</td><td>&lt;1</td><td>5</td><td>25</td><td>50</td></tr>
-    <tr><td>Glove fingerprint (КОЕ/перчатка)</td><td>&lt;1</td><td>5</td><td>—</td><td>—</td></tr>
-    <tr><td>Частицы 0.5 мкм / м³ (in operation)</td><td>3 520</td><td>352 000</td><td>3 520 000</td><td>не нормируется</td></tr>
-    <tr><td>Частицы 5 мкм / м³ (in operation)</td><td>не нормируется (тренд)</td><td>2 930</td><td>29 300</td><td>не нормируется</td></tr>
+    <tr><td>Active air (КОЕ/м³)</td><td>Без роста</td><td>10</td><td>100</td><td>200</td></tr>
+    <tr><td>Settle plate Ø90 / 4 ч (КОЕ)</td><td>Без роста</td><td>5</td><td>50</td><td>100</td></tr>
+    <tr><td>Contact plate Ø55 (КОЕ)</td><td>Без роста</td><td>5</td><td>25</td><td>50</td></tr>
+    <tr><td>Glove fingerprint (КОЕ/перчатка)</td><td>Без роста</td><td>5</td><td>—</td><td>—</td></tr>
+    <tr><td>Частицы 0.5 мкм / м³ (in operation)</td><td>3 520</td><td>352 000</td><td>3 520 000</td><td>не предопределено</td></tr>
+    <tr><td>Частицы 5 мкм / м³ (in operation)</td><td>29</td><td>2 930</td><td>29 300</td><td>не предопределено</td></tr>
   </tbody>
 </table>
+<p><strong>Две ловушки в этой таблице.</strong> Первая: для класса A в редакции Annex 1 (2022) действует <strong>«без роста»</strong>, а не «&lt;1 КОЕ» из редакции 2008 года — примечание к таблице 6 прямо требует расследования любого роста в классе A. Вторая: предел по частицам ≥ 5 мкм для класса A зависит от того, что вы делаете. Для <strong>классификации</strong> помещения (таблица 1 Annex 1) он не задан — включение 5 мкм рассматривается, если на это указывает CCS или исторический тренд. Для <strong>рутинного мониторинга</strong> (таблица 5 Annex 1) он равен <strong>29/м³</strong>. В таблице выше приведены пределы мониторинга, потому что речь идёт о программе EM. Подмена одного другим — типичная находка на инспекции.</p>
 <p>Alert limit обычно устанавливают на уровне 50-70% от action или статистически — как μ + 2σ из 6-12 месяцев trending. Подробнее о классах см. <a href="/blog/iso-14644-klassy-chistoty-poyasneniye">статью о классах ISO 14644</a>.</p>
 
 <h2 id="trending">Trending data — как анализировать</h2>
