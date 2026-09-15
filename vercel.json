@@ -2,6 +2,11 @@
   "regions": ["fra1"],
   "redirects": [
     {
+      "source": "/catalog/cleaning-equipment/2151014",
+      "destination": "/catalog/cleaning-equipment/2151008",
+      "permanent": true
+    },
+    {
       "source": "/catalog/disinfectants-and-detergents/7515165",
       "destination": "/catalog/disinfectants-and-detergents/101109135",
       "permanent": true

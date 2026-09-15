@@ -156,7 +156,7 @@ export const productImages: Record<string, string> = {
 
   // Cleaning equipment (handles)
   '2151005': `${IBC}/upload/iblock/601/6012d6e711ccfcd34b57b66fabc52ca8.jpeg`,
-  '2151014': `${IBC}/upload/iblock/285/st6a4xvt6zs8dg0m0uas86o2mvdkrxce.jpg`,
+  '2151008': `${IBC}/upload/iblock/285/st6a4xvt6zs8dg0m0uas86o2mvdkrxce.jpg`,
   '2151003': `${IBC}/upload/iblock/e8b/e8be558e84fc6b6c80650ab4b80abb28.jpeg`,
   '2778': `${IBC}/upload/iblock/f81/f81b7fc1bcf675f77637cb601f59bbd0.jpeg`,
   '2131007': `${IBC}/upload/iblock/415/x3a6peesm8bq8som2bs8up9s0aczjfxk.jpg`,

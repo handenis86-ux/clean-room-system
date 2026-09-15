@@ -2249,7 +2249,7 @@ const catalog: ProductCategory[] = [
           { label: 'Автоклавирование', value: 'Да' },
         ],
       },
-      { name: 'Держатель из нержавеющей стали KEK40', sku: '2151014', description: 'Hydroflex, держатель мопа без рамки из нержавеющей стали, ISO 4 / GMP A-B',
+      { name: 'Держатель бескаркасный KEK40', sku: '2151008', description: 'Hydroflex, бескаркасный держатель мопа из нержавеющей стали и POM-пластика, ISO 4 / GMP A-B',
         specs: [
           { label: 'Материал', value: 'Нержавеющая сталь' },
           { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4' },
