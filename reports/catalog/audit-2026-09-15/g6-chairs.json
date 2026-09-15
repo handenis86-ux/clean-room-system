@@ -1,0 +1,494 @@
+{
+  "group": "g6-chairs",
+  "products": [
+    {
+      "sku": "9123",
+      "name": "BIMOS Labsit 2",
+      "status": "issues",
+      "docs_checked": [
+        "Брошюра Labsit (eng) (brochure 03/17, covers 9123/9121/9125/9127 and E versions)",
+        "Технический паспорт 9123 (eng) (actually assembly and operating instructions, pictograms only)",
+        "Сертификат чистых помещений (Fraunhofer IPA TESTED DEVICE, report IN 1609-845, Labsit 9123 black, 25.03.2017)"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Сертификат чистых помещений",
+          "card_value": "Сертификат чистых помещений (прикреплён как действующий)",
+          "source_value": "Fraunhofer IPA TESTED DEVICE certificate for Labsit No. 9123 (color black), report IN 1609-845, ISO 14644-1 class 3 (seat F = 1200N, 12 cycles/min: class 3; backrest F = 350N, 12 cycles/min: class 3; overall class 3). Issued 25 March 2017, validity 5 years -> expired March 2022. Model and article number match the card.",
+          "quote": "The validity of this certificate | applies only to the mentioned | product in this particular | condition for a duration of | 5 years. ... Stuttgart, March 25, 2017",
+          "source_doc": "Сертификат чистых помещений | https://ibcnanotex.com/upload/iblock/e18/e18e9800d46a6f264e3a742345fd4d58.pdf",
+          "proposed_card_value": "Запросить у BIMOS/IBC Nanotex действующий сертификат Fraunhofer IPA; до получения подписать документ как «Сертификат Fraunhofer IPA (2017, срок действия 5 лет истёк в 2022)» или снять с карточки",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Класс чистоты ISO 14644-1",
+          "card_value": "ISO 4 (также в описании «ISO 4 / GMP A-B» и в standards «EN ISO 14644-1 (ISO 4)»)",
+          "source_value": "Brochure: 'For use in cleanrooms category 3' / 'in accordance with ISO 14644-1' / '(Fraunhofer)' (next two lines). The attached Fraunhofer IPA certificate for Labsit (No.) 9123 (color: black) gives Air Cleanliness Class 3 for seat, backrest and overall result under ISO 14644-1. Class 3 is stricter than the ISO 4 on the card, and the card never states the documented class. Note the certificate itself is expired (see previous issue).",
+          "quote": "For use in cleanrooms category 3",
+          "source_doc": "Брошюра Labsit (eng) | https://ibcnanotex.com/upload/iblock/f83/f83fa7fd45c88a90a949d459d305aee7.pdf",
+          "proposed_card_value": "ISO 3 (испытание Fraunhofer IPA, отчёт IN 1609-845, 2017)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс A, B (также «GMP A-B» в описании и «EU GMP A-B» в standards)",
+          "source_value": "Brochure only says the chair is GMP-conform; no GMP grade (A/B/C/D) is named in any attached document.",
+          "quote": "GMP-CONFORM | Meets the specifi- | cations of the GMP | regulations",
+          "source_doc": "Брошюра Labsit (eng) | https://ibcnanotex.com/upload/iblock/f83/f83fa7fd45c88a90a949d459d305aee7.pdf",
+          "proposed_card_value": "Соответствует требованиям GMP (класс помещения GMP производителем не указан)",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "standards",
+          "card_value": "EN 61340-5-1",
+          "source_value": "9123 is the non-ESD version. The brochure describes ESD as optional and lists the ESD model separately as 9123E (LABSIT 2-ESD); EN 61340-5-1 is not mentioned in any 9123 document.",
+          "quote": "electrostatically dissipative (optional)",
+          "source_doc": "Брошюра Labsit (eng) | https://ibcnanotex.com/upload/iblock/f83/f83fa7fd45c88a90a949d459d305aee7.pdf",
+          "proposed_card_value": "Убрать EN 61340-5-1 из стандартов модели 9123 (ESD-исполнение — артикул 9123E)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "Texon",
+      "name": "BIMOS Cleanroom Texon 2, 3, 4",
+      "status": "issues",
+      "docs_checked": [
+        "Сертификат ESD (EN 61340-5-1) (manufacturer's own ESD declaration signed by Bimos managing partners, 9173R/9171R/9175R, Rgp 10^5-10^7 Ohm; no validity date)",
+        "Брошюра (eng) (01/25)",
+        "Инструкция по сборке (eng) (assembly instructions, lists 9173R/9171R/9175R)",
+        "Технический паспорт TDS 9173R (eng)",
+        "Технический паспорт TDS 9171R/9175R (eng)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Высота сиденья",
+          "card_value": "450–620 мм (для всей серии Texon 2, 3, 4; также в описании)",
+          "source_value": "450–620 mm applies only to Cleanroom Texon 2 (9173R, castors). Cleanroom Texon 3 + 4 (9171R glides and foot ring, 9175R Stop & Go castors and foot ring) have 570–810 mm.",
+          "quote": "CLEANROOM TEXON with foot ring ... 9171R, 9175R ... Seat height (infinitely adjustable from | 570 to 810 mm)",
+          "source_doc": "Технический паспорт TDS 9171R/9175R (eng) | /datasheets/bimos-texon-tds-9171r-en.pdf",
+          "proposed_card_value": "Texon 2 (9173R): 450–620 мм; Texon 3 и 4 (9171R, 9175R, с кольцом для ног): 570–810 мм",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс A, B (также «GMP A-B» в описании и «EU GMP A-B» в standards)",
+          "source_value": "Brochure says only 'GMP-compliant'; TDS standards list contains DIN EN ISO 14644-1 and DIN EN 61340-5-1 but no GMP grade. No attached document names grade A/B.",
+          "quote": "GMP-compliant. Fulfils the requirements | of good manufacturing practice regulations",
+          "source_doc": "Брошюра (eng) | /datasheets/bimos-texon-brochure-en.pdf",
+          "proposed_card_value": "Соответствует требованиям GMP (класс помещения GMP производителем не указан)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "9123E",
+      "name": "BIMOS ESD Labsit 2",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9121",
+      "name": "BIMOS Labsit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9121E",
+      "name": "BIMOS ESD Labsit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9125",
+      "name": "BIMOS Labsit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9125E",
+      "name": "BIMOS ESD Labsit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9030",
+      "name": "BIMOS Nexxit 1",
+      "status": "issues",
+      "docs_checked": [
+        "Брошюра Nexxit (eng) (08/19)",
+        "TDS Nexxit1 Supertec (eng)",
+        "TDS Nexxit1 поролон (eng)",
+        "TDS Nexxit1 искусственная кожа (eng)",
+        "TDS Nexxit1 ткань (eng)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Высота сиденья",
+          "card_value": "450–620 мм (также в описании)",
+          "source_value": "Brochure ergonomics block gives 'Adjustable seat height' 450 - 600mm (quoted line; the label 'Adjustable seat height' is on the next line), and the brochure order table gives 'Seat height 450-600mm' for NEXXIT 1 9030. All four 9030 TDS files (Supertec, integral foam, artificial leather, fabric) show '450-600' in the dimensions block.",
+          "quote": "450 - 600mm             60mm          60mm",
+          "source_doc": "Брошюра Nexxit (eng) | https://ibcnanotex.com/upload/iblock/97d/pxcqy52tuloudbkwlmiyfqrzumqwu11c.pdf",
+          "proposed_card_value": "450–600 мм",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9030E",
+      "name": "BIMOS ESD Nexxit 1",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9033",
+      "name": "BIMOS Nexxit 2",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9033E",
+      "name": "BIMOS ESD Nexxit 2",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9031",
+      "name": "BIMOS Nexxit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9031E",
+      "name": "BIMOS ESD Nexxit 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9560",
+      "name": "BIMOS Neon 1",
+      "status": "issues",
+      "docs_checked": [
+        "Инструкция (eng) (assembly instructions, lists 9560/9560E and other Neon articles)",
+        "Технический паспорт TDS (eng) (TDS 9560, Neon 1 with glides, permanent contact backrest)",
+        "Брошюра Neon (eng) (08/17)",
+        "Сертификат (actually a Fraunhofer IAO ergonomics expert opinion, 21.02.2012; not a cleanroom or ESD certificate)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Гарантия",
+          "card_value": "5 лет (также «гарантия 5 лет» в описании)",
+          "source_value": "TDS 9560: 10-year long-term warranty, of which 3 years full warranty; brochure: ten-year warranty.",
+          "quote": "10 year long term warranty, 3 years full | warranty.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/e83/e8343cd5827837d5e8eca392cf55b6e1.pdf ; Брошюра Neon (eng) | https://ibcnanotex.com/upload/iblock/eb1/eb18799016f2601efb4b43f088723c0f.pdf",
+          "proposed_card_value": "10 лет (из них 3 года полная гарантия)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Назначение",
+          "card_value": "Лаборатории, чистые помещения",
+          "source_value": "Neon documents list production, R&D, ESD and laboratory workplaces; no Neon document claims cleanroom suitability or any ISO 14644-1 class (the only 'clean room' mention is a generic sentence about the Bimos brand). Aggravating: the file attached as 'Сертификат' is not a cleanroom certificate but a Fraunhofer IAO ergonomics/design expert opinion ('Expert opinion | bimos Neon workplace chair', Stuttgart, 21 February 2012), which a buyer may misread as cleanroom qualification; rename it to 'Экспертное заключение Fraunhofer IAO по эргономике (eng, 2012)'.",
+          "quote": "Neon cuts a fine figure in the classical production envi- | ronment, and in ESD workplaces and the laboratory too.",
+          "source_doc": "Брошюра Neon (eng) | https://ibcnanotex.com/upload/iblock/eb1/eb18799016f2601efb4b43f088723c0f.pdf",
+          "proposed_card_value": "Производство, лаборатории, ESD-участки",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "9408",
+      "name": "BIMOS Flex 1",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS 9408 (eng) (Stool Flex 1 with castors, integral foam)",
+        "Каталог Flex (eng) (catalogue pages 136-137, Flex 1/2/3)",
+        "Инструкция Flex (eng) (assembly instructions 9408/9409/9419)"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Обивка",
+          "card_value": "Мягкая вентилируемая, устойчива к агрессивным веществам (материал не указан)",
+          "source_value": "Upholstery material is integral PU foam (SoftTouch), black, order no. 2000 – the only finish offered.",
+          "quote": "Integral foam (PU): | The new developed SoftTouch integral foam ... Colour: Black (2000).",
+          "source_doc": "Технический паспорт TDS 9408 (eng) | https://ibcnanotex.com/upload/iblock/929/9297680d43784365f40c6a110ec417b0.pdf",
+          "proposed_card_value": "Интегральный пенополиуретан (PU) SoftTouch, чёрный (2000); нескользящая волнистая поверхность, рекомендован при контакте с агрессивными веществами",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9408E",
+      "name": "BIMOS ESD Flex 1",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9409",
+      "name": "BIMOS Flex 2",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9409E",
+      "name": "BIMOS ESD Flex 2",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9419",
+      "name": "BIMOS Flex 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9419E",
+      "name": "BIMOS ESD Flex 3",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "Basic",
+      "name": "BIMOS Cleanroom Basic 1, 2, 3",
+      "status": "issues",
+      "docs_checked": [
+        "Сертификат ESD (manufacturer's own ESD declaration signed by Bimos managing partners, Rgp 10^5-10^7 Ohm; no validity date)",
+        "Сертификат чистых помещений (scanned Fraunhofer IPA certificate of qualification, model 9140, report IN 9912-165, 09.12.1999)",
+        "Технический паспорт TDS 9141/9143/9146 (eng)",
+        "Технический паспорт TDS 9140/9142/9145 (eng)",
+        "Инструкция по сборке (eng) (assembly instructions, Basic series incl. 9140/9141)",
+        "Брошюра (eng) (catalogue pages 128-131)"
+      ],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс A, B (также «GMP A-B» в описании и «EU GMP A-B» в standards)",
+          "source_value": "TDS and brochure state compliance with the EU GMP guidelines but name no GMP grade; the ISO 3 claim itself is supported.",
+          "quote": "air cleanliness class 3 according to DIN EN ISO 14644-1 and the | EU GMP guidelines.",
+          "source_doc": "Технический паспорт TDS 9140/9142/9145 (eng) | /datasheets/bimos-basic-tds-9140-en.pdf",
+          "proposed_card_value": "Соответствует требованиям EU GMP (класс помещения GMP производителем не указан)",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Максимальная нагрузка",
+          "card_value": "150 кг (также в описании)",
+          "source_value": "None of the six Basic documents gives a load capacity; the TDS dimension blocks list only backrest/seat dimensions, weight (17 kg / 19 kg) and volume. (150 kg appears in the Texon brochure, not in Basic documents.)",
+          "quote": "Dimensions in mm Backrest: ... H 430, or 530 | Seat: ... H 460-630 | W 460 | D 440 | 17 kg",
+          "source_doc": "Технический паспорт TDS 9140/9142/9145 (eng) | /datasheets/bimos-basic-tds-9140-en.pdf",
+          "proposed_card_value": "Убрать или подтвердить у производителя (в документах Basic не указана)",
+          "confidence": "medium"
+        },
+        {
+          "type": "expired_certificate",
+          "field": "Сертификат чистых помещений",
+          "card_value": "Сертификат чистых помещений (прикреплён к карточке с ISO 3)",
+          "source_value": "Scanned Fraunhofer IPA certificate for model 9140 of the Basic series, dated 09.12.1999. No validity period is printed, but it is ~27 years old and classifies the chair to Cleanliness Class 1 per US Federal Standard 209E (withdrawn standard), not to ISO 14644-1; ESD per DIN EN 100 015-1 / IEC 61340-5-1. The card's ISO 3 claim remains supported by the current TDS and brochure, but this certificate does not itself state ISO 3.",
+          "quote": "Model 9140 of the model series Basic ... The above-mentioned test piece is suitable for use in cleanrooms fulfilling the specifications of Cleanliness Class 1 (according to US Fed. Standard 209E) ... Stuttgart, 09. Dezember 1999",
+          "source_doc": "Сертификат чистых помещений | /datasheets/bimos-basic-cleanroom-cert.pdf",
+          "proposed_card_value": "Запросить актуальный сертификат Fraunhofer IPA по ISO 14644-1; до этого подписать как «Сертификат Fraunhofer IPA, модель 9140, класс 1 по US FED STD 209E (1999)»",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "9460",
+      "name": "BIMOS Allround",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт 9460 поролон (eng) (Allround Stool 1 with glides, integral foam)",
+        "Технический паспорт 9460 иск. кожа (eng) (Allround Stool 1 with glides, Magic synthetic leather)"
+      ],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Антистатические свойства",
+          "card_value": "Да (также «ESD» в описании)",
+          "source_value": "Both complete 9460 performance sheets (upholstery, base, glides, full standards list, warranty) contain no mention of ESD, conductivity or antistatic properties; article 9460 carries no E suffix.",
+          "quote": "DIN 68 877 | GS certificate for \"tested safety\" | DIN EN ISO 9001 quality management | DIN EN ISO 14001 environmental | management | EMAS tested environmental management | OHSAS 45001 occupational health and safety",
+          "source_doc": "Технический паспорт 9460 поролон (eng) | https://ibcnanotex.com/upload/iblock/8fc/39ygw2ww5iesvefysni14jmxjrmxem5n.pdf",
+          "proposed_card_value": "Убрать «ESD» и «Антистатические свойства: Да» (в техпаспорте 9460 не указаны)",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Обивка",
+          "card_value": "не указана",
+          "source_value": "Two upholstery variants: integral PU foam (quoted, from the 'поролон' sheet: 'extremely robust, durable, washable, disinfectant-proof, PVC-free') or Magic synthetic leather (from the 'иск. кожа' sheet: 'Magic synthetic leather upholstery: Washable, easy-care, disinfectant-proof ... PVC-free, phthalate-free'), black; seat diameter 400 mm.",
+          "quote": "Integral foam upholstery (PU):",
+          "source_doc": "Технический паспорт 9460 поролон (eng) | https://ibcnanotex.com/upload/iblock/8fc/39ygw2ww5iesvefysni14jmxjrmxem5n.pdf ; Технический паспорт 9460 иск. кожа (eng) | https://ibcnanotex.com/upload/iblock/88d/yrrgxuit29mrdumvj9e062b67dddxzvb.pdf",
+          "proposed_card_value": "Интегральный пенополиуретан (PU) или искусственная кожа Magic (без ПВХ), чёрный; сиденье Ø 400 мм",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9461",
+      "name": "BIMOS Allround",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт 9461 поролон (eng) (Allround Stool 3 with glides and footring, integral foam)",
+        "Технический паспорт 9461 иск. кожа (eng) (Allround Stool 3 with glides and footring, Magic synthetic leather)"
+      ],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Антистатические свойства",
+          "card_value": "Да (также «ESD» в описании)",
+          "source_value": "Both complete 9461 performance sheets contain no mention of ESD, conductivity or antistatic properties; article 9461 carries no E suffix.",
+          "quote": "DIN 68 877 | GS certificate for \"tested safety\" | DIN EN ISO 9001 quality management | DIN EN ISO 14001 environmental | management | EMAS tested environmental management | OHSAS 45001 occupational health and safety",
+          "source_doc": "Технический паспорт 9461 поролон (eng) | https://ibcnanotex.com/upload/iblock/dcb/dhwi4svs90jbiqqc4xbk279ktlr9dohw.pdf",
+          "proposed_card_value": "Убрать «ESD» и «Антистатические свойства: Да» (в техпаспорте 9461 не указаны)",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Обивка",
+          "card_value": "не указана",
+          "source_value": "Two upholstery variants: integral PU foam (quoted, from the 'поролон' sheet: 'extremely robust, durable, washable, disinfectant-proof, PVC-free') or Magic synthetic leather (from the 'иск. кожа' sheet: 'Magic synthetic leather upholstery: Washable, easy-care, disinfectant-proof ... PVC-free, phthalate-free'), black; seat diameter 400 mm; chrome-plated height-adjustable foot ring, glides.",
+          "quote": "Integral foam upholstery (PU):",
+          "source_doc": "Технический паспорт 9461 поролон (eng) | https://ibcnanotex.com/upload/iblock/dcb/dhwi4svs90jbiqqc4xbk279ktlr9dohw.pdf ; Технический паспорт 9461 иск. кожа (eng) | https://ibcnanotex.com/upload/iblock/a22/84zngglmt3cl2mqbo3ecy846ct578td3.pdf",
+          "proposed_card_value": "Интегральный пенополиуретан (PU) или искусственная кожа Magic (без ПВХ), чёрный; сиденье Ø 400 мм",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9144",
+      "name": "BIMOS Fin",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт 9144 (eng) (actually the Fin brochure 03/16 with a 'Technical data' block)"
+      ],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Химостойкость",
+          "card_value": "Устойчив к дезинфектантам (также в описании)",
+          "source_value": "The Fin document describes the seat only as washable, hard-wearing Soft Touch PU foam; resistance to disinfectants is not mentioned anywhere.",
+          "quote": "the washable seat. ... Hard-wearing: Soft Touch PU foam",
+          "source_doc": "Технический паспорт 9144 (eng) | https://ibcnanotex.com/upload/iblock/e49/e49b0c356688eeaf834f9b8e5d1b8eef.pdf",
+          "proposed_card_value": "Моющееся сиденье из износостойкого пенополиуретана Soft Touch",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Ширина сиденья",
+          "card_value": "460 мм",
+          "source_value": "The technical-data dimension drawing shows 450 mm next to the 620–850 mm height; the extracted text does not label the dimension, but 450 mm is the only horizontal dimension given (likely seat width). 460 mm appears nowhere.",
+          "quote": "620 - 850mm ... 450 mm",
+          "source_doc": "Технический паспорт 9144 (eng) | https://ibcnanotex.com/upload/iblock/e49/e49b0c356688eeaf834f9b8e5d1b8eef.pdf",
+          "proposed_card_value": "450 мм",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Материал сиденья",
+          "card_value": "не указан",
+          "source_value": "Seat is Soft Touch PU foam (black 2000, blue 2001, basalt grey 2002); frame is coated aluminium; changeable glides.",
+          "quote": "comfort seat in Soft Touch PU foam | comfort handle | robust aluminium frame",
+          "source_doc": "Технический паспорт 9144 (eng) | https://ibcnanotex.com/upload/iblock/e49/e49b0c356688eeaf834f9b8e5d1b8eef.pdf",
+          "proposed_card_value": "Сиденье: пенополиуретан Soft Touch (PU); рама: алюминий с покрытием; сменные опоры",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9144E",
+      "name": "BIMOS ESD Fin",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "9570",
+      "name": "BIMOS Neon",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS 9570 (eng) (Neon 1 with glides, synchronous mechanism)",
+        "Брошюра Neon (eng) (08/17; identical file to the 9560 brochure)",
+        "Сертификат Neon (actually a Fraunhofer IAO ergonomics expert opinion, 21.02.2012; identical file to 9560 'Сертификат')",
+        "Инструкция Neon (eng) (assembly instructions, lists 9570/9570E)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Гарантия",
+          "card_value": "5 лет",
+          "source_value": "TDS 9570: 10-year long-term warranty, of which 3 years full warranty; brochure: ten-year warranty.",
+          "quote": "10 year long term warranty, 3 years full | warranty.",
+          "source_doc": "Технический паспорт TDS 9570 (eng) | https://ibcnanotex.com/upload/iblock/130/1305952da3b2afd3865a7497cfa42e5a.pdf ; Брошюра Neon (eng) | https://ibcnanotex.com/upload/iblock/602/602a0e13dec547ba82e06b6ae2a0b48d.pdf",
+          "proposed_card_value": "10 лет (из них 3 года полная гарантия)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9563",
+      "name": "BIMOS Neon",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS 9563 (eng) (Neon 2 with castors, permanent contact backrest)",
+        "Брошюра Neon (eng) (08/17)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Гарантия",
+          "card_value": "5 лет",
+          "source_value": "TDS 9563: 10-year long-term warranty, of which 3 years full warranty; brochure: ten-year warranty.",
+          "quote": "10 year long term warranty, 3 years full | warranty.",
+          "source_doc": "Технический паспорт TDS 9563 (eng) | https://ibcnanotex.com/upload/iblock/ccf/ccffb0a138e5f73a8a576531b8c95f93.pdf ; Брошюра Neon (eng) | https://ibcnanotex.com/upload/iblock/602/602a0e13dec547ba82e06b6ae2a0b48d.pdf",
+          "proposed_card_value": "10 лет (из них 3 года полная гарантия)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "9561",
+      "name": "BIMOS Neon",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS 9561 (eng) (Neon 3 with glides and footrest, permanent contact backrest)",
+        "Брошюра Neon (eng) (08/17)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Гарантия",
+          "card_value": "5 лет",
+          "source_value": "TDS 9561: 10-year long-term warranty, of which 3 years full warranty; brochure: ten-year warranty.",
+          "quote": "10 year long term warranty, 3 years full | warranty.",
+          "source_doc": "Технический паспорт TDS 9561 (eng) | https://ibcnanotex.com/upload/iblock/31f/31f17375fd63db3639772a319bc6f796.pdf ; Брошюра Neon (eng) | https://ibcnanotex.com/upload/iblock/602/602a0e13dec547ba82e06b6ae2a0b48d.pdf",
+          "proposed_card_value": "10 лет (из них 3 года полная гарантия)",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

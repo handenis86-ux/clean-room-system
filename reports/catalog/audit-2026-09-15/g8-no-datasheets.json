@@ -1,0 +1,1740 @@
+{
+ "group": "g8-no-datasheets",
+ "products": [
+  {
+   "sku": "1029552",
+   "name": "Комбинезон ESD Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1028850",
+   "name": "Бахилы высокие ESD Alsico High Clean Stat II",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1037223",
+   "name": "Комбинезон Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "duplicate_or_sku_problem",
+     "field": "name",
+     "card_value": "Комбинезон Alsico High Tech",
+     "problem": "Две карточки (1037223 и 1002715) имеют одинаковое название «Комбинезон Alsico High Tech»; различаются только наличием капюшона, что видно лишь из описания — в списке каталога и в поиске они неразличимы.",
+     "proposed_card_value": "Комбинезон Alsico High Tech с капюшоном",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "1037271",
+   "name": "Капюшон ESD Alsico High Clean Stat II",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1002715",
+   "name": "Комбинезон Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "duplicate_or_sku_problem",
+     "field": "name",
+     "card_value": "Комбинезон Alsico High Tech",
+     "problem": "Две карточки (1002715 и 1037223) имеют одинаковое название «Комбинезон Alsico High Tech»; различаются только наличием капюшона (по описанию).",
+     "proposed_card_value": "Комбинезон Alsico High Tech без капюшона",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "1029863",
+   "name": "Маска лицевая ESD Alsico High Clean Stat II",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1001718",
+   "name": "Халат ESD Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Многоразовый ESD-халат, 98% полиэстер + 2% антистатическое волокно, ISO 4-6 / GMP A-B",
+     "problem": "Халат заявлен для зон GMP A-B. По EU GMP Annex 1 в зонах A/B требуется стерильный комбинезон или брючный костюм, собранный на запястьях, с высоким воротом и капюшоном; халат этим требованиям не отвечает. Документов производителя в карточке нет.",
+     "proposed_card_value": "Многоразовый ESD-халат, 98% полиэстер + 2% антистатическое волокно, ISO 4-6",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "1027438",
+   "name": "Носки Alsico High Tech (150 ден)",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1027437",
+   "name": "Носки Alsico High Tech (167 ден)",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1024768",
+   "name": "Бахилы высокие Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1034204",
+   "name": "Бахилы высокие с молнией Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1002390",
+   "name": "Капюшон Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1022895",
+   "name": "Туника с длинными рукавами Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1022901",
+   "name": "Брюки Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1028566",
+   "name": "Носки ESD Alsico Clean Stat",
+   "category": "reusable-garm",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "1037470",
+   "name": "Халат Alsico High Tech",
+   "category": "reusable-garm",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты EU GMP; description",
+     "card_value": "Класс A, B; «ISO 4-6 / GMP A-B»",
+     "problem": "Халат заявлен для зон GMP A-B. По EU GMP Annex 1 в зонах A/B требуется стерильный комбинезон или брючный костюм, собранный на запястьях, с высоким воротом и капюшоном; халат этим требованиям не отвечает.",
+     "proposed_card_value": "Удалить строку «Класс чистоты EU GMP: Класс A, B»; описание: «Многоразовый халат для чистых помещений, 98% полиэстер + 2% антистатическое волокно, ISO 4-6»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2123025",
+   "name": "Модульная тележка 2.0 Ergo-S 320",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; ГОСТ Р 52249; EU GMP",
+     "problem": "В списке стандартов изделия указаны ГОСТ Р 52249, EU GMP — это не стандарты на продукцию: ГОСТ Р 52249 — российские правила производства и контроля качества лекарственных средств (GMP); EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2123022",
+   "name": "Модульная тележка 2.0 Ergo-S 230",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP",
+     "problem": "В списке стандартов изделия указаны EU GMP — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2123016",
+   "name": "Модульная тележка 2.0 Ergo 230",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP",
+     "problem": "В списке стандартов изделия указаны EU GMP — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2121203",
+   "name": "Модульная тележка UNO 211",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP",
+     "problem": "В списке стандартов изделия указаны EU GMP — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2121301",
+   "name": "Система насыщения МОП Prepare 311",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP",
+     "problem": "В списке стандартов изделия указаны EU GMP — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2124001",
+   "name": "Система насыщения мопов PurQuip Prepare",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "empty_or_thin",
+     "field": "description; specs",
+     "card_value": "Hydroflex, система насыщения мопов для чистых помещений",
+     "problem": "Описание повторяет название, характеристики тавтологичны («Тип: Система насыщения мопов», «Назначение: Предварительное насыщение мопов рабочим раствором», «Производитель: Hydroflex»); карточки 2124001 и 2123027 практически неразличимы — нет материала, вместимости, размеров.",
+     "proposed_card_value": "Дополнить отличительными характеристиками (материал, вместимость, размеры) по документации Hydroflex; низкий приоритет",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2123027",
+   "name": "Система насыщения мопов 2.0 ERGO 200",
+   "category": "cleaning-trolleys-systems",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "empty_or_thin",
+     "field": "description; specs",
+     "card_value": "Hydroflex, система насыщения мопов ERGO 200",
+     "problem": "Описание повторяет название, характеристики тавтологичны («Тип: Система насыщения мопов», «Назначение: Предварительное насыщение мопов рабочим раствором», «Производитель: Hydroflex»); карточки 2124001 и 2123027 практически неразличимы — нет материала, вместимости, размеров.",
+     "proposed_card_value": "Дополнить отличительными характеристиками (материал, вместимость, размеры) по документации Hydroflex; низкий приоритет",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2151005",
+   "name": "Держатель из полипропилена KKV40",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 6 / Класс C, D",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 6 / GMP C, D»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2151014",
+   "name": "Держатель из нержавеющей стали KEK40",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2151003",
+   "name": "Держатель из нержавеющей стали KEU40",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 5 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 5 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2778",
+   "name": "Держатель DualClean 2778",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131007",
+   "name": "Телескопическая ручка SAK170",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 6 / Класс C, D",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 6 / GMP C, D»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131006",
+   "name": "Телескопическая ручка SET2070",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131027",
+   "name": "Телескопическая ручка SAT2150",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 5 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 5 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131026",
+   "name": "Телескопическая ручка SAT2100",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Материал; description",
+     "card_value": "Нержавеющая сталь; «телескопическая ручка из нержавеющей стали»",
+     "problem": "Во всей группе коды Hydroflex «SA…» — алюминиевые ручки (SAK170, SAT2150, SA400, SAV150), «SE…» — нержавеющая сталь (SET2070, SET2100, SEP140). SAT2100 — единственная «SA»-модель, заявленная как нержавеющая сталь; её масса 560 г при длине 108–207 см и цвет «Серый» соответствуют алюминию (нержавеющая SET2100 114–211 см весит 930 г). От материала на карточке зависят класс ISO 4 / GMP A-B и автоклавирование.",
+     "proposed_card_value": "До сверки с документацией Hydroflex удалить строку «Материал» и материал из описания: «Hydroflex, телескопическая ручка, 108–207 см»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131012",
+   "name": "Телескопическая ручка SA400",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 6 / Класс C, D",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 6 / GMP C, D»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131005",
+   "name": "Телескопическая ручка SET2100",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131011",
+   "name": "Ручка SAV150",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 6 / Класс C, D",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 6 / GMP C, D»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131003",
+   "name": "Ручка SEP140",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2746S",
+   "name": "Телескопическая ручка Quickconnect 2746S",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 4 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 4 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2131015",
+   "name": "Система для очистки изоляторов ICT2050",
+   "category": "cleaning-equipment",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP",
+     "card_value": "ISO 5 / Класс A, B",
+     "problem": "Инвентарю (тележка/ручка/держатель) присвоен «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP» как свойство изделия. ISO 14644-1 классифицирует чистоту воздуха, класс GMP — зону; сам инвентарь классифицировать нельзя, можно указать лишь зону, для которой он рекомендован производителем. Документов в карточке нет.",
+     "proposed_card_value": "Переименовать строки в одну: «Рекомендуемая зона применения: ISO 5 / GMP A, B»",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2111105",
+   "name": "Одноразовый стерильный МОП EC40-S",
+   "category": "mops",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; ГОСТ Р 52249; EU GMP",
+     "problem": "В списке стандартов изделия указаны ГОСТ Р 52249, EU GMP — это не стандарты на продукцию: ГОСТ Р 52249 — российские правила производства и контроля качества лекарственных средств (GMP); EU GMP — правила для производителей лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Материал",
+     "card_value": "Полиэстер (полиэфир) / PE",
+     "problem": "Описание «100% полиэстер», а в характеристиках «Полиэстер (полиэфир) / PE»; обозначение PE стандартно означает полиэтилен, т.е. читается как второй материал. Нестерильный аналог EC40 и EC20-S указаны как 100% полиэстер.",
+     "proposed_card_value": "100% полиэстер",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "2111104",
+   "name": "Одноразовый МОП EC40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2111109",
+   "name": "Одноразовый стерильный МОП EF40-S",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2111138",
+   "name": "Одноразовый МОП EX40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2111006",
+   "name": "Многоразовый МОП Z40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2111005",
+   "name": "Многоразовый МОП P40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2112008",
+   "name": "Многоразовый МОП ML40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2112009",
+   "name": "Многоразовый МОП MLB40",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "2111111",
+   "name": "Одноразовый стерильный МОП EC20-S",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "DCQT0002",
+   "name": "Одноразовый стерильный МОП DualClean Quiltec",
+   "category": "mops",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "DCQT001",
+   "name": "Одноразовый МОП для ламелей DualClean",
+   "category": "mops",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "duplicate_or_sku_problem",
+     "field": "sku",
+     "card_value": "DCQT001",
+     "problem": "В одной серии Contec DualClean артикулы имеют разный формат: DCQT0002 (4 цифры) и DCQT001 (3 цифры) — вероятна ошибка ввода артикула в одной из карточек.",
+     "proposed_card_value": "Сверить артикул с каталогом Contec; при подтверждении формата серии — DCQT0001",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "N5",
+   "name": "NGlide N5 универсальные в рулоне",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N7",
+   "name": "NGlide N7 для интенсивной очистки",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N10",
+   "name": "NGlide N10 с низким ворсоотделением",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N11",
+   "name": "NGlide N11 в рулоне с низким ворсоотделением",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N15",
+   "name": "NGlide N15 для сильных загрязнений",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N16",
+   "name": "NGlide N16 для сильных загрязнений",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N33",
+   "name": "NGlide N33 для масляных загрязнений",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N60",
+   "name": "NGlide N60 универсальные в рулоне",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N61",
+   "name": "NGlide N61 универсальные в рулоне",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "N80",
+   "name": "NGlide N80 особо прочные",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "NR1",
+   "name": "NGlide NR1 многоразовые в рулоне",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "NR2",
+   "name": "NGlide NR2 многоразовые в упаковке",
+   "category": "cleaning-cloth",
+   "status": "ok",
+   "issues": []
+  },
+  {
+   "sku": "Z800-1000",
+   "name": "ZEAL Clean Supplies полиэтиленовая упаковка",
+   "category": "cleanroom-packaging",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP; ГОСТ Р 52249",
+     "problem": "В списке стандартов изделия указаны EU GMP, ГОСТ Р 52249 — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; ГОСТ Р 52249 — российские правила производства и контроля качества лекарственных средств (GMP); изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "ZA800-1000",
+   "name": "ZEAL Clean Supplies антистатическая упаковка",
+   "category": "cleanroom-packaging",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP; ГОСТ Р 52249",
+     "problem": "В списке стандартов изделия указаны EU GMP, ГОСТ Р 52249 — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; ГОСТ Р 52249 — российские правила производства и контроля качества лекарственных средств (GMP); изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "ESD-защита, нейтрализация статического заряда.",
+     "problem": "Антистатический полиэтилен лишь снижает трибоэлектрическую зарядку; он не «нейтрализует» заряд и не является ESD-защитным (экранирующим) пакетом. Параметров (поверхностное сопротивление) и документов нет.",
+     "proposed_card_value": "Антистатический полиэтилен снижает накопление статического заряда.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "ZS800-1000",
+   "name": "ZEAL Clean Supplies стерильная упаковка",
+   "category": "cleanroom-packaging",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP; ГОСТ Р 52249",
+     "problem": "В списке стандартов изделия указаны EU GMP, ГОСТ Р 52249 — это не стандарты на продукцию: EU GMP — правила для производителей лекарственных средств; ГОСТ Р 52249 — российские правила производства и контроля качества лекарственных средств (GMP); изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1",
+     "confidence": "medium"
+    },
+    {
+     "type": "duplicate_or_sku_problem",
+     "field": "sku; specs: Размер",
+     "card_value": "ZS800-1000; 600×600 мм, 700×980 мм, 800×1000 мм (под заказ)",
+     "problem": "Артикул кодирует размер 800×1000 мм, а в характеристике перечислены три размера, причём из записи неясно, относится ли «(под заказ)» к 800×1000 мм (т.е. к размеру самого артикула) или ко всем.",
+     "proposed_card_value": "800×1000 мм (другие размеры — по запросу)",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRB-B",
+   "name": "Micro CRB B — скамейка с обувницей",
+   "category": "tinman-benches",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRB",
+   "name": "Micro CRB — перфорированная скамейка для гоунинга",
+   "category": "tinman-benches",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRB-B",
+   "name": "Pharma CRB B — скамейка с обувницей (двойной лист)",
+   "category": "tinman-benches",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые передние и задние кромки повышают комфорт во время надевания обуви; замкнутые сварные швы и минимизация щелей соответствуют требованиям GMP Annex 1 к гигиеническому дизайну",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые передние и задние кромки повышают комфорт во время надевания обуви; замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Карточка одновременно заявляет «Класс A» (зона A по EU GMP Annex 1 — это зона с однонаправленным воздушным потоком) и позиционирует изделие как «Альтернатива перфорированной Micro CRB B для зон без вертикального ламинарного потока» — прямое внутреннее противоречие. Кроме того, ISO 14644-1 и класс GMP относятся к помещению/зоне, а не к мебели.",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRB-S",
+   "name": "Pharma CRB S — скамейка с полками",
+   "category": "tinman-benches",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRB",
+   "name": "Pharma CRB — скамейка для гоунинга (сплошное сиденье)",
+   "category": "tinman-benches",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Карточка одновременно заявляет «Класс A» (зона A по EU GMP Annex 1 — это зона с однонаправленным воздушным потоком) и позиционирует изделие как «Альтернатива перфорированной Micro CRB — для зон без обязательного однонаправленного вертикального потока» — прямое внутреннее противоречие. Кроме того, ISO 14644-1 и класс GMP относятся к помещению/зоне, а не к мебели.",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "high"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Опции",
+     "card_value": "Закрепляемые ножки, размер обувницы по запросу",
+     "problem": "Это исполнение без обувницы (описание: хранение бахил через отдельные стеллажи; версия с обувницей — Pharma CRB B), но в опциях указан «размер обувницы по запросу».",
+     "proposed_card_value": "Закрепляемые ножки",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRGC",
+   "name": "CRGC — шкаф для чистых помещений со скошенным верхом",
+   "category": "tinman-cabinets",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей — соответствие требованиям GMP Annex 1 к гигиеническому дизайну",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-EVOK-LAM-CART",
+   "name": "EVOK LAM Cart — тележка с ламинарным потоком и HEPA/ULPA-фильтром",
+   "category": "tinman-carts",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRC",
+   "name": "Micro CRC — перфорированная транспортная тележка",
+   "category": "tinman-carts",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей — соответствие требованиям hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Вес (кг); description",
+     "card_value": "30,6 (Micro CRC 800 × 600 × 1000)",
+     "problem": "Размерный ряд глубин — 525/625/725 мм, а типовая модель, для которой дан вес, указана как 800 × 600 × 1000 — глубины 600 мм в ряду нет (то же в описании).",
+     "proposed_card_value": "30,6 (типовая конфигурация Micro CRC шириной 800 мм); в описании убрать «800 × 600 × 1000»",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRC",
+   "name": "Pharma CRC — транспортная тележка со сплошными полками",
+   "category": "tinman-carts",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей — соответствие принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Вес (кг); description",
+     "card_value": "31 (Pharma CRC 800 × 600 × 1000)",
+     "problem": "Размерный ряд глубин — 525/625/725 мм, а типовая модель, для которой дан вес, указана как 800 × 600 × 1000 — глубины 600 мм в ряду нет (то же в описании).",
+     "proposed_card_value": "31 (типовая конфигурация Pharma CRC шириной 800 мм); в описании убрать «800 × 600 × 1000»",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRT-D",
+   "name": "CRT D — мобильная тумба с ящиками",
+   "category": "tinman-drawers",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRG-D",
+   "name": "CRG D — двойная напольная стойка для одежды",
+   "category": "tinman-garment-racks",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые кромки, замкнутые сварные швы, минимизация щелей — соответствие принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые кромки, замкнутые сварные швы, минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRG",
+   "name": "CRG — одиночная напольная стойка для одежды",
+   "category": "tinman-garment-racks",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые кромки, замкнутые сварные швы и минимизация щелей соответствуют требованиям GMP Annex 1 к гигиеническому дизайну",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые кромки, замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "description",
+     "card_value": "Альтернатива двусторонней CRG D — для зон с большим штатом смены.",
+     "problem": "Односторонняя стойка позиционирована для «средних и небольших производств», а заключительная фраза читается как будто именно она предназначена для зон с большим штатом смены — противоречие (для большого штата — двусторонняя CRG D).",
+     "proposed_card_value": "Для зон с большим штатом смены — двусторонняя стойка CRG D.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRG-IW",
+   "name": "CRG iW — наклонная настенная стойка для одежды",
+   "category": "tinman-garment-racks",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRM",
+   "name": "CRM — настенное зеркало для зоны гоунинга",
+   "category": "tinman-mirrors",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «классами чистоты ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «переходах между классами чистоты ISO 4 / GMP A» → «переходах между зонами разных классов чистоты».",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Размеры (мм); description",
+     "card_value": "600 × 1800 × 2SS (WxHxThickness) [VERIFY стандартный размер из PDF]",
+     "problem": "На живой карточке опубликована редакционная пометка «[VERIFY стандартный размер из PDF]» — размер не проверен; «2SS» как толщина — бессмысленное значение (то же «600 × 1800 × 2SS мм» в описании и в строке веса).",
+     "proposed_card_value": "600 × 1800 (Ш × В); в описании и строке веса убрать «× 2SS»; размер сверить с документом Tinman",
+     "confidence": "high"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Облегчённая по сравнению со стеклянным аналогом конструкция упрощает настенный монтаж — установка одним оператором без специальной подготовки стены.",
+     "problem": "Карточка сама указывает массу 19 кг для 600 × 1800 мм; стеклянное зеркало того же размера толщиной 4–6 мм весит около 11–16 кг, т.е. стальное не легче. Утверждение противоречит собственному весу.",
+     "proposed_card_value": "Настенный монтаж — установка одним оператором без специальной подготовки стены.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PASS-THROUGH-CRGC",
+   "name": "CRGC Pass-Through — передаточный шкаф со скошенным верхом",
+   "category": "tinman-pass-through",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы, скруглённые кромки, минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRST-T-PLATFORM",
+   "name": "CRST t — платформа подъёмная (3/4/5 ступеней)",
+   "category": "tinman-platforms",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Все скруглённые кромки и углы исключают порезы и зацепы одежды; замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Все скруглённые кромки и углы исключают порезы и зацепы одежды; замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "empty_or_thin",
+     "field": "specs: Размеры (мм)",
+     "card_value": "L × D × H (см. конфигуратор: P400/P600/P800)",
+     "problem": "Вместо размеров опубликован шаблон «L × D × H» без чисел.",
+     "proposed_card_value": "По конфигуратору: длина платформы P400 / P600 / P800",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRG-H8-S50",
+   "name": "CRG h8 s50 — стеллаж с крючками и полками",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые передние кромки полок повышают эргономику работы; замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые передние кромки полок повышают эргономику работы; замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRSHM",
+   "name": "CRSHM — стеллаж для сушки мопов",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Стеллажу для сушки мопов присвоены «ISO 4 / Класс A», а собственный текст карточки называет применение «отдельные зоны/боксы санитарной обработки и сушки уборочного инвентаря, технические помещения» — это противоречит зоне A (критическая зона с однонаправленным потоком).",
+     "proposed_card_value": "Удалить строки «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP»; добавить «Рекомендуемая зона применения: помещения подготовки и сушки уборочного инвентаря»; в описании «для зон чистых помещений класса ISO 4 / GMP A» → «для чистых помещений».",
+     "confidence": "high"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Опции",
+     "card_value": "Закрепляемые ножки / 360°-колёса, кол-во полок",
+     "problem": "В описании — одна фиксированная нижняя полка, а опцией названо «количество секций для подвеса»; в характеристиках опцией указано «кол-во полок».",
+     "proposed_card_value": "Закрепляемые ножки / 360°-колёса, количество секций для подвеса",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRS-R",
+   "name": "Micro CRS R — перфорированный стеллаж с полками-решётками",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Опции",
+     "card_value": "Закрепляемые ножки / 360°-колёса, 2 размера решёток, layout 1/2/3",
+     "problem": "В «Опциях» указано «2 размера решёток», а в строке «Решётки» перечислены три типоразмера: T1 225×350×120 / T2 150×350×120 / T3 90×175×80 (двойная).",
+     "proposed_card_value": "Закрепляемые ножки / 360°-колёса, 3 типоразмера решёток (T1/T2/T3), layout 1/2/3",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRS-R",
+   "name": "Pharma CRS R — стеллаж с решётками (сплошной каркас)",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей — соответствие принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Опции",
+     "card_value": "Закрепляемые ножки / 360°-колёса, 2 размера решёток",
+     "problem": "В «Опциях» указано «2 размера решёток», а в строке «Решётки» перечислены три типоразмера: T1 225×350×120 / T2 150×350×120 / T3 90×175×80 (двойная).",
+     "proposed_card_value": "Закрепляемые ножки / 360°-колёса, 3 типоразмера решёток (T1/T2/T3)",
+     "confidence": "high"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "description",
+     "card_value": "В отличие от перфорированной версии Micro CRS R, у Pharma CRS R сплошной каркас (без перфорации), что критично для зон с возможным проливом или работы с мелкоштучными материалами, не пропадающими между прутьями.",
+     "problem": "Полки у этой модели — решётки (прутья), поэтому сплошной каркас не удерживает пролив и не предотвращает проваливание мелких предметов «между прутьями»; обоснование противоречит конструкции, описанной в той же карточке.",
+     "proposed_card_value": "В отличие от перфорированной версии Micro CRS R, у Pharma CRS R сплошной (неперфорированный) каркас.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRS",
+   "name": "Micro CRS — перфорированный стеллаж с регулируемыми полками",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые передние и задние кромки полок повышают эргономику; замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые передние и задние кромки полок повышают эргономику; замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "description",
+     "card_value": "Перфорированный универсальный стеллаж с регулируемыми сплошными полками",
+     "problem": "Название и описание — перфорированный стеллаж, «перфорация полок и каркаса с воздухопроницаемостью 40%», а в первой фразе полки названы «сплошными»; сплошные полки — отличительный признак Pharma CRS.",
+     "proposed_card_value": "Перфорированный универсальный стеллаж с регулируемыми полками",
+     "confidence": "high"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Вес (кг)",
+     "card_value": "34 (Micro CRC 1000 × 400 × 1800)",
+     "problem": "В строке веса указана модель «Micro CRC» (это тележка), а описание говорит «Типовая Micro CRS 1000 × 400 × 1800»; кроме того, длины 1000 мм нет в размерном ряду 766/966/1166/… мм.",
+     "proposed_card_value": "34 (типовая конфигурация Micro CRS глубиной 400 и высотой 1800 мм)",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRS",
+   "name": "Pharma CRS — стеллаж со сплошными полками",
+   "category": "tinman-shelves",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые передние и задние кромки повышают эргономику; замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые передние и задние кромки повышают эргономику; замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Вес (кг); description",
+     "card_value": "69 (Pharma CRS 1200 × 600 × 2000)",
+     "problem": "Типовая модель указана длиной 1200 мм, а размерный ряд длин — 766/966/1166/1366/… мм; 1200 мм в нём нет (вероятно, номинальное обозначение вместо фактического размера).",
+     "proposed_card_value": "69 (типовая конфигурация Pharma CRS глубиной 600 и высотой 2000 мм); в описании убрать «1200 × 600 × 2000» или привести длину к ряду",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRSU",
+   "name": "CRSU — раковина из нержавеющей стали",
+   "category": "tinman-sinks",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы между чашей и столешницей, минимизация щелей и низкая шероховатость поверхности — соответствие требованиям GMP Annex 1 к гигиеническому дизайну, поверхность выдерживает ежесменную обработку спиртовыми, биоцидными и спороцидными растворами",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы между чашей и столешницей, минимизация щелей и низкая шероховатость поверхности — облегчают очистку и дезинфекцию, поверхность выдерживает ежесменную обработку спиртовыми, биоцидными и спороцидными растворами",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Раковине присвоены «ISO 4» и «Класс A», тогда как EU GMP Annex 1 (раздел о помещениях) прямо исключает раковины и сливы в зонах A и B; кроме того, собственный текст карточки называет применение «зоны мойки рук перед входом в gowning room, переходы между классами C/B» — это не зона A.",
+     "proposed_card_value": "Удалить строки «Класс чистоты ISO 14644-1» и «Класс чистоты EU GMP»; добавить «Рекомендуемая зона применения: зоны мойки рук перед входом в чистые помещения (не для зон GMP A/B)»; в описании «перед входом в чистые помещения класса ISO 4 / GMP A» → «перед входом в чистые помещения».",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRST-T-STOOL",
+   "name": "CRST t — стремянка (1 или 2 ступени)",
+   "category": "tinman-step-stools",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Размеры (мм)",
+     "card_value": "L × D × H (P400/P600/P800; W 440/540 мм)",
+     "problem": "Вместо размеров опубликован шаблон «L × D × H», хотя описание содержит числа (длина 420/620/820 мм для t1 и 720/920/1120 мм для t2, ширина 440/540 мм).",
+     "proposed_card_value": "420/620/820 (t1) или 720/920/1120 (t2) × 440 (t1) / 540 (t2); высота — по конфигуратору",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-MICRO-CRT",
+   "name": "Micro CRT — перфорированный рабочий стол",
+   "category": "tinman-tables",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы и минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы и минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-PHARMA-CRT",
+   "name": "Pharma CRT — рабочий стол со сплошной столешницей",
+   "category": "tinman-tables",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Замкнутые сварные швы между столешницей и каркасом, скруглённые внешние кромки, минимизация щелей — соответствие принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Замкнутые сварные швы между столешницей и каркасом, скруглённые внешние кромки, минимизация щелей — облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "internal_inconsistency",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Карточка одновременно заявляет «Класс A» (зона A по EU GMP Annex 1 — это зона с однонаправленным воздушным потоком) и позиционирует изделие как «Альтернатива перфорированной Micro CRT — для зон без обязательного однонаправленного потока» — прямое внутреннее противоречие. Кроме того, ISO 14644-1 и класс GMP относятся к помещению/зоне, а не к мебели.",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRT-T",
+   "name": "CRT T — стол для холодных комнат (HPL Compact)",
+   "category": "tinman-tables",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые кромки столешницы, замкнутые сварные швы каркаса, минимизация щелей соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые кромки столешницы, замкнутые сварные швы каркаса, минимизация щелей облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TINMAN-CRW-BH",
+   "name": "CRW BH — урна с верхним фиксатором мешка",
+   "category": "tinman-waste-bins",
+   "status": "issues",
+   "issues": [
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 14644-1; EU GMP Annex 1; ISO 9001",
+     "problem": "В списке стандартов изделия указаны EU GMP Annex 1 — это не стандарты на продукцию: EU GMP Annex 1 — руководство для производителей стерильных лекарственных средств; изделие не может им «соответствовать», документов в карточке нет.",
+     "proposed_card_value": "ISO 14644-1; ISO 9001",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "description",
+     "card_value": "Скруглённые внешние кромки исключают надрывы перчаток и порезы оператора; замкнутые сварные швы и низкая шероховатость поверхности соответствуют принципам hygienic design GMP Annex 1",
+     "problem": "Утверждение о соответствии мебели «требованиям/принципам GMP Annex 1» не имеет основания: Annex 1 — руководство для производителей стерильных лекарственных средств, а не стандарт гигиенического дизайна оборудования; сертификатов или документов в карточке нет.",
+     "proposed_card_value": "Скруглённые внешние кромки исключают надрывы перчаток и порезы оператора; замкнутые сварные швы и низкая шероховатость поверхности облегчают очистку и дезинфекцию",
+     "confidence": "medium"
+    },
+    {
+     "type": "implausible_or_unsupported_claim",
+     "field": "specs: Класс чистоты ISO 14644-1 / Класс чистоты EU GMP; description",
+     "card_value": "ISO 4 / Класс A; «класса ISO 4 / GMP A»",
+     "problem": "Мебели/оборудованию из нержавеющей стали присвоены «Класс чистоты ISO 14644-1: ISO 4» и «Класс чистоты EU GMP: Класс A» как свойство изделия: ISO 14644-1 классифицирует воздух помещения, а класс GMP — зону; изделие классифицировать нельзя. Одинаковая пара «ISO 4 / A» стоит на всех карточках Tinman независимо от назначения (включая раковину, урну, зеркало, стеллаж для сушки мопов), т.е. не выглядит специфичной для изделия; зона A по GMP — критическая зона с однонаправленным потоком, тогда как в описании применение указано шире (gowning room, шлюзы, лаборатории и т.п.).",
+     "proposed_card_value": "Заменить обе строки одной: «Рекомендуемая зона применения: чистые помещения до ISO 4»; строку «Класс чистоты EU GMP: Класс A» удалить; в описании «класса ISO 4 / GMP A» → «класса до ISO 4».",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

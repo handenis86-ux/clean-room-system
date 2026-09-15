@@ -1,0 +1,928 @@
+{
+ "group": "g4-gloves",
+ "products": [
+  {
+   "sku": "20830",
+   "name": "Isofield Gecko Nitrile Gloves",
+   "status": "issues",
+   "docs_checked": ["Technical Data Sheet TDS (eng)", "Technical Data Sheet TDS (ru)"],
+   "issues": [
+    {
+     "type": "missing_in_card",
+     "field": "Стерильность",
+     "card_value": "не указано (ни в характеристиках, ни в описании)",
+     "source_value": "Нестерильные",
+     "quote": "Non-sterile nitrile Cleanroom gloves / ПЕРЧАТКИ ДЛЯ ЧИСТЫХ ПОМЕЩЕНИЙ НЕСТЕРИЛЬНЫЕ НИТРИЛОВЫЕ",
+     "source_doc": "Technical Data Sheet TDS (eng) | /datasheets/20830-tds-en.pdf; Technical Data Sheet TDS (ru) | /datasheets/20830-tds-ru.pdf",
+     "proposed_card_value": "Нестерильные",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ISO 13485",
+     "source_value": "TDS называет только систему менеджмента качества ISO 9001:2015; ISO 13485 не упоминается ни в EN, ни в RU TDS",
+     "quote": "Manufactured in a facility operating under ISO 9001:2015 quality management system",
+     "source_doc": "Technical Data Sheet TDS (eng) | /datasheets/20830-tds-en.pdf",
+     "proposed_card_value": "Удалить ISO 13485 из списка стандартов (оставить ISO 9001)",
+     "confidence": "medium"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR)",
+     "source_value": "нитрил (нитрильный каучук). Аббревиатура NR по ISO 1629 означает натуральный каучук (латекс); нитрильный каучук — NBR",
+     "quote": "Материал          нитрил (нитрильный каучук)",
+     "source_doc": "Technical Data Sheet TDS (ru) | /datasheets/20830-tds-ru.pdf",
+     "proposed_card_value": "Нитрил (NBR)",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TM03",
+   "name": "NPro Ntouch TM03 трикотажные перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "230–270 мм",
+     "quote": "ДЛИНА              230-270 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/bf4/9mn0imstopvddayh8semfwmhhkjpojyl.pdf",
+     "proposed_card_value": "230–270 мм",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "69655",
+   "name": "Shield Orange Nitrile 300 DI стерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Химическая стойкость (eng)", "Декларация CE", "Антистатические свойства (eng)", "Инструкция по применению (eng)"],
+   "issues": [
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты ISO 14644-1",
+     "card_value": "ISO 6, 7, 8 (в описании «ISO 6+»)",
+     "source_value": "Ни один из 5 документов не указывает класс ISO 14644-1; TDS относит продукт к линейке DI (Bio contamination control) и говорит лишь о совместимости со стерильными процессами. Кроме того, сочетание ISO 6–8 с GMP A/B в карточке само по себе некорректно (класс A по EU GMP Annex 1 = ISO 5)",
+     "quote": "Compatible with sterile processing environments due to paperless packaging and multiple post leaching of gloves (single washed in deionised water).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69655-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс ISO не указан производителем) либо получить письменное подтверждение SHIELD Scientific",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс A, B (в описании «GMP A/B»)",
+     "source_value": "Класс/зона EU GMP не указаны ни в TDS, ни в декларации, ни в инструкции",
+     "quote": "Compatible with sterile processing environments due to paperless packaging and multiple post leaching of gloves (single washed in deionised water).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69655-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику либо заменить на «Для стерильных производственных процессов» (формулировка производителя)",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "список стандартов пуст",
+     "source_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (защита от вирусов); EN ISO 374-2:2019 уровень 3; EN ISO 21420:2020",
+     "quote": "is in conformity with the provisions of Regulation (EU) 2016/425 and with the harmonized standards EN ISO 374-1:2016 + A1:2018 (as a Type B glove against reagents: K, P & T) EN ISO 374-5:2016 & EN ISO 21420:2020 as well as test method EN ISO 374-2:2019 (performance level 3), including protection against viruses (ISO 16604:2004)",
+     "source_doc": "Декларация CE | /datasheets/shield-69655-declaration-ce.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 374-2:2019 (уровень 3); EN ISO 21420:2020; EN 455-1/2/3/4",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR), неопрен (CR)",
+     "source_value": "Нитрил (бутадиен-нитрильный каучук) и неопрен (полихлоропрен). NR по ISO 1629 — натуральный каучук; нитрил — NBR",
+     "quote": "Nitrile and neoprene synthetic rubber (Acrylonitrile butadiene and polychloroprene).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69655-tds-en.pdf",
+     "proposed_card_value": "Нитрил (NBR), неопрен (CR)",
+     "confidence": "high"
+    },
+    {
+     "type": "wrong_document",
+     "field": "Инструкция по применению (eng)",
+     "card_value": "Инструкция по применению (eng)",
+     "source_value": "Документ относится к этому продукту (коды 69 6551–69 6559), но это устаревшая редакция от 30.12.2019: указан нотифицированный орган 0598 и EN 374-4:2013, тогда как действующие TDS (28.02.2025) и декларация CE (19.03.2025) ссылаются на орган 2797 (BSI) и EN ISO 374-4:2019",
+     "quote": "SHIELDskin XTREMETM Sterile ORANGE NITRILETM 300 DI User's Instructions 30122019 V30 A4 ... 0598 ... Determination of material resistance to permeation by chemicals (EN 16523-1:2015) and degradation (EN 374-4:2013)",
+     "source_doc": "Инструкция по применению (eng) | /datasheets/shield-69655-instruction-en.pdf",
+     "proposed_card_value": "Заменить на актуальную редакцию инструкции производителя (с нотифицированным органом 2797)",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TE11",
+   "name": "NPro Ntouch TE11 ESD трикотажные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "223–263 мм",
+     "quote": "ДЛИНА              223-263 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/330/rf3awmjhv6y618cdqxi62d39zp0idapz.pdf",
+     "proposed_card_value": "223–263 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Цвет",
+     "card_value": "Серый/чёрный",
+     "source_value": "серо-синий",
+     "quote": "ЦВЕТ               серо-синий",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/330/rf3awmjhv6y618cdqxi62d39zp0idapz.pdf",
+     "proposed_card_value": "Серо-синий",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "Совместимы с сенсорными экранами.",
+     "source_value": "Совместимость с сенсорными экранами в TDS не заявлена; ключевые особенности — тактильная чувствительность, отсутствие ворса, анатомическая форма",
+     "quote": "• Высокий уровень тактильной чувствительности • Отсутствие ворса • Анатомическая форма • Экономичное решение",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/330/rf3awmjhv6y618cdqxi62d39zp0idapz.pdf",
+     "proposed_card_value": "Антистатические трикотажные перчатки без покрытия для ESD-защиты при сборке микроэлектроники. Высокая тактильная чувствительность, без ворса, анатомическая форма.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TE12",
+   "name": "NPro Ntouch TE12 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "210–250 мм",
+     "quote": "ДЛИНА              210-250 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/9e4/0iqzg1xdj7r937cez4ggdrbwmzd11q05.pdf",
+     "proposed_card_value": "210–250 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "ESD",
+     "card_value": "Да, поверхностное сопротивление <10⁵ Ом",
+     "source_value": "Удельное поверхностное сопротивление <10⁷ Ом; вертикальное Rv <1,0×10⁸ Ом. Значение <1,0×10⁵ в TDS стоит в скобках после EN 16350:2014 без подписи и поверхностным сопротивлением не названо (проверено по рендеру PDF)",
+     "quote": "EN 16350:2014 (<1,0x10⁵); удельное поверхностное сопротивление <10⁷ Ом; вертикальное сопротивление RV<1,0x10⁸ Ом",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/9e4/0iqzg1xdj7r937cez4ggdrbwmzd11q05.pdf",
+     "proposed_card_value": "Да, удельное поверхностное сопротивление <10⁷ Ом, вертикальное сопротивление Rv <1,0×10⁸ Ом (EN 16350:2014)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "совместимы с сенсорными экранами",
+     "source_value": "Совместимость с сенсорными экранами в TDS не заявлена",
+     "quote": "• Высокий уровень тактильной чувствительности • Отсутствие ворса • Анатомическая форма • Экономичное решение",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/9e4/0iqzg1xdj7r937cez4ggdrbwmzd11q05.pdf",
+     "proposed_card_value": "Антистатические трикотажные перчатки с полиуретановым покрытием на первых фалангах пальцев. ESD-защита, высокая тактильная чувствительность, без ворса.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TE13",
+   "name": "NPro Ntouch TE13 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "230–270 мм",
+     "quote": "ДЛИНА              230-270 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/a94/iplb3zzjtrvubxmesjh1ent1aj8370j8.pdf",
+     "proposed_card_value": "230–270 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "ESD",
+     "card_value": "Да, поверхностное сопротивление <10⁵ Ом, вертикальное <10⁸ Ом",
+     "source_value": "Удельное поверхностное сопротивление <10⁷ Ом (вертикальное <1,0×10⁸ Ом совпадает). Значение <1,0×10⁵ стоит без подписи после EN 16350:2014",
+     "quote": "EN 16350:2014 (<1,0x10⁵); удельное поверхностное сопротивление <10⁷ Ом; вертикальное сопротивление RV<1,0x10⁸ Ом",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/a94/iplb3zzjtrvubxmesjh1ent1aj8370j8.pdf",
+     "proposed_card_value": "Да, удельное поверхностное сопротивление <10⁷ Ом, вертикальное сопротивление Rv <1,0×10⁸ Ом (EN 16350:2014)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Материал",
+     "card_value": "Полиэстер + углеродное волокно, PU-покрытие на подушечках (в описании «на подушечках пальцев»)",
+     "source_value": "TDS указывает только материал покрытия — полиуретан, без зоны нанесения (для TE12 зона указана явно: «на первых фалангах пальцев»; для TE13 — нет)",
+     "quote": "МАТЕРИАЛ ПОКРЫТИЯ  полиуретан",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/a94/iplb3zzjtrvubxmesjh1ent1aj8370j8.pdf",
+     "proposed_card_value": "Полиэстер + углеродное волокно, полиуретановое покрытие",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "69645",
+   "name": "Shield Orange Nitrile 300 DI нестерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Химическая стойкость (eng)", "Декларация CE", "Антистатические свойства (eng)", "Декларация EAC"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "AQL",
+     "card_value": "0.65",
+     "source_value": "AQL < 0,25 (уровень 3, G1, ISO 2859-1) — подтверждено TDS, руководством по химстойкости и декларацией CE (уровень 3)",
+     "quote": "Acceptable Quality Level (AQL)                                  < 0.25 G1 - Level 3 ... Viruses Performance level 3, AQL < 0.25 (inspection level G1).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69645-tds-en.pdf",
+     "proposed_card_value": "0.25",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Толщина ладони",
+     "card_value": "0.13 мм",
+     "source_value": "0,14 мм (номинальная); палец 0,19 мм, манжета 0,10 мм",
+     "quote": "Palm                               0.14                                         5.5",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69645-tds-en.pdf; Химическая стойкость (eng): \"Palm thickness: 0.14 mm/ 5.5 mil\"",
+     "proposed_card_value": "0.14 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты ISO 14644-1",
+     "card_value": "ISO 6, 7, 8 (в описании «ISO 6+»)",
+     "source_value": "Класс ISO 14644-1 не указан ни в одном документе; TDS относит продукт к «Basic contamination control» и говорит лишь о совместимости с чистыми процессами",
+     "quote": "Compatible with clean processing environments due to paperless packaging and multiple post leaching of gloves (single washed in deionised water).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69645-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс ISO не указан производителем) либо получить подтверждение SHIELD Scientific",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс C, D",
+     "source_value": "Класс EU GMP не указан ни в одном документе",
+     "quote": "BASIC CONTAMINATION CONTROL ... Compatible with clean processing environments",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69645-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику либо получить подтверждение SHIELD Scientific",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "список стандартов пуст",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (J, K, P, T); EN ISO 374-5:2016 (вирусы); EN ISO 374-2:2019 уровень 3; EN ISO 21420:2020",
+     "quote": "EN ISO 374-1:2016 + A1:2018 (as a Type B glove against reagents: J, K, P & T) EN ISO 374-5:2016 & EN ISO 21420:2020 as well as test method EN ISO 374-2:2019 (performance level 3), including protection against viruses (ISO 16604:2004)",
+     "source_doc": "Декларация CE | /datasheets/shield-69645-declaration-ce.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (JKPT); EN ISO 374-5:2016 (VIRUS); EN ISO 374-2:2019 (уровень 3); EN ISO 21420:2020; EN 1149-1/2/3/5",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR), неопрен (CR)",
+     "source_value": "Нитрил (бутадиен-нитрильный каучук) и неопрен (полихлоропрен). NR по ISO 1629 — натуральный каучук; нитрил — NBR",
+     "quote": "Nitrile and neoprene synthetic rubber (Acrylonitrile butadiene and polychloroprene).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69645-tds-en.pdf",
+     "proposed_card_value": "Нитрил (NBR), неопрен (CR)",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "69845",
+   "name": "Shield White Nitrile 300 DI",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Химическая стойкость (eng)", "Декларация CE", "Инструкция по применению (eng)", "Декларация EAC"],
+   "issues": [
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты ISO 14644-1",
+     "card_value": "ISO 6, 7, 8 (в описании «ISO 6+»)",
+     "source_value": "Класс ISO 14644-1 не указан ни в одном документе",
+     "quote": "Compatible with clean processing environments due to paperless packaging and multiple post leaching of gloves (single washed in deionised water).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69845-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс ISO не указан производителем) либо получить подтверждение SHIELD Scientific",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс C, D",
+     "source_value": "Класс EU GMP не указан ни в одном документе",
+     "quote": "BASIC CONTAMINATION CONTROL ... Compatible with clean processing environments",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69845-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику либо получить подтверждение SHIELD Scientific",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "список стандартов пуст",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (вирусы); EN ISO 374-2:2019 уровень 2; EN ISO 21420:2020",
+     "quote": "EN ISO 374-1:2016 + A1:2018 (as a Type B glove against reagents: K, P & T) EN ISO 374-5:2016 & EN ISO 21420:2020 as well as test method EN ISO 374-2:2019 (performance level 2), including protection against viruses (ISO 16604:2004)",
+     "source_doc": "Декларация CE | /datasheets/shield-69845-declaration-ce.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 374-2:2019 (уровень 2); EN ISO 21420:2020; EN 1149-1/2/3/5",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR)",
+     "source_value": "Нитрил (бутадиен-нитрильный каучук). NR по ISO 1629 — натуральный каучук; нитрил — NBR",
+     "quote": "Nitrile synthetic rubber (Acrylonitrile butadiene).",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/shield-69845-tds-en.pdf",
+     "proposed_card_value": "Нитрил (NBR)",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "30130",
+   "name": "Isofield Comet Neoprene стерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Технический паспорт TDS (ru)", "Декларация соответствия"],
+   "issues": [
+    {
+     "type": "wrong_document",
+     "field": "Декларация соответствия",
+     "card_value": "Декларация соответствия (EU DoC)",
+     "source_value": "Продукт назван верно (код 30130), но опубликован ЧЕРНОВИК, а не выданная декларация: водяной знак DRAFT, номер сертификата ЕС-типа и дата не заполнены (XXXXX). Для фарм-QA такой документ недействителен",
+     "quote": "under certificate number XXXXX , issued by the Notified Body CCQS Certification Services Limited (NB 2834) ... Date: XXXXX",
+     "source_doc": "Декларация соответствия | /datasheets/isofield-30130-declaration.pdf",
+     "proposed_card_value": "Заменить на подписанную декларацию с номером сертификата и датой (запросить у Isofield/IBC Nanotex) или снять документ с карточки",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "трёхкратная промывка деионизированной водой",
+     "source_value": "Ни EN, ни RU TDS для Comet не упоминают промывку деионизированной водой (эта фраза есть только в RU TDS другой модели — Gecko 20830)",
+     "quote": "Processed in a NEBB certified ISO Class 5 cleanroom",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-30130-tds-en.pdf; Технический паспорт TDS (ru) | /datasheets/isofield-30130-tds-ru.pdf",
+     "proposed_card_value": "Стерильные неопреновые перчатки для чистых помещений ISO 4/5, GMP A/B. Гамма-облучение (не менее 25 кГр), SAL 10⁻⁶, упакованы в чистом помещении ISO 5 (NEBB).",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "ГОСТ Р 52249 (правила GMP для производства ЛС) не упоминается ни в одном документе; перечень соответствия стандартам в TDS его не содержит",
+     "quote": "Соответствие стандартам    ... EN ISO 11137-2:2015 IEST-RP-CC005.4 EN 455-2:2015 EN ISO 21420:2020 ASTM D6978-05 EN ISO 374-2:2019 EN ISO 374-1:2016+A1:2018 ISO 16604:2004",
+     "source_doc": "Технический паспорт TDS (ru) | /datasheets/isofield-30130-tds-ru.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (VIRUS); EN ISO 11137-2:2015 (стерилизация, SAL 10⁻⁶)",
+     "quote": "EN ISO 374-1:2016 +A1:2018/TYPE B ... KPT VIRUS ... EN ISO 374-5:2016; The applicable essential health and safety requirements of Annex II of the PPE Regulation (EU) 2016/425 as a Category III product",
+     "source_doc": "Технический паспорт TDS (ru) | /datasheets/isofield-30130-tds-ru.pdf; Технический паспорт TDS (eng) | /datasheets/isofield-30130-tds-en.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 374-2:2019; EN 455-2:2015; EN ISO 11137-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TE21",
+   "name": "NPro Ntouch TE21 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "233–263 мм",
+     "quote": "ДЛИНА              233-263 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/53b/d2kmfle7f3aipepr2vm1astjzzd1o86b.pdf",
+     "proposed_card_value": "233–263 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Цвет",
+     "card_value": "Чёрный",
+     "source_value": "синий",
+     "quote": "ЦВЕТ               синий",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/53b/d2kmfle7f3aipepr2vm1astjzzd1o86b.pdf",
+     "proposed_card_value": "Синий",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "совместимы с сенсорными экранами",
+     "source_value": "Совместимость с сенсорными экранами в TDS не заявлена",
+     "quote": "• Высокий уровень тактильной чувствительности • Отсутствие ворса • Анатомическая форма • Премиальная линейка",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/53b/d2kmfle7f3aipepr2vm1astjzzd1o86b.pdf",
+     "proposed_card_value": "Тонкие трикотажные перчатки из полиамида с углеродным волокном без покрытия. ESD-защита, высокая тактильная чувствительность, без ворса.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TE22",
+   "name": "NPro Ntouch TE22 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "210–250 мм",
+     "quote": "ДЛИНА              210-250 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/689/4m0h3dq6s7rc81nwp6oemm0nkhsd8f63.pdf",
+     "proposed_card_value": "210–250 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Цвет",
+     "card_value": "Чёрный",
+     "source_value": "синий с белым покрытием",
+     "quote": "ЦВЕТ               синий с белым покрытием",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/689/4m0h3dq6s7rc81nwp6oemm0nkhsd8f63.pdf",
+     "proposed_card_value": "Синий с белым покрытием",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "ESD",
+     "card_value": "Да, поверхностное сопротивление <10⁵ Ом, вертикальное <10⁸ Ом",
+     "source_value": "Удельное поверхностное сопротивление <10⁷ Ом (вертикальное <1,0×10⁸ Ом совпадает). Значение <1,0×10⁵ стоит без подписи после EN 16350:2014",
+     "quote": "EN 16350:2014 (<1,0x10⁵); удельное поверхностное сопротивление <10⁷ Ом; вертикальное сопротивление RV<1,0x10⁸ Ом",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/689/4m0h3dq6s7rc81nwp6oemm0nkhsd8f63.pdf",
+     "proposed_card_value": "Да, удельное поверхностное сопротивление <10⁷ Ом, вертикальное сопротивление Rv <1,0×10⁸ Ом (EN 16350:2014)",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TE23",
+   "name": "NPro Ntouch TE23 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "230–270 мм",
+     "quote": "ДЛИНА              230-270 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/75b/nruk6e06i7ywvmtxi1r3kf700yuwt028.pdf",
+     "proposed_card_value": "230–270 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Цвет",
+     "card_value": "Чёрный",
+     "source_value": "синий с чёрным покрытием",
+     "quote": "ЦВЕТ               синий с черным покрытием",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/75b/nruk6e06i7ywvmtxi1r3kf700yuwt028.pdf",
+     "proposed_card_value": "Синий с чёрным покрытием",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "с полным PU-покрытием",
+     "source_value": "TDS указывает только материал покрытия — полиуретан; что покрытие полное, не сказано",
+     "quote": "МАТЕРИАЛ ПОКРЫТИЯ  полиуретан",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/75b/nruk6e06i7ywvmtxi1r3kf700yuwt028.pdf",
+     "proposed_card_value": "Тонкие трикотажные антистатические перчатки из полиамида с углеродным волокном и полиуретановым покрытием. Без ворса, ESD-защита, анатомическая форма.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "20530",
+   "name": "Isofield Volta Nitrile стерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт (eng) — BROKEN_LINK_404", "Декларация CE", "Декларация EAC"],
+   "issues": [
+    {
+     "type": "broken_link",
+     "field": "Технический паспорт (eng)",
+     "card_value": "https://ibcnanotex.com/upload/iblock/f2e/pccr0ytqlmsrwnkww665rpd5k7sv7ose.pdf",
+     "source_value": "Ссылка возвращает 404. Единственный технический документ недоступен, поэтому AQL 0.65, ISO 4/5, GMP A/B, толщина 0.14 мм, размеры, цвет и «трёхкратная промывка» в карточке не подтверждены ни одним прикреплённым документом (декларации подтверждают только: стерильные, нитрил, 300 мм, анатомические, СИЗ кат. III)",
+     "quote": "",
+     "source_doc": "Технический паспорт (eng) | https://ibcnanotex.com/upload/iblock/f2e/pccr0ytqlmsrwnkww665rpd5k7sv7ose.pdf",
+     "proposed_card_value": "Загрузить актуальный TDS Isofield Volta 20530 на /datasheets/ и перепроверить характеристики",
+     "confidence": "high"
+    },
+    {
+     "type": "wrong_document",
+     "field": "Декларация CE",
+     "card_value": "Декларация CE",
+     "source_value": "Продукт назван (код 20050/20530), но это незаполненный шаблон: номер сертификата ЕС-типа «XXXXX», дата «DD.MM.YY», без подписи — недействительный документ",
+     "quote": "under certificate number XXXXX , issued by the Notified Body SATRA Technology Europe (2777) ... Date : DD.MM.YY",
+     "source_doc": "Декларация CE | https://ibcnanotex.com/upload/iblock/c7d/nc05o48tkgwxtxj5hdj16c67oigrvyul.pdf",
+     "proposed_card_value": "Заменить на подписанную декларацию с номером сертификата и датой или снять документ",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR)",
+     "source_value": "Нитрил. NR по ISO 1629 — натуральный каучук; нитрил — NBR",
+     "quote": "ISOFIELD STERILE 300MM NITRILE HAND SPECIFIC CLEANROOM GLOVES (Product Code: 20050/20530)",
+     "source_doc": "Декларация CE | https://ibcnanotex.com/upload/iblock/c7d/nc05o48tkgwxtxj5hdj16c67oigrvyul.pdf",
+     "proposed_card_value": "Нитрил (NBR)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается в декларациях; TDS недоступен",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European Harmonized standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация CE | https://ibcnanotex.com/upload/iblock/c7d/nc05o48tkgwxtxj5hdj16c67oigrvyul.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249; указать СИЗ категории III, EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "TE33",
+   "name": "NPro Ntouch TE33 ESD перчатки",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Длина",
+     "card_value": "220–275 мм",
+     "source_value": "225–265 мм",
+     "quote": "ДЛИНА              225-265 мм",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/46d/ntwpjeddugjteh4v89d05j5fqzpj6kzb.pdf",
+     "proposed_card_value": "225–265 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "Материал",
+     "card_value": "Полиамид (нейлон) + углеродное волокно, пенонитриловое покрытие",
+     "source_value": "В основе также спандекс",
+     "quote": "МАТЕРИАЛ ОСНОВЫ    полиамид (нейлон) со спандеком и карбоновым волокном",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/46d/ntwpjeddugjteh4v89d05j5fqzpj6kzb.pdf",
+     "proposed_card_value": "Полиамид (нейлон) + спандекс + углеродное волокно, покрытие из вспененного нитрила",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "Совместимы с сенсорными экранами",
+     "source_value": "Совместимость с сенсорными экранами в TDS не заявлена",
+     "quote": "• Высокий уровень тактильной чувствительности • Отсутствие ворса • Анатомическая форма • Премиальная линейка",
+     "source_doc": "Технический паспорт TDS (ru) | https://ibcnanotex.com/upload/iblock/46d/ntwpjeddugjteh4v89d05j5fqzpj6kzb.pdf",
+     "proposed_card_value": "Тонкие трикотажные перчатки из полиамида со спандексом и углеродным волокном, с покрытием из вспененного нитрила и ESD-свойствами. Высокая тактильная чувствительность, без ворса.",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "sku": "10040",
+   "name": "Isofield CR+ Latex стерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Декларация CE", "Декларация EAC"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Натуральный латекс (NBR)",
+     "source_value": "Натуральный латекс (натуральный каучук, NR). NBR по ISO 1629 — бутадиен-нитрильный каучук, т.е. нитрил; для латексных перчаток это вводит в заблуждение (аллергенность)",
+     "quote": "Sterile latex Cleanroom gloves ... the glove contains Natural Rubber Latex which may cause allergic reactions.",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-cr10040-tds-en.pdf; Декларация CE | /datasheets/isofield-cr10040-declaration-ce.pdf",
+     "proposed_card_value": "Натуральный латекс (NR)",
+     "confidence": "high"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "Стерильность",
+     "card_value": "Стерильные",
+     "source_value": "Гамма-облучение не менее 25 кГр, SAL 10⁻⁶",
+     "quote": "Gamma irradiation, minimum 25kGy Sterility Assurance Level 10-6",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-cr10040-tds-en.pdf",
+     "proposed_card_value": "Стерильные (гамма-облучение, не менее 25 кГр, SAL 10⁻⁶)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "Трёхкратная промывка деионизированной водой",
+     "source_value": "Промывка деионизированной водой не упоминается ни в TDS, ни в декларации/инструкции",
+     "quote": "Processed in a NEBB certified ISO Class 5 cleanroom",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-cr10040-tds-en.pdf",
+     "proposed_card_value": "Стерильные латексные перчатки для чистых помещений ISO 4/5, GMP A/B. Гамма-облучение, SAL 10⁻⁶, длина 400 мм, содержание белка менее 50 мкг/г.",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается ни в одном документе",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European Harmonized standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация CE | /datasheets/isofield-cr10040-declaration-ce.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016",
+     "quote": "EN ISO 374-1:2016+A1:2018 Type B ... EN ISO 374-5:2016 ... PPE Regulation (EU) 2016/425 as a Category III product",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-cr10040-tds-en.pdf; Декларация CE: \"ISOFIELD STERILE 400MM LATEX CLEANROOM GLOVES (Product Code: 10040) PPE RISK CATEGORY III\"",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN 455-2:2015; EN ISO 11137-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "10630LT",
+   "name": "Isofield BlaserLT Latex стерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Декларация CE", "Декларация EAC"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Толщина ладони",
+     "card_value": "0.21 мм",
+     "source_value": "0,23 мм (палец 0,26 мм, манжета 0,15 мм)",
+     "quote": "Palm                        0.23                       9.05     EN 455-2:2015",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-blazer10630lt-tds-en.pdf",
+     "proposed_card_value": "0.23 мм",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "name",
+     "card_value": "Isofield BlaserLT Latex стерильные",
+     "source_value": "Модель называется Blazer LT (BlazerLT)",
+     "quote": "Isofield Blazer LT ... ISOFIELD BLAZER/ ISOFIELD BLAZER LT (Product Code: 10630/10630LT)",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-blazer10630lt-tds-en.pdf; Декларация CE | /datasheets/isofield-blazer10630lt-declaration-ce.pdf",
+     "proposed_card_value": "Isofield Blazer LT Latex стерильные",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Натуральный латекс (NBR)",
+     "source_value": "Латекс (натуральный каучук, NR). NBR по ISO 1629 — нитрил",
+     "quote": "Sterile latex Cleanroom gloves",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-blazer10630lt-tds-en.pdf",
+     "proposed_card_value": "Натуральный латекс (NR)",
+     "confidence": "high"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "Стерильность",
+     "card_value": "Стерильные",
+     "source_value": "Гамма-облучение не менее 25 кГр, SAL 10⁻⁶",
+     "quote": "Gamma irradiation, minimum 25kGy Sterility Assurance Level 10-6",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-blazer10630lt-tds-en.pdf",
+     "proposed_card_value": "Стерильные (гамма-облучение, не менее 25 кГр, SAL 10⁻⁶)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается ни в одном документе",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация CE | /datasheets/isofield-blazer10630lt-declaration-ce.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B; EN ISO 374-5:2016",
+     "quote": "EN ISO 374-1:2016+A1:2018 Type B ... EN ISO 374-5:2016 ... PPE Regulation (EU) 2016/425 as a Category III product",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-blazer10630lt-tds-en.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B; EN ISO 374-5:2016; EN 455-2:2015; EN ISO 11137-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "10140",
+   "name": "Isofield LS400 Latex нестерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Декларация и инструкция (eng)", "Технический паспорт TDS (ru)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "AQL",
+     "card_value": "0.65",
+     "source_value": "AQL 1,5 (уровень 2 из 3, EN 374-2:2016); на пиктограммах также «AQL 1.5»",
+     "quote": "Acceptable Quality Level (AQL)                                     1.5 - Level 2 of 3                     EN374-2:2016",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls400-tds-en.pdf; Технический паспорт TDS (ru) | /datasheets/isofield-ls400-tds-ru.pdf",
+     "proposed_card_value": "1.5",
+     "confidence": "high"
+    },
+    {
+     "type": "contradiction",
+     "field": "Размер",
+     "card_value": "S, M, L, XL, XXL",
+     "source_value": "S, M, L, XL (артикулы 10140S–10140XL; XXL нет) — проверено по рендеру PDF",
+     "quote": "SMALL   10140S MEDIUM  10140M LARGE   10140L XLARGE  10140XL",
+     "source_doc": "Технический паспорт TDS (ru) | /datasheets/isofield-ls400-tds-ru.pdf",
+     "proposed_card_value": "S, M, L, XL",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс C, D",
+     "source_value": "TDS указывает только совместимость с ISO Class 5; класс EU GMP не указан",
+     "quote": "ISO Class 5 compatible",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls400-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс EU GMP не указан производителем) либо получить подтверждение Isofield",
+     "confidence": "medium"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Натуральный латекс (NBR)",
+     "source_value": "Латекс (натуральный каучук, NR). NBR по ISO 1629 — нитрил",
+     "quote": "Latex ... WARNING. When the packaging includes this pictogram, the glove contains Natural Rubber Latex which may cause allergic reactions.",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls400-tds-en.pdf; Декларация и инструкция (eng) | /datasheets/isofield-ls400-doc-en.pdf",
+     "proposed_card_value": "Натуральный латекс (NR)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается ни в одном документе",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European Harmonized standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация и инструкция (eng) | /datasheets/isofield-ls400-doc-en.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (VIRUS)",
+     "quote": "EN ISO 374-5:2016 EN ISO 21420:2020 EN ISO 374-1:2016+ A1:2018 TYPE B ... VIRUS KPT; ISOFIELD NON-STERILE 400MM LATEX CLEANROOM GLOVES (Product Code: 10140) PPE RISK CATEGORY III",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls400-tds-en.pdf; Декларация и инструкция (eng) | /datasheets/isofield-ls400-doc-en.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 21420:2020; EN 455-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "20340",
+   "name": "Isofield NS400 Nitrile нестерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Декларация и инструкция (eng)"],
+   "issues": [
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс C, D",
+     "source_value": "TDS указывает только совместимость с ISO Class 5; класс EU GMP не указан",
+     "quote": "ISO Class 5 compatible",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ns400-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс EU GMP не указан производителем) либо получить подтверждение Isofield",
+     "confidence": "medium"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "description",
+     "card_value": "ультрачистые, трёхкратная промывка деионизированной водой",
+     "source_value": "Промывка деионизированной водой и «ультрачистые» не упоминаются; TDS: обработка в чистом помещении ISO 5, типичное число частиц 1800/см²",
+     "quote": "Processed in a NEBB certified ISO Class 5 Cleanroom",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ns400-tds-en.pdf",
+     "proposed_card_value": "Нестерильные нитриловые перчатки для чистых помещений ISO 5. Длина 400 мм, текстурированные пальцы, обработаны в чистом помещении ISO 5 (NEBB).",
+     "confidence": "medium"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Нитрил (NR)",
+     "source_value": "Нитрил. NR по ISO 1629 — натуральный каучук; нитрил — NBR",
+     "quote": "Nitrile",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ns400-tds-en.pdf",
+     "proposed_card_value": "Нитрил (NBR)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается ни в одном документе",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European Harmonized standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация и инструкция (eng) | /datasheets/isofield-ns400-doc-en.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (VIRUS)",
+     "quote": "EN ISO 374-5:2016 EN ISO 21420:2020 EN ISO 374-1:2016+ A1:2018 TYPE B ... VIRUS KPT; ISOFIELD NON-STERILE 400MM NITRILE CLEANROOM GLOVES (Product Code: 20340) PPE RISK CATEGORY III",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ns400-tds-en.pdf; Декларация и инструкция (eng) | /datasheets/isofield-ns400-doc-en.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 21420:2020; EN 455-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "10230",
+   "name": "Isofield LS300 Latex нестерильные",
+   "status": "issues",
+   "docs_checked": ["Технический паспорт TDS (eng)", "Декларация и инструкция (eng)"],
+   "issues": [
+    {
+     "type": "contradiction",
+     "field": "Размер",
+     "card_value": "S, M, L, XL, XXL",
+     "source_value": "XS, S, M, L, XL (артикулы 10230XS–10230XL; XXL нет) — проверено по рендеру PDF",
+     "quote": "XSMALL 10230XS SMALL 10230S MEDIUM 10230M LARGE 10230L XLARGE 10230XL",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls300-tds-en.pdf",
+     "proposed_card_value": "XS, S, M, L, XL",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "Класс чистоты EU GMP",
+     "card_value": "Класс C, D",
+     "source_value": "TDS указывает только совместимость с ISO Class 5; класс EU GMP не указан",
+     "quote": "ISO Class 5 compatible",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls300-tds-en.pdf",
+     "proposed_card_value": "Удалить характеристику (класс EU GMP не указан производителем) либо получить подтверждение Isofield",
+     "confidence": "medium"
+    },
+    {
+     "type": "contradiction",
+     "field": "Материал",
+     "card_value": "Натуральный латекс (NBR)",
+     "source_value": "Латекс (натуральный каучук, NR). NBR по ISO 1629 — нитрил",
+     "quote": "Latex ... Protein level less than 50µg/g",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls300-tds-en.pdf",
+     "proposed_card_value": "Натуральный латекс (NR)",
+     "confidence": "high"
+    },
+    {
+     "type": "unsupported_claim",
+     "field": "standards",
+     "card_value": "ГОСТ Р 52249",
+     "source_value": "Не упоминается ни в одном документе",
+     "quote": "is in conformity with the provision of Regulation (EU) 2016/425 and with the European standards EN ISO 21420:2020, EN ISO 374-1:2016+A1:2018, EN ISO 374-2:2019, EN ISO 374-4:2019, EN ISO 374-5:2016",
+     "source_doc": "Декларация и инструкция (eng) | /datasheets/isofield-ls300-doc-en.pdf",
+     "proposed_card_value": "Удалить ГОСТ Р 52249 из списка стандартов",
+     "confidence": "medium"
+    },
+    {
+     "type": "missing_in_card",
+     "field": "standards",
+     "card_value": "ISO 14644-1, EU GMP, ГОСТ Р 52249 (нет EN ISO 374 и категории СИЗ)",
+     "source_value": "СИЗ категории III; EN ISO 374-1:2016+A1:2018 тип B (K, P, T); EN ISO 374-5:2016 (VIRUS)",
+     "quote": "EN ISO 374-5:2016 EN ISO 21420:2020 EN ISO 374-1:2016+ A1:2018 TYPE B ... VIRUS KPT; ISOFIELD NON-STERILE 300MM LATEX CLEANROOM GLOVES (Product Code: 10230) PPE RISK CATEGORY III",
+     "source_doc": "Технический паспорт TDS (eng) | /datasheets/isofield-ls300-tds-en.pdf; Декларация и инструкция (eng) | /datasheets/isofield-ls300-doc-en.pdf",
+     "proposed_card_value": "СИЗ категории III (Регламент (ЕС) 2016/425); EN ISO 374-1:2016+A1:2018 тип B (KPT); EN ISO 374-5:2016 (VIRUS); EN ISO 21420:2020; EN 455-2:2015",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "sku": "TN30",
+   "name": "NPro Ntouch TN30 Nitrile в диспенсере",
+   "status": "no_usable_docs",
+   "docs_checked": [],
+   "issues": []
+  },
+  {
+   "sku": "TN24",
+   "name": "NPro Ntouch TN24 Nitrile в диспенсере",
+   "status": "no_usable_docs",
+   "docs_checked": [],
+   "issues": []
+  },
+  {
+   "sku": "HT XY1532/9A",
+   "name": "CSM RABS Snow Lotus перчатки",
+   "status": "no_usable_docs",
+   "docs_checked": [],
+   "issues": []
+  }
+ ]
+}

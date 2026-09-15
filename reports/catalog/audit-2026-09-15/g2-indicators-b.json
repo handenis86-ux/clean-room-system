@@ -1,0 +1,575 @@
+{
+  "group": "g2-indicators-b",
+  "products": [
+    {
+      "sku": "IC10/20",
+      "name": "IC10/20 Инкубатор",
+      "status": "issues",
+      "docs_checked": ["Инструкция по применению (eng)", "Описание продукта PDS (eng)", "Паспорт безопасности SDS (eng) — только раздел 1 (IC10/20 указан в Trade name)"],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Интерфейс",
+          "card_value": "Разъём для внешнего термометра, звуковые уведомления",
+          "source_value": "Ни PDS, ни полная инструкция не упоминают звуковых сигналов; состояние отображается только синим индикатором (мигает при нагреве, горит постоянно по достижении температуры). Звуковые оповещения указаны в TDS других приборов (BPH, BHY), но не IC10/20.",
+          "quote": "NOTE: The proper switching-on of the device may be verified by the blinking of the temperature blue light.",
+          "source_doc": "Инструкция по применению (eng) | https://ibcnanotex.com/upload/iblock/ad8/eh0nv1daoptl5tkqygnua0zn44bji0nx.pdf",
+          "proposed_card_value": "Отверстие для внешнего термометра, световой индикатор температуры, дробилка ампул",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Интерфейс",
+          "card_value": "Разъём для внешнего термометра",
+          "source_value": "У прибора не разъём (электрический соединитель), а специальное отверстие в нагревательном блоке для внешнего термометра",
+          "quote": "Special hole for external thermometer.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/d94/2hit6vpaw1v9y019s0pu1k0ks3swo81e.pdf",
+          "proposed_card_value": "Отверстие для внешнего термометра",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Температура",
+          "card_value": "37 °C и 60 °C (двухтемпературная)",
+          "source_value": "Одновременно поддерживается одна температура: 37 ± 2 °C или 60 ± 2 °C, выбирается переключателем; значения не изменяются. Формулировка «и» может быть понята как одновременная работа при двух температурах.",
+          "quote": "Incubator IC10/20 has a switch button located at the base of the incubator to select the temperature at (37 ± 2) °C or (60 ± 2) °C.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/d94/2hit6vpaw1v9y019s0pu1k0ks3swo81e.pdf",
+          "proposed_card_value": "37 ± 2 °C или 60 ± 2 °C (выбор переключателем)",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Количество позиций",
+          "card_value": "36 независимых позиций",
+          "source_value": "36 позиций (26 + 10) в одном нагревательном блоке с единой температурой; «независимость» позиций документами не заявлена, позиции двух разных размеров для разных изделий",
+          "quote": "10 metal positions (1.3 cm diameter, 3.0 cm deep) to incubate BT23, BT31, culture media and protein pen. 26 metal positions (0.9 cm diameter, 3.0 cm deep) to incubate BT10, BT20, BT30, BT91, BT94, BT100, BT21, BT22 and BT24.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/d94/2hit6vpaw1v9y019s0pu1k0ks3swo81e.pdf",
+          "proposed_card_value": "36 позиций: 26 (Ø 0,9 см) для BT10, BT20, BT30, BT91, BT94, BT100, BT21, BT22, BT24 и 10 (Ø 1,3 см) для BT23, BT31, питательных сред и протеинового теста",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT224",
+      "name": "BT224 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Время считывания",
+          "card_value": "20 минут (предварительное) + 48 ч визуальное",
+          "source_value": "Флуоресцентное считывание через 20 минут — окончательное (final); визуальное подтверждение через 48 ч — опциональное. Инструкция: «Final readout of negative results is readily available after 20 minutes of incubation».",
+          "quote": "Final fluorescence reading is performed after 20 minute-incubation at 60 °C (sensitivity ≥ 97 %). An optional visual pH color change confirmation could be made after 48 hours of incubation.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/5ff/qtej0n7xod5tff74mh9qbsj2ykq3weug.pdf",
+          "proposed_card_value": "20 минут (окончательное флуоресцентное считывание в автоматическом инкубаторе Bionova); визуальное подтверждение через 48 ч — опционально",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка",
+          "source_value": "50 штук в коробке",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/5ff/qtej0n7xod5tff74mh9qbsj2ykq3weug.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "BT97",
+      "name": "BT97 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Время считывания",
+          "card_value": "1 час (предварительное) + 48 ч визуальное",
+          "source_value": "Флуоресцентное считывание через 1 час — окончательное; визуальное подтверждение через 48 ч — опциональное. Инструкция: «Final readout of negative results is readily available after 1 hour of incubation at 60±2 °C».",
+          "quote": "Final fluorescence reading is performed after 1-hour incubation at 60 °C (sensitivity ≥ 97 %). An optional visual pH color change confirmation could be performed after 48 hours of incubation.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/828/wxcx83830wdtvvosjfntx7ujowzvhweb.pdf",
+          "proposed_card_value": "1 час (окончательное флуоресцентное считывание); визуальное подтверждение через 48 ч — опционально",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "BT95",
+      "name": "BT95 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Время считывания",
+          "card_value": "2 часа (предварительное) + 48 ч визуальное",
+          "source_value": "Флуоресцентное считывание через 2 часа — окончательное; визуальное подтверждение через 48 ч — опциональное. Инструкция: «Final readout of negative results is readily available after 2 hours of incubation».",
+          "quote": "Final fluorescence reading is performed after 2-hour incubation at 60 °C (sensitivity ≥ 97 %). An optional visual pH color change confirmation could be performed after 48 hours of incubation.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/5b1/wu3ktxkdw24y4ytpcfxqg0y6up3i79jr.pdf",
+          "proposed_card_value": "2 часа (окончательное флуоресцентное считывание); визуальное подтверждение через 48 ч — опционально",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка",
+          "source_value": "50 штук в коробке",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/5b1/wu3ktxkdw24y4ytpcfxqg0y6up3i79jr.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Метод стерилизации",
+          "card_value": "Стерилизация парами перекиси водорода (VH2O2)",
+          "source_value": "Индикатор предназначен для плазменной стерилизации и стерилизации парами H2O2; инструкция перечисляет циклы STERRAD 100S, STERRAD Standard и Express, V-Pro Max, Sterizone VP4",
+          "quote": "Monitoring plasma or vaporized Hydrogen Peroxide sterilization processes (H2O2).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/5b1/wu3ktxkdw24y4ytpcfxqg0y6up3i79jr.pdf",
+          "proposed_card_value": "Плазменная стерилизация или стерилизация парами перекиси водорода (H₂O₂)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT102",
+      "name": "BT102 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "50/100 штук/коробка",
+          "source_value": "Только 50 штук в коробке; фасовка по 100 шт. в документах не указана",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/40c/wlkxzcw7cflxvj0r5q30ui22mtfzje1r.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Низкотемпературный пар + формальдегид (LTSF) 50–80 °C",
+          "source_value": "Документы указывают только «стерилизация формальдегидом»; диапазон 50–80 °C не приводится (D-значение определено при 60 °C, 1 моль/л формальдегида)",
+          "quote": "Monitoring Formaldehyde Sterilization Processes.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/40c/wlkxzcw7cflxvj0r5q30ui22mtfzje1r.pdf",
+          "proposed_card_value": "Стерилизация формальдегидом (D-значение при 60 °C, 1 моль/л формальдегида)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT220",
+      "name": "BT220 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Время считывания",
+          "card_value": "3 часа (предварительное) + 48 ч визуальное",
+          "source_value": "Флуоресцентное считывание через 3 часа — окончательное; визуальное подтверждение (48 ч и/или 7 суток) — опциональное. Инструкция: «Final readout of negative results is readily available after 3 hours of incubation».",
+          "quote": "Final fluorescence reading is performed after 3-hour incubation at 60 °C (sensitivity: ≥ 97 %). A visual confirmation of the result is optional (color change of the medium caused by pH change) and can be made after incubation at 60°C for 48 hours and/or for 7 days.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/d63/yb698168ljic5e25bde0ciatjn2eahz3.pdf",
+          "proposed_card_value": "3 часа (окончательное флуоресцентное считывание); визуальное подтверждение через 48 ч — опционально",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "50/100 штук/коробка",
+          "source_value": "Только 50 штук в коробке",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/d63/yb698168ljic5e25bde0ciatjn2eahz3.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "ISO 11138-1:2017, ISO 11138-3:2017, ISO 11138-8:2021",
+          "source_value": "TDS дополнительно указывает ISO 11140-1:2014 (химический индикатор процесса на этикетке)",
+          "quote": "ISO 11138-1:2017, ISO 11138-3:2017, ISO 11138-8:2021 and ISO 11140-1:2014.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/d63/yb698168ljic5e25bde0ciatjn2eahz3.pdf",
+          "proposed_card_value": "ISO 11138-1:2017; ISO 11138-3:2017; ISO 11138-8:2021; ISO 11140-1:2014",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT110",
+      "name": "BT110 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "standards",
+          "card_value": "ISO 11138-1:2017, ISO 11138-4:2017",
+          "source_value": "Для индикатора EtO применима ISO 11138-2:2017 (окись этилена), а не ISO 11138-4 (сухой жар); инструкция: «Parameters determined at time of manufacture according to ISO 11138-1:2017, ISO 11138-2:2017»",
+          "quote": "ISO 11138-1:2017 and ISO 11138-2:2017; IRAM 37102-1:1999 and IRAM 37102-2:1999.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/bbe/cmfhbizojw9m3pafgunujbonxc4bz6p4.pdf",
+          "proposed_card_value": "ISO 11138-1:2017; ISO 11138-2:2017",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка",
+          "source_value": "50 штук в коробке",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/bbe/cmfhbizojw9m3pafgunujbonxc4bz6p4.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "BT80",
+      "name": "BT80 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "48 часов. Стерилизация водяным паром",
+          "source_value": "Индикатор предназначен для контроля деконтаминации медицинских отходов влажным теплом, создаваемым микроволновым и/или радиочастотным излучением; применение для паровой стерилизации производителем прямо запрещено",
+          "quote": "Do not expose this product to EO, Steam, Dry Heat, Radiation or any sterilization processes other than Moist Heat produced by microwaves or radio frequency.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/4f3/i3xwwxl63agn4let5fk0ink08t5k4pv1.pdf",
+          "proposed_card_value": "48 часов. Деконтаминация медицинских отходов влажным теплом (СВЧ / радиочастотный нагрев)",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Метод",
+          "card_value": "Дезинфекция влажным теплом (пар, пар+воздух, перегретая вода)",
+          "source_value": "Влажное тепло, создаваемое микроволновым и/или радиочастотным излучением, при обработке медицинских отходов; пар, паровоздушная смесь и перегретая вода в документах не указаны, а пар исключён. Инструкция: «Do not use Bionova® BT80 Biological Indicators for monitoring Steam sterilization cycles».",
+          "quote": "Control of medical waste decontamination processes through Moist Heat, by means of radio frequency and/or microwave radiation.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/4f3/i3xwwxl63agn4let5fk0ink08t5k4pv1.pdf",
+          "proposed_card_value": "Деконтаминация медицинских отходов влажным теплом, создаваемым микроволновым и/или радиочастотным излучением",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "BT40",
+      "name": "BT40 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Время считывания",
+          "card_value": "48 часов",
+          "source_value": "BT40 — полоска со спорами, не самосодержащий индикатор: после стерилизации её асептически переносят в питательную среду; 48 ч — только в средах Bionova MC1030-2 / MC1020-2, в обычной среде (TSB) — 7 суток",
+          "quote": "Terragene S.A. recommends the use of Bionova® MC1030-2 or Bionova® MC1020-2 culture media for final reading in 48 hours. For conventional culture mediums, such as TSB, incubation for 7 days at 37 °C is recommended.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a2f/0ntbmsrg3frsx0uxz061z6x995bu2443.pdf",
+          "proposed_card_value": "48 часов в питательной среде Bionova MC1030-2 / MC1020-2 (в TSB — 7 суток); среда в комплект не входит",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Газовая (EtO) или сухой жар (160–180 °C)",
+          "source_value": "Диапазон 160–180 °C в документах не указан; для сухого жара приведено только D-значение при 160 °C",
+          "quote": "D-ValueDRY: Not lower than 2.0 min. Conditions: T = 160 °C.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a2f/0ntbmsrg3frsx0uxz061z6x995bu2443.pdf",
+          "proposed_card_value": "Газовая стерилизация окисью этилена (EtO) или сухой жар",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Тип / Упаковка",
+          "card_value": "Полоска со спорами (алюминиевый zip-пакет); 100 штук/zip-пакет",
+          "source_value": "Каждая полоска — в индивидуальном конверте 25×70 мм; 100 конвертов в пакете из алюминиевой фольги. Застёжка zip в документах не упоминается.",
+          "quote": "Envelope: 25 mm x 70 mm non-absorbent material package, green edges. Strip: 5 mm x 25 mm filter paper strip.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a2f/0ntbmsrg3frsx0uxz061z6x995bu2443.pdf",
+          "proposed_card_value": "Тип: Полоска со спорами 5×25 мм (фильтровальная бумага) в индивидуальном конверте 25×70 мм; Упаковка: 100 штук в пакете из алюминиевой фольги",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT21",
+      "name": "BT21 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка (200 ампул + 20 контрольных)",
+          "source_value": "200 ампул + 20 отрицательных контролей в коробке; «100 штук» противоречит и документу, и скобке в самом значении",
+          "quote": "200 units + 20 negative controls per box (negative controls are marked with a colored dot on one end).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/8d3/ju455hxsfj5yccz90uff1b2vgix0nvo7.pdf",
+          "proposed_card_value": "200 ампул + 20 отрицательных контролей/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Метод стерилизации",
+          "card_value": "Автоклавирование (пар) 121–135 °C",
+          "source_value": "Самосодержащие ампулы со спорами для контроля промышленной паровой стерилизации жидкостей; назначение «жидкости» в карточке отсутствует",
+          "quote": "Monitoring industrial steam sterilization processes of liquids between 121-135 °C.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/8d3/ju455hxsfj5yccz90uff1b2vgix0nvo7.pdf",
+          "proposed_card_value": "Промышленная паровая стерилизация жидкостей 121–135 °C (самосодержащие ампулы со спорами)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT10",
+      "name": "BT10 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Газовая стерилизация окисью этилена (EtO) 600 мг/л, 55 °C",
+          "source_value": "Параметры цикла в документах BT10 не заданы; 600 мг/л приводится только как условие определения D-значения, и температура там 54 ± 1 °C (не 55 °C) при 60 ± 10 % RH",
+          "quote": "D-value: not lower than 2.0 minutes. Conditions: 600 ± 30 mg/l EO, 60 ± 10 % RH, 54 ± 1 °C.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b79/hxwd0y3blahrk9b8ihc4n3hqk17ee7gt.pdf",
+          "proposed_card_value": "Газовая стерилизация окисью этилена (EtO); D-значение ≥ 2,0 мин при 600 ± 30 мг/л EtO, 60 ± 10 % RH, 54 ± 1 °C",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "ISO 11138-1:2017, ISO 11138-2:2017, ISO 11138-8:2021",
+          "source_value": "TDS дополнительно указывает ISO 11140-1:2014",
+          "quote": "ISO 11138-1:2017, ISO 11138-2:2017, ISO 11138-8:2021 and ISO 11140-1:2014.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b79/hxwd0y3blahrk9b8ihc4n3hqk17ee7gt.pdf",
+          "proposed_card_value": "ISO 11138-1:2017; ISO 11138-2:2017; ISO 11138-8:2021; ISO 11140-1:2014",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT22",
+      "name": "BT22 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка (200 ампул + 20 контрольных)",
+          "source_value": "200 ампул + 20 отрицательных контролей в коробке; «100 штук» противоречит и документу, и скобке в самом значении",
+          "quote": "200 units + 20 negative controls per box (negative controls are marked with a colored dot on one end).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/653/ddl2i3vsba8vbnjp763tk9g0bgsusgh9.pdf",
+          "proposed_card_value": "200 ампул + 20 отрицательных контролей/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Метод стерилизации",
+          "card_value": "Автоклавирование (пар) 121–135 °C",
+          "source_value": "Самосодержащие ампулы со спорами для контроля промышленной паровой стерилизации жидкостей; назначение «жидкости» в карточке отсутствует",
+          "quote": "Monitoring industrial steam sterilization processes of liquids between 121-135 °C.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/653/ddl2i3vsba8vbnjp763tk9g0bgsusgh9.pdf",
+          "proposed_card_value": "Промышленная паровая стерилизация жидкостей 121–135 °C (самосодержащие ампулы со спорами)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT100",
+      "name": "BT100 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Низкотемпературный пар + формальдегид (LTSF) 50–80 °C",
+          "source_value": "Документы указывают только «стерилизация формальдегидом»; диапазон 50–80 °C не приводится (D-значение определено при 60 °C, 1 моль/л формальдегида)",
+          "quote": "Monitoring Formaldehyde Sterilization Processes.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/baa/sn4suiljzorfjz8ph7njub3sxb60duno.pdf",
+          "proposed_card_value": "Стерилизация формальдегидом (D-значение ≥ 6,0 мин при 60 °C, 1 моль/л формальдегида)",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Микроорганизм",
+          "card_value": "Geobacillus stearothermophilus 10⁶",
+          "source_value": "TDS допускает популяцию 10⁵ или 10⁶ спор на индикатор (в извлечённом тексте надстрочные индексы потеряны: «105 or 106» = 10⁵ или 10⁶); фактическая нагрузка указывается на упаковке партии",
+          "quote": "105 or 106 Geobacillus stearothermophilus ATCC 7953 spores per vial.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/baa/sn4suiljzorfjz8ph7njub3sxb60duno.pdf",
+          "proposed_card_value": "Geobacillus stearothermophilus ATCC 7953, 10⁵ или 10⁶ спор (указывается на упаковке партии)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT24",
+      "name": "BT24 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) — документ на BT24/6", "Инструкция (eng) — BT24/4, BT24/5, BT24/6"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка (100 ампул + 20 контрольных)",
+          "source_value": "200 ампул + 20 отрицательных контролей в коробке",
+          "quote": "200 units + 20 negative controls per box (negative controls are marked with a colored dot on one end).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/6cd/h3la7qeykge82jkbtwlu53g1t6iyn4m1.pdf",
+          "proposed_card_value": "200 ампул + 20 отрицательных контролей/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Метод стерилизации",
+          "card_value": "Автоклавирование (пар) 110–121 °C",
+          "source_value": "Назначение — промышленная низкотемпературная паровая стерилизация жидкостей в небольших ёмкостях; в карточке не указано",
+          "quote": "Monitoring industrial Steam sterilization processes of liquids in small containers at low temperature between 110 °C – 121 °C.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/6cd/h3la7qeykge82jkbtwlu53g1t6iyn4m1.pdf",
+          "proposed_card_value": "Промышленная паровая стерилизация жидкостей в небольших ёмкостях при низкой температуре 110–121 °C",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT50/6_BION_100",
+      "name": "BT50 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng) — BT50/4, BT50/5, BT50/6, BT50/7"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Время считывания",
+          "card_value": "24 / 48 часов",
+          "source_value": "BT50 — полоска со спорами: после цикла её переносят в питательную среду; 24 ч (пар) и 48 ч (формальдегид) — при инкубации 55–62 °C в подходящей среде (рекомендована Bionova MC1020-2), в TSB — 7 суток",
+          "quote": "Upon completion of the sterilization cycle, the spore strip should be tested in a suitable culture medium. Terragene S.A. suggests the use of Bionova® MC1020-2 culture medium.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a48/4s41s563cbpgll8nfoqb7gaerxzm7fnn.pdf",
+          "proposed_card_value": "24 ч (пар) / 48 ч (формальдегид) в питательной среде Bionova MC1020-2; в TSB — 7 суток",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Автоклавирование (пар) 121–135 °C или LTSF 50–80 °C",
+          "source_value": "Документы указывают пар 121–135 °C и формальдегид без температурного диапазона; 50–80 °C не приводится",
+          "quote": "Monitoring 121-135 °C steam and formaldehyde sterilization processes.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a48/4s41s563cbpgll8nfoqb7gaerxzm7fnn.pdf",
+          "proposed_card_value": "Автоклавирование (пар) 121–135 °C или стерилизация формальдегидом",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Тип / Упаковка",
+          "card_value": "Полоска со спорами (алюминиевый zip-пакет); 100 полосок/zip-пакет",
+          "source_value": "Полоска 5×25 мм в индивидуальном конверте 25×70 мм; 100 штук в пакете из алюминиевой фольги. Застёжка zip в документах не упоминается.",
+          "quote": "100 units per aluminum foil bag.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/a48/4s41s563cbpgll8nfoqb7gaerxzm7fnn.pdf",
+          "proposed_card_value": "Тип: Полоска со спорами 5×25 мм в индивидуальном конверте 25×70 мм; Упаковка: 100 штук в пакете из алюминиевой фольги",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BT31",
+      "name": "BT31 Биоиндикатор",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng) — скан R03/02.2025"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "100 штук/коробка",
+          "source_value": "50 штук в коробке",
+          "quote": "50 units per box.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/943/s3k2nykji1wwt7sdwaa3ohf6arxg0ay3.pdf",
+          "proposed_card_value": "50 штук/коробка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Время считывания",
+          "card_value": "72 часа",
+          "source_value": "BT31 — стеклянная ампула со спорами без среды: после цикла содержимое переносят в питательную среду; 72 ч — при инкубации в средах Bionova MC1030-2 или MC1020-2 при 37 ± 2 °C",
+          "quote": "Upon completion of the sterilization cycle, the content of the ampoule should be incubated in a suitable culture medium at 37 ± 2 °C. Terragene S.A. suggests the use of Bionova® MC1030-2 Culture Medium or Bionova® MC1020-2 Culture Medium to final reading in 72 hours.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/943/s3k2nykji1wwt7sdwaa3ohf6arxg0ay3.pdf",
+          "proposed_card_value": "72 часа в питательной среде Bionova MC1030-2 / MC1020-2 (содержимое ампулы переносится в среду после стерилизации)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Метод стерилизации",
+          "card_value": "Сухой жар (150–190 °C)",
+          "source_value": "Диапазон 150–190 °C в документах не указан; TDS заявляет совместимость с экстремально высокими температурами циклов депирогенизации, D-значение приведено при 160 °C",
+          "quote": "Monitoring dry heat sterilization processes. Compatible with extremely high temperatures generated during depyrogenation cycles and sterilization processes in ovens and dry heat tunnels.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/943/s3k2nykji1wwt7sdwaa3ohf6arxg0ay3.pdf",
+          "proposed_card_value": "Сухой жар (сухожаровые шкафы и туннели, циклы депирогенизации); D-значение ≥ 2,0 мин при 160 °C",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BPH-Photon",
+      "name": "BPH-Photon Инкубатор",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": []
+    },
+    {
+      "sku": "CG3",
+      "name": "CG3 Этикеровщик",
+      "status": "issues",
+      "docs_checked": ["Описание продукта PDS (eng)", "Инструкция по применению (eng)"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Этикеровщик автоматический для химических индикаторов",
+          "source_value": "Ручной (Manual) трёхстрочный этикеровщик для маркировки стерилизационных упаковок этикетками Chemdye; работает от курка (инструкция: «Pull and release the trigger»)",
+          "quote": "Manual Labeler that allows a quick and easy labelling of sterilization packages with Chemdye® CD13 / CD23 / CD33 / CD43 / CD53 / CD83 Labels.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/393/f52hvm41lxgiqgraulz8lmg4tc7zqviz.pdf",
+          "proposed_card_value": "Ручной трёхстрочный этикеровщик для маркировки стерилизационных упаковок этикетками Chemdye",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Тип",
+          "card_value": "Автоматический этикеровщик",
+          "source_value": "Ручной этикеровщик (Three Line Labeler)",
+          "quote": "Manual Labeler that allows a quick and easy labelling of sterilization packages with Chemdye® CD13 / CD23 / CD33 / CD43 / CD53 / CD83 Labels.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/393/f52hvm41lxgiqgraulz8lmg4tc7zqviz.pdf",
+          "proposed_card_value": "Ручной трёхстрочный этикеровщик",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Назначение",
+          "card_value": "Нанесение этикеток на химические индикаторы класса 1",
+          "source_value": "Этикеровщик наносит этикетки Chemdye на стерилизационные упаковки, а не на химические индикаторы; «класс 1» в документах не упоминается. Печатает три строки до 12 символов, этикетка 29 × 22,5 мм.",
+          "quote": "Prints three lines of up to 12 characters each (Label size: 29 mm long x 22.5 mm wide)",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/393/f52hvm41lxgiqgraulz8lmg4tc7zqviz.pdf",
+          "proposed_card_value": "Маркировка стерилизационных упаковок этикетками Chemdye; печать трёх строк до 12 символов (этикетка 29 × 22,5 мм)",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Совместимые индикаторы",
+          "card_value": "CD23 (этикетки для автоклавирования)",
+          "source_value": "PDS перечисляет шесть совместимых типов этикеток: CD13, CD23, CD33, CD43, CD53, CD83; ограничение одним CD23 и пометка «для автоклавирования» документом не подтверждаются",
+          "quote": "labelling of sterilization packages with Chemdye® CD13 / CD23 / CD33 / CD43 / CD53 / CD83 Labels.",
+          "source_doc": "Описание продукта PDS (eng) | https://ibcnanotex.com/upload/iblock/393/f52hvm41lxgiqgraulz8lmg4tc7zqviz.pdf",
+          "proposed_card_value": "Этикетки Chemdye® CD13, CD23, CD33, CD43, CD53, CD83",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "BHY-Hyper",
+      "name": "BHY-Hyper Инкубатор",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS (eng)", "Инструкция (eng)"],
+      "issues": []
+    }
+  ]
+}

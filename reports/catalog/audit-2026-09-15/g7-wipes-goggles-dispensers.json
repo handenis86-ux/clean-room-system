@@ -1,0 +1,553 @@
+{
+  "group": "g7-wipes-goggles-dispensers",
+  "products": [
+    {
+      "sku": "2184001",
+      "name": "Hydroflex PurWipe Premio 3030",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf"],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Плотность",
+          "card_value": "320 г/м²",
+          "source_value": "380 г/м² (± 5 г/м²)",
+          "quote": "32 x 32 cm (± 0.5 cm) | 380 g/m² (± 5 g/m²)",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "380 г/м²",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Многоразовые тканые микрофибровые салфетки",
+          "source_value": "трикотажное полотно из микрофибры (knit), не тканое",
+          "quote": "100 % Microfiber (80 % Polyester / 20 % Polyamide), knit",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "Многоразовые трикотажные микрофибровые салфетки (80% полиэстер / 20% полиамид); спецификация «Материал»: «Микрофибра 100% (80% полиэстер / 20% полиамид), трикотаж»",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс A, B, C, D (описание: ISO 5-8 / GMP A-D; спецификация ISO: ISO 5, 6, 7, 8)",
+          "source_value": "класс ISO/GMP в TDS не указан; назначение ограничено некритичными поверхностями/применениями в GMP-зонах",
+          "quote": "Recommended for wiping of non-critical surfaces. Suitable for removing visible contamination, particles and for disinfection",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "Удалить классы GMP A–D и ISO 5–8 (в TDS не указаны). Формулировка по TDS: «Для протирки некритичных поверхностей; допускается применение в GMP-зонах для некритичных задач»",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Автоклавируемые, безворсовые, антистатические.",
+          "source_value": "не электростатически проводящая",
+          "quote": "Not electrostatically conductive",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "Убрать «антистатические»; при необходимости указать «Электропроводность: не электростатически проводящая»",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Упаковка",
+          "card_value": "10 штук/коробка",
+          "source_value": "10 шт./пакет, 5 пакетов/короб (50 шт. в коробе)",
+          "quote": "10 pcs. / bag, 5 bags / carton [case = 50 pcs.]",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "10 шт./пакет, 5 пакетов/короб (50 шт.)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Стерильность",
+          "card_value": "Нет (стерилизуется перед использованием)",
+          "source_value": "поставляется нестираной; перед первым использованием обязательна деконтаминация — профессиональная стирка и сушка в прачечной для чистых помещений",
+          "quote": "Unwashed in delivery condition. Wipe must be decontaminated for cleanroom use before first usage!",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "Нет. Поставляется нестираной — перед первым использованием обязательна профессиональная подготовка (стирка и сушка в стиральных машинах для чистых помещений)",
+          "confidence": "medium"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Срок хранения",
+          "card_value": "≥3 лет",
+          "source_value": "срок хранения в TDS не указан",
+          "quote": "(в документе отсутствует: блок Product specifications содержит поля Material, Size | Weight, Color, Edges, Fluid Absorption, Chemical resistance, Conductivity, Re-use, Decontamination, Delivery Condition, Packing — срока хранения нет)",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/b08/dj2yhjw5cwnbrb5lt28rklh5t30td4me.pdf",
+          "proposed_card_value": "Удалить спецификацию «Срок хранения» (нет в документе производителя)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "LWPS0006/LWPS0007",
+      "name": "Contec Sterile Polynit Heatseal Wipes",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/lwps-tds-en.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "PNHS-99/PNHS-1212",
+      "name": "Contec Polynit Heatseal Wipes",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/pnhs-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "C2-99IR/25",
+      "name": "Contec SterileSorb Wipes",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/sterilesorb-tds-en.pdf"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Стерильно",
+          "card_value": "Да",
+          "source_value": "гамма-облучение, валидированная стерильность SAL 10⁻⁶ по ANSI/AAMI/ISO 11137; двойная упаковка (внешний пакет peelable + внутренний пакет с линейным надрывом)",
+          "quote": "These sterile, nonwoven wipes are sterilized by gamma irradiation and validated sterile per AAMI (Association for the Advancement of Medical Instrumentation) 11137 guidelines to a 10-6 SAL (Sterility Assurance Level)",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sterilesorb-tds-en.pdf",
+          "proposed_card_value": "Да (гамма-облучение, SAL 10⁻⁶)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "AMSI0001/0002/0003",
+      "name": "Contec Amplitude Sigma Wipes",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/amsi-tds-en.pdf"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Материал",
+          "card_value": "(нет спецификации «Материал»; описание: «Нетканые салфетки спанлейс»)",
+          "source_value": "55% целлюлоза / 45% полиэстер (Sontara), гидросплетённое нетканое полотно, 68 г/м²",
+          "quote": "fabric comprised of a hydroentangled blend of 55% cellulose and 45% polyester staple fibers.",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/amsi-tds-en.pdf",
+          "proposed_card_value": "Материал: 55% целлюлоза / 45% полиэстер; Плотность: 68 г/м²",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "NC2S",
+      "name": "NPro NGlide NC2S",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc2s-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC3S",
+      "name": "NPro NGlide NC3S",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc3-tds.pdf"],
+      "issues": [
+        {
+          "type": "wrong_document",
+          "field": "Технический паспорт TDS | /datasheets/nc3-tds.pdf",
+          "card_value": "Стерильные тканые, 80% полиэстер/20% полиамид, 205 г/м², ISO 4-8 / GMP A-B; Стерильно: Да",
+          "source_value": "приложен паспорт нестерильной NC3 (Ref. NC3001/NC3002), GMP C, D; SKU NC3S в документе отсутствует, данных о стерилизации нет",
+          "quote": "Рекомендовано использование в чистых помещениях класса ISO 4 / GMP C, D",
+          "source_doc": "Технический паспорт TDS | /datasheets/nc3-tds.pdf",
+          "proposed_card_value": "Заменить документ на техпаспорт стерильной NC3S (запросить у IBC Nanotex); до получения — снять ссылку на nc3-tds.pdf, т.к. GMP A-B и стерильность этим документом не подтверждаются",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "NC7S",
+      "name": "NPro NGlide NC7S",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc7s-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC8S",
+      "name": "NPro NGlide NC8S",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc8s-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC1",
+      "name": "NPro NGlide NC1",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc1-tds-ru.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC2",
+      "name": "NPro NGlide NC2",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc2-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC3",
+      "name": "NPro NGlide NC3",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc3-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC4",
+      "name": "NPro NGlide NC4",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc4-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "NC5",
+      "name": "NPro NGlide NC5",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc5-tds.pdf"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "(нет спецификации; описание: «ISO 6-8»)",
+          "source_value": "ISO 6 / GMP C, D",
+          "quote": "Экономичный вариант для рекомендуемого класса чистых помещений ISO 6 / GMP C- D",
+          "source_doc": "Технический паспорт TDS | /datasheets/nc5-tds.pdf",
+          "proposed_card_value": "Класс C, D (описание: «ISO 6-8 / GMP C-D»)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "NC8",
+      "name": "NPro NGlide NC8",
+      "status": "ok",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/nc8-tds.pdf"],
+      "issues": []
+    },
+    {
+      "sku": "SAT-C1-7030 BPR",
+      "name": "Contec SATWIPES Sigma Wipes",
+      "status": "issues",
+      "docs_checked": ["Спецификация (eng) | /datasheets/satwipes-spec-en.pdf", "Описание продукта (ru) | /datasheets/satwipes-ru.pdf"],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс C, D; ISO 6, 7, 8 (описание: ISO 6-8 / GMP C-D)",
+          "source_value": "ни английская спецификация, ни русское описание не указывают класс ISO или GMP",
+          "quote": "(в документах отсутствует: Technical Data содержит Wipe material, Wipe construction, Solution of saturation, Basis weight, NVR, Particles — класса ISO/GMP нет; в русском описании также нет)",
+          "source_doc": "Спецификация (eng) | /datasheets/satwipes-spec-en.pdf",
+          "proposed_card_value": "Удалить классы ISO 6-8 / GMP C-D либо подтвердить актуальным PDS Contec",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Материал",
+          "card_value": "(нет спецификации «Материал»; «Тип: Предварительно пропитанные»)",
+          "source_value": "55% целлюлоза / 45% полиэстер, гидросплетённое нетканое полотно, 68 г/м²",
+          "quote": "Материал 55% целлюлоза, 45% полиэстер Дизайн Гидросплетение нетканого материала",
+          "source_doc": "Описание продукта (ru) | /datasheets/satwipes-ru.pdf",
+          "proposed_card_value": "Материал: 55% целлюлоза / 45% полиэстер, нетканое (гидросплетение); Плотность: 68 г/м²",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "PS-911EB-BPR",
+      "name": "Contec PROSAT Sterile Meltblown Polypropylene",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/prosat-sterile-tds-en.pdf"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "(нет спецификации; описание: «ISO 5-8»)",
+          "source_value": "ISO 5-8, Grade A/B для стерильной версии",
+          "quote": "ISO 5 - 8 Grade A/B for sterile, C/D for nonsterile",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/prosat-sterile-tds-en.pdf",
+          "proposed_card_value": "Класс A, B (описание: «ISO 5-8 / GMP A-B»)",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Стерильно",
+          "card_value": "Да",
+          "source_value": "гамма-облучение, валидированный SAL 10⁻⁶; срок годности стерильной версии 2 года",
+          "quote": "Gamma irradiated to a validated SAL 10-6*",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/prosat-sterile-tds-en.pdf",
+          "proposed_card_value": "Да (гамма-облучение, SAL 10⁻⁶)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "PS-911-BPR",
+      "name": "Contec PROSAT Meltblown Polypropylene",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/prosat-tds-en.pdf"],
+      "issues": [
+        {
+          "type": "wrong_document",
+          "field": "Технический паспорт TDS (eng) | /datasheets/prosat-tds-en.pdf",
+          "card_value": "prosat-tds-en.pdf как TDS на PROSAT Meltblown Polypropylene PS-911-BPR",
+          "source_value": "файл побайтно идентичен sterilesorb-tds-en.pdf (MD5 4ed87cfbf077e7b7d8d2d02044dccdb7) — это буклет Contec SterileSorb Wipes (WIP066), PS-911-BPR в нём не упоминается. Все утверждения карточки (100% PP meltblown, ISO 5-8 / GMP C-D, нестерильно, 70% IPA, 23×28 см) подтверждаются паспортом prosat-sterile-tds-en.pdf, где PS-911-BPR указан.",
+          "quote": "SterileSorbTM Wipes Cellulose/polyester nonwoven wipes",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/prosat-tds-en.pdf",
+          "proposed_card_value": "Заменить ссылку на /datasheets/prosat-sterile-tds-en.pdf (PDS «PROSAT Meltblown Polypropylene IPA Wipes», INT246, содержит PS-911-BPR: «230x 280mm», «ISO 5 - 8 Grade A/B for sterile, C/D for nonsterile»)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "VC2",
+      "name": "NPro NView VC2 многоразовые закрытые",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS | /datasheets/vc2-tds.pdf", "Декларация соответствия ЕАС | /datasheets/vc2-declaration.pdf (ЕАЭС N RU Д-RS.РА04.В.08995/25, т.м. Npro (NView), действительна по 29.04.2030)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Антизапотевающее покрытие",
+          "card_value": "(не указано)",
+          "source_value": "устойчивы к запотеванию, защита от царапин",
+          "quote": "Устойчивы к запотеванию • Конструкция “очки на очки” • Защита от царапин",
+          "source_doc": "Технический паспорт TDS | /datasheets/vc2-tds.pdf",
+          "proposed_card_value": "Устойчивость к запотеванию: Да; Защита от царапин: Да",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "50210",
+      "name": "Isofield Isoclave CF 50210 многоразовые",
+      "status": "issues",
+      "docs_checked": ["Описание продукта PDS (eng) | /datasheets/isoclave-50210-pds-en.pdf", "Декларация соответствия ЕАС | /datasheets/isoclave-50210-declaration.pdf (ЕАЭС N RU Д-MY.РА08.В.81723/25, т.м. Isofield (ISOCLAVE), действительна по 30.09.2030)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Покрытие линз",
+          "card_value": "(не указано)",
+          "source_value": "линза с антицарапинным и антизапотевающим покрытием",
+          "quote": "Premium anti-scratch, anti-fog lens",
+          "source_doc": "Описание продукта PDS (eng) | /datasheets/isoclave-50210-pds-en.pdf",
+          "proposed_card_value": "Покрытие линз: антизапотевающее, антицарапинное",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "50110",
+      "name": "Isofield Isoclave IV 50110 многоразовые",
+      "status": "issues",
+      "docs_checked": ["Описание продукта PDS (eng) | /datasheets/isoclave-50110-pds-en.pdf", "Декларация соответствия ЕАС | /datasheets/isoclave-50110-declaration.pdf (ЕАЭС N RU Д-MY.РА08.В.81723/25, т.м. Isofield (ISOCLAVE), действительна по 30.09.2030)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "(пусто)",
+          "source_value": "EN 166:2001, ISO 16321-1:2021, СИЗ категории II",
+          "quote": "Complies with relevant requirements in EN 166:2001 | Tested against EN 166 and ISO 16321-1 | Certified to PPE Cat II",
+          "source_doc": "Описание продукта PDS (eng) | /datasheets/isoclave-50110-pds-en.pdf",
+          "proposed_card_value": "EN 166:2001; ISO 16321-1:2021; ТР ТС 019/2011",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Покрытие линз",
+          "card_value": "(не указано)",
+          "source_value": "линза с антицарапинным и антизапотевающим покрытием",
+          "quote": "Premium anti-scratch, anti-fog lens",
+          "source_doc": "Описание продукта PDS (eng) | /datasheets/isoclave-50110-pds-en.pdf",
+          "proposed_card_value": "Покрытие линз: антизапотевающее, антицарапинное",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "2962008",
+      "name": "Hydroflex PurGuard SV-801-AF многоразовые",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/purguard-sv801-tds-en.pdf", "Декларация соответствия ЕАС | /datasheets/purguard-sv801-declaration.pdf (ЕАЭС N RU Д-DE.РА02.В.06937/23, PurGuard, действительна по 26.02.2028)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "(пусто)",
+          "source_value": "CE, СИЗ категории II, испытаны по EN 166:2001, оптический класс 1",
+          "quote": "CE certified as PPE product, category II, tested according to EN 166:2001, Optical class 1",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/purguard-sv801-tds-en.pdf",
+          "proposed_card_value": "EN 166:2001; ТР ТС 019/2011; спецификация «Оптический класс (EN 166)»: «Класс 1»",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "2962011",
+      "name": "Hydroflex PurGuard SV-900-AF многоразовые",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/purguard-sv900-tds-en.pdf", "Декларация соответствия ЕАС | /datasheets/purguard-sv900-declaration.pdf (ЕАЭС N RU Д-DE.РА02.В.06937/23, PurGuard, действительна по 26.02.2028)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "(пусто)",
+          "source_value": "CE, СИЗ категории II, испытаны по EN 166:2002, оптический класс 1",
+          "quote": "CE certified as PPE product category II, tested according to EN 166:2002, Optical class 1",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/purguard-sv900-tds-en.pdf",
+          "proposed_card_value": "EN 166; ТР ТС 019/2011; спецификация «Оптический класс (EN 166)»: «Класс 1»",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "2961004",
+      "name": "Hydroflex PurGuard EV-100 одноразовые стерильные",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/purguard-ev100-tds-en.pdf", "Декларация соответствия ЕАС | /datasheets/purguard-ev100-declaration.pdf (ЕАЭС N RU Д-DE.РА02.В.06937/23, PurGuard, действительна по 26.02.2028)"],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "(пусто)",
+          "source_value": "CE, СИЗ категории II, испытаны по EN 166:2001, оптический класс 1",
+          "quote": "CE certified as PPE product category II, tested according to EN 166:2001, Optical class 1",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/purguard-ev100-tds-en.pdf",
+          "proposed_card_value": "EN 166:2001; ТР ТС 019/2011; спецификация «Оптический класс (EN 166)»: «Класс 1»",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Антизапотевающее покрытие",
+          "card_value": "(не указано)",
+          "source_value": "непрямая вентиляция и антизапотевающее покрытие",
+          "quote": "Indirect ventilation and anti-fog coating",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/purguard-ev100-tds-en.pdf",
+          "proposed_card_value": "Антизапотевающее покрытие: Да; Вентиляция: Непрямая",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "FS-0086",
+      "name": "STAXS DOTCH Puru Vision 1.0 одноразовые стерильные",
+      "status": "issues",
+      "docs_checked": ["Технический паспорт TDS (eng) | /datasheets/staxs-fs0086-tds-en.pdf", "Декларация соответствия ЕАС | /datasheets/staxs-fs0086-declaration.pdf (ЕАЭС N RU Д-NL.РА05.В.57561/25, т.м. Dotch, Puru, действительна по 30.06.2030)"],
+      "issues": [
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты EU GMP",
+          "card_value": "Класс A, B, C, D",
+          "source_value": "класс GMP в документе не указан; указано только «рекомендованы для чистых помещений ISO 5 и выше»",
+          "quote": "Recommended for ISO 5 cleanrooms and higher",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/staxs-fs0086-tds-en.pdf",
+          "proposed_card_value": "Удалить спецификацию «Класс чистоты EU GMP» и «GMP A-D» из описания (в документе производителя не указано); описание: «Стерильные одноразовые, для чистых помещений ISO 5, SAL 10⁻⁶»",
+          "confidence": "medium"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Стерильно",
+          "card_value": "Да (SAL 10⁻⁶)",
+          "source_value": "радиационная стерилизация (облучение мин. 25 кГр), валидация по ISO 11137-2 (VDmax25), SAL 10⁻⁶; срок годности 2 года",
+          "quote": "Sterility validated according to ISO 11137-2 (VD max25) | Certificate of Processing (min. Irradiation of 25kGy)",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/staxs-fs0086-tds-en.pdf",
+          "proposed_card_value": "Да (радиационная стерилизация ≥25 кГр, ISO 11137-2, SAL 10⁻⁶)",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "(пусто; оптический класс и покрытие линзы не указаны)",
+          "source_value": "EN 166:2001, оптический класс 1, маркировка оправы EN 166 3 S; линза из поликарбоната с антизапотевающим покрытием",
+          "quote": "EN166:2001 Optical class 1 | Frame: EN 166 3 S | Fitted with anti-fog coating",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/staxs-fs0086-tds-en.pdf",
+          "proposed_card_value": "Стандарты: EN 166:2001; ТР ТС 019/2011. Спецификации: «Оптический класс (EN 166)»: «Класс 1»; «Маркировка оправы»: «EN 166 3 S»; «Антизапотевающее покрытие»: «Да»",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "TINMAN-B1DFM",
+      "name": "TINMAN B1DFM — настенный диспенсер для одной коробки масок",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-B1DG",
+      "name": "TINMAN B1DG — настенный диспенсер для одной коробки перчаток",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-B3DFM",
+      "name": "TINMAN B3DFM — настенный диспенсер на три коробки масок",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-B3DG",
+      "name": "TINMAN B3DG — настенный диспенсер на три коробки перчаток",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-DFMB",
+      "name": "TINMAN DFMB — диспенсер для бумаги формата A4",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-FTDM",
+      "name": "TINMAN FTDM — диспенсер с плоской крышкой для перчаток",
+      "status": "issues",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "internal_inconsistency",
+          "field": "description",
+          "card_value": "Альтернатива со скошенной крышкой для зон с горизонтальным потоком воздуха — STDM.",
+          "source_value": "карточка TINMAN-STDM утверждает обратное: наклонная крышка «критично для зон с вертикальным однонаправленным потоком воздуха», а FTDM — «для зон без вертикального ламинарного потока»",
+          "quote": "Наклонная крышка минимизирует оседание пыли и аэрозолей на верхней поверхности и облегчает их стекание при дезинфекции — критично для зон с вертикальным однонаправленным потоком воздуха.",
+          "source_doc": "карточка TINMAN-STDM (description), документов производителя нет",
+          "proposed_card_value": "Альтернатива с наклонной крышкой, на которой меньше оседает пыль, — STDM.",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "TINMAN-GDM",
+      "name": "TINMAN GDM — диспенсер для очков",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-LBS",
+      "name": "TINMAN LBS — настенный диспенсер для бумажных отходов",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-STDM",
+      "name": "TINMAN STDM — диспенсер с наклонной крышкой для перчаток",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "TINMAN-WDM",
+      "name": "TINMAN WDM — настенный диспенсер для салфеток",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "B3DD",
+      "name": "Tinman B3DD диспенсер для бутылок",
+      "status": "ok",
+      "docs_checked": ["Спецификация B3DD | https://ibcnanotex.com/upload/iblock/631/ikq3bx15a1xyxdzq6d2mgxcezumkw682.pdf"],
+      "issues": []
+    }
+  ]
+}

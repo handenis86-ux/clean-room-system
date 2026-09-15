@@ -1,0 +1,975 @@
+{
+  "group": "g3-disinfectants",
+  "products": [
+    {
+      "sku": "SBT102PC",
+      "name": "Contec Sterile ProChlor (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Инструкция по применению (ru)",
+        "Декларация соответствия",
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS приводит тесты эффективности EN 1276, EN 13704 (спорицидность), EN 13697, EN 1650, EN 16615 и вирусный тест, напечатанный как «EN14776» (Poliovirus; по-видимому, опечатка производителя вместо EN 14476 — в карточку не переносить без подтверждения)",
+          "quote": "EN1276 E. hirae >log 7 1 min | EN13704 B. subtilis >log 6 1 min | EN14776 Poliovirus 4.33 30 secs | EN13697 B. subtilis > log 6 1 min | EN1650 C. albicans > log 4 1 min | EN16615",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/prochlor-tds-en.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 16615",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эндотоксины",
+          "card_value": "<0.25 EU/мл",
+          "source_value": "В разделе Product Specification TDS и в инструкции 01NAN-15 предел по эндотоксинам не указан",
+          "quote": "• 2000ppm hypochlorous acid in purified water • Ready-to-use with 2 year shelf life • 0.2 micron filtered under Grade A air in a Grade B/C cleanroom • Double bagged in polyethylene linear tear bags (LDPE) • Trigger spray with jet or spray option • Packed in corrugated fibreboard boxes (PAP) • Relevant certificates of analysis and sterility provided with every batch. • Full supporting documentation information is available on request.",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/prochlor-tds-en.pdf",
+          "proposed_card_value": "Удалить строку (в документах производителя не указано)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты ISO 14644-1",
+          "card_value": "ISO 4, 5, 6, 7, 8",
+          "source_value": "Ни TDS, ни инструкция не называют классы ISO; указаны только классы GMP A–D (инструкция) и Grade A/B для стерильной версии (TDS). ISO 4 не следует ни из одного документа",
+          "quote": "в помещениях классов чистоты А, В, С, D на промышленных предприятиях, включая предприятия фармацевтической и биотехнологической промышленности",
+          "source_doc": "Инструкция по применению (ru) | /datasheets/prochlor-instruction-ru.pdf",
+          "proposed_card_value": "Удалить строку или не указывать класс ISO, пока производитель его не подтвердит",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Стерильное спорицидное средство, уничтожает споры за 60 сек",
+          "source_value": "TDS: log 6 против B. subtilis за 60 с (суспензионный тест EN 13704). Но приложенная к этой же карточке российская инструкция 01NAN-15 устанавливает режим для бактерий в споровой форме — 15 мин при 400 мл/м²; для вегетативных форм — 1 мин. Покупатель, сравнивающий карточку с инструкцией, увидит расхождение",
+          "quote": "Бактерии в споровой форме | 15 | 400 | Орошение",
+          "source_doc": "Инструкция по применению (ru) | /datasheets/prochlor-instruction-ru.pdf",
+          "proposed_card_value": "Стерильное спорицидное средство на основе HClO: log 6 против B. subtilis за 60 сек (EN 13704, TDS); режим по инструкции 01NAN-15 для споровых форм — 15 мин",
+          "confidence": "medium"
+        },
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35997/23 (Contec ProChlor)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026)",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия | /datasheets/prochlor-declaration.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBC502PC",
+      "name": "Contec Sterile ProChlor (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS приводит EN 1276, EN 13704, EN 13697, EN 1650, EN 16615 и вирусный тест «EN14776» (вероятная опечатка производителя вместо EN 14476)",
+          "quote": "EN1276 E. hirae >log 7 1 min | EN13704 B. subtilis >log 6 1 min | EN14776 Poliovirus 4.33 30 secs | EN13697 B. subtilis > log 6 1 min | EN1650 C. albicans > log 4 1 min | EN16615",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/333/8zq0nr5wa6izy8d1gnfbwo0payl0es7g.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 16615",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эндотоксины",
+          "card_value": "<0.25 EU/мл",
+          "source_value": "В разделе Product Specification TDS предел по эндотоксинам не указан",
+          "quote": "• 2000ppm hypochlorous acid in purified water • Ready-to-use with 2 year shelf life • 0.2 micron filtered under Grade A air in a Grade B/C cleanroom • Double bagged in polyethylene linear tear bags (LDPE) • Trigger spray with jet or spray option • Packed in corrugated fibreboard boxes (PAP) • Relevant certificates of analysis and sterility provided with every batch. • Full supporting documentation information is available on request.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/333/8zq0nr5wa6izy8d1gnfbwo0payl0es7g.pdf",
+          "proposed_card_value": "Удалить строку (в документах производителя не указано)",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты ISO 14644-1",
+          "card_value": "ISO 4, 5, 6, 7, 8",
+          "source_value": "TDS классы ISO не называет; для стерильной версии указано только Grade A/B",
+          "quote": "Suitable for Grade A and B cleanrooms",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/333/8zq0nr5wa6izy8d1gnfbwo0payl0es7g.pdf",
+          "proposed_card_value": "Удалить строку или не указывать класс ISO, пока производитель его не подтвердит",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "FBT102PC",
+      "name": "Contec ProChlor (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS приводит EN 1276, EN 13704, EN 13697, EN 1650, EN 16615 и вирусный тест «EN14776» (вероятная опечатка производителя вместо EN 14476)",
+          "quote": "EN1276 E. hirae >log 7 1 min | EN13704 B. subtilis >log 6 1 min | EN14776 Poliovirus 4.33 30 secs | EN13697 B. subtilis > log 6 1 min | EN1650 C. albicans > log 4 1 min | EN16615",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/db1/zw5vgizn52u17vxmxr6agxan0g9vjw29.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 16615",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты ISO 14644-1",
+          "card_value": "ISO 4, 5, 6, 7, 8",
+          "source_value": "TDS классы ISO не называет (упомянуты только Grade A/B/C как среда фасовки и Grade A/B для стерильной версии). Кроме того, ISO 4–6 не согласуются с указанным в карточке классом GMP C, D для нестерильной версии",
+          "quote": "0.2 micron filtered under Grade A air in a Grade B/C cleanroom",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/db1/zw5vgizn52u17vxmxr6agxan0g9vjw29.pdf",
+          "proposed_card_value": "Удалить строку или не указывать класс ISO, пока производитель его не подтвердит",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "FBC502PC",
+      "name": "Contec ProChlor (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS приводит EN 1276, EN 13704, EN 13697, EN 1650, EN 16615 и вирусный тест «EN14776» (вероятная опечатка производителя вместо EN 14476)",
+          "quote": "EN1276 E. hirae >log 7 1 min | EN13704 B. subtilis >log 6 1 min | EN14776 Poliovirus 4.33 30 secs | EN13697 B. subtilis > log 6 1 min | EN1650 C. albicans > log 4 1 min | EN16615",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/db1/zw5vgizn52u17vxmxr6agxan0g9vjw29.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 16615",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Класс чистоты ISO 14644-1",
+          "card_value": "ISO 4, 5, 6, 7, 8",
+          "source_value": "TDS классы ISO не называет (упомянуты только Grade A/B/C как среда фасовки и Grade A/B для стерильной версии). Кроме того, ISO 4–6 не согласуются с указанным в карточке классом GMP C, D для нестерильной версии",
+          "quote": "0.2 micron filtered under Grade A air in a Grade B/C cleanroom",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/db1/zw5vgizn52u17vxmxr6agxan0g9vjw29.pdf",
+          "proposed_card_value": "Удалить строку или не указывать класс ISO, пока производитель его не подтвердит",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "SBT0570IW",
+      "name": "Contec Sterile 70% IPA (0.5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "wrong_document",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "SBT0570IW, 0.5 л триггер спрей",
+          "source_value": "Приложен американский PDS Contec Sterile IPA (PDSD004) с артикулами SB167030IR / SB327030IR / SB1287030IR / SB128100IR и объёмами 16 oz (0.47 L), 32 oz (0.95 L), 1 gallon (3.8 L). Артикул SBT0570IW в документе отсутствует; это та же линейка, но другая региональная версия (в документе вода USP purified, а не WFI)",
+          "quote": "SB167030IR Contec Sterile 70% IPA | 16 oz. | (0.47 L) | SB327030IR Contec Sterile 70% IPA | 32 oz. | (0.95 L) | SB1287030IR Contec Sterile 70% IPA | 1 gallon | (3.8 L)",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Приложить европейский TDS Contec Sterile 70% IPA с артикулом SBT0570IW",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Состав",
+          "card_value": "Изопропиловый спирт (IPA) 70% / вода для инъекций (WFI) 30%",
+          "source_value": "Приложенный TDS: IPA USP + очищенная вода USP (deionized), не вода для инъекций. Документ относится к американской версии, поэтому если европейский TDS на SBT0570IW подтверждает WFI — оставить карточку и заменить документ",
+          "quote": "Containing USP Grade IPA and USP grade purified water | Water Quality | Meets the requirements of USP grade deionized water",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Изопропиловый спирт (IPA) 70% / очищенная вода (USP)",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Фильтрация 0,22 мм",
+          "card_value": "Да (в названии строки 0,22 мм)",
+          "source_value": "0.2 мкм; «мм» в карточке — ошибка единиц (в 1000 раз)",
+          "quote": "Filtered through 0.2 micron in-line filter",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Фильтрация: 0,2 мкм",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эндотоксины",
+          "card_value": "Менее 0,25 EU/мл",
+          "source_value": "В блоке Product Information TDS предел по эндотоксинам не указан (документ — американская версия, поэтому medium)",
+          "quote": "Product Information | Appearance | Clear, colorless liquid | Water Quality | Meets the requirements of USP grade deionized water | Environment | ISO 3-8 Grade A/B",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Удалить строку, пока производитель не подтвердит предел",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "SBT170IW",
+      "name": "Contec Sterile 70% IPA (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Инструкция по использованию (ru)",
+        "Декларация соответствия ЕАС",
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Состав",
+          "card_value": "Изопропиловый спирт (IPA) 70% / вода для инъекций (WFI) 30%",
+          "source_value": "Оба приложенных документа указывают очищенную воду, а не воду для инъекций: инструкция 02NAN-15 (стерильная упаковка SBT170I) — «очищенную воду»; TDS — USP purified / deionized water",
+          "quote": "содержащей в качестве действующего вещества 2-пропанол–65±2,0%, в качестве вспомогательного компонента – очищенную воду | Containing USP Grade IPA and USP grade purified water",
+          "source_doc": "Инструкция по использованию (ru) | /datasheets/sbt170iw-instruction-ru.pdf; Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Изопропиловый спирт (IPA) 70% / очищенная вода",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эффективность",
+          "card_value": "Вирусы, бактерии, фунги",
+          "source_value": "Инструкция перечисляет спектр: грамотрицательные и грамположительные бактерии, грибы рода Candida; вирулицидное действие не заявлено ни в инструкции, ни в TDS",
+          "quote": "1.2 Средство обладает антимикробным действием в отношении грамотрицательных и грамположительных бактерий, грибов рода Кандида.",
+          "source_doc": "Инструкция по использованию (ru) | /datasheets/sbt170iw-instruction-ru.pdf",
+          "proposed_card_value": "Бактерии (грамположительные и грамотрицательные), дрожжеподобные грибы рода Candida",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "standards",
+          "card_value": "ГОСТ Р 52249",
+          "source_value": "ГОСТ Р 52249 (правила GMP) не упоминается ни в инструкции, ни в TDS, ни в декларации; декларация подтверждает соответствие ГОСТ 12.1.007-76 и Нормативным показателям № 01-12/75-97",
+          "quote": "СООТВЕТСТВУЕТ ТРЕБОВАНИЯМ: ГОСТ 12.1.007-76, пп. 1.2, 1.3 Нормативные показатели безопасности и эффективности дезинфекционных средств, подлежащие контролю при проведении обязательной сертификации № 01-12/75-97 пп. 1.1–1.7, 2.1–2.9, 5.1;",
+          "source_doc": "Декларация соответствия ЕАС | /datasheets/sbt170iw-declaration.pdf",
+          "proposed_card_value": "Удалить «ГОСТ Р 52249» из списка стандартов",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Фильтрация 0,22 мм",
+          "card_value": "Да (в названии строки 0,22 мм)",
+          "source_value": "0.2 мкм; «мм» в карточке — ошибка единиц (в 1000 раз)",
+          "quote": "Filtered through 0.2 micron in-line filter",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Фильтрация: 0,2 мкм",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эндотоксины",
+          "card_value": "Менее 0,25 EU/мл",
+          "source_value": "Ни TDS (блок Product Information), ни инструкция 02NAN-15 предел по эндотоксинам не указывают",
+          "quote": "Product Information | Appearance | Clear, colorless liquid | Water Quality | Meets the requirements of USP grade deionized water | Environment | ISO 3-8 Grade A/B",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Удалить строку, пока производитель не подтвердит предел",
+          "confidence": "medium"
+        },
+        {
+          "type": "wrong_document",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "SBT170IW, 1 л триггер спрей",
+          "source_value": "Приложен американский PDS Contec Sterile IPA (PDSD004) с артикулами SB167030IR / SB327030IR / SB1287030IR / SB128100IR и объёмами 0.47 L, 0.95 L, 3.8 L; артикул SBT170IW и объём 1 л отсутствуют",
+          "quote": "SB167030IR Contec Sterile 70% IPA | 16 oz. | (0.47 L) | SB327030IR Contec Sterile 70% IPA | 32 oz. | (0.95 L) | SB1287030IR Contec Sterile 70% IPA | 1 gallon | (3.8 L)",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Приложить европейский TDS Contec Sterile 70% IPA с артикулом SBT170IW",
+          "confidence": "medium"
+        },
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия ЕАС",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35994/23 (Contec 70% Isopropanol)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026). Кроме того, это декларация по ГОСТ Р (РОСС RU), а не декларация ЕАС, как названо в карточке",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия ЕАС | /datasheets/sbt170iw-declaration.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBC570I",
+      "name": "Contec Sterile 70% IPA (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)"
+      ],
+      "issues": [
+        {
+          "type": "wrong_document",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "SBC570I, 5 л канистра",
+          "source_value": "Приложен американский PDS Contec Sterile IPA (PDSD004): артикулы SB167030IR / SB327030IR / SB1287030IR / SB128100IR, объёмы 0.47 L, 0.95 L, 3.8 L. Артикула SBC570I и упаковки 5 л в документе нет вообще",
+          "quote": "SB167030IR Contec Sterile 70% IPA | 16 oz. | (0.47 L) | SB327030IR Contec Sterile 70% IPA | 32 oz. | (0.95 L) | SB1287030IR Contec Sterile 70% IPA | 1 gallon | (3.8 L)",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Приложить TDS/инструкцию, где указан SBC570I 5 л (например, инструкцию 02NAN-15, которая называет SBC570I)",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "Состав",
+          "card_value": "Изопропиловый спирт (IPA) 70% / вода для инъекций (WFI) 30%",
+          "source_value": "Приложенный TDS: очищенная вода USP (deionized), не WFI. Инструкция 02NAN-15, которая называет SBC570I (приложена к карточке SBT170IW), тоже указывает «очищенную воду»",
+          "quote": "Containing USP Grade IPA and USP grade purified water | Water Quality | Meets the requirements of USP grade deionized water",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Изопропиловый спирт (IPA) 70% / очищенная вода",
+          "confidence": "medium"
+        },
+        {
+          "type": "contradiction",
+          "field": "Фильтрация 0,22 мм",
+          "card_value": "Да (в названии строки 0,22 мм)",
+          "source_value": "0.2 мкм; «мм» в карточке — ошибка единиц (в 1000 раз)",
+          "quote": "Filtered through 0.2 micron in-line filter",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Фильтрация: 0,2 мкм",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "Эндотоксины",
+          "card_value": "Менее 0,25 EU/мл",
+          "source_value": "В блоке Product Information TDS предел по эндотоксинам не указан",
+          "quote": "Product Information | Appearance | Clear, colorless liquid | Water Quality | Meets the requirements of USP grade deionized water | Environment | ISO 3-8 Grade A/B",
+          "source_doc": "Технический паспорт TDS (eng) | /datasheets/sbt170iw-tds.pdf",
+          "proposed_card_value": "Удалить строку, пока производитель не подтвердит предел",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "FBT170I",
+      "name": "Contec IPA 70% (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Инструкция по применению (eng)",
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35994/23 (Contec 70% Isopropanol)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026)",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия | https://ibcnanotex.com/upload/iblock/b69/up4re5pri0r4tkc0zjkzkz4rmcugcag2.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBT16HPW",
+      "name": "Contec Sterile HydroPure (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35996/23 (Contec Sterile Hydropure)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026)",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия | /datasheets/hydropure-declaration.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "specs: Действующее вещество, Класс чистоты ISO 14644-1, Класс чистоты EU GMP, Фильтрация, Эндотоксины",
+          "card_value": "H₂O₂ 6%; ISO 4; Класс A, B; 0.22 мкм; <0.25 EU/мл",
+          "source_value": "К карточке приложена только декларация, которая называет продукт, но не содержит концентрации, классов чистоты, фильтрации или эндотоксинов. Технических документов нет — значения не проверяемы (не означает, что они неверны)",
+          "quote": "ЗАЯВЛЯЕТ, ЧТО ПРОДУКЦИЯ Средство дезинфицирующее для обработки поверхностей Contec Sterile Hydropure (Контек Стерильный Хайдропюр)",
+          "source_doc": "Декларация соответствия | /datasheets/hydropure-declaration.pdf",
+          "proposed_card_value": "Приложить TDS Contec Sterile HydroPure и сверить с ним значения; до сверки не добавлять новых цифр",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "FBC570I",
+      "name": "Contec IPA 70% (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Инструкция по применению (eng)",
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35994/23 (Contec 70% Isopropanol)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026)",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия | https://ibcnanotex.com/upload/iblock/fa0/9gv4y3w704h63aod6mp37yqdcgw7hf6n.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBC56HP",
+      "name": "Contec Sterile HydroPure (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия",
+          "card_value": "Декларация РОСС RU Д-US.РА01.В.35996/23 (Contec Sterile Hydropure)",
+          "source_value": "Срок действия истёк 13.09.2026 (сегодня 15.09.2026)",
+          "quote": "СРОК ДЕЙСТВИЯ ДЕКЛАРАЦИИ О СООТВЕТСТВИИ     с 14.09.2023 по 13.09.2026",
+          "source_doc": "Декларация соответствия | /datasheets/hydropure-declaration.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "unsupported_claim",
+          "field": "specs: Действующее вещество, Класс чистоты ISO 14644-1, Класс чистоты EU GMP, Фильтрация, Эндотоксины",
+          "card_value": "H₂O₂ 6%; ISO 4; Класс A, B; 0.22 мкм; <0.25 EU/мл",
+          "source_value": "К карточке приложена только декларация, которая называет продукт, но не содержит концентрации, классов чистоты, фильтрации или эндотоксинов. Технических документов нет — значения не проверяемы (не означает, что они неверны)",
+          "quote": "ЗАЯВЛЯЕТ, ЧТО ПРОДУКЦИЯ Средство дезинфицирующее для обработки поверхностей Contec Sterile Hydropure (Контек Стерильный Хайдропюр)",
+          "source_doc": "Декларация соответствия | /datasheets/hydropure-declaration.pdf",
+          "proposed_card_value": "Приложить TDS Contec Sterile HydroPure и сверить с ним значения; до сверки не добавлять новых цифр",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "101105069",
+      "name": "ClearKlens IPA (1L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/448/kocvao0qnu26kikhjehwehh48j1alztf.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/448/kocvao0qnu26kikhjehwehh48j1alztf.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Паспорт безопасности SDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/f97/lkuu46p5p91iwso5dgobs3jlk8ttttya.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/f97/lkuu46p5p91iwso5dgobs3jlk8ttttya.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Свидетельство о госрегистрации",
+          "card_value": "https://ibcnanotex.com/upload/iblock/9ba/gdze3om4wumtsjmdcynjzqp82vjwo8ps.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/9ba/gdze3om4wumtsjmdcynjzqp82vjwo8ps.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Декларация ЕАС",
+          "card_value": "https://ibcnanotex.com/upload/iblock/4ac/7b5cwn0wf8f1u4ypnso8250dospa2uul.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/4ac/7b5cwn0wf8f1u4ypnso8250dospa2uul.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBT103NK",
+      "name": "Contec Sterile NeutraKlean (1L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/745/ysel1yymxvx04h12ukdb5p1ecexpr69b.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/745/ysel1yymxvx04h12ukdb5p1ecexpr69b.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "SBC503NK",
+      "name": "Contec Sterile NeutraKlean (5L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/745/ysel1yymxvx04h12ukdb5p1ecexpr69b.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/745/ysel1yymxvx04h12ukdb5p1ecexpr69b.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "100848253",
+      "name": "ClearKlens Cleansinald RTU (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации",
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Стерильно",
+          "card_value": "не указано (строки нет; описание — «готовое к применению дезинфицирующее средство»)",
+          "source_value": "TDS: стерильный продукт на воде для инъекций, фильтрация 0,22 мкм, упаковка стерилизуется, двойной пакет, сертификат стерильности",
+          "quote": "Стерильный, готовый для применения дезинфектант с водой для инъекций | концентрат ClearKlens Cleansinald разбавлен водой для инъекций до концентрации 0.5% по объему в соответствии с Европейской фармакопеей (European Pharmacopoeia) и затем пропущен через фильтр с размером пор 0.22 мкм (μm). | упаковка для ClearKlens Cleansinald RTU перед заполнением стерилизуется, затем заполняется продуктом и пакуется в двойной пакет. Продукт снабжается сертификатом стерильности.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/79c/dl6lfcxwry7lnmpw0cyzlexv7tdslxf5.pdf",
+          "proposed_card_value": "Стерильно: Да; Фильтрация: 0,22 мкм; Вода: вода для инъекций (WFI); двойная упаковка",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Действующее вещество",
+          "card_value": "не указано",
+          "source_value": "TDS: смесь ЧАС и алкиламинов, 0,5% (об.) концентрата на воде для инъекций; SDS разд. 3: алкилдиметилбензиламмоний хлорид (CAS 68424-85-1) 0,01–0,1% (масс.)",
+          "quote": "ClearKlens Cleansinald RTU представляет собой готовую для применения смесь ЧАС и алкиламинов разбавленную водой для инъекций (WFI) до концентрации 0.5% по объему",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/79c/dl6lfcxwry7lnmpw0cyzlexv7tdslxf5.pdf",
+          "proposed_card_value": "Действующее вещество: ЧАС и алкиламины (0,5% об. концентрата ClearKlens Cleansinald в воде для инъекций)",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS: EN 1040 (бактерии, 5 мин), EN 1276 (бактерии, чистые условия, 5 мин), EN 1650 (Candida albicans, 15 мин), 20 °C",
+          "quote": "CEN 1040 (бактерии) (20°C, 5 минут время контакта), CEN 1276 (бактерии) в чистых условиях (20°C, 5 минут время контакта) CEN 1650 (Candida albicans) при 20°C и времени контакта 15 минут.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/79c/dl6lfcxwry7lnmpw0cyzlexv7tdslxf5.pdf",
+          "proposed_card_value": "EN 1040, EN 1276, EN 1650",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "7516051",
+      "name": "ClearKlens Tego 2000 RTU (5L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации",
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "Стерильно",
+          "card_value": "не указано (строки нет)",
+          "source_value": "TDS: стерильный RTU на воде для инъекций, 1% (об.) раствор, фильтрация 0,2 мкм, асептический розлив, двойная упаковка",
+          "quote": "Стерильный готовый для применения амфотерный дезинфектант с водой для инъекций | раствор пропущен через фильтр с размером пор 0.2 мкм и разлит в асептических условиях. | RTU представляет собой готовый к использованию 1% по объему водный раствор с водой для инъекций (WFI).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/c4b/0bbv6qo033686bkfkbotposbkmr2de4y.pdf",
+          "proposed_card_value": "Стерильно: Да; Концентрация: 1% (об.) Tego 2000 на воде для инъекций (WFI); Фильтрация: 0,2 мкм, асептический розлив",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS: EN 1276, EN 1650, EN 13697; EN 14476 (MVA)",
+          "quote": "ClearKlens Tego® 2000 RTU прошел тесты на соответствие EN 1276, EN 1650 и EN 13697. Он прошел тест EN14476 для MVA.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/c4b/0bbv6qo033686bkfkbotposbkmr2de4y.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 14476 (MVA)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "7513381",
+      "name": "ClearKlens Tego 2000 (20L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации",
+        "Декларация соответствия"
+      ],
+      "issues": [
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS: EN 1276, EN 1650, EN 13697; EN 14476 (MVA). Рабочая концентрация 0,5–2% (об.)",
+          "quote": "® успешно прошел тест CEN 1276, EN 1650 и EN 13697. Он соответствует EN14476 для MVA.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/841/woih66layp5h7arsin0ce9e0j8lix8ty.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 14476 (MVA)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "7515165",
+      "name": "ClearKlens Plus (30mL)",
+      "status": "ok",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации"
+      ],
+      "issues": []
+    },
+    {
+      "sku": "7513374",
+      "name": "ClearKlens Plus (5L)",
+      "status": "ok",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации"
+      ],
+      "issues": []
+    },
+    {
+      "sku": "100934589",
+      "name": "ClearKlens Oxifast (1L) стерильный",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Действующее вещество",
+          "card_value": "Перекись водорода",
+          "source_value": "TDS называет активным ингредиентом надуксусную кислоту (НУК) 700 ppm. Перекись водорода присутствует в составе (SDS разд. 3: 3–10%, уксусная кислота 1–3%, надуксусная кислота 0,01–0,1%), но производитель не называет её действующим веществом",
+          "quote": "100 г содержит в качестве активного ингредиента: 0,07 г НУК (700 ppm).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/8b9/ovtkavtf3jymrnaq10fkpw1t4mef186a.pdf",
+          "proposed_card_value": "Надуксусная кислота (НУК) 700 ppm (0,07 г/100 г)",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Diversey ClearKlens Oxifast — спорицидное стерильное средство на основе перекиси водорода",
+          "source_value": "TDS: раствор на основе НУК",
+          "quote": "ClearKlens Oxifast готовый к применению раствор на основе НУК.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/8b9/ovtkavtf3jymrnaq10fkpw1t4mef186a.pdf",
+          "proposed_card_value": "Diversey ClearKlens Oxifast — готовое к применению стерильное спорицидное средство на основе надуксусной кислоты (НУК)",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS: EN 1276, EN 13697, EN 1650, EN 13704, EN 14476 — чистые условия, 20 °C, контакт минимум 5 мин",
+          "quote": "EN 1276 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 13697 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 1650 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 13704 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 14476 в чистых условиях при 20°C , время контакта минимум 5 минут",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/8b9/ovtkavtf3jymrnaq10fkpw1t4mef186a.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 14476 (контакт мин. 5 мин)",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Декларация соответствия",
+          "card_value": "https://ibcnanotex.com/upload/iblock/07e/ta657ttqoch8gd07byhxtbwvd5gyw873.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/07e/ta657ttqoch8gd07byhxtbwvd5gyw873.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "100934612",
+      "name": "ClearKlens Oxifast (1L)",
+      "status": "issues",
+      "docs_checked": [
+        "Технический паспорт TDS (eng)",
+        "Паспорт безопасности SDS (eng)",
+        "Свидетельство о госрегистрации"
+      ],
+      "issues": [
+        {
+          "type": "contradiction",
+          "field": "Действующее вещество",
+          "card_value": "Перекись водорода",
+          "source_value": "TDS называет активным ингредиентом надуксусную кислоту (НУК) 700 ppm. Перекись водорода присутствует в составе (SDS разд. 3: 3–10%), но производитель не называет её действующим веществом",
+          "quote": "100 г содержит в качестве активного ингредиента: 0,07 г НУК (700 ppm).",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/63f/uo9iwct0k0ux8gdli6pysef5o5h95jt1.pdf",
+          "proposed_card_value": "Надуксусная кислота (НУК) 700 ppm (0,07 г/100 г)",
+          "confidence": "high"
+        },
+        {
+          "type": "contradiction",
+          "field": "description",
+          "card_value": "Diversey ClearKlens Oxifast — спорицидное средство на основе перекиси водорода",
+          "source_value": "TDS: раствор на основе НУК",
+          "quote": "ClearKlens Oxifast готовый к применению раствор на основе НУК.",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/63f/uo9iwct0k0ux8gdli6pysef5o5h95jt1.pdf",
+          "proposed_card_value": "Diversey ClearKlens Oxifast — готовое к применению спорицидное средство на основе надуксусной кислоты (НУК), нестерильное",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "standards",
+          "card_value": "[] (стандарты не указаны)",
+          "source_value": "TDS: EN 1276, EN 13697, EN 1650, EN 13704, EN 14476 — чистые условия, 20 °C, контакт минимум 5 мин",
+          "quote": "EN 1276 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 13697 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 1650 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 13704 в чистых условиях при 20°C , время контакта минимум 5 минут | EN 14476 в чистых условиях при 20°C , время контакта минимум 5 минут",
+          "source_doc": "Технический паспорт TDS (eng) | https://ibcnanotex.com/upload/iblock/63f/uo9iwct0k0ux8gdli6pysef5o5h95jt1.pdf",
+          "proposed_card_value": "EN 1276, EN 1650, EN 13697, EN 13704, EN 14476 (контакт мин. 5 мин)",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Декларация соответствия",
+          "card_value": "https://ibcnanotex.com/upload/iblock/dc3/p939jct6f6n2xfupxl9t3krpm8fkcs90.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/dc3/p939jct6f6n2xfupxl9t3krpm8fkcs90.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "7513365",
+      "name": "ClearKlens Prime (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "100845236",
+      "name": "ClearKlens Multi (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "7513355",
+      "name": "ClearKlens Scale (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "7519182",
+      "name": "ClearKlens Eco (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "7513363",
+      "name": "ClearKlens NTC (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "7513367",
+      "name": "ClearKlens Flow (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": []
+    },
+    {
+      "sku": "101103248",
+      "name": "ClearKlens Solve (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/997/zyce0zl9ul279e8eke9i3h9q3ios5d6y.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/997/zyce0zl9ul279e8eke9i3h9q3ios5d6y.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Паспорт безопасности SDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/ce9/8jnzd0eyw2c0hzulp0m7p9hfrvo607zr.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/ce9/8jnzd0eyw2c0hzulp0m7p9hfrvo607zr.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Свидетельство о госрегистрации",
+          "card_value": "https://ibcnanotex.com/upload/iblock/f5f/g78hwlohud00c0k23t900y73a3t9wcne.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/f5f/g78hwlohud00c0k23t900y73a3t9wcne.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "7517222",
+      "name": "ClearKlens Brite (20L)",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Технический паспорт TDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/726/omjpr9u3hex8n10q42cju4qxyjqx03rs.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/726/omjpr9u3hex8n10q42cju4qxyjqx03rs.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Паспорт безопасности MSDS (eng)",
+          "card_value": "https://ibcnanotex.com/upload/iblock/537/kczfybsqkm9yzrxulacvk0pixl6myrh5.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/537/kczfybsqkm9yzrxulacvk0pixl6myrh5.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "broken_link",
+          "field": "Свидетельство о госрегистрации",
+          "card_value": "https://ibcnanotex.com/upload/iblock/2af/h343shzad78snlgfiidgfjr5o25uxqzy.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/2af/h343shzad78snlgfiidgfjr5o25uxqzy.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "Dezonium",
+      "name": "Dezonium",
+      "status": "issues",
+      "docs_checked": [
+        "Протокол испытаний",
+        "Добровольный сертификат соответствия",
+        "Декларация соответствия ГОСТ Р",
+        "Свидетельство о госрегистрации"
+      ],
+      "issues": [
+        {
+          "type": "expired_certificate",
+          "field": "Добровольный сертификат соответствия",
+          "card_value": "Сертификат РОСС RU.32396.04НТЦ0.ОС02.00252 (Dezonium)",
+          "source_value": "Срок действия истёк 29.07.2024",
+          "quote": "Срок действия с 30.07.2021 по 29.07.2024",
+          "source_doc": "Добровольный сертификат соответствия | https://ibcnanotex.com/upload/iblock/1b1/tzk5qftvpujoug2bct85zbh45x7kdijz.pdf",
+          "proposed_card_value": "Заменить на действующий сертификат или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "expired_certificate",
+          "field": "Декларация соответствия ГОСТ Р",
+          "card_value": "Декларация № ...НВ42.В.01293/20 от 20.11.2020 (Dezonium)",
+          "source_value": "Срок действия истёк 19.11.2023",
+          "quote": "Декларация о соответствии действительна до 19.11.2023",
+          "source_doc": "Декларация соответствия ГОСТ Р | https://ibcnanotex.com/upload/iblock/945/o3frzulqb5roa47irhf3vfk2nm7i5x7k.pdf",
+          "proposed_card_value": "Заменить на действующую декларацию или убрать документ",
+          "confidence": "high"
+        },
+        {
+          "type": "missing_in_card",
+          "field": "Действующие вещества",
+          "card_value": "IPA 66% + алкилдиметилбензиламмоний хлорид (АДБАК)",
+          "source_value": "Концентрация АДБАК в карточке не указана; протокол испытаний по ТУ 20.20.14-136-98536873-2020 даёт массовую долю АДБАК 0,19–0,21%, IPA 62,0–70,0% (масс.) / 71,0–79,0% (об.). Протокол — не TDS, поэтому medium",
+          "quote": "6 Массовая доля алкилдиметилбензиламмоний хлорида , %, в пределах 0,19 – 0,21",
+          "source_doc": "Протокол испытаний | https://ibcnanotex.com/upload/iblock/9f4/npbvwp5dp1mxnwyimebrqy68u6q5192n.pdf",
+          "proposed_card_value": "Изопропиловый спирт 62–70% (масс.) / 71–79% (об.) + алкилдиметилбензиламмоний хлорид (АДБАК) 0,19–0,21%",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "sku": "CIP ACID",
+      "name": "FORCLEA CIP Acid",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Свидетельство о госрегистрации",
+          "card_value": "https://ibcnanotex.com/upload/iblock/829/70vytnp7zbdlfx0ntib9effwz5q42vm5.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/829/70vytnp7zbdlfx0ntib9effwz5q42vm5.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "CIP-30",
+      "name": "FORCLEA CIP",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Сертификат соответствия",
+          "card_value": "https://ibcnanotex.com/upload/iblock/402/tpkwgr6bamu8l41spct3w8q5s299vxbz.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/402/tpkwgr6bamu8l41spct3w8q5s299vxbz.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "sku": "CIP Cl",
+      "name": "FORCLEA CIP CL",
+      "status": "no_usable_docs",
+      "docs_checked": [],
+      "issues": [
+        {
+          "type": "broken_link",
+          "field": "Свидетельство о госрегистрации",
+          "card_value": "https://ibcnanotex.com/upload/iblock/fe2/mx16bezt4xc85o5bsdtftz707l4scasl.pdf",
+          "source_value": "HTTP 404",
+          "quote": "",
+          "source_doc": "https://ibcnanotex.com/upload/iblock/fe2/mx16bezt4xc85o5bsdtftz707l4scasl.pdf",
+          "proposed_card_value": "Заменить ссылку на актуальный PDF или убрать документ",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
