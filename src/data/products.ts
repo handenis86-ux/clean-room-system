@@ -7,6 +7,13 @@ export interface Product {
   specs?: { label: string; value: string }[];
   datasheets?: { name: string; url: string; size?: string }[];
   standards?: string[];
+  /**
+   * Позиция не отображается в каталоге IBC и не предлагается к заказу.
+   * Карточка остаётся по своему адресу с пометкой «недоступна» и noindex,
+   * но исключена из листингов, поиска, фасетов, сравнения и карты сайта.
+   * Вернуть в продажу — удалить флаг.
+   */
+  hidden?: boolean;
 }
 
 export interface ProductCategory {
@@ -36,7 +43,7 @@ export interface ProductCategory {
 
 const IBC = 'https://ibcnanotex.com';
 
-export const categories: ProductCategory[] = [
+const catalog: ProductCategory[] = [
   {
     slug: 'indicators',
     title: 'Индикаторы для стерилизации, дезинфекции и мойки',
@@ -113,7 +120,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017'],
       },
-      { name: 'BT98 Биоиндикатор', sku: 'BT98', description: '5 минут. Стерилизация перекисью водорода (VH2O2)',
+      { name: 'BT98 Биоиндикатор', sku: 'BT98', hidden: true, description: '5 минут. Стерилизация перекисью водорода (VH2O2)',
         specs: [
           { label: 'Время считывания', value: '5 минут' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -376,7 +383,7 @@ export const categories: ProductCategory[] = [
           { name: 'Паспорт безопасности SDS (eng)', url: 'https://ibcnanotex.com/upload/iblock/c42/juii9lpe6kaa0sf46guif0y62njktdq2.pdf', size: '1.4 мб' },
         ],
       },
-      { name: 'BT224 Биоиндикатор', sku: 'BT224', description: '20 минут. Автоклавирование (паровая стерилизация)',
+      { name: 'BT224 Биоиндикатор', sku: 'BT224', hidden: true, description: '20 минут. Автоклавирование (паровая стерилизация)',
         specs: [
           { label: 'Время считывания', value: '20 минут (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -392,7 +399,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017'],
       },
-      { name: 'BT97 Биоиндикатор', sku: 'BT97', description: '1 час. Дезинфекция перекисью водорода (VH2O2)',
+      { name: 'BT97 Биоиндикатор', sku: 'BT97', hidden: true, description: '1 час. Дезинфекция перекисью водорода (VH2O2)',
         specs: [
           { label: 'Время считывания', value: '1 час (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -408,7 +415,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017'],
       },
-      { name: 'BT95 Биоиндикатор', sku: 'BT95', description: '2 часа. Стерилизация перекисью водорода (VH2O2)',
+      { name: 'BT95 Биоиндикатор', sku: 'BT95', hidden: true, description: '2 часа. Стерилизация перекисью водорода (VH2O2)',
         specs: [
           { label: 'Время считывания', value: '2 часа (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -424,7 +431,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017'],
       },
-      { name: 'BT102 Биоиндикатор', sku: 'BT102', description: '2 часа. Газовая стерилизация формальдегидом',
+      { name: 'BT102 Биоиндикатор', sku: 'BT102', hidden: true, description: '2 часа. Газовая стерилизация формальдегидом',
         specs: [
           { label: 'Время считывания', value: '2 часа (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -440,7 +447,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-5:2017'],
       },
-      { name: 'BT220 Биоиндикатор', sku: 'BT220', description: '3 часа. Автоклавирование (паровая стерилизация)',
+      { name: 'BT220 Биоиндикатор', sku: 'BT220', hidden: true, description: '3 часа. Автоклавирование (паровая стерилизация)',
         specs: [
           { label: 'Время считывания', value: '3 часа (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '60 °C' },
@@ -456,7 +463,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017', 'ISO 11138-8:2021'],
       },
-      { name: 'BT110 Биоиндикатор', sku: 'BT110', description: '4 часа. Газовая стерилизация окисью этилена',
+      { name: 'BT110 Биоиндикатор', sku: 'BT110', hidden: true, description: '4 часа. Газовая стерилизация окисью этилена',
         specs: [
           { label: 'Время считывания', value: '4 часа (окончательное флуоресцентное) + 48 ч визуальное (опционально)' },
           { label: 'Температура инкубации', value: '37 °C' },
@@ -472,7 +479,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-2:2017'],
       },
-      { name: 'BT80 Биоиндикатор', sku: 'BT80', description: '48 часов. Деконтаминация медицинских отходов влажным теплом (СВЧ / радиочастотное излучение)',
+      { name: 'BT80 Биоиндикатор', sku: 'BT80', hidden: true, description: '48 часов. Деконтаминация медицинских отходов влажным теплом (СВЧ / радиочастотное излучение)',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Температура инкубации', value: '37 °C' },
@@ -488,7 +495,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017'],
       },
-      { name: 'BT40 Биоиндикатор', sku: 'BT40', description: '48 часов. Воздушная и газовая стерилизация',
+      { name: 'BT40 Биоиндикатор', sku: 'BT40', hidden: true, description: '48 часов. Воздушная и газовая стерилизация',
         specs: [
           { label: 'Время считывания', value: '48 часов в среде Bionova MC1030-2 / MC1020-2 (в TSB — 7 суток при 37 °C)' },
           { label: 'Температура инкубации', value: '37 °C' },
@@ -505,7 +512,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-2:2017', 'ISO 11138-4:2017'],
       },
-      { name: 'BT21 Биоиндикатор', sku: 'BT21', description: '0,5 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
+      { name: 'BT21 Биоиндикатор', sku: 'BT21', hidden: true, description: '0,5 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Объём питательной среды', value: '0,5 мл' },
@@ -522,7 +529,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017', 'ISO 11138-8:2021'],
       },
-      { name: 'BT10 Биоиндикатор', sku: 'BT10', description: '48 часов. Газовая стерилизация окисью этилена',
+      { name: 'BT10 Биоиндикатор', sku: 'BT10', hidden: true, description: '48 часов. Газовая стерилизация окисью этилена',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Температура инкубации', value: '37 °C' },
@@ -538,7 +545,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-2:2017', 'ISO 11138-8:2021'],
       },
-      { name: 'BT22 Биоиндикатор', sku: 'BT22', description: '0,25 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
+      { name: 'BT22 Биоиндикатор', sku: 'BT22', hidden: true, description: '0,25 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Объём питательной среды', value: '0,25 мл' },
@@ -554,7 +561,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017', 'ISO 11138-8:2021'],
       },
-      { name: 'BT100 Биоиндикатор', sku: 'BT100', description: '48 часов. Газовая стерилизация формальдегидом',
+      { name: 'BT100 Биоиндикатор', sku: 'BT100', hidden: true, description: '48 часов. Газовая стерилизация формальдегидом',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Температура инкубации', value: '55–62 °C' },
@@ -570,7 +577,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-5:2017'],
       },
-      { name: 'BT24 Биоиндикатор', sku: 'BT24', description: '0,6 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
+      { name: 'BT24 Биоиндикатор', sku: 'BT24', hidden: true, description: '0,6 мл / 48 часов. Автоклавирование (промышленная паровая стерилизация жидкостей)',
         specs: [
           { label: 'Время считывания', value: '48 часов' },
           { label: 'Объём питательной среды', value: '0,6 мл' },
@@ -587,7 +594,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017'],
       },
-      { name: 'BT50 Биоиндикатор', sku: 'BT50/6_BION_100', description: '24/48 часов. Автоклавирование и газовая стерилизация',
+      { name: 'BT50 Биоиндикатор', sku: 'BT50/6_BION_100', hidden: true, description: '24/48 часов. Автоклавирование и газовая стерилизация',
         specs: [
           { label: 'Время считывания', value: '24 ч (пар) / 48 ч (формальдегид) в среде Bionova MC1020-2; в TSB — 7 суток' },
           { label: 'Температура инкубации', value: '55–62 °C' },
@@ -604,7 +611,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-3:2017', 'ISO 11138-5:2017'],
       },
-      { name: 'BT31 Биоиндикатор', sku: 'BT31', description: '72 часа. Воздушная стерилизация (сухожаровая)',
+      { name: 'BT31 Биоиндикатор', sku: 'BT31', hidden: true, description: '72 часа. Воздушная стерилизация (сухожаровая)',
         specs: [
           { label: 'Время считывания', value: '72 часа после переноса содержимого ампулы в среду Bionova MC1030-2 / MC1020-2' },
           { label: 'Температура инкубации', value: '37 °C' },
@@ -620,7 +627,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['ISO 11138-1:2017', 'ISO 11138-4:2017'],
       },
-      { name: 'BPH-Photon Инкубатор', sku: 'BPH-Photon', description: '7 секунд. Инкубатор автоматического считывания',
+      { name: 'BPH-Photon Инкубатор', sku: 'BPH-Photon', hidden: true, description: '7 секунд. Инкубатор автоматического считывания',
         specs: [
           { label: 'Тип', value: 'Автоматический инкубатор с фотонным считыванием' },
           { label: 'Количество позиций', value: '2 независимые позиции' },
@@ -649,7 +656,7 @@ export const categories: ProductCategory[] = [
           { name: 'Инструкция по применению (eng)', url: 'https://ibcnanotex.com/upload/iblock/5c3/5gjilwfx82yf2r1phbk2rhd7mvp218lr.pdf', size: '886.8 кб' },
         ],
       },
-      { name: 'BHY-Hyper Инкубатор', sku: 'BHY-Hyper', description: '5 минут. Инкубатор автоматического считывания',
+      { name: 'BHY-Hyper Инкубатор', sku: 'BHY-Hyper', hidden: true, description: '5 минут. Инкубатор автоматического считывания',
         specs: [
           { label: 'Тип', value: 'Автоматический инкубатор с флуоресцентным считыванием' },
           { label: 'Количество позиций', value: '2 независимые позиции' },
@@ -837,7 +844,7 @@ export const categories: ProductCategory[] = [
         datasheets: [
         ],
       },
-      { name: 'ClearKlens IPA (1L)', sku: '101105069', description: 'Diversey ClearKlens изопропиловый спирт для чистых помещений',
+      { name: 'ClearKlens IPA (1L)', sku: '101105069', hidden: true, description: 'Diversey ClearKlens изопропиловый спирт для чистых помещений',
         specs: [
           { label: 'Производитель', value: 'Diversey' },
           { label: 'Действующее вещество', value: 'Изопропиловый спирт (IPA) 70%' },
@@ -993,7 +1000,7 @@ export const categories: ProductCategory[] = [
           { label: 'Объём', value: '20 л' },
         ],
       },
-      { name: 'ClearKlens Multi (20L)', sku: '100845236', description: 'Diversey ClearKlens Multi — щелочной концентрат для CIP мойки',
+      { name: 'ClearKlens Multi (20L)', sku: '100845236', hidden: true, description: 'Diversey ClearKlens Multi — щелочной концентрат для CIP мойки',
         specs: [
           { label: 'Производитель', value: 'Diversey' },
           { label: 'Тип', value: 'Щелочной концентрат' },
@@ -1076,7 +1083,7 @@ export const categories: ProductCategory[] = [
           { name: 'Свидетельство о госрегистрации', url: 'https://ibcnanotex.com/upload/iblock/0b3/yh5fw2vrjbv01jflm7qbme5y0se3hbpt.pdf', size: '1.4 мб' },
         ],
       },
-      { name: 'FORCLEA CIP Acid', sku: 'CIP ACID', description: 'Neokhim FORCLEA — концентрированный кислотный CIP детергент',
+      { name: 'FORCLEA CIP Acid', sku: 'CIP ACID', hidden: true, description: 'Neokhim FORCLEA — концентрированный кислотный CIP детергент',
         specs: [
           { label: 'Производитель', value: 'Neokhim' },
           { label: 'Тип', value: 'Кислотный CIP детергент, концентрат' },
@@ -1085,7 +1092,7 @@ export const categories: ProductCategory[] = [
         datasheets: [
         ],
       },
-      { name: 'FORCLEA CIP', sku: 'CIP-30', description: 'Neokhim FORCLEA — концентрированный щелочной CIP детергент',
+      { name: 'FORCLEA CIP', sku: 'CIP-30', hidden: true, description: 'Neokhim FORCLEA — концентрированный щелочной CIP детергент',
         specs: [
           { label: 'Производитель', value: 'Neokhim' },
           { label: 'Тип', value: 'Щелочной CIP детергент, концентрат' },
@@ -1094,7 +1101,7 @@ export const categories: ProductCategory[] = [
         datasheets: [
         ],
       },
-      { name: 'FORCLEA CIP CL', sku: 'CIP Cl', description: 'Neokhim FORCLEA — щелочной CIP детергент с активным хлором',
+      { name: 'FORCLEA CIP CL', sku: 'CIP Cl', hidden: true, description: 'Neokhim FORCLEA — щелочной CIP детергент с активным хлором',
         specs: [
           { label: 'Производитель', value: 'Neokhim' },
           { label: 'Тип', value: 'Щелочной CIP детергент с активным хлором' },
@@ -2382,7 +2389,7 @@ export const categories: ProductCategory[] = [
           { label: 'Производитель', value: 'Hydroflex' },
         ],
       },
-      { name: 'Телескопическая ручка Quickconnect 2746S', sku: '2746S', description: 'Contec, телескопическая ручка из нержавеющей стали с системой QuickConnect, ISO 4 / GMP A-B, 95–166 см',
+      { name: 'Телескопическая ручка Quickconnect 2746S', sku: '2746S', hidden: true, description: 'Contec, телескопическая ручка из нержавеющей стали с системой QuickConnect, ISO 4 / GMP A-B, 95–166 см',
         specs: [
           { label: 'Материал', value: 'Нержавеющая сталь' },
           { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4' },
@@ -2952,7 +2959,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['EN 166:2001', 'ISO 16321-1:2021', 'ТР ТС 019/2011'],
       },
-      { name: 'Hydroflex PurGuard SV-801-AF многоразовые', sku: '2962008', description: 'Автоклавируемые, антизапотевающее покрытие, ISO 5-8 / GMP A-D, до 40 циклов',
+      { name: 'Hydroflex PurGuard SV-801-AF многоразовые', sku: '2962008', hidden: true, description: 'Автоклавируемые, антизапотевающее покрытие, ISO 5-8 / GMP A-D, до 40 циклов',
         specs: [
           { label: 'Класс чистоты ISO 14644-1', value: 'ISO 5, 6, 7, 8' },
           { label: 'Класс чистоты EU GMP', value: 'Класс A, B, C, D' },
@@ -2969,7 +2976,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['EN 166:2001', 'ТР ТС 019/2011'],
       },
-      { name: 'Hydroflex PurGuard SV-900-AF многоразовые', sku: '2962011', description: 'Панорамные, автоклавируемые, антизапотевающие, ISO 5-8 / GMP A-D',
+      { name: 'Hydroflex PurGuard SV-900-AF многоразовые', sku: '2962011', hidden: true, description: 'Панорамные, автоклавируемые, антизапотевающие, ISO 5-8 / GMP A-D',
         specs: [
           { label: 'Класс чистоты ISO 14644-1', value: 'ISO 5, 6, 7, 8' },
           { label: 'Класс чистоты EU GMP', value: 'Класс A, B, C, D' },
@@ -2987,7 +2994,7 @@ export const categories: ProductCategory[] = [
         ],
         standards: ['EN 166', 'ТР ТС 019/2011'],
       },
-      { name: 'Hydroflex PurGuard EV-100 одноразовые стерильные', sku: '2961004', description: 'Стерильные, EO-стерилизация SAL 10⁻⁶, ISO 4-8 / GMP A-D',
+      { name: 'Hydroflex PurGuard EV-100 одноразовые стерильные', sku: '2961004', hidden: true, description: 'Стерильные, EO-стерилизация SAL 10⁻⁶, ISO 4-8 / GMP A-D',
         specs: [
           { label: 'Класс чистоты ISO 14644-1', value: 'ISO 4, 5, 6, 7, 8' },
           { label: 'Класс чистоты EU GMP', value: 'Класс A, B, C, D' },
@@ -4393,6 +4400,15 @@ export const categories: ProductCategory[] = [
   },
 ];
 
+/** Все карточки, включая скрытые. Нужен только странице товара. */
+export const allCategories: ProductCategory[] = catalog;
+
+/** Витрина: скрытые позиции (`hidden: true`) исключены. */
+export const categories: ProductCategory[] = catalog.map((c) => ({
+  ...c,
+  products: c.products.filter((p) => !p.hidden),
+}));
+
 export function getCategoryBySlug(slug: string): ProductCategory | undefined {
   return categories.find((c) => c.slug === slug);
 }
@@ -4405,8 +4421,9 @@ export function productSlug(sku: string): string {
   return sku.toLowerCase().replace(/[\/\s]+/g, '-').replace(/[^a-z0-9-]/g, '');
 }
 
+/** Ищет и среди скрытых позиций — их страницы продолжают открываться. */
 export function getProductBySlug(categorySlug: string, pSlug: string): { category: ProductCategory; product: Product } | undefined {
-  const category = getCategoryBySlug(categorySlug);
+  const category = catalog.find((c) => c.slug === categorySlug);
   if (!category) return undefined;
   const product = category.products.find((p) => productSlug(p.sku) === pSlug);
   if (!product) return undefined;

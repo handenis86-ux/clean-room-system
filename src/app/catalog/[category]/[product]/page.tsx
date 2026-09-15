@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Phone, Mail, Package, FileText, ChevronRight, ShieldCheck } from 'lucide-react';
 import {
-  categories,
+  allCategories,
   getProductBySlug,
   productSlug,
 } from '@/data/products';
@@ -26,7 +26,8 @@ interface Props {
 
 export function generateStaticParams() {
   const params: { category: string; product: string }[] = [];
-  for (const cat of categories) {
+  // Скрытые позиции тоже получают страницу — с пометкой и noindex.
+  for (const cat of allCategories) {
     for (const p of cat.products) {
       params.push({ category: cat.slug, product: productSlug(p.sku) });
     }
@@ -81,6 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`,
     },
+    ...(product.hidden ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title,
       description: truncatedDescription,
@@ -109,7 +111,7 @@ export default function ProductPage({ params }: Props) {
 
   // Other products in the same category (exclude current)
   const otherProducts = category.products
-    .filter((p) => p.sku !== product.sku)
+    .filter((p) => p.sku !== product.sku && !p.hidden)
     .slice(0, 5);
 
   const productUrl = `${siteConfig.url}/catalog/${category.slug}/${productSlug(product.sku)}`;
@@ -282,10 +284,26 @@ export default function ProductPage({ params }: Props) {
               <span className="text-[13px] text-text-muted">
                 Арт: {product.sku}
               </span>
-              <span className="bg-brand-light text-brand rounded-full px-3 py-1 text-[13px] font-medium">
-                Под заказ
-              </span>
+              {product.hidden ? (
+                <span className="bg-surface text-text-muted rounded-full px-3 py-1 text-[13px] font-medium">
+                  Недоступна для заказа
+                </span>
+              ) : (
+                <span className="bg-brand-light text-brand rounded-full px-3 py-1 text-[13px] font-medium">
+                  Под заказ
+                </span>
+              )}
             </div>
+
+            {product.hidden && (
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-[14px] text-amber-900 leading-relaxed">
+                Позиция сейчас не поставляется. Подобрать замену поможем по запросу — актуальный ассортимент в разделе{' '}
+                <Link href={`/catalog/${category.slug}`} className="underline font-medium">
+                  {category.title}
+                </Link>
+                .
+              </div>
+            )}
 
             {/* Description */}
             {product.description && (

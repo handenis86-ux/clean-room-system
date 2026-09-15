@@ -145,7 +145,7 @@ export default function DisinfectantCalculator() {
     } else {
       lines.push({
         category: 'regular',
-        name: 'ClearKlens IPA (1L) / Contec IPA 70% (5L)',
+        name: 'Contec IPA 70% (5L)',
         sku: 'FBC570I',
         href: '/catalog/disinfectants-and-detergents/FBC570I',
         note: 'IPA 70% нестерильный — базовая обработка GMP C/D',
@@ -252,7 +252,7 @@ export default function DisinfectantCalculator() {
               {
                 value: 'non_sterile',
                 label: 'Нестерильная',
-                description: 'Для GMP C/D: ClearKlens IPA / ProChlor',
+                description: 'Для GMP C/D: Contec IPA 70% / ProChlor',
               },
             ]}
           />
