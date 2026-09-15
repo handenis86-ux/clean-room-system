@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   title:
     'EU GMP Annex 1 для фарм-заводов Узбекистана 2027: чек-лист соответствия',
   description:
-    'Соответствие Annex 1 к дедлайну GMP 2027 в Узбекистане: 9 §-разделов (§4 гоунинг, §7 перчатки, §8 дезинфекция) × 17 категорий расходников. Скачать чек-лист, запросить КП.',
+    'Соответствие Annex 1 к дедлайну GMP 2027 в Узбекистане: 8 разделов (§4 помещения и дезинфекция, §7 персонал и одежда, §8 производство) × 17 категорий расходников. Скачать чек-лист, запросить КП.',
   alternates: {
     canonical: `${siteConfig.url}/compliance/annex1`,
   },
@@ -56,66 +56,20 @@ export const metadata: Metadata = {
     title:
       'EU GMP Annex 1 — соответствие фарм-завода Узбекистана к дедлайну 2027',
     description:
-      'Чек-лист и compliance matrix Annex 1 для QA-специалистов Узбекистана: §4 гоунинг, §7 перчатки, §8 дезинфекция. 17 категорий расходников × 9 разделов. Скачать чек-лист или запросить КП.',
+      'Чек-лист и compliance matrix Annex 1 для QA-специалистов Узбекистана: §4 помещения и дезинфекция, §7 персонал и одежда, §8 производство. 17 категорий расходников × 8 разделов. Скачать чек-лист или запросить КП.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 };
 
 const annexSections = [
-  {
-    id: '3',
-    label: '§3',
-    title: 'PQS / CCS',
-    full: 'Pharmaceutical Quality System & Contamination Control Strategy',
-  },
-  {
-    id: '4',
-    label: '§4',
-    title: 'Personnel',
-    full: 'Гигиена, гоунинг персонала, обучение',
-  },
-  {
-    id: '5',
-    label: '§5',
-    title: 'Premises',
-    full: 'Помещения, классификация, qualification',
-  },
-  {
-    id: '6',
-    label: '§6',
-    title: 'Equipment',
-    full: 'Оборудование (дизайн, очистка, стерилизация)',
-  },
-  {
-    id: '7',
-    label: '§7',
-    title: 'Utilities',
-    full: 'Утилиты (HVAC, вода, газы)',
-  },
-  {
-    id: '8',
-    label: '§8',
-    title: 'Production',
-    full: 'Производство (aseptic, APS, sterilization, lyo)',
-  },
-  {
-    id: '9',
-    label: '§9',
-    title: 'Monitoring',
-    full: 'Environmental & process monitoring',
-  },
-  {
-    id: '10',
-    label: '§10',
-    title: 'QC',
-    full: 'Quality Control — стерильность, релиз',
-  },
-  {
-    id: '11',
-    label: '§11',
-    title: 'Disinfection',
-    full: 'Очистка и дезинфекция',
-  },
+  { id: '3', label: '§3', title: 'PQS', full: 'Pharmaceutical Quality System' },
+  { id: '4', label: '§4', title: 'Premises', full: 'Помещения, шлюзы, очистка и дезинфекция (§4.33–4.36)' },
+  { id: '5', label: '§5', title: 'Equipment', full: 'Оборудование: дизайн, очистка, обслуживание' },
+  { id: '6', label: '§6', title: 'Utilities', full: 'Утилиты: HVAC, вода, газы' },
+  { id: '7', label: '§7', title: 'Personnel', full: 'Персонал: гоунинг, одежда, перчатки' },
+  { id: '8', label: '§8', title: 'Production', full: 'Производство: асептика, стерилизация, SUS' },
+  { id: '9', label: '§9', title: 'Monitoring', full: 'Мониторинг среды и процесса, APS' },
+  { id: '10', label: '§10', title: 'QC', full: 'Контроль качества' },
 ];
 
 const matchesSection = (categorySlug: string, sectionId: string): boolean => {
@@ -159,7 +113,7 @@ export default function ComplianceAnnex1Page() {
         name: 'Чем EU GMP Annex 1 (2022) отличается от версии 2008 года?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Annex 1 (2022) реструктурирован и расширен. Добавлены новые разделы: §2 — Стратегия контроля контаминации (CCS), формализация подхода Quality Risk Management по ICH Q9, расширенные требования к Environmental Monitoring (§9). Раздел очистки и дезинфекции вынесен в отдельный §11 (раньше — §8.42). Срок применения в ЕС — с 25 августа 2023 г.',
+          text: 'Annex 1 (2022) полностью переработан: в основу положена стратегия контроля контаминации (CCS, раздел 2), расширены требования к мониторингу среды и процесса и к моделированию асептического процесса (раздел 9, §9.32–9.49), добавлены требования к одноразовым системам (§8.131–8.139). Требования к очистке и дезинфекции помещений — §4.33–4.36. Документ структурирован в 10 разделов и глоссарий. Срок применения в ЕС — с 25 августа 2023 г.',
         },
       },
       {
@@ -332,7 +286,7 @@ export default function ComplianceAnnex1Page() {
       <section className="bg-surface py-12 px-4 lg:px-[80px]">
         <div className="max-w-[1240px] mx-auto">
           <h2 className="text-[24px] md:text-[30px] font-extrabold text-text-dark mb-6">
-            Compliance Matrix: 17 категорий × 9 разделов
+            Compliance Matrix: 17 категорий × 8 разделов
           </h2>
           <div className="bg-white rounded-xl border border-surface-input overflow-x-auto">
             <table className="w-full border-collapse text-[13px] min-w-[900px] compliance-matrix">
