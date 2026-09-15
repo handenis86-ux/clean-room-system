@@ -180,6 +180,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
                   [&_a]:text-brand [&_a]:underline [&_a]:hover:text-brand-dark
                   [&_strong]:text-text-dark [&_strong]:font-semibold
                   [&_ul]:space-y-2 [&_ul]:mb-4 [&_ul]:pl-5 [&_ul]:list-disc
+                  [&_ol]:space-y-2 [&_ol]:mb-4 [&_ol]:pl-5 [&_ol]:list-decimal
                   [&_li]:text-base [&_li]:text-[#333] [&_li]:leading-[1.6]
                   [&_table]:w-full [&_table]:border-collapse [&_table]:rounded-lg [&_table]:overflow-hidden [&_table]:mb-6 [&_table]:border [&_table]:border-surface-border
                   [&_thead]:bg-brand-dark

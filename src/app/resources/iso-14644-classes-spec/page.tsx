@@ -757,7 +757,7 @@ export default function Iso14644ClassesSpecPage() {
                     70×60 см для мопов с готовой пропиткой.
                   </li>
                   <li>
-                    Бренды: Contec Polynit Heatseal, Berkshire Choice
+                    Бренды: Contec Sterile Polynit Heatseal, Berkshire Choice
                     Sterile, Foamtec MicroWipe, Texwipe TX3211 Sterile.
                   </li>
                 </ul>

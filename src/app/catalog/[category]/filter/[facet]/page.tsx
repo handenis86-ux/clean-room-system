@@ -154,9 +154,14 @@ export default function FacetPage({ params }: Props) {
         <h1 className="text-[28px] md:text-[42px] font-bold text-brand-dark leading-tight">
           {facet.h1}
         </h1>
-        <p className="text-[16px] text-brand max-w-[760px] mt-3 leading-relaxed">
-          {facet.intro}
-        </p>
+        {/* intro — статический текст из facets.ts, абзацы через \n\n, внутри бывают ссылки */}
+        {facet.intro.split('\n\n').map((para, i) => (
+          <p
+            key={i}
+            className="text-[16px] text-brand max-w-[760px] mt-3 leading-relaxed [&_a]:underline [&_a]:hover:text-brand-dark"
+            dangerouslySetInnerHTML={{ __html: para }}
+          />
+        ))}
         <div className="mt-6 flex items-center gap-3 text-[13px] text-text-muted">
           <ShieldCheck size={16} className="text-brand" />
           <span>
