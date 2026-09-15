@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   title:
     'TINMAN — нержавеющая мебель и оборудование cleanroom в Узбекистане',
   description:
-    'Поставщик мебели и оборудования TINMAN (Сербия) для чистых помещений в Узбекистане: скамейки, шкафы, столы, тележки, диспенсеры, шлюзы, раковины. AISI 304/316, ISO 4 / GMP A.',
+    'Поставщик мебели и оборудования TINMAN (Сербия) для чистых помещений в Узбекистане: скамейки, шкафы, столы, тележки, диспенсеры, шлюзы, раковины. AISI 304/316, для зон GMP A–D.',
   alternates: {
     canonical: `${siteConfig.url}/brands/tinman`,
   },
   openGraph: {
     title: 'TINMAN cleanroom-мебель в Узбекистане | Clean Room Systems',
     description:
-      '14 категорий нержавеющей мебели и оборудования для cleanroom: AISI 304/316, ISO 4 / GMP A. Поставка по Узбекистану через Clean Room Systems.',
+      '14 категорий нержавеющей мебели и оборудования для cleanroom: AISI 304/316, для зон GMP A–D. Поставка по Узбекистану через Clean Room Systems.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 };
@@ -216,8 +216,8 @@ export default function TinmanBrandPage() {
             Производитель cleanroom-мебели из Сербии. Скамейки, шкафы, столы,
             тележки, диспенсеры, передаточные шлюзы, раковины — всё из{' '}
             <strong className="text-white">AISI 304/316</strong> с зеркальной
-            полировкой 2R. Класс чистоты{' '}
-            <strong className="text-white">ISO 4 / GMP A</strong>. Поставка по
+            полировкой 2R. Подходит для зон{' '}
+            <strong className="text-white">GMP A–D</strong>. Поставка по
             Узбекистану через Clean Room Systems.
           </p>
 
