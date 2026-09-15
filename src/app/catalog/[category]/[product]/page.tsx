@@ -20,6 +20,11 @@ import CalculatorCTA from './CalculatorCTA';
 import StickyKpCTA from './StickyKpCTA';
 import './print.css';
 
+/** Картинки товаров бывают локальными (/images/...) и внешними (https://...). */
+function absoluteUrl(src: string): string {
+  return src.startsWith('http') ? src : `${siteConfig.url}${src}`;
+}
+
 interface Props {
   params: { category: string; product: string };
 }
@@ -74,7 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const truncatedDescription = truncate(description, 200);
   const productImage = getProductImage(product.sku);
   const ogImageUrl = productImage
-    ? `${siteConfig.url}${productImage}`
+    ? absoluteUrl(productImage)
     : `${siteConfig.url}/og-image.png`;
   return {
     title,
@@ -158,7 +163,7 @@ export default function ProductPage({ params }: Props) {
     sku: product.sku,
     description: product.description || category.description,
     image: productImage
-      ? `${siteConfig.url}${productImage}`
+      ? absoluteUrl(productImage)
       : `${siteConfig.url}/og-image.png`,
     url: productUrl,
     brand: {
