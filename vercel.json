@@ -2,6 +2,26 @@
   "regions": ["fra1"],
   "redirects": [
     {
+      "source": "/catalog/disinfectants-and-detergents/7515165",
+      "destination": "/catalog/disinfectants-and-detergents/101109135",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/disinfectants-and-detergents/100934589",
+      "destination": "/catalog/disinfectants-and-detergents/101109715",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/disinfectants-and-detergents/100934612",
+      "destination": "/catalog/disinfectants-and-detergents/101109716",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/disinfectants-and-detergents/7519182",
+      "destination": "/catalog/disinfectants-and-detergents/101107534",
+      "permanent": true
+    },
+    {
       "source": "/blog/vybor-dezinfektantov-dlya-farmacevticheskogo-proizvodstva",
       "destination": "/blog/dezinfektanty-cleanroom-vybor-2026-gajd",
       "permanent": true
