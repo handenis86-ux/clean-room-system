@@ -102,7 +102,7 @@ const ARTICLE_HTML = `
     <tr><td><strong>Jami diapazon</strong></td><td><strong>$180-420k</strong></td><td><strong>$620-1320k</strong></td><td><strong>$1340-3450k</strong></td></tr>
   </tbody>
 </table>
-<p>Kalit moddasi — zonalar kapital taʼmiri, ayniqsa sovet OST-77 yoki GOST 23-67 boʻyicha loyihalashtirilgan korxonalar uchun (1990-2000-yillardagi koʻpchilik mahalliy zavodlar). Agar boshlangʻich infratuzilma GMPga yaqin boʻlsa (masalan, 2020+ yillarda loyihalashtirilgan Pharma Park rezidentlari), bu modda 5-10 marta qisqaradi.</p>
+<p>Kalit moddasi — zonalar kapital taʼmiri, ayniqsa sovet tarmoq meʼyorlari boʻyicha loyihalashtirilgan korxonalar uchun (1990-2000-yillardagi koʻpchilik mahalliy zavodlar). Agar boshlangʻich infratuzilma GMPga yaqin boʻlsa (masalan, 2020+ yillarda loyihalashtirilgan Pharma Park rezidentlari), bu modda 5-10 marta qisqaradi.</p>
 
 <h2 id="foreign-factories">Mezon sifatida 13 ta xorijiy GMP-zavod</h2>
 <p>2026 yil aprel holatiga koʻra Oʻzbekistonda xorijiy kapital bilan 13 ta farm-zavod ishlamoqda, EU GMP yoki ekvivalent tekshiruvlardan oʻtgan. Bu mahalliy sharoitda sertifikatsiya amaliyotda qanday koʻrinishi haqida ishchi misollar.</p>
