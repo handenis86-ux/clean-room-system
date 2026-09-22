@@ -64,3 +64,6 @@ public/uploads/*
 # Analytics — local credentials & weekly reports
 .secrets/
 reports/weekly/*.md
+
+# временный конфиг из scripts/deploy/test-nginx.py
+scripts/deploy/.test.conf
