@@ -1,0 +1,10 @@
+aiogram==3.31.0
+anthropic==1.7.0
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+sqlalchemy[asyncio]==2.0.54
+asyncpg==0.31.0
+alembic==1.20.0
+redis==8.1.0
+pydantic-settings==2.15.0
+sentry-sdk==2.70.0
