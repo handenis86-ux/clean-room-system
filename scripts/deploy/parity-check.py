@@ -36,14 +36,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def fetch(url, tries=3):
-    """Запрос без следования редиректам. Повторы — канал бывает нестабилен,
-    без них сверка даёт ложные расхождения."""
+    """Запрос без следования редиректам. Три попытки с паузой: канал бывает
+    нестабилен, без повторов сверка даёт ложные расхождения. Если ответа нет и
+    после повторов, адрес уходит в net_errors, а не в расхождения."""
     opener = urllib.request.build_opener(NoRedirect, urllib.request.HTTPSHandler(context=CTX))
     last = ''
     for attempt in range(tries):
         req = urllib.request.Request(url, headers={'User-Agent': UA})
         try:
-            r = opener.open(req, timeout=40)
+            r = opener.open(req, timeout=20)
             return r.status, {k.lower(): v for k, v in r.headers.items()}, r.read().decode('utf-8', 'ignore')
         except urllib.error.HTTPError as e:
             return e.code, {k.lower(): v for k, v in e.headers.items()}, e.read().decode('utf-8', 'ignore')
@@ -81,13 +82,15 @@ def main():
     if limit:
         paths = paths[:limit]
 
-    diffs, noindex_pages, errors = [], 0, 0
+    diffs, net_errors, noindex_pages = [], [], 0
     for i, p in enumerate(paths, 1):
         st_new, _, html_new = fetch(new_base + p)
         st_live, _, html_live = fetch(LIVE + p)
+        if st_new == 0 or st_live == 0:
+            # Ни один из хостов не ответил — это проблема канала, а не сайта.
+            net_errors.append('%s: нет ответа (новый %s, боевой %s)' % (p, st_new, st_live))
+            continue
         if st_new != 200 or st_live != 200:
-            if st_new == 0 or st_live == 0:
-                errors += 1
             diffs.append('%s: код %s (новый) против %s (боевой)' % (p, st_new, st_live))
             continue
         a, b = grab(html_new), grab(html_live)
@@ -111,15 +114,21 @@ def main():
     vj = json.load(io.open(os.path.join(ROOT, 'vercel.json'), encoding='utf-8'))
     for r in vj.get('redirects', []):
         st, h, _ = fetch(new_base + r['source'])
-        if st not in (301, 308) or not h.get('location', '').endswith(r['destination']):
+        if st == 0:
+            net_errors.append('редирект %s: нет ответа' % r['source'])
+        elif st not in (301, 308) or not h.get('location', '').endswith(r['destination']):
             diffs.append('редирект %s: %s %s' % (r['source'], st, h.get('location')))
 
     print('\nстраниц сверено: %d' % len(paths))
     print('страниц с noindex на новом хосте: %d (для staging это норма)' % noindex_pages)
-    print('сетевых ошибок: %d' % errors)
     print('расхождений: %d' % len(diffs))
     for d in diffs[:40]:
         print('  ', d)
+    if net_errors:
+        print('нет ответа (проблема канала, не сайта): %d' % len(net_errors))
+        for e in net_errors[:10]:
+            print('  ', e)
+        print('повторите эти адреса перед переключением DNS')
     return 1 if diffs else 0
 
 
