@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import ClientLogos from '@/components/sections/ClientLogos';
 
 export const metadata: Metadata = {
   title: 'О компании',
@@ -211,12 +212,7 @@ export default function AboutPage() {
             Узбекистана выбирают Clean Room Systems.
           </p>
         </div>
-        <p className="text-[16px] text-text leading-relaxed text-center max-w-[700px] mx-auto">
-          Среди наших клиентов — фармацевтические производства, резиденты Pharma
-          Park, лаборатории, пищевые и косметические производства Узбекистана.
-          Мы соблюдаем конфиденциальность партнёрских отношений и предоставляем
-          рекомендации по запросу.
-        </p>
+        <ClientLogos />
       </section>
 
       {/* CTA */}

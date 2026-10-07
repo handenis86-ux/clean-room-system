@@ -15,7 +15,7 @@ export default function PartnersSection() {
       <div className="container mx-auto px-4 lg:px-20">
         <div className="text-center mb-14">
           <span className="text-xs font-bold text-brand uppercase tracking-[2px]">
-            + НАШИ ПАРТНЁРЫ
+            + БРЕНДЫ
           </span>
           <h2 className="text-[28px] md:text-[36px] font-extrabold text-text-dark mt-3">
             Работаем с ведущими брендами для чистых помещений
