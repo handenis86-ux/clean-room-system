@@ -26,7 +26,7 @@ export const clients: Client[] = [
   {
     name: 'Nobel Pharmsanoat',
     title: 'Nobel Pharmsanoat — фармацевтическое производство',
-    logo: '/images/clients/nobel.png',
+    logo: '/images/clients/nobel.webp',
     width: 108,
     height: 152,
     displayHeight: 64,
@@ -34,7 +34,7 @@ export const clients: Client[] = [
   {
     name: 'Jurabek Laboratories',
     title: 'Jurabek Laboratories — фармацевтическое производство',
-    logo: '/images/clients/jurabek-laboratories.png',
+    logo: '/images/clients/jurabek-laboratories.webp',
     width: 92,
     height: 84,
     displayHeight: 78,
@@ -42,7 +42,7 @@ export const clients: Client[] = [
   {
     name: 'Rompharm NS',
     title: 'Rompharm NS — производство жидких лекарственных форм',
-    logo: '/images/clients/rompharm-ns.png',
+    logo: '/images/clients/rompharm-ns.webp',
     width: 285,
     height: 60,
     displayHeight: 34,
