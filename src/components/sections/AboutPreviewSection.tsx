@@ -2,32 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-const stats = [
-  { value: '15+', label: 'лет на рынке' },
-  { value: '500+', label: 'клиентов' },
-  { value: '8', label: 'категорий продукции' },
-  { value: 'ISO', label: '9001:2015' },
-];
-
 export default function AboutPreviewSection() {
   return (
     <>
-      {/* Stats bar */}
-      <section className="bg-brand-light py-[60px]">
-        <div className="container mx-auto px-4 lg:px-20">
-          <div className="flex flex-wrap justify-around gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-[32px] sm:text-[48px] font-black text-brand leading-none mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-[14px] text-text">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About text + photo */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 lg:px-20">

@@ -46,6 +46,7 @@ export default function HomePage() {
 
       <HeroSection />
       <GmpConsultingCTA />
+      <ClientsSection />
       <AboutPreviewSection />
       <ServicesSection />
       <CategoriesSection />
@@ -54,7 +55,6 @@ export default function HomePage() {
       <ComplianceResourcesSection />
       <LeadMagnetCTA />
       <PartnersSection />
-      <ClientsSection />
       <CTASection />
     </>
   );
